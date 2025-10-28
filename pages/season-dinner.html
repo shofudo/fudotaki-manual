@@ -1,94 +1,436 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>きせつの ゆうしょく せつめい</title>
-<style>
-  :root{ --ink:#fff; --bg:#111; --panel:#000a; --cap:#ddd; }
-  *{box-sizing:border-box}
-  body{margin:0;font-family:system-ui,'Noto Sans JP',sans-serif;background:var(--bg);color:var(--ink)}
-  a{color:#aee;text-decoration:none}
-
-  /* 上下のバー */
-  header,footer{
-    padding:10px 14px;
-    background:var(--panel);
-    backdrop-filter:saturate(1.2) blur(6px);
-    position:sticky;
-  }
-  header{top:0} footer{bottom:0}
-  .bar{display:flex;gap:10px;align-items:center;justify-content:space-between}
-  .btn{color:#fff;background:#1e88e5;padding:8px 12px;border-radius:10px}
-
-  /* 横スワイプのレールとスライド */
-  .rail{
-    scroll-snap-type:x mandatory;
-    display:flex;
-    overflow-x:auto;
-    gap:12px;
-    padding:12px;
-  }
-  .slide{
-    scroll-snap-align:center;
-    flex:0 0 92vw;          /* 1画面に1枚分 */
-    max-width:900px;        /* タブレットでも読みやすく */
-    margin-inline:auto;
-    background:#222;
-    border-radius:12px;
-    padding:10px;
-  }
-  .slide img{
-    width:100%;
-    height:auto;
-    max-height:68vh;        /* 画面に収める */
-    object-fit:contain;
-    border-radius:8px;
-    display:block;
-    background:#111;
-  }
-  .cap{
-    margin-top:8px;
-    font-size:15px;
-    line-height:1.6;
-    color:var(--cap);
-  }
-
-  .audio{width:100%}
-</style>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>季節の献立（season-dinner）</title>
+  <style>
+    :root {
+      --bg:#f7f7f7;
+      --card:#ffffff;
+      --ink:#222;
+      --sub:#666;
+      --acc:#245e5e;
+      --bd:#e6e6e6;
+      --radius:16px;
+      --gap:14px;
+      --maxw:940px;
+    }
+    html,body { margin:0; padding:0; background:var(--bg); color:var(--ink); font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; line-height:1.6;}
+    header {
+      position:sticky; top:0; z-index:10;
+      background:#fff; border-bottom:1px solid var(--bd);
+    }
+    .wrap { max-width:var(--maxw); margin:auto; padding:10px 16px; }
+    .toolbar { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    .toolbar a, .toolbar button {
+      appearance:none; border:1px solid var(--bd); background:#fff; color:var(--ink);
+      padding:8px 12px; border-radius:10px; font-size:14px; cursor:pointer;
+    }
+    .toolbar button.active { border-color:var(--acc); color:#fff; background:var(--acc); }
+    .hero {
+      max-width:var(--maxw); margin:12px auto 0; padding:0 16px;
+    }
+    .hero img { width:100%; height:auto; border-radius:var(--radius); display:block; }
+    main { max-width:var(--maxw); margin:16px auto; padding:0 16px 80px; }
+    .dish-block, .guide-block {
+      background:var(--card); border:1px solid var(--bd); border-radius:var(--radius);
+      padding:16px; margin:16px 0; box-shadow: 0 1px 2px rgba(0,0,0,.04);
+    }
+    .dish-head { display:flex; align-items:baseline; gap:10px; }
+    .dish-head h2 { font-size:20px; margin:0; }
+    .dish-head small { color:var(--sub); }
+    .imgbox { margin:10px 0 12px; }
+    .imgbox img { width:100%; height:auto; border-radius:12px; border:1px solid var(--bd); display:block; }
+    .levels p { margin:.4em 0; }
+    .audio-row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:10px; }
+    audio { width:260px; max-width:100%; }
+    details { background:#fafafa; border:1px dashed var(--bd); padding:10px; border-radius:10px; margin-top:8px; }
+    .nav-arrows {
+      display:flex; justify-content:space-between; gap:10px; margin-top:12px;
+    }
+    .nav-arrows a {
+      flex:1; text-align:center; text-decoration:none;
+      border:1px solid var(--bd); padding:10px; border-radius:10px; color:var(--ink); background:#fff;
+    }
+    .muted { color:var(--sub); font-size:13px; }
+    /* スワイプ時のターゲット強調 */
+    .focus-highlight { outline:3px solid rgba(36,94,94,.35); transition:outline-color .4s; }
+    @media (min-width:800px){
+      .dish-flex { display:grid; grid-template-columns: 1.1fr 1fr; gap:16px; align-items:start; }
+      .imgbox { margin:0; }
+    }
+  </style>
 </head>
 <body>
-  <header class="bar">
-    <a class="btn" href="../index.html">← もどる</a>
-    <div>きせつの ゆうしょく せつめい</div>
-    <span></span>
+  <header>
+    <div class="wrap toolbar">
+      <a href="../index.html" aria-label="トップへ">← トップ</a>
+      <span class="muted">season-dinner</span>
+      <div style="flex:1"></div>
+      <span class="muted">表示レベル：</span>
+      <div role="group" aria-label="説明レベル切替">
+        <button class="lvl-btn" data-lvl="1">L1</button>
+        <button class="lvl-btn" data-lvl="2">L2</button>
+        <button class="lvl-btn active" data-lvl="3">L3</button>
+      </div>
+    </div>
   </header>
 
-  <section class="rail">
-    <!-- ★ スライド1（画像＋説明文） -->
-    <article class="slide">
-      <img src="../assets/img/season-dinner/hiboru.png" alt="ぜんさい">
-      <p class="cap">
-        ぜんさいの せつめい：  
-        やまの しょくざいをつかった ひとさら。  
-        さーびすの こたえかたを かくにんしながら しょうかいしてください。
-      </p>
-    </article>
+  <!-- TOP画像 -->
+  <div class="hero">
+    <img src="../assets/season/hero.jpg" alt="季節の会席イメージ（TOP画像）" />
+  </div>
 
-    <!-- ★ スライド2以降は、必要に応じて同じ形で増やす -->
-    <!--
-    <article class="slide">
-      <img src="../assets/img/season-dinner/02.jpg" alt="02">
-      <p class="cap">せつめいぶん（ひらがな・カタカナ中心）</p>
-    </article>
-    -->
-  </section>
+  <main id="content">
 
-  <footer>
-    <div class="bar">
-      <audio class="audio" controls preload="none"
-             src="../assets/audio/season-dinner/kasaimori.mp3"></audio>
-    </div>
-  </footer>
+    <!-- 吸物 -->
+    <section class="dish-block" id="suimono" data-order="1">
+      <div class="dish-head"><h2>吸物</h2><small>（すいもの）</small></div>
+      <div class="dish-flex">
+        <div class="imgbox"><img src="../assets/season/suimono.jpg" alt="吸物の写真" /></div>
+        <div>
+          <div class="levels">
+            <p data-l="1">レベル1：こちらは、スイモノでございます。</p>
+            <p data-l="2">レベル2：おダシは トリと カツオブシで とった おダシになります。</p>
+            <p data-l="3">レベル3：ワンダネには ニンジンと　キクのハナビラが　はいっております。</p>
+          </div>
+          <div class="audio-row">
+            <audio controls src="../assets/audio/suimono_intro.mp3"></audio>
+            <span class="muted">案内音声：吸物 提供説明</span>
+          </div>
+        </div>
+      </div>
+      <div class="nav-arrows">
+        <a href="#kasaimori">次へ ➜ 果菜盛り</a>
+      </div>
+    </section>
+
+    <!-- ちょうしょくチョイス案内 -->
+    <section class="guide-block" id="breakfast-choice" data-order="2">
+      <h2>ちょうしょくチョイス　あんない</h2>
+      <div class="audio-row">
+        <audio controls src="../assets/audio/breakfast_choice.mp3"></audio>
+        <details>
+          <summary>セリフ（表示）</summary>
+          <p>「あしたの、ちょうしょくのチョイスについて、おきまりでしたらおうかがいいたしますが、いかがですか？」</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- SPちょうしょくプラン案内 -->
+    <section class="guide-block" id="sp-breakfast" data-order="3">
+      <h2>SPちょうしょくプラン　あんない</h2>
+      <div class="audio-row">
+        <audio controls src="../assets/audio/sp_breakfast.mp3"></audio>
+        <details>
+          <summary>セリフ（表示）</summary>
+          <p>「あしたの、ちょうしょくに、おすきなのみものと、たまごりょうりを、おえらびいただいていますが、おきまりですか？」</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- 果菜盛り -->
+    <section class="dish-block" id="kasaimori" data-order="4">
+      <div class="dish-head"><h2>果菜盛り</h2><small>（かさいもり）</small></div>
+      <div class="dish-flex">
+        <div class="imgbox"><img src="../assets/season/kasaimori.jpg" alt="果菜盛りの写真" /></div>
+        <div>
+          <div class="levels">
+            <p data-l="1">レベル1：こちらは、カサイモリでございます。</p>
+            <p data-l="2">レベル2：ヤサイと、サカナの、モリアワセになり、チュウオウには、クミアゲユバをごヨウイしております。</p>
+            <p data-l="3">レベル3：モロミジョウユと　ゴマズを　ごヨウイしております。ユバは　モロミジョウユで　めしあがっていただくのを オススメしておりますが、ヤサイと　サカナは　おスキなほうで　めしあがってください。</p>
+          </div>
+          <div class="audio-row">
+            <audio controls src="../assets/audio/kasaimori.mp3"></audio>
+            <span class="muted">案内音声：果菜盛り 提供説明</span>
+          </div>
+        </div>
+      </div>
+      <div class="nav-arrows">
+        <a href="#suimono">⬅ 前へ</a>
+        <a href="#mushimono">次へ ➜ 蒸物替り</a>
+      </div>
+    </section>
+
+    <!-- 蒸物替り -->
+    <section class="dish-block" id="mushimono" data-order="5">
+      <div class="dish-head"><h2>蒸物替り</h2><small>（むしものがわり）</small></div>
+      <div class="dish-flex">
+        <div class="imgbox"><img src="../assets/season/mushimono.jpg" alt="蒸物替りの写真" /></div>
+        <div>
+          <div class="levels">
+            <p data-l="1">レベル1：こちらは　ムシモノガワリ　になります。</p>
+            <p data-l="2">レベル2：むしたサトイモに　サトイモとミソでつくったアンを　かけたものになります。</p>
+            <p data-l="3">レベル3：オハシでもめしあがれますが、スプーンもごよういしておりますので、たべやすいほうで　おめしあがりください。</p>
+          </div>
+          <div class="audio-row">
+            <audio controls src="../assets/audio/mushimono.mp3"></audio>
+          </div>
+        </div>
+      </div>
+      <div class="nav-arrows">
+        <a href="#kasaimori">⬅ 前へ</a>
+        <a href="#shiizakana">次へ ➜ 強肴</a>
+      </div>
+    </section>
+
+    <!-- 強肴 -->
+    <section class="dish-block" id="shiizakana" data-order="6">
+      <div class="dish-head"><h2>強肴</h2><small>（しいざかな）</small></div>
+      <div class="dish-flex">
+        <div class="imgbox"><img src="../assets/season/shiizakana.jpg" alt="強肴の写真" /></div>
+        <div>
+          <div class="levels">
+            <p data-l="1">レベル1：こちらは、 ゴボウと ニンジンをつかった ヒリュウズと、 ジモノのトチギユメポークと　ゴマドウフに　キクナのアンを　かけたものになります。</p>
+            <p data-l="2">レベル2：ヒリュウズは　シタアジがついておりますが、 モジオというシオを　そえてありますのでおコノミで　つけて　めしあがってください。</p>
+            <p data-l="3">レベル3：</p>
+          </div>
+          <div class="audio-row">
+            <audio controls src="../assets/audio/shiizakana.mp3"></audio>
+          </div>
+        </div>
+      </div>
+      <div class="nav-arrows">
+        <a href="#mushimono">⬅ 前へ</a>
+        <a href="#meat-sample">次へ ➜ メイン肉サンプル</a>
+      </div>
+    </section>
+
+    <!-- メイン肉サンプル（煮物の前に提示） -->
+    <section class="guide-block" id="meat-sample" data-order="7">
+      <h2>メイン用 にくのサンプルあんない</h2>
+      <div class="audio-row">
+        <audio controls src="../assets/audio/meat_sample.mp3"></audio>
+        <details>
+          <summary>セリフ（表示）</summary>
+          <p>「こちら、このあとのにものでゴテイキョウさせていただく、トチギわぎゅうのサーロインとモモニクでございます。ミディアムレアくらいのヒのとおしかげんでゴテイキョウしておりますが、よくひをとおしたほうがおこのみでしたら、そのようにいたします。おこのみはいかがでしょうか？」</p>
+        </details>
+      </div>
+      <hr />
+      <h3>ステーキ サンプルうかがい</h3>
+      <div class="audio-row">
+        <audio controls src="../assets/audio/steak_sample.mp3"></audio>
+        <details>
+          <summary>セリフ（表示）</summary>
+          <p>「こちらは、このあとのステーキでやかせていただくおにくでございます。」<br>
+          「おこのみのやきかげんでめしあがっていただいておりますが、やきかげんはいかがいたしますか？」</p>
+        </details>
+      </div>
+      <div class="nav-arrows">
+        <a href="#shiizakana">⬅ 前へ</a>
+        <a href="#nimono">次へ ➜ 煮物</a>
+      </div>
+    </section>
+
+    <!-- 煮物 -->
+    <section class="dish-block" id="nimono" data-order="8">
+      <div class="dish-head"><h2>煮物</h2><small>（にもの）</small></div>
+      <div class="dish-flex">
+        <div class="imgbox"><img src="../assets/season/nimono.jpg" alt="煮物の写真" /></div>
+        <div>
+          <div class="levels">
+            <p data-l="1">レベル1：こちらはニモノになります。</p>
+            <p data-l="2">レベル2：トチギワギュウを　スキヤキじたてのニモノにしたものになります。</p>
+            <p data-l="3">レベル3：</p>
+          </div>
+          <div class="audio-row">
+            <audio controls src="../assets/audio/nimono.mp3"></audio>
+          </div>
+        </div>
+      </div>
+      <div class="nav-arrows">
+        <a href="#meat-sample">⬅ 前へ</a>
+        <a href="#gohan-ask">次へ ➜ ごはん うかがい</a>
+      </div>
+    </section>
+
+    <!-- ごはんの うかがい方 -->
+    <section class="guide-block" id="gohan-ask" data-order="9">
+      <h2>ごはんの うかがいかたについて（ニモノをだしたあと）</h2>
+      <div class="audio-row">
+        <audio controls src="../assets/audio/rice_ask.mp3"></audio>
+        <details>
+          <summary>セリフ（表示）</summary>
+          <p>「このあと、ごはんのごよういと　となりますが、ごようい　させていただいても　よろしいでしょうか？」</p>
+          <p>※りょうりや　おさけが　たくさん　のこっているときは：「このあと、ごはんのごよういと　となりますが、すこし　じかんを　あけたほうが　よろしいでしょうか？」</p>
+          <p>→ あいだを あけてほしい といわれたら：「かしこまりました。　ひつようなときに　おこえがけください。」（ボタンの あるヘヤは ボタンを おしてください とつたえる）</p>
+        </details>
+      </div>
+      <div class="nav-arrows">
+        <a href="#nimono">⬅ 前へ</a>
+        <a href="#katemeshi">次へ ➜ かてめし</a>
+      </div>
+    </section>
+
+    <!-- かてめし -->
+    <section class="dish-block" id="katemeshi" data-order="10">
+      <div class="dish-head"><h2>かてめし</h2></div>
+      <div class="dish-flex">
+        <div class="imgbox"><img src="../assets/season/katemeshi.jpg" alt="かてめしの写真" /></div>
+        <div>
+          <div class="levels">
+            <p data-l="1">レベル1：こちらは ゴハンの ごヨウイとなります。</p>
+            <p data-l="2">レベル2：ヤシオマスというサカナと　スレンコンをあわせたごはんになります。</p>
+            <p data-l="3">レベル3：つけものは あさづけの ごよういと みそしるは あかみその おみそしると なります。</p>
+          </div>
+          <div class="audio-row">
+            <audio controls src="../assets/audio/katemeshi.mp3"></audio>
+          </div>
+        </div>
+      </div>
+      <div class="nav-arrows">
+        <a href="#gohan-ask">⬅ 前へ</a>
+        <a href="#kanmi-check">次へ ➜ 甘味 提供前 確認</a>
+      </div>
+    </section>
+
+    <!-- 甘味 提供前の確認 -->
+    <section class="guide-block" id="kanmi-check" data-order="11">
+      <h2>かんみ ていきょうまえの かくにん</h2>
+      <div class="audio-row">
+        <audio controls src="../assets/audio/dessert_check.mp3"></audio>
+        <details>
+          <summary>セリフ（表示）</summary>
+          <p>「このあと、デザートの　ごよういとなりますが　おもちしても　よろしいでしょうか？」</p>
+          <p>「また、おやしょくように　めしあがっていただいた　ごはんを　おにぎりにして　おもちしておりますが、ごよういいたしますか？」</p>
+        </details>
+      </div>
+      <div class="nav-arrows">
+        <a href="#katemeshi">⬅ 前へ</a>
+        <a href="#kanmi">次へ ➜ 甘味</a>
+      </div>
+    </section>
+
+    <!-- 甘味 -->
+    <section class="dish-block" id="kanmi" data-order="12">
+      <div class="dish-head"><h2>甘味</h2><small>（かんみ）</small></div>
+      <div class="dish-flex">
+        <div class="imgbox"><img src="../assets/season/kanmi.jpg" alt="甘味の写真" /></div>
+        <div>
+          <div class="levels">
+            <p data-l="1">レベル1：こちらは、デザートになります。</p>
+            <p data-l="2">レベル2：トチギケンサンの イチゴをつかった シャーベットと、 ナスコウゲンの ギュウニュウを ニツメてつくったミルク ソースをかけてあります。</p>
+            <p data-l="3">レベル3：もうひとつの ちいさいうつわには カボチャのプリンと　リンゴをカラメルニにしたものを ごよういしております。</p>
+          </div>
+          <div class="audio-row">
+            <audio controls src="../assets/audio/kanmi.mp3"></audio>
+          </div>
+        </div>
+      </div>
+      <div class="nav-arrows">
+        <a href="#kanmi-check">⬅ 前へ</a>
+        <a href="#kogashi">次へ ➜ 小菓子</a>
+      </div>
+    </section>
+
+    <!-- 小菓子 -->
+    <section class="dish-block" id="kogashi" data-order="13">
+      <div class="dish-head"><h2>小菓子</h2></div>
+      <div class="dish-flex">
+        <div class="imgbox"><img src="../assets/season/kogashi.jpg" alt="小菓子の写真" /></div>
+        <div>
+          <div class="levels">
+            <p data-l="1">レベル1：こちらはコガシになります。</p>
+            <p data-l="2">レベル2：チョウジをつかったボーロとショウガのコンペイトウになります。</p>
+            <p data-l="3">レベル3：シャーベットで冷えたオナカをアタタメますので、サイゴにメシアガってください。</p>
+          </div>
+          <div class="audio-row">
+            <audio controls src="../assets/audio/kogashi.mp3"></audio>
+          </div>
+        </div>
+      </div>
+      <div class="nav-arrows">
+        <a href="#kanmi">⬅ 前へ</a>
+        <a href="#onigiri">次へ ➜ おにぎり案内</a>
+      </div>
+    </section>
+
+    <!-- おにぎり案内 -->
+    <section class="guide-block" id="onigiri" data-order="14">
+      <h2>おにぎりのせつめい</h2>
+      <div class="audio-row">
+        <audio controls src="../assets/audio/onigiri.mp3"></audio>
+        <details>
+          <summary>セリフ（表示）</summary>
+          <p>「こちらは、オニギリでございます。カゴのまま　おヘヤに　おもちください。カゴは　おヘヤに　おいていただけると　たすかります。」</p>
+        </details>
+      </div>
+      <div class="nav-arrows">
+        <a href="#kogashi">⬅ 前へ</a>
+        <a href="#content">↑ ページ先頭</a>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // --- 説明レベル切替（L1/L2/L3） ---
+    const lvlBtns = document.querySelectorAll('.lvl-btn');
+    let currentLevel = 3;
+    function applyLevel(lvl){
+      currentLevel = lvl;
+      lvlBtns.forEach(b => b.classList.toggle('active', +b.dataset.lvl === lvl));
+      document.querySelectorAll('[data-l]').forEach(p => {
+        const need = +p.dataset.l;
+        p.style.display = (need <= lvl) ? '' : 'none';
+      });
+    }
+    lvlBtns.forEach(b => b.addEventListener('click', () => applyLevel(+b.dataset.lvl)));
+    applyLevel(3);
+
+    // --- スワイプで次/前のブロックへ ---
+    let touchX = null, touchY = null, t0 = 0;
+    function onTouchStart(e){
+      const t = e.changedTouches[0];
+      touchX = t.clientX; touchY = t.clientY; t0 = Date.now();
+    }
+    function onTouchEnd(e){
+      if(touchX===null) return;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - touchX;
+      const dy = t.clientY - touchY;
+      const dt = Date.now() - t0;
+      touchX = touchY = null;
+      // 横スワイプ強め・縦ブレ小さめ・短時間
+      if(Math.abs(dx) > 60 && Math.abs(dy) < 40 && dt < 500){
+        const blocks = [...document.querySelectorAll('.dish-block, .guide-block')];
+        // 画面中央に一番近いブロックを現在地とする
+        const center = window.scrollY + window.innerHeight/2;
+        const idx = blocks.findIndex(el=>{
+          const r = el.getBoundingClientRect(); const top = r.top + window.scrollY; const mid = top + r.height/2;
+          return Math.abs(mid - center) < r.height/2;
+        });
+        let nextIdx = null;
+        if(dx < 0) nextIdx = Math.min(blocks.length-1, idx+1);
+        else nextIdx = Math.max(0, idx-1);
+        if(nextIdx != null && nextIdx !== -1){
+          const target = blocks[nextIdx];
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+          target.classList.add('focus-highlight');
+          setTimeout(()=>target.classList.remove('focus-highlight'), 600);
+        }
+      }
+    }
+    document.addEventListener('touchstart', onTouchStart, {passive:true});
+    document.addEventListener('touchend', onTouchEnd, {passive:true});
+
+    // --- キーボード左右でも移動（デモ/PC操作用） ---
+    document.addEventListener('keydown', (e)=>{
+      if(e.key!=='ArrowLeft' && e.key!=='ArrowRight') return;
+      const blocks = [...document.querySelectorAll('.dish-block, .guide-block')];
+      const center = window.scrollY + window.innerHeight/2;
+      const idx = blocks.findIndex(el=>{
+        const r = el.getBoundingClientRect(); const top = r.top + window.scrollY; const mid = top + r.height/2;
+        return Math.abs(mid - center) < r.height/2;
+      });
+      const nextIdx = e.key==='ArrowRight' ? Math.min(blocks.length-1, idx+1) : Math.max(0, idx-1);
+      const target = blocks[nextIdx];
+      if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); target.classList.add('focus-highlight'); setTimeout(()=>target.classList.remove('focus-highlight'), 600); }
+    });
+  </script>
 </body>
 </html>
