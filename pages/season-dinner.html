@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>きせつの ゆうしょく せつめい</title>
+<style>
+  :root{ --ink:#fff; --bg:#111; --panel:#000a; --cap:#ddd; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,'Noto Sans JP',sans-serif;background:var(--bg);color:var(--ink)}
+  a{color:#aee;text-decoration:none}
+
+  /* 上下のバー */
+  header,footer{
+    padding:10px 14px;
+    background:var(--panel);
+    backdrop-filter:saturate(1.2) blur(6px);
+    position:sticky;
+  }
+  header{top:0} footer{bottom:0}
+  .bar{display:flex;gap:10px;align-items:center;justify-content:space-between}
+  .btn{color:#fff;background:#1e88e5;padding:8px 12px;border-radius:10px}
+
+  /* 横スワイプのレールとスライド */
+  .rail{
+    scroll-snap-type:x mandatory;
+    display:flex;
+    overflow-x:auto;
+    gap:12px;
+    padding:12px;
+  }
+  .slide{
+    scroll-snap-align:center;
+    flex:0 0 92vw;          /* 1画面に1枚分 */
+    max-width:900px;        /* タブレットでも読みやすく */
+    margin-inline:auto;
+    background:#222;
+    border-radius:12px;
+    padding:10px;
+  }
+  .slide img{
+    width:100%;
+    height:auto;
+    max-height:68vh;        /* 画面に収める */
+    object-fit:contain;
+    border-radius:8px;
+    display:block;
+    background:#111;
+  }
+  .cap{
+    margin-top:8px;
+    font-size:15px;
+    line-height:1.6;
+    color:var(--cap);
+  }
+
+  .audio{width:100%}
+</style>
+</head>
+<body>
+  <header class="bar">
+    <a class="btn" href="../index.html">← もどる</a>
+    <div>きせつの ゆうしょく せつめい</div>
+    <span></span>
+  </header>
+
+  <section class="rail">
+    <!-- ★ スライド1（画像＋説明文） -->
+    <article class="slide">
+      <img src="../assets/img/season-dinner/hiboru.png" alt="ぜんさい">
+      <p class="cap">
+        ぜんさいの せつめい：  
+        やまの しょくざいをつかった ひとさら。  
+        さーびすの こたえかたを かくにんしながら しょうかいしてください。
+      </p>
+    </article>
+
+    <!-- ★ スライド2以降は、必要に応じて同じ形で増やす -->
+    <!--
+    <article class="slide">
+      <img src="../assets/img/season-dinner/02.jpg" alt="02">
+      <p class="cap">せつめいぶん（ひらがな・カタカナ中心）</p>
+    </article>
+    -->
+  </section>
+
+  <footer>
+    <div class="bar">
+      <audio class="audio" controls preload="none"
+             src="../assets/audio/season-dinner/kasaimori.mp3"></audio>
+    </div>
+  </footer>
+</body>
+</html>
