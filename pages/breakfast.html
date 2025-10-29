@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>朝食提供 説明 (breakfast)</title>
+
+  <style>
+    :root {
+      --bg: #f6f7f8;
+      --card: #ffffff;
+      --ink: #1f2a37;
+      --muted: #64748b;
+      --bd: #e5e7eb;
+      --radius: 18px;
+      --maxw: 980px;
+      --shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans JP", sans-serif;
+    }
+
+    header, main {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* ヒーロー */
+    .hero {
+      max-width: var(--maxw);
+      margin: 14px auto 0;
+      padding: 0 16px;
+      position: relative;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+      border: 1px solid var(--bd);
+      box-shadow: var(--shadow);
+      object-fit: cover;
+      aspect-ratio: 16 / 5;
+    }
+
+    .hero-title {
+      position: absolute;
+      left: 32px;
+      bottom: 28px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.35);
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      backdrop-filter: blur(2px);
+    }
+
+    .block {
+      background: var(--card);
+      border: 1px solid var(--bd);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    .head h2 {
+      margin: 6px 6px 12px;
+      font-size: 18px;
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      padding: 8px;
+    }
+
+    .toc-card {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 14px;
+      border: 1px solid var(--bd);
+      border-radius: 14px;
+      background: #fff;
+      text-decoration: none;
+      color: #111;
+    }
+
+    .toc-card:hover {
+      outline: 2px solid #d1fae5;
+    }
+
+    audio {
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    .img-wide {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      border: 1px solid var(--bd);
+      box-shadow: var(--shadow);
+    }
+
+    .note {
+      font-size: 13px;
+      color: #6b7280;
+      margin-top: 4px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    .steps img {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid var(--bd);
+    }
+
+    .fab {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #0f766e;
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="hero">
+      <img src="../assets/img/breakfast/top2.jpg" alt="朝食の提供説明">
+      <div class="hero-title">朝食提供 説明</div>
+    </div>
+  </header>
+
+  <main id="content">
+
+    <!-- 目次 -->
+    <section class="block" id="toc">
+      <div class="head"><h2>目次</h2></div>
+      <div class="toc-grid">
+        <a class="toc-card" href="#greeting">👋 お客様へのごあいさつ</a>
+        <a class="toc-card" href="#tea">🍵 せんちゃをいれて</a>
+        <a class="toc-card" href="#rice">🍚 ごはん・みそしる・やさいのおかず</a>
+        <a class="toc-card" href="#refill">🍵 ごはんのおかわり</a>
+        <a class="toc-card" href="#fruit">🍓 フルーツ</a>
+        <a class="toc-card" href="#donabe">🍲 SPちょうしょく ドナベごはん</a>
+      </div>
+    </section>
+
+    <!-- 1. お客様へのごあいさつ -->
+    <section class="block" id="greeting">
+      <div class="head"><h2>1. お客様へのごあいさつ</h2></div>
+      <ul>
+        <li>おはようございます。</li>
+        <li>お食事をお持ちいたします。</li>
+        <li>おちゃをお召し上がりながらお待ちください。</li>
+      </ul>
+      <audio controls src="../assets/audio/breakfast/greeting.mp3"></audio>
+    </section>
+
+    <!-- 2. せんちゃをいれて -->
+    <section class="block" id="tea">
+      <div class="head"><h2>2. せんちゃをいれて</h2></div>
+      <ul>
+        <li>おはようございます。</li>
+        <li>おちゃをいれてまいります。</li>
+      </ul>
+      <audio controls src="../assets/audio/breakfast/tea.mp3"></audio>
+    </section>
+
+    <!-- 3. ごはん・みそしる・やさいのおかず -->
+    <section class="block" id="rice">
+      <div class="head"><h2>3. ごはん・みそしる・やさいのおかず</h2></div>
+      <ul>
+        <li>こちらがごはん、みそしる、やさいのおかずでございます。</li>
+        <li>みそしるやごはんのおかわりが必要でしたらお声がけください。</li>
+      </ul>
+      <audio controls src="../assets/audio/breakfast/rice.mp3"></audio>
+    </section>
+
+    <!-- 4. ごはんのおかわり -->
+    <section class="block" id="refill">
+      <div class="head"><h2>4. ごはんのおかわり</h2></div>
+      <ul>
+        <li>おかわりのご希望があればお申し付けください。</li>
+      </ul>
+      <audio controls src="../assets/audio/breakfast/refill.mp3"></audio>
+    </section>
+
+    <!-- 5. フルーツ -->
+    <section class="block" id="fruit">
+      <div class="head"><h2>5. フルーツ</h2></div>
+      <ul>
+        <li>お食事の最後にフルーツをご用意しております。</li>
+      </ul>
+      <audio controls src="../assets/audio/breakfast/fruit.mp3"></audio>
+    </section>
+
+    <!-- 6. SPちょうしょく ドナベごはん -->
+    <section class="block" id="donabe">
+      <div class="head"><h2>6. SPちょうしょく ドナベごはん</h2></div>
+      <p>以下の手順に沿って土鍋ごはんをお召し上がりいただきます。</p>
+      <div class="steps">
+        <img src="../assets/img/breakfast/donabe_1.jpg" alt="1. ドナベのフタをとる">
+        <img src="../assets/img/breakfast/donabe_2.jpg" alt="2. ごはんのうえ20%をとる">
+        <img src="../assets/img/breakfast/donabe_3.jpg" alt="3. にんずうぶんおわけする">
+        <img src="../assets/img/breakfast/donabe_4.jpg" alt="4. まぜる・ほぐす">
+        <img src="../assets/img/breakfast/donabe_5.jpg" alt="5. テーブルのまんなかにおく">
+      </div>
+      <p class="note">※ 画像のみの紹介です。音声・詳細説明は今後追加予定。</p>
+    </section>
+
+  </main>
+
+  <a class="fab" href="#toc" aria-label="目次へ">目</a>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('../sw.js');
+    }
+  </script>
+</body>
+</html>
