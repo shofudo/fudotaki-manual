@@ -130,7 +130,39 @@
       border: 1px solid var(--bd);
     }
 
-    .fab {
+    .fab {/* --- ヒーロー（TOP画像） --- */
+.hero{
+  position: relative;
+  width: 100%;
+  max-width: 980px;
+  margin: 14px auto 0;
+  padding: 0 16px;
+}
+.hero img{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 5; /* 横長に見せたいときは16/5〜16/6が自然 */
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 18px rgba(0,0,0,.10);
+  display: block;
+}
+/* タイトル（画像の上に文字） */
+.hero-title{
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: #fff;
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(2px);
+  font-size: clamp(16px, 3.2vw, 22px);
+}
+
       position: fixed;
       right: 18px;
       bottom: 18px;
@@ -149,11 +181,11 @@
 
 <body>
   <header>
-    <div class="hero">
-      <img src="../assets/img/breakfast/top2.jpg" alt="朝食の提供説明">
-      <div class="hero-title">朝食提供 説明</div>
-    </div>
-  </header>
+ <!-- TOP画像（ヒーロー） -->
+  <div class="hero">
+    <img src="assets/img/breakfast/top2.jpg" alt="朝食の会席 提供イメージ">
+    <div class="hero-title">朝食ご案内</div>
+  </div>
 
   <main id="content">
 
