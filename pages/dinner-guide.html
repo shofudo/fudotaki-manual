@@ -44,6 +44,14 @@
   .nav{display:flex;gap:8px;justify-content:space-between;margin-top:12px}
   .nav a{display:inline-block;padding:8px 10px;border:1px solid var(--bd);border-radius:10px;background:#fff;color:var(--acc-2);text-decoration:none}
   audio{width:100%;margin-top:8px}
+  /* FAB（右下の丸ボタン） */
+  .fab-wrap{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;flex-direction:column;gap:10px}
+  .fab{width:52px;height:52px;border-radius:999px;border:1px solid var(--bd);background:#fff;box-shadow:var(--shadow);
+       display:grid;place-items:center;text-decoration:none;color:var(--acc-2);opacity:0;transform:translateY(10px);
+       transition:opacity .2s ease, transform .2s ease}
+  .fab svg{width:22px;height:22px}
+  .fab.show{opacity:1;transform:none}
+  .fab:active{transform:scale(.97)}
   /* 小さめ画面 */
   @media (max-width:640px){
     #toc .cards{grid-template-columns:1fr}
@@ -100,7 +108,7 @@
     </div>
   </section>
 
-  <!-- 2. 席でのご案内（画像なしに修正） -->
+  <!-- 2. 席でのご案内（画像なし） -->
   <section class="block" id="at-seat">
     <div class="head"><h2>2️⃣ せきに ついた あと の ごあんない</h2></div>
     <div class="body">
@@ -163,7 +171,7 @@
     </div>
   </section>
 
-  <!-- 5. かんみ前確認（ここに飲み物画像） -->
+  <!-- 5. かんみ前確認 -->
   <section class="block" id="dessert-check">
     <div class="head"><h2>5️⃣ かんみ ていきょう まえ の かくにん</h2></div>
     <div class="body">
@@ -173,11 +181,8 @@
       <audio controls>
         <source src="../assets/audio/dinner-guide/dessert-check.mp3" type="audio/mpeg">
       </audio>
-
-      <!-- ここに “飲み物一覧” と “ハイボール” の画像をフル幅で表示 -->
       <img class="img-full" src="../assets/img/dinner-guide/highball.jpg" alt="ハイボール の あんない（画像）" style="margin-top:10px">
       <img class="img-full" src="../assets/img/dinner-guide/drink-list.jpg" alt="のみもの いちらん（画像）" style="margin-top:10px">
-
       <div class="nav">
         <a href="#rice-timing">← まえへ</a>
         <span></span>
@@ -186,6 +191,22 @@
   </section>
 
 </main>
+
+<!-- 右下 丸ボタン -->
+<div class="fab-wrap" aria-label="クイックナビ">
+  <!-- 目次へ -->
+  <a href="#toc" class="fab" id="fab-toc" title="目次へ" aria-label="目次へ">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M4 6h16M4 12h10M4 18h16"/>
+    </svg>
+  </a>
+  <!-- 先頭へ -->
+  <button class="fab" id="fab-top" title="先頭へ" aria-label="先頭へ">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+</div>
 
 <script>
 /* ===== HOMEリンク（ローカル/Pages両対応） ===== */
@@ -219,6 +240,23 @@
       if(dx<0) goto(i+1); else goto(i-1);
     }
   },{passive:true});
+})();
+
+/* ===== 右下 丸ボタンの表示制御 ===== */
+(function(){
+  const topBtn = document.getElementById('fab-top');
+  const tocBtn = document.getElementById('fab-toc');
+  const onScroll = ()=>{
+    const y = window.scrollY || document.documentElement.scrollTop;
+    const show = y > 240;
+    topBtn.classList.toggle('show', show);
+    tocBtn.classList.toggle('show', show);
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('load', onScroll);
+  topBtn.addEventListener('click', ()=>{
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
 })();
 </script>
 </body>
