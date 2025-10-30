@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ゆうしょく あんない (dinner-guide)</title>
+<style>
+  :root{
+    --bg:#f6f7f8; --card:#ffffff; --ink:#1f2a37; --muted:#64748b;
+    --acc:#0f766e; --acc-2:#155e75; --bd:#e5e7eb; --radius:18px; --maxw:980px;
+    --shadow:0 6px 18px rgba(0,0,0,.06);
+  }
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans JP", "Yu Gothic", sans-serif; line-height:1.7;
+    scroll-behavior:smooth;}
+  /* ヘッダ */
+  header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#fff,rgba(255,255,255,.92));
+    backdrop-filter:saturate(180%) blur(6px); border-bottom:1px solid var(--bd);}
+  header .in{max-width:var(--maxw);margin:auto;display:flex;gap:12px;align-items:center;padding:10px 14px;}
+  header a, header .brand{color:var(--acc-2);text-decoration:none;font-weight:600}
+  header .brand{margin-inline:auto;color:var(--ink)}
+  header .btn{padding:6px 10px;border:1px solid var(--bd);border-radius:10px;background:#fff}
+  /* ヒーロー */
+  .hero{position:relative;max-width:var(--maxw);margin:12px auto 0;overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow);}
+  .hero img{display:block;width:100%;height:34vh;object-fit:cover;object-position:center; /* スクロールでついてこない */ }
+  .hero .hero-title{position:absolute;left:16px;bottom:14px;color:#fff;background:rgba(0,0,0,.35);
+    padding:8px 12px;border-radius:12px;font-weight:700;letter-spacing:.02em}
+  main{max-width:var(--maxw);margin:14px auto 40px;padding:0 12px}
+  /* ブロック */
+  .block{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);box-shadow:var(--shadow);
+    margin:14px 0;overflow:hidden}
+  .block .head{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid var(--bd);background:#fff}
+  .block .head h2{margin:0;font-size:18px}
+  .block .body{padding:14px}
+  .block p{margin:.6em 0}
+  .block .note{color:var(--muted);font-size:.95em}
+  .imgs{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}
+  .imgs img{width:100%;height:220px;object-fit:cover;border:1px solid var(--bd);border-radius:12px}
+  .imgs .span6{grid-column:span 6}
+  .imgs .span12{grid-column:span 12}
+  /* 目次 */
+  #toc .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  #toc a{display:block;border:1px solid var(--bd);background:#fff;border-radius:14px;padding:12px;text-decoration:none;color:var(--ink)}
+  #toc a b{display:block;color:var(--acc-2);margin-bottom:4px}
+  /* ナビ */
+  .nav{display:flex;gap:8px;justify-content:space-between;margin-top:12px}
+  .nav a{display:inline-block;padding:8px 10px;border:1px solid var(--bd);border-radius:10px;background:#fff;color:var(--acc-2);text-decoration:none}
+  audio{width:100%;margin-top:8px}
+  /* 小さめ画面 */
+  @media (max-width:640px){
+    #toc .cards{grid-template-columns:1fr}
+    .imgs img{height:180px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="in">
+    <a class="btn" id="btn-home" href="../index.html">← トップ</a>
+    <span class="brand">dinner-guide</span>
+    <a class="btn" href="#toc">目次</a>
+  </div>
+</header>
+
+<div class="hero">
+  <img src="../assets/img/dinner-guide/top2.jpg" alt="">
+  <div class="hero-title">ゆうしょく　あんない</div>
+</div>
+
+<main>
+
+  <!-- 目次 -->
+  <section class="block" id="toc">
+    <div class="head"><h2>📑 もくじ</h2></div>
+    <div class="body">
+      <div class="cards">
+        <a href="#entrance"><b>1. せきに あんない</b>いりぐちでの あいさつ～せきまで</a>
+        <a href="#at-seat"><b>2. せきでの ごあんない</b>しょくぜんしゅ／メニュー／のみもの</a>
+        <a href="#steak-sauce"><b>3. ステーキ タレの せつめい</b>タレの ないよう・つかいかた</a>
+        <a href="#rice-timing"><b>4. ごはんの うかがいかた</b>ニモノやステーキの あと</a>
+        <a href="#dessert-check"><b>5. かんみ まえの かくにん</b>デザート／おにぎり の ごようい</a>
+        <a href="#offline"><b>6. オフライン じゅんび</b>おんせい いっかつ ほぞん</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. 入口～席案内 -->
+  <section class="block" id="entrance">
+    <div class="head"><h2>1️⃣ せきに あんない（いりぐち～せき）</h2></div>
+    <div class="body">
+      <p>しょくじばしょ の いりぐちで おきゃくさま を むかえ、あいさつ を します。</p>
+      <p>「いらっしゃいませ。」</p>
+      <p>へや の なまえ を かくにんし、ようい した せき に ごあんない します。</p>
+      <p>「おせき に ごあんない いたします。」</p>
+      <p class="note">※ のみもの を うかがう スタッフ が いない ばあい：</p>
+      <p>「ただいま ごあんない させて いただきますので、しょうしょう おまちください。」</p>
+      <audio controls>
+        <source src="../assets/audio/dinner-guide/entrance.mp3" type="audio/mpeg">
+      </audio>
+      <div class="nav">
+        <span></span>
+        <a href="#at-seat">つぎへ →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 席でのご案内 -->
+  <section class="block" id="at-seat">
+    <div class="head"><h2>2️⃣ せきに ついた あと の ごあんない</h2></div>
+    <div class="body">
+      <p>「ごせつめい を させて いただきます。」</p>
+      <p>「こちらは しょくぜんしゅ の ゆずしゅ で ございます。」</p>
+      <p class="note">※ ノンアルコール の かた には 「ざくろす」 を ごようい しております。</p>
+      <p>「こちらに ほんじつ の こんだて と、のみもの の メニュー を ごようい しております。」</p>
+      <p>「あたたかい おちゃ と おみず は、むりょう で ごようい できます。<br>おきまり に なりましたら、おしらせ ください。」</p>
+      <p class="note">※ タイミング を みて、のみもの の ちゅうもん を うかがい オーダー します。<br>
+      むりょう の おちゃ は きほん 「ほうじちゃ」。おみず は こおり の あり／なし を かくにん。</p>
+      <audio controls>
+        <source src="../assets/audio/dinner-guide/at-seat.mp3" type="audio/mpeg">
+      </audio>
+
+      <div class="imgs" style="margin-top:8px">
+        <img class="span12" src="../assets/img/dinner-guide/drink-list.jpg" alt="のみもの いちらん（画像）">
+      </div>
+
+      <div class="nav">
+        <a href="#entrance">← まえへ</a>
+        <a href="#steak-sauce">つぎへ →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ステーキ タレ -->
+  <section class="block" id="steak-sauce">
+    <div class="head"><h2>3️⃣ ステーキ タレ の せつめい（ステーキプラン／わぎゅうかいせき）</h2></div>
+    <div class="body">
+      <ol>
+        <li>ステーキ の まえ の りょうり（あげもの）を ていきょう するとき に、ステーキ の タレ を いっしょ に もって いく。</li>
+        <li>りょうり を ていきょう して せつめい した あと に、ステーキ の タレ を ていきょう して せつめい を する。</li>
+        <li>「こちらは ステーキ の タレ に なります。」</li>
+        <li>「いちばん うえ は 『ショウガス』。ショウユ は かさいもり でも ごていきょう した 『もろみしょうゆ』。『モジオ』 と 『クロコショウ』 も ごようい しておりますので、<br>この あと の ステーキ に ごりよう ください。」</li>
+      </ol>
+
+      <div class="imgs" style="margin-top:8px">
+        <img class="span12" src="../assets/img/dinner-guide/steak-sauce.jpg" alt="ステーキのタレ（画像）">
+      </div>
+
+      <audio controls>
+        <source src="../assets/audio/dinner-guide/steak-sauce.mp3" type="audio/mpeg">
+      </audio>
+
+      <div class="nav">
+        <a href="#at-seat">← まえへ</a>
+        <a href="#rice-timing">つぎへ →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. ごはんの うかがい -->
+  <section class="block" id="rice-timing">
+    <div class="head"><h2>4️⃣ ごはん の うかがいかた（ニモノ／ステーキ の あと）</h2></div>
+    <div class="body">
+      <p>ニモノ の せつめい の あと、つぎ の ように うかがいます。</p>
+      <p>「このあと、ごはん となりますが、ごようい させて いただいても よろしい でしょうか？」</p>
+      <p class="note">※ りょうり や おさけ が のこって いる とき は、ききかた を かえる：</p>
+      <p>「このあと、ごはん となりますが、すこし じかん を あけた ほうが よろしい でしょうか？」</p>
+      <p>（あいだ を あけて ほしい と いわれたら）</p>
+      <p>「かしこまりました。 ひつよう な とき に おこえがけ ください。」<br>
+      <span class="note">※ ボタン の ある へや は 「ボタン を おしてください」 と つたえる。</span></p>
+      <audio controls>
+        <source src="../assets/audio/dinner-guide/rice-timing.mp3" type="audio/mpeg">
+      </audio>
+
+      <div class="nav">
+        <a href="#steak-sauce">← まえへ</a>
+        <a href="#dessert-check">つぎへ →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. かんみ前確認 -->
+  <section class="block" id="dessert-check">
+    <div class="head"><h2>5️⃣ かんみ ていきょう まえ の かくにん</h2></div>
+    <div class="body">
+      <p>ほうじちゃ を おもち し、げぜん を しながら ようす を うかがいます。</p>
+      <p>「このあと、デザート の ごようい と なりますが、おもち しても よろしい でしょうか？」</p>
+      <p>「また、おやしょく よう に、めしあがって いただいた ごはん を おにぎり に して おもち しております が、<br>ごようい いたします か？」</p>
+      <audio controls>
+        <source src="../assets/audio/dinner-guide/dessert-check.mp3" type="audio/mpeg">
+      </audio>
+
+      <div class="imgs" style="margin-top:8px">
+        <img class="span6" src="../assets/img/dinner-guide/highball.jpg" alt="ハイボール の あんない（画像）">
+        <img class="span6" src="../assets/img/dinner-guide/drink-list.jpg" alt="のみもの いちらん（画像）">
+      </div>
+
+      <div class="nav">
+        <a href="#rice-timing">← まえへ</a>
+        <a href="#offline">つぎへ →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. オフライン準備 -->
+  <section class="block" id="offline">
+    <div class="head"><h2>6️⃣ オフライン じゅんび</h2></div>
+    <div class="body">
+      <p>このページ の おんせい を いっかつ で ほぞん します。</p>
+      <button id="btn-prefetch">このページの おんせい を いっかつ ほぞん</button>
+      <span id="prefetch-status" class="note" style="margin-left:8px">みじっこう</span>
+      <div class="nav">
+        <a href="#dessert-check">← まえへ</a>
+        <span></span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+/* ===== HOMEリンク（ローカル/Pages両対応） ===== */
+(function(){
+  const a = document.getElementById('btn-home');
+  try{
+    const isPages = location.pathname.includes('/fudotaki-manual/');
+    if(isPages){ a.href = '/fudotaki-manual/index.html'; }
+  }catch(e){}
+})();
+
+/* ===== オーディオ一括プリフェッチ ===== */
+async function prefetchAllAudios(){
+  const s = document.getElementById('prefetch-status');
+  const urls = [...document.querySelectorAll('audio source[src]')].map(x=>new URL(x.src,location).href);
+  if(urls.length===0){ s.textContent='おんせい は ありません'; return; }
+  try{
+    const keys = await caches.keys();
+    const cache = await caches.open(keys[0] || 'fudotaki-manual-dynamic');
+    let ok=0, ng=0;
+    for(const u of urls){
+      try{
+        const r = await fetch(u, {cache:'no-store'});
+        if(r.ok) await cache.put(u, r.clone());
+        ok++;
+      }catch{ ng++; }
+    }
+    s.textContent = `かんりょう ${ok} せいこう / ${ng} しっぱい`;
+  }catch(e){
+    s.textContent = 'しっぱい：ブラウザ が Service Worker に たいおう していない か、HTTPS が ひつよう です';
+  }
+}
+document.getElementById('btn-prefetch').addEventListener('click', prefetchAllAudios);
+
+/* ===== スワイプで前後セクション移動 ===== */
+(function(){
+  const blocks = [...document.querySelectorAll('.block')];
+  const indexOf = id => blocks.findIndex(b=>b.id===id);
+  const goto = i=>{
+    if(i<0 || i>=blocks.length) return;
+    const id = blocks[i].id;
+    location.hash = '#'+id;
+    blocks[i].scrollIntoView({behavior:'smooth', block:'start'});
+  };
+  let sx=0, sy=0, t0=0;
+  document.addEventListener('touchstart',e=>{
+    const t=e.changedTouches[0]; sx=t.clientX; sy=t.clientY; t0=Date.now();
+  },{passive:true});
+  document.addEventListener('touchend',e=>{
+    const t=e.changedTouches[0]; const dx=t.clientX-sx, dy=t.clientY-sy;
+    if(Math.abs(dx)>60 && Math.abs(dy)<40 && (Date.now()-t0)<600){
+      const id=(location.hash||'#toc').slice(1);
+      const i=indexOf(id); if(i<0) return;
+      if(dx<0) goto(i+1); else goto(i-1);
+    }
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
