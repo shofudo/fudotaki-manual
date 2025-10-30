@@ -22,7 +22,7 @@
   header .btn{padding:6px 10px;border:1px solid var(--bd);border-radius:10px;background:#fff}
   /* ヒーロー */
   .hero{position:relative;max-width:var(--maxw);margin:12px auto 0;overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow);}
-  .hero img{display:block;width:100%;height:34vh;object-fit:cover;object-position:center; /* スクロールでついてこない */ }
+  .hero img{display:block;width:100%;height:34vh;object-fit:cover;object-position:center}
   .hero .hero-title{position:absolute;left:16px;bottom:14px;color:#fff;background:rgba(0,0,0,.35);
     padding:8px 12px;border-radius:12px;font-weight:700;letter-spacing:.02em}
   main{max-width:var(--maxw);margin:14px auto 40px;padding:0 12px}
@@ -34,10 +34,8 @@
   .block .body{padding:14px}
   .block p{margin:.6em 0}
   .block .note{color:var(--muted);font-size:.95em}
-  .imgs{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}
-  .imgs img{width:100%;height:220px;object-fit:cover;border:1px solid var(--bd);border-radius:12px}
-  .imgs .span6{grid-column:span 6}
-  .imgs .span12{grid-column:span 12}
+  /* 画像：フル幅・高さ自動 */
+  .img-full{display:block;width:100%;height:auto;border:1px solid var(--bd);border-radius:12px;box-sizing:border-box}
   /* 目次 */
   #toc .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
   #toc a{display:block;border:1px solid var(--bd);background:#fff;border-radius:14px;padding:12px;text-decoration:none;color:var(--ink)}
@@ -49,7 +47,6 @@
   /* 小さめ画面 */
   @media (max-width:640px){
     #toc .cards{grid-template-columns:1fr}
-    .imgs img{height:180px}
   }
 </style>
 </head>
@@ -79,7 +76,6 @@
         <a href="#steak-sauce"><b>3. ステーキ タレの せつめい</b>タレの ないよう・つかいかた</a>
         <a href="#rice-timing"><b>4. ごはんの うかがいかた</b>ニモノやステーキの あと</a>
         <a href="#dessert-check"><b>5. かんみ まえの かくにん</b>デザート／おにぎり の ごようい</a>
-        <a href="#offline"><b>6. オフライン じゅんび</b>おんせい いっかつ ほぞん</a>
       </div>
     </div>
   </section>
@@ -104,7 +100,7 @@
     </div>
   </section>
 
-  <!-- 2. 席でのご案内 -->
+  <!-- 2. 席でのご案内（画像なしに修正） -->
   <section class="block" id="at-seat">
     <div class="head"><h2>2️⃣ せきに ついた あと の ごあんない</h2></div>
     <div class="body">
@@ -118,11 +114,6 @@
       <audio controls>
         <source src="../assets/audio/dinner-guide/at-seat.mp3" type="audio/mpeg">
       </audio>
-
-      <div class="imgs" style="margin-top:8px">
-        <img class="span12" src="../assets/img/dinner-guide/drink-list.jpg" alt="のみもの いちらん（画像）">
-      </div>
-
       <div class="nav">
         <a href="#entrance">← まえへ</a>
         <a href="#steak-sauce">つぎへ →</a>
@@ -140,15 +131,10 @@
         <li>「こちらは ステーキ の タレ に なります。」</li>
         <li>「いちばん うえ は 『ショウガス』。ショウユ は かさいもり でも ごていきょう した 『もろみしょうゆ』。『モジオ』 と 『クロコショウ』 も ごようい しておりますので、<br>この あと の ステーキ に ごりよう ください。」</li>
       </ol>
-
-      <div class="imgs" style="margin-top:8px">
-        <img class="span12" src="../assets/img/dinner-guide/steak-sauce.jpg" alt="ステーキのタレ（画像）">
-      </div>
-
+      <img class="img-full" src="../assets/img/dinner-guide/steak-sauce.jpg" alt="ステーキのタレ（画像）" style="margin-top:8px">
       <audio controls>
         <source src="../assets/audio/dinner-guide/steak-sauce.mp3" type="audio/mpeg">
       </audio>
-
       <div class="nav">
         <a href="#at-seat">← まえへ</a>
         <a href="#rice-timing">つぎへ →</a>
@@ -170,7 +156,6 @@
       <audio controls>
         <source src="../assets/audio/dinner-guide/rice-timing.mp3" type="audio/mpeg">
       </audio>
-
       <div class="nav">
         <a href="#steak-sauce">← まえへ</a>
         <a href="#dessert-check">つぎへ →</a>
@@ -178,7 +163,7 @@
     </div>
   </section>
 
-  <!-- 5. かんみ前確認 -->
+  <!-- 5. かんみ前確認（ここに飲み物画像） -->
   <section class="block" id="dessert-check">
     <div class="head"><h2>5️⃣ かんみ ていきょう まえ の かくにん</h2></div>
     <div class="body">
@@ -189,27 +174,12 @@
         <source src="../assets/audio/dinner-guide/dessert-check.mp3" type="audio/mpeg">
       </audio>
 
-      <div class="imgs" style="margin-top:8px">
-        <img class="span6" src="../assets/img/dinner-guide/highball.jpg" alt="ハイボール の あんない（画像）">
-        <img class="span6" src="../assets/img/dinner-guide/drink-list.jpg" alt="のみもの いちらん（画像）">
-      </div>
+      <!-- ここに “飲み物一覧” と “ハイボール” の画像をフル幅で表示 -->
+      <img class="img-full" src="../assets/img/dinner-guide/highball.jpg" alt="ハイボール の あんない（画像）" style="margin-top:10px">
+      <img class="img-full" src="../assets/img/dinner-guide/drink-list.jpg" alt="のみもの いちらん（画像）" style="margin-top:10px">
 
       <div class="nav">
         <a href="#rice-timing">← まえへ</a>
-        <a href="#offline">つぎへ →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. オフライン準備 -->
-  <section class="block" id="offline">
-    <div class="head"><h2>6️⃣ オフライン じゅんび</h2></div>
-    <div class="body">
-      <p>このページ の おんせい を いっかつ で ほぞん します。</p>
-      <button id="btn-prefetch">このページの おんせい を いっかつ ほぞん</button>
-      <span id="prefetch-status" class="note" style="margin-left:8px">みじっこう</span>
-      <div class="nav">
-        <a href="#dessert-check">← まえへ</a>
         <span></span>
       </div>
     </div>
@@ -226,29 +196,6 @@
     if(isPages){ a.href = '/fudotaki-manual/index.html'; }
   }catch(e){}
 })();
-
-/* ===== オーディオ一括プリフェッチ ===== */
-async function prefetchAllAudios(){
-  const s = document.getElementById('prefetch-status');
-  const urls = [...document.querySelectorAll('audio source[src]')].map(x=>new URL(x.src,location).href);
-  if(urls.length===0){ s.textContent='おんせい は ありません'; return; }
-  try{
-    const keys = await caches.keys();
-    const cache = await caches.open(keys[0] || 'fudotaki-manual-dynamic');
-    let ok=0, ng=0;
-    for(const u of urls){
-      try{
-        const r = await fetch(u, {cache:'no-store'});
-        if(r.ok) await cache.put(u, r.clone());
-        ok++;
-      }catch{ ng++; }
-    }
-    s.textContent = `かんりょう ${ok} せいこう / ${ng} しっぱい`;
-  }catch(e){
-    s.textContent = 'しっぱい：ブラウザ が Service Worker に たいおう していない か、HTTPS が ひつよう です';
-  }
-}
-document.getElementById('btn-prefetch').addEventListener('click', prefetchAllAudios);
 
 /* ===== スワイプで前後セクション移動 ===== */
 (function(){
