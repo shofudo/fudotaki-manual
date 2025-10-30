@@ -1,201 +1,197 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>breakfast あさごはん</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>breakfast あさごはん</title>
 
-  <style>
-    :root{
-      --bg:#f6f7f8; --card:#ffffff; --ink:#1f2a37; --muted:#64748b;
-      --bd:#e5e7eb; --radius:18px; --maxw:980px; --shadow:0 6px 18px rgba(0,0,0,.10);
-      --accent:#0f766e;
-    }
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
-      font-family:system-ui,-apple-system,"Segoe UI","Noto Sans JP",sans-serif;}
-    header,main{max-width:var(--maxw);margin:0 auto;padding:0 16px;}
+<style>
+  :root{
+    --bg:#f6f7f8;--card:#fff;--ink:#1f2a37;--muted:#64748b;
+    --bd:#e5e7eb;--radius:18px;--maxw:980px;--shadow:0 6px 18px rgba(0,0,0,.10);
+    --accent:#0f766e;--accent-2:#155e75;
+  }
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family:system-ui,-apple-system,"Segoe UI","Noto Sans JP",sans-serif;line-height:1.7;scroll-behavior:smooth;}
+  /* --- ヘッダー --- */
+  header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#fff,rgba(255,255,255,.92));
+    backdrop-filter:saturate(180%) blur(6px);border-bottom:1px solid var(--bd);}
+  header .in{max-width:var(--maxw);margin:auto;display:flex;gap:12px;align-items:center;padding:10px 14px;}
+  header a,header .brand{color:var(--accent-2);text-decoration:none;font-weight:600}
+  header .brand{margin-inline:auto;color:var(--ink)}
+  header .btn{padding:6px 10px;border:1px solid var(--bd);border-radius:10px;background:#fff}
 
-    /* --- ヒーロー --- */
-    .hero{position:relative;width:100%;max-width:var(--maxw);margin:14px auto 0;padding:0 16px;}
-    .hero img{width:100%;height:auto;aspect-ratio:16/5;object-fit:cover;
-      border-radius:var(--radius);border:1px solid var(--bd);box-shadow:var(--shadow);display:block;}
-    .hero-title{position:absolute;left:24px;bottom:24px;padding:10px 16px;border-radius:999px;
-      font-weight:700;letter-spacing:.02em;color:#fff;background:rgba(0,0,0,.35);
-      backdrop-filter:blur(2px);font-size:clamp(16px,3.2vw,22px);}
+  /* --- ヒーロー --- */
+  .hero{position:relative;width:100%;max-width:var(--maxw);margin:14px auto 0;}
+  .hero img{width:100%;height:auto;aspect-ratio:16/5;object-fit:cover;border-radius:var(--radius);
+    border:1px solid var(--bd);box-shadow:var(--shadow);display:block;}
+  .hero-title{position:absolute;left:24px;bottom:24px;padding:10px 16px;border-radius:999px;
+    font-weight:700;letter-spacing:.02em;color:#fff;background:rgba(0,0,0,.35);
+    backdrop-filter:blur(2px);font-size:clamp(16px,3.2vw,22px);}
 
-    /* --- ブロック --- */
-    .block{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);
-      box-shadow:var(--shadow);margin:20px auto;padding:20px;}
-    .head h2{margin:6px 6px 12px;font-size:18px;}
+  /* --- ブロック --- */
+  .block{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);
+    box-shadow:var(--shadow);margin:20px auto;padding:20px;}
+  .head h2{margin:6px 6px 12px;font-size:18px;}
+  .note{font-size:13px;color:#6b7280;margin-top:4px;}
 
-    /* --- 目次 --- */
-    .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;padding:8px;}
-    .toc-card{display:flex;align-items:center;gap:8px;padding:12px 14px;border:1px solid var(--bd);
-      border-radius:14px;background:#fff;text-decoration:none;color:#111;}
-    .toc-card:hover{outline:2px solid #d1fae5;}
-    .muted{color:var(--muted);font-size:12px}
+  /* --- 目次 --- */
+  .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;padding:8px;}
+  .toc-card{display:flex;align-items:center;gap:8px;padding:12px 14px;border:1px solid var(--bd);
+    border-radius:14px;background:#fff;text-decoration:none;color:#111;}
+  .toc-card:hover{outline:2px solid #d1fae5;}
+  .muted{color:var(--muted);font-size:12px}
 
-    /* --- セクション内 --- */
-    audio{width:100%;margin:10px 0;}
-    .steps{display:flex;justify-content:center;}
-    .steps_img{width:100%;max-width:900px;border-radius:12px;border:1px solid var(--bd);box-shadow:var(--shadow);display:block;margin:0 auto;}
-    .note{font-size:13px;color:#6b7280;margin-top:4px;}
+  /* --- 画像 --- */
+  .steps{display:flex;justify-content:center;}
+  .steps_img{width:100%;max-width:900px;border-radius:12px;border:1px solid var(--bd);box-shadow:var(--shadow);display:block;margin:0 auto;}
 
-    /* --- 右下ボタン --- */
-    .fab-stack{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:50}
-    .fab{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
-      background:var(--accent);color:#fff;text-decoration:none;border:0;cursor:pointer;
-      box-shadow:0 8px 22px rgba(0,0,0,.20);}
-    .fab svg{width:22px;height:22px;display:block;fill:#fff}
-    .fab:active{transform:translateY(1px)}
-    .tooltip{position:absolute;right:58px;background:#111;color:#fff;font-size:12px;
-      padding:6px 8px;border-radius:8px;opacity:0;pointer-events:none;transition:.15s}
-    .fab-wrap{position:relative}
-    .fab-wrap:hover .tooltip{opacity:.9}
-  </style>
+  /* --- 音声 --- */
+  audio{width:100%;margin:10px 0;}
+
+  /* --- 右下ボタン --- */
+  .fab-stack{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:50}
+  .fab{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
+    background:var(--accent);color:#fff;text-decoration:none;border:0;cursor:pointer;
+    box-shadow:0 8px 22px rgba(0,0,0,.20);}
+  .fab svg{width:22px;height:22px;fill:#fff}
+  .fab:active{transform:translateY(1px)}
+  .tooltip{position:absolute;right:58px;background:#111;color:#fff;font-size:12px;
+    padding:6px 8px;border-radius:8px;opacity:0;pointer-events:none;transition:.15s}
+  .fab-wrap{position:relative}
+  .fab-wrap:hover .tooltip{opacity:.9}
+</style>
 </head>
 
 <body>
-  <header>
-    <div class="hero">
-      <img src="../assets/img/breakfast/top2.jpg" alt="朝食の会席 提供イメージ">
-      <div class="hero-title">breakfast あさごはん</div>
-    </div>
-  </header>
 
-  <main id="content">
-    <!-- 目次 -->
-    <section class="block" id="toc">
-      <div class="head"><h2>目次</h2></div>
-      <div class="toc-grid">
-        <a class="toc-card" href="#title">📄 ちょうしょくていきょう／せつめい</a>
-        <a class="toc-card" href="#greeting">👋 1. おきゃくさまを　せきに　あんない</a>
-        <a class="toc-card" href="#tea">🍵 2. せんちゃを　いれて　ていきょうする</a>
-        <a class="toc-card" href="#set">🍚 3. ごはん、みそしる、やきざかなを　ていきょうする</a>
-        <a class="toc-card" href="#refill">🍽️ 4. ごはんを　ていきょうして10-15ぷんごに　おかわりをきく</a>
-        <a class="toc-card" href="#fruit">🍓 5. フルーツをていきょうする</a>
-        <a class="toc-card" href="#donabe">🍲 SPちょうしょく　ドナベごはんについて</a>
-      </div>
-    </section>
-
-    <!-- タイトル -->
-    <section class="block" id="title">
-      <div class="head"><h2>ちょうしょくていきょう　／　せつめい</h2></div>
-      <p>ちょうしょく　ていきょうじの　せつめい</p>
-    </section>
-
-    <!-- 1 -->
-    <section class="block" id="greeting">
-      <div class="head"><h2>1. おきゃくさまを　せきに　あんない</h2></div>
-      <p>しょくじばしょの　いりぐちに　おきゃくさまが　きたら、あいさつをします。</p>
-      <p>「おはようございます。」</p>
-      <p>へやの　なまえを　かくにんし、おせきに　ごあんないします。</p>
-      <p>「おせきにごあんないいたします。」</p>
-      <p>ゆうしょくと　おなじせきに　あんないします。</p>
-      <p>「おちゃを　おもちいたしますので、しょうしょう　おまちください。」</p>
-      <audio controls>
-        <source src="../assets/audio/breakfast/breakfast-1.mp3" type="audio/mpeg">
-      </audio>
-    </section>
-
-    <!-- 2 -->
-    <section class="block" id="tea">
-      <div class="head"><h2>2. せんちゃを　いれて　ていきょうする</h2></div>
-      <p>「おはようございます。」</p>
-      <p>おちゃを　ていきょうします。</p>
-      <p>こんだてと　サラダの　ドレッシングの　せつめいをします。</p>
-      <p>「こちらの　しろいかみに　けさのこんだてを　ごよういしておりますので、ごらんください。」</p>
-      <p>「けさは　こちらに　やさいサラダをごよういしています。ドレッシングは、じかせいのにんじんドレッシング、イギリスさんの　マルドンシーソルトという　つぶのおおきい　しお、しょうゆベースの　しそドレッシングになりますので、おすきなもので　サラダを　おめしあがりください。」</p>
-      <p>「いま、ごはんも　ごよういしてまいります。」</p>
-      <audio controls>
-        <source src="../assets/audio/breakfast/breakfast-2.mp3" type="audio/mpeg">
-      </audio>
-    </section>
-
-    <!-- 3 -->
-    <section class="block" id="set">
-      <div class="head"><h2>3. ごはん、みそしる、やきざかなを　ていきょうする</h2></div>
-      <p>みそしるを　みぎてがわ、ごはんを　ひだりてがわに　ていきょうします。（ヒダリキキの　ヒトは　ぎゃくに　おきます）</p>
-      <p>「みそしるは　こんさいを　つかった　おみそしる、やきざかなは　カレイの　ゆうあんやきで　ございます。」</p>
-      <p>「みそしるや　ドレッシングの　おかわりを　ごよういしていますので、おこえがけください。」</p>
-      <audio controls>
-        <source src="../assets/audio/breakfast/breakfast-3.mp3" type="audio/mpeg">
-      </audio>
-    </section>
-
-    <!-- 4 -->
-    <section class="block" id="refill">
-      <div class="head"><h2>4. ごはんを　ていきょうして10-15ぷんごに　おかわりをきく</h2></div>
-      <p>「おみそしるや　ドレッシングの　おかわりは　いかがですか？」</p>
-      <p>みそしる、ドレッシング、ごはんなどの　おかわりを　かくにんします。</p>
-      <p>ごはんは　おひつをさげて、ほじゅうをします。</p>
-      <audio controls>
-        <source src="../assets/audio/breakfast/breakfast-4.mp3" type="audio/mpeg">
-      </audio>
-    </section>
-
-    <!-- 5 -->
-    <section class="block" id="fruit">
-      <div class="head"><h2>5. フルーツをていきょうする</h2></div>
-      <p>きせつによって　ないようが　かわるので、そのときの　てきせつな　ないようを　せつめいをします。</p>
-      <p>「フロント　にコーヒーを　ごよういしております。」</p>
-      <p>「おへやに　おもちいただいても　だいじょうぶですので、よろしければ　おたちよりください。」</p>
-      <audio controls>
-        <source src="../assets/audio/breakfast/breakfast-5.mp3" type="audio/mpeg">
-      </audio>
-    </section>
-
-    <!-- ドナベ：画像のみ -->
-    <section class="block" id="donabe">
-      <div class="head"><h2>SPちょうしょく　ドナベごはんについて</h2></div>
-      <div class="steps">
-        <img class="steps_img" src="../assets/img/breakfast/donabe.jpg" alt="ドナベごはん">
-      </div>
-      <p class="note">※ いまは画像のみ（テキスト・音声なし）で運用します。</p>
-    </section>
-  </main>
-
-  <!-- 右下フローティングボタン（上へ／ホーム） -->
-  <div class="fab-stack" aria-label="操作ボタン">
-    <div class="fab-wrap">
-      <button class="fab" id="btn-top" aria-label="上へ">
-        <!-- 上矢印 -->
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5l7 7-1.4 1.4L13 8.8V20h-2V8.8L6.4 13.4 5 12l7-7z"/></svg>
-      </button>
-      <span class="tooltip">ページ上部へ</span>
-    </div>
-    <div class="fab-wrap">
-      <button class="fab" id="btn-home" aria-label="ホームへ">
-        <!-- ホーム -->
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 8-1.5 1.3L19 11.5V20a1 1 0 0 1-1 1h-5v-6H11v6H6a1 1 0 0 1-1-1v-8.5L4.5 12.3 3 11l9-8z"/></svg>
-      </button>
-      <span class="tooltip">トップへ</span>
-    </div>
+<!-- ヘッダー（トップ／目次） -->
+<header>
+  <div class="in">
+    <a class="btn" id="btn-home" href="../index.html">← トップ</a>
+    <span class="brand">breakfast</span>
+    <a class="btn" href="#toc">目次</a>
   </div>
+</header>
 
-  <script>
-    // 上へ（#toc へスムーススクロール）
-    document.getElementById('btn-top')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      const target = document.getElementById('toc');
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      else window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+<!-- ヒーロー -->
+<div class="hero">
+  <img src="../assets/img/breakfast/top2.jpg" alt="朝食の会席 提供イメージ">
+  <div class="hero-title">breakfast あさごはん</div>
+</div>
 
-    // 環境に応じてトップURLを切り替え
-    const HOME = (location.hostname.endsWith('github.io'))
-      ? '/fudotaki-manual/'
-      : '/';
+<main id="content">
 
-    document.getElementById('btn-home')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      location.href = HOME;
-    });
+  <!-- 目次 -->
+  <section class="block" id="toc">
+    <div class="head"><h2>目次</h2></div>
+    <div class="toc-grid">
+      <a class="toc-card" href="#title">📄 ちょうしょくていきょう／せつめい</a>
+      <a class="toc-card" href="#greeting">👋 1. おきゃくさまを　せきに　あんない</a>
+      <a class="toc-card" href="#tea">🍵 2. せんちゃを　いれて　ていきょうする</a>
+      <a class="toc-card" href="#set">🍚 3. ごはん、みそしる、やきざかなを　ていきょうする</a>
+      <a class="toc-card" href="#refill">🍽️ 4. ごはんを　ていきょうして10-15ぷんごに　おかわりをきく</a>
+      <a class="toc-card" href="#fruit">🍓 5. フルーツをていきょうする</a>
+      <a class="toc-card" href="#donabe">🍲 SPちょうしょく　ドナベごはんについて</a>
+    </div>
+  </section>
 
-    // Service Worker（pages/ から1つ上にある sw.js）
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('../sw.js');
-    }
-  </script>
+  <!-- 各セクション -->
+  <section class="block" id="title">
+    <div class="head"><h2>ちょうしょくていきょう　／　せつめい</h2></div>
+    <p>ちょうしょく　ていきょうじの　せつめい</p>
+  </section>
+
+  <section class="block" id="greeting">
+    <div class="head"><h2>1. おきゃくさまを　せきに　あんない</h2></div>
+    <p>しょくじばしょの　いりぐちに　おきゃくさまが　きたら、あいさつをします。</p>
+    <p>「おはようございます。」</p>
+    <p>へやの　なまえを　かくにんし、おせきに　ごあんないします。</p>
+    <p>「おせきにごあんないいたします。」</p>
+    <p>ゆうしょくと　おなじせきに　あんないします。</p>
+    <p>「おちゃを　おもちいたしますので、しょうしょう　おまちください。」</p>
+    <audio controls><source src="../assets/audio/breakfast/breakfast-1.mp3" type="audio/mpeg"></audio>
+  </section>
+
+  <section class="block" id="tea">
+    <div class="head"><h2>2. せんちゃを　いれて　ていきょうする</h2></div>
+    <p>「おはようございます。」</p>
+    <p>おちゃを　ていきょうします。</p>
+    <p>こんだてと　サラダの　ドレッシングの　せつめいをします。</p>
+    <p>「こちらの　しろいかみに　けさのこんだてを　ごよういしておりますので、ごらんください。」</p>
+    <p>「けさは　こちらに　やさいサラダをごよういしています。ドレッシングは、じかせいのにんじんドレッシング、イギリスさんの　マルドンシーソルトという　つぶのおおきい　しお、しょうゆベースの　しそドレッシングになりますので、おすきなもので　サラダを　おめしあがりください。」</p>
+    <p>「いま、ごはんも　ごよういしてまいります。」</p>
+    <audio controls><source src="../assets/audio/breakfast/breakfast-2.mp3" type="audio/mpeg"></audio>
+  </section>
+
+  <section class="block" id="set">
+    <div class="head"><h2>3. ごはん、みそしる、やきざかなを　ていきょうする</h2></div>
+    <p>みそしるを　みぎてがわ、ごはんを　ひだりてがわに　ていきょうします。（ヒダリキキの　ヒトは　ぎゃくに　おきます）</p>
+    <p>「みそしるは　こんさいを　つかった　おみそしる、やきざかなは　カレイの　ゆうあんやきで　ございます。」</p>
+    <p>「みそしるや　ドレッシングの　おかわりを　ごよういしていますので、おこえがけください。」</p>
+    <audio controls><source src="../assets/audio/breakfast/breakfast-3.mp3" type="audio/mpeg"></audio>
+  </section>
+
+  <section class="block" id="refill">
+    <div class="head"><h2>4. ごはんを　ていきょうして10-15ぷんごに　おかわりをきく</h2></div>
+    <p>「おみそしるや　ドレッシングの　おかわりは　いかがですか？」</p>
+    <p>みそしる、ドレッシング、ごはんなどの　おかわりを　かくにんします。</p>
+    <p>ごはんは　おひつをさげて、ほじゅうをします。</p>
+    <audio controls><source src="../assets/audio/breakfast/breakfast-4.mp3" type="audio/mpeg"></audio>
+  </section>
+
+  <section class="block" id="fruit">
+    <div class="head"><h2>5. フルーツをていきょうする</h2></div>
+    <p>きせつによって　ないようが　かわるので、そのときの　てきせつな　ないようを　せつめいをします。</p>
+    <p>「フロント　にコーヒーを　ごよういしております。」</p>
+    <p>「おへやに　おもちいただいても　だいじょうぶですので、よろしければ　おたちよりください。」</p>
+    <audio controls><source src="../assets/audio/breakfast/breakfast-5.mp3" type="audio/mpeg"></audio>
+  </section>
+
+  <section class="block" id="donabe">
+    <div class="head"><h2>SPちょうしょく　ドナベごはんについて</h2></div>
+    <div class="steps">
+      <img class="steps_img" src="../assets/img/breakfast/donabe.jpg" alt="ドナベごはん">
+    </div>
+    <p class="note">※ いまは画像のみ（テキスト・音声なし）で運用します。</p>
+  </section>
+</main>
+
+<!-- 右下フローティングボタン -->
+<div class="fab-stack" aria-label="操作ボタン">
+  <div class="fab-wrap">
+    <button class="fab" id="btn-top" aria-label="ページ上部へ">
+      <svg viewBox="0 0 24 24"><path d="M12 5l7 7-1.4 1.4L13 8.8V20h-2V8.8L6.4 13.4 5 12l7-7z"/></svg>
+    </button>
+    <span class="tooltip">ページ上部へ</span>
+  </div>
+  <div class="fab-wrap">
+    <button class="fab" id="btn-home" aria-label="トップへ">
+      <svg viewBox="0 0 24 24"><path d="M12 3l9 8-1.5 1.3L19 11.5V20a1 1 0 0 1-1 1h-5v-6H11v6H6a1 1 0 0 1-1-1v-8.5L4.5 12.3 3 11l9-8z"/></svg>
+    </button>
+    <span class="tooltip">トップへ</span>
+  </div>
+</div>
+
+<script>
+  // 上へ移動
+  document.getElementById('btn-top')?.addEventListener('click', e=>{
+    e.preventDefault();
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  // ホームへ移動（環境に応じ切替）
+  const HOME = location.pathname.includes('/fudotaki-manual/')
+    ? '/fudotaki-manual/index.html'
+    : '../index.html';
+  document.getElementById('btn-home')?.addEventListener('click', e=>{
+    e.preventDefault(); location.href = HOME;
+  });
+
+  // Service Worker 登録
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('../sw.js');
+  }
+</script>
 </body>
 </html>
