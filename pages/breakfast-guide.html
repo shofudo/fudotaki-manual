@@ -4,27 +4,26 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>breakfast あさごはん</title>
-  <base href="/fudotaki-manual/">
 
   <style>
     :root{
       --bg:#f6f7f8; --card:#ffffff; --ink:#1f2a37; --muted:#64748b;
       --bd:#e5e7eb; --radius:18px; --maxw:980px; --shadow:0 6px 18px rgba(0,0,0,.10);
+      --accent:#0f766e;
     }
     html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
       font-family:system-ui,-apple-system,"Segoe UI","Noto Sans JP",sans-serif;}
-
     header,main{max-width:var(--maxw);margin:0 auto;padding:0 16px;}
 
-    /* --- ヒーロー（TOP画像） --- */
+    /* --- ヒーロー --- */
     .hero{position:relative;width:100%;max-width:var(--maxw);margin:14px auto 0;padding:0 16px;}
     .hero img{width:100%;height:auto;aspect-ratio:16/5;object-fit:cover;
       border-radius:var(--radius);border:1px solid var(--bd);box-shadow:var(--shadow);display:block;}
-    .hero-title{position:absolute;left:16px;bottom:16px;padding:10px 16px;border-radius:999px;
+    .hero-title{position:absolute;left:24px;bottom:24px;padding:10px 16px;border-radius:999px;
       font-weight:700;letter-spacing:.02em;color:#fff;background:rgba(0,0,0,.35);
       backdrop-filter:blur(2px);font-size:clamp(16px,3.2vw,22px);}
 
-    /* --- カード/ブロック --- */
+    /* --- ブロック --- */
     .block{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);
       box-shadow:var(--shadow);margin:20px auto;padding:20px;}
     .head h2{margin:6px 6px 12px;font-size:18px;}
@@ -36,24 +35,30 @@
     .toc-card:hover{outline:2px solid #d1fae5;}
     .muted{color:var(--muted);font-size:12px}
 
-    /* --- セクション内の要素 --- */
+    /* --- セクション内 --- */
     audio{width:100%;margin:10px 0;}
     .steps{display:flex;justify-content:center;}
     .steps_img{width:100%;max-width:900px;border-radius:12px;border:1px solid var(--bd);box-shadow:var(--shadow);display:block;margin:0 auto;}
     .note{font-size:13px;color:#6b7280;margin-top:4px;}
 
-    /* --- 右下の目次ボタン --- */
-    .fab{position:fixed;right:18px;bottom:18px;width:48px;height:48px;border-radius:50%;
-      display:grid;place-items:center;background:#0f766e;color:#fff;text-decoration:none;
+    /* --- 右下ボタン --- */
+    .fab-stack{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:50}
+    .fab{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
+      background:var(--accent);color:#fff;text-decoration:none;border:0;cursor:pointer;
       box-shadow:0 8px 22px rgba(0,0,0,.20);}
+    .fab svg{width:22px;height:22px;display:block;fill:#fff}
+    .fab:active{transform:translateY(1px)}
+    .tooltip{position:absolute;right:58px;background:#111;color:#fff;font-size:12px;
+      padding:6px 8px;border-radius:8px;opacity:0;pointer-events:none;transition:.15s}
+    .fab-wrap{position:relative}
+    .fab-wrap:hover .tooltip{opacity:.9}
   </style>
 </head>
 
 <body>
   <header>
-    <!-- TOP画像（ヒーロー） -->
     <div class="hero">
-      <img src="assets/img/breakfast/top2.jpg" alt="朝食の会席 提供イメージ">
+      <img src="../assets/img/breakfast/top2.jpg" alt="朝食の会席 提供イメージ">
       <div class="hero-title">breakfast あさごはん</div>
     </div>
   </header>
@@ -88,7 +93,9 @@
       <p>「おせきにごあんないいたします。」</p>
       <p>ゆうしょくと　おなじせきに　あんないします。</p>
       <p>「おちゃを　おもちいたしますので、しょうしょう　おまちください。」</p>
-      <audio controls src="assets/audio/breakfast/breakfast-1.mp3"></audio>
+      <audio controls>
+        <source src="../assets/audio/breakfast/breakfast-1.mp3" type="audio/mpeg">
+      </audio>
     </section>
 
     <!-- 2 -->
@@ -100,7 +107,9 @@
       <p>「こちらの　しろいかみに　けさのこんだてを　ごよういしておりますので、ごらんください。」</p>
       <p>「けさは　こちらに　やさいサラダをごよういしています。ドレッシングは、じかせいのにんじんドレッシング、イギリスさんの　マルドンシーソルトという　つぶのおおきい　しお、しょうゆベースの　しそドレッシングになりますので、おすきなもので　サラダを　おめしあがりください。」</p>
       <p>「いま、ごはんも　ごよういしてまいります。」</p>
-      <audio controls src="assets/audio/breakfast/breakfast-2.mp3"></audio>
+      <audio controls>
+        <source src="../assets/audio/breakfast/breakfast-2.mp3" type="audio/mpeg">
+      </audio>
     </section>
 
     <!-- 3 -->
@@ -109,7 +118,9 @@
       <p>みそしるを　みぎてがわ、ごはんを　ひだりてがわに　ていきょうします。（ヒダリキキの　ヒトは　ぎゃくに　おきます）</p>
       <p>「みそしるは　こんさいを　つかった　おみそしる、やきざかなは　カレイの　ゆうあんやきで　ございます。」</p>
       <p>「みそしるや　ドレッシングの　おかわりを　ごよういしていますので、おこえがけください。」</p>
-      <audio controls src="assets/audio/breakfast/breakfast-3.mp3"></audio>
+      <audio controls>
+        <source src="../assets/audio/breakfast/breakfast-3.mp3" type="audio/mpeg">
+      </audio>
     </section>
 
     <!-- 4 -->
@@ -118,7 +129,9 @@
       <p>「おみそしるや　ドレッシングの　おかわりは　いかがですか？」</p>
       <p>みそしる、ドレッシング、ごはんなどの　おかわりを　かくにんします。</p>
       <p>ごはんは　おひつをさげて、ほじゅうをします。</p>
-      <audio controls src="assets/audio/breakfast/breakfast-4.mp3"></audio>
+      <audio controls>
+        <source src="../assets/audio/breakfast/breakfast-4.mp3" type="audio/mpeg">
+      </audio>
     </section>
 
     <!-- 5 -->
@@ -127,24 +140,61 @@
       <p>きせつによって　ないようが　かわるので、そのときの　てきせつな　ないようを　せつめいをします。</p>
       <p>「フロント　にコーヒーを　ごよういしております。」</p>
       <p>「おへやに　おもちいただいても　だいじょうぶですので、よろしければ　おたちよりください。」</p>
-      <audio controls src="assets/audio/breakfast/breakfast-5.mp3"></audio>
+      <audio controls>
+        <source src="../assets/audio/breakfast/breakfast-5.mp3" type="audio/mpeg">
+      </audio>
     </section>
 
-    <!-- ドナベ：画像のみ（テキスト・音声なし） -->
+    <!-- ドナベ：画像のみ -->
     <section class="block" id="donabe">
       <div class="head"><h2>SPちょうしょく　ドナベごはんについて</h2></div>
       <div class="steps">
-        <img class="steps_img" src="assets/img/breakfast/donabe.jpg" alt="ドナベごはん">
+        <img class="steps_img" src="../assets/img/breakfast/donabe.jpg" alt="ドナベごはん">
       </div>
       <p class="note">※ いまは画像のみ（テキスト・音声なし）で運用します。</p>
     </section>
   </main>
 
-  <a class="fab" href="#toc" aria-label="目次へ">目</a>
+  <!-- 右下フローティングボタン（上へ／ホーム） -->
+  <div class="fab-stack" aria-label="操作ボタン">
+    <div class="fab-wrap">
+      <button class="fab" id="btn-top" aria-label="上へ">
+        <!-- 上矢印 -->
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5l7 7-1.4 1.4L13 8.8V20h-2V8.8L6.4 13.4 5 12l7-7z"/></svg>
+      </button>
+      <span class="tooltip">ページ上部へ</span>
+    </div>
+    <div class="fab-wrap">
+      <button class="fab" id="btn-home" aria-label="ホームへ">
+        <!-- ホーム -->
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 8-1.5 1.3L19 11.5V20a1 1 0 0 1-1 1h-5v-6H11v6H6a1 1 0 0 1-1-1v-8.5L4.5 12.3 3 11l9-8z"/></svg>
+      </button>
+      <span class="tooltip">トップへ</span>
+    </div>
+  </div>
 
   <script>
+    // 上へ（#toc へスムーススクロール）
+    document.getElementById('btn-top')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById('toc');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      else window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 環境に応じてトップURLを切り替え
+    const HOME = (location.hostname.endsWith('github.io'))
+      ? '/fudotaki-manual/'
+      : '/';
+
+    document.getElementById('btn-home')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      location.href = HOME;
+    });
+
+    // Service Worker（pages/ から1つ上にある sw.js）
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js');
+      navigator.serviceWorker.register('../sw.js');
     }
   </script>
 </body>
