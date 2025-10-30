@@ -13,35 +13,38 @@
   html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
     font-family:system-ui,-apple-system,"Segoe UI","Noto Sans JP","Yu Gothic",sans-serif;
     line-height:1.9; scroll-behavior:smooth; letter-spacing:.02em;}
+  /* ヘッダー */
   header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#fff,rgba(255,255,255,.92));
     backdrop-filter:saturate(180%) blur(6px); border-bottom:1px solid var(--bd);}
   header .in{max-width:var(--maxw);margin:auto;display:flex;gap:12px;align-items:center;padding:10px 14px;}
   header a, header .brand{color:var(--acc-2);text-decoration:none;font-weight:600}
   header .brand{margin-inline:auto;color:var(--ink)}
   header .btn{padding:6px 10px;border:1px solid var(--bd);border-radius:10px;background:#fff}
+  /* ヒーロー */
   .hero{position:relative;max-width:var(--maxw);margin:12px auto 0;overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow);}
   .hero img{display:block;width:100%;height:34vh;object-fit:cover;object-position:center;border:1px solid var(--bd);}
   .hero .hero-title{position:absolute;left:16px;bottom:14px;color:#fff;background:rgba(0,0,0,.35);
     padding:8px 12px;border-radius:12px;font-weight:700;letter-spacing:.03em}
   main{max-width:var(--maxw);margin:14px auto 40px;padding:0 12px}
+  /* ブロック */
   .block{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);box-shadow:var(--shadow);
     margin:16px 0;overflow:hidden}
   .block .head{display:flex;align-items:center;gap:8px;padding:14px 14px;border-bottom:1px solid var(--bd);background:#fff}
   .block .head h2{margin:0;font-size:18px}
   .block .body{padding:16px}
   .block p{margin:0 0 12px}
-  .note{color:var(--muted);font-size:.95em}
-  audio{width:100%;margin-top:10px}
+  /* 目次 */
   #toc .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
   #toc a{display:block;border:1px solid var(--bd);background:#fff;border-radius:14px;padding:12px;text-decoration:none;color:var(--ink)}
   #toc a b{display:block;color:var(--acc-2);margin-bottom:4px}
+  /* 画像 */
   .img-full{display:block;width:100%;height:auto;border:1px solid var(--bd);border-radius:12px;box-shadow:var(--shadow)}
-  .nav{display:flex;gap:8px;justify-content:space-between;margin-top:12px}
-  .nav a{display:inline-block;padding:8px 10px;border:1px solid var(--bd);border-radius:10px;background:#fff;color:var(--acc-2);text-decoration:none}
+  /* 区切り */
   .divider{margin:22px 0; height:1px; background:linear-gradient(90deg,transparent,#dbe0e6,transparent)}
+  /* 右下 丸ボタン（上＝トップへ ／ 下＝ホームへ） */
   .fab-wrap{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;flex-direction:column;gap:10px}
   .fab{width:52px;height:52px;border-radius:999px;border:1px solid var(--bd);background:#fff;box-shadow:var(--shadow);
-       display:grid;place-items:center;text-decoration:none;color:var(--acc-2);opacity:0;transform:translateY(10px);
+       display:grid;place-items:center;text-decoration:none;color:#111;opacity:0;transform:translateY(10px);
        transition:opacity .2s ease, transform .2s ease}
   .fab svg{width:22px;height:22px}
   .fab.show{opacity:1;transform:none}
@@ -51,6 +54,7 @@
 </head>
 <body>
 
+<!-- ヘッダー -->
 <header>
   <div class="in">
     <a class="btn" id="btn-home" href="../index.html">← とっぷ</a>
@@ -59,6 +63,7 @@
   </div>
 </header>
 
+<!-- ヒーロー（画像1/2） -->
 <div class="hero">
   <img src="../assets/img/checkin-out/top2.jpg" alt="">
   <div class="hero-title">ちぇっくいん・ちぇっくあうと</div>
@@ -66,94 +71,243 @@
 
 <main>
 
+<!-- 目次 -->
 <section class="block" id="toc">
   <div class="head"><h2>📑 もくじ</h2></div>
   <div class="body">
     <div class="cards">
-      <a href="#ci-1"><b>1. しゅっきん の じゅんび</b></a>
-      <a href="#ci-2"><b>2. おきゃくさま の らいかん かくにん</b></a>
-      <a href="#ci-3"><b>3. おきゃくさま の おむかえ</b>（おと）</a>
-      <a href="#ci-4"><b>4. ふろんと で の たいおう</b>（おと）</a>
-      <a href="#ci-5"><b>5. にもつ を はこぶ</b></a>
-      <a href="#ci-6"><b>6. まっちゃ と ようかん の じゅんび</b></a>
-      <a href="#ci-7"><b>7. ゆかた の たいおう</b></a>
-      <a href="#ci-8"><b>8. おへや へ はこぶ</b>（おと）</a>
-      <a href="#ci-9"><b>9. たぶれっと と ちょうしょく の あんない</b>（おと）</a>
-      <a href="#ci-10"><b>10. おへや せつび の あんない</b>（おと）</a>
-      <a href="#ci-11"><b>11. ゆかた の しまいかた</b>（おと）</a>
-      <a href="#ci-12"><b>12. おへや を でる</b>（おと・かんないず）</a>
+      <a href="#ci-1"><b>1. しゅっきんじのじゅんび</b></a>
+      <a href="#ci-2"><b>2. おきゃくさまの ライカンかくにん</b></a>
+      <a href="#ci-3"><b>3. おきゃくさまのおむかえ</b></a>
+      <a href="#ci-4"><b>4. フロントでのたいおう</b></a>
+      <a href="#ci-5"><b>5. にもつをはこぶ</b></a>
+      <a href="#ci-6"><b>6. マッチャとヨウカンのじゅんび</b></a>
+      <a href="#ci-7"><b>7. ゆかたのとりあつかい</b></a>
+      <a href="#ci-8"><b>8. おへやへのはいぜん</b></a>
+      <a href="#ci-9"><b>9. タブレットと　チョウショクの　あんない</b></a>
+      <a href="#ci-10"><b>10. へやセツビのあんない</b></a>
+      <a href="#ci-11"><b>11. ゆかたの　しまいかた</b></a>
+      <a href="#ci-12"><b>12. へやをでる</b></a>
     </div>
     <div class="divider"></div>
     <div class="cards">
-      <a href="#co-1"><b>（あさ）1. ちぇっくあうと の しごと</b>（おと）</a>
+      <a href="#co-1"><b>（あさ）1. きほん ぎょうむ の ながれ</b></a>
+      <a href="#co-2"><b>（あさ）2. チェックアウト の たいおう</b></a>
+      <a href="#co-3"><b>（あさ）3. チェックアウト ご の ぎょうむ</b></a>
     </div>
   </div>
 </section>
 
-<!-- チェックイン -->
-<section class="block" id="ci-3"><div class="head"><h2>3️⃣ おきゃくさま の おむかえ</h2></div>
-<div class="body">
-<p>・「いらっしゃいませ」</p>
-<p>・「おにもつ おもち いたします」</p>
-<p>・にもつ を うけとって ふろんと へ あんない</p>
-<audio controls><source src="../assets/audio/checkin-out/ci-3.mp3"></audio>
-</div></section>
+<!-- ================= チェックイン ================= -->
 
-<section class="block" id="ci-4"><div class="head"><h2>4️⃣ ふろんと で の たいおう</h2></div>
-<div class="body">
-<p>・「おにもつ を てーぶる に おかせて いただきます」</p>
-<p>・「ごあんない しますので、すこし おまちください」</p>
-<audio controls><source src="../assets/audio/checkin-out/ci-4.mp3"></audio>
-</div></section>
+<section class="block" id="ci-1">
+  <div class="head"><h2>1.   しゅっきんじのじゅんび</h2></div>
+  <div class="body">
+    <p>ジムショへ アイサツ、ショクジバショの ヘヤワリを かく</p>
+    <p>ノイヒンされた ユカタなどが、テーブルにあれば、かたづけます。</p>
 
-<section class="block" id="ci-8"><div class="head"><h2>8️⃣ おへや へ はこぶ</h2></div>
-<div class="body">
-<p>・「しつれい いたします」</p>
-<p>・まっちゃ と ようかん を ていきょう する</p>
-<p>・「こちらは じかせい の ようかん です」</p>
-<audio controls><source src="../assets/audio/checkin-out/ci-8.mp3"></audio>
-</div></section>
+    <p><b>タブレットの ボウハンカメラ きどう</b></p>
+    <p>タブレットで ボウハンカメラを きどうし、つねに カンシ できるようにします。</p>
 
-<section class="block" id="ci-9"><div class="head"><h2>9️⃣ たぶれっと と ちょうしょく の あんない</h2></div>
-<div class="body">
-<p>・「こちらの たぶれっと に じょうほう が あります」</p>
-<p>・「ちょうしょく の めにゅー です。おすきな もの を えらんでください」</p>
-<audio controls><source src="../assets/audio/checkin-out/ci-9.mp3"></audio>
-</div></section>
+    <p><b>みずやのかたづけ</b></p>
+    <p>みずやの グラスなどをかたづけ、ジムショに マッチャわんや ヨウカンをもっていきます。</p>
 
-<section class="block" id="ci-10"><div class="head"><h2>🔟 おへや せつび の あんない</h2></div>
-<div class="body">
-<p>・「なにか あれば でんわ の ふろんと ぼたん を おして ください」</p>
-<audio controls><source src="../assets/audio/checkin-out/ci-10.mp3"></audio>
-</div></section>
+    <p><b>ポットの おんどへんこう</b></p>
+    <p>ポットのおんどを90どから98どにへんこうします。</p>
+  </div>
+</section>
 
-<section class="block" id="ci-11"><div class="head"><h2>1️⃣1️⃣ ゆかた の しまいかた</h2></div>
-<div class="body">
-<p>・「おえらび の ゆかた を しまいます」</p>
-<p>・「こちらに ゆかた と ばすたおる と さむえ が あります」</p>
-<audio controls><source src="../assets/audio/checkin-out/ci-11.mp3"></audio>
-</div></section>
+<section class="block" id="ci-2">
+  <div class="head"><h2>2. おきゃくさまの ライカンかくにん</h2></div>
+  <div class="body">
+    <p><b>タブレットかくにん</b></p>
+    <p>さぎょうしながら、タブレットの カメラがめんを かくにんし、おきゃくさまの ライカンをチェックします。</p>
+  </div>
+</section>
 
-<section class="block" id="ci-12"><div class="head"><h2>1️⃣2️⃣ おへや を でる（かんないず）</h2></div>
-<div class="body">
-<p>・「ごゆっくり おすごし ください」</p>
-<p>・へや を でたら、くつ と すりっぱ を こうかん</p>
-<audio controls><source src="../assets/audio/checkin-out/ci-12.mp3"></audio>
-<img class="img-full" src="../assets/img/checkin-out/map.jpg" alt="かんないず">
-</div></section>
+<section class="block" id="ci-3">
+  <div class="head"><h2>3. おきゃくさまのおむかえ</h2></div>
+  <div class="body">
+    <p><b>チュウシャジョウでの たいおう</b></p>
+    <p>くるまが チュウシャジョウに トウチャクしたら、おきゃくさまを むかえにいき、「いらっしゃいませ」とあいさつします。</p>
+    <p>「おはこびできる、おにもつ があれば、おてつだいします。」とおつたえし、にもつを はこんでフロントへ あんないします。</p>
+    <!-- 音声：ci-3 -->
+    <audio controls><source src="../assets/audio/checkin-out/ci-3.mp3" type="audio/mpeg"></audio>
+  </div>
+</section>
 
-<!-- チェックアウト -->
-<section class="block" id="co-1"><div class="head"><h2>🕙 ちぇっくあうと の しごと</h2></div>
-<div class="body">
-<p>・あさ は ふつう の しごと を しながら ふろんと の じょうたい を かくにん</p>
-<p>・「ありがとうございました」 と あいさつ</p>
-<p>・かいけい しゅうりょう まで えがお で たいき → そのあと おれい</p>
-<p>・きねん さつえい と おみおくり の あんない</p>
-<audio controls><source src="../assets/audio/checkin-out/co-1.mp3"></audio>
-</div></section>
+<section class="block" id="ci-4">
+  <div class="head"><h2>4. フロントでのたいおう</h2></div>
+  <div class="body">
+    <p><b>にもつのとりあつかい</b></p>
+    <p>フロントに あんないしたら、「にもつを テーブルに おかせていただきます。」とおつたえし、にもつを おきます。</p>
+
+    <p><b>チェックインのてつづき</b></p>
+    <p>おきゃくさまに チェックインを　していただきます。</p>
+    <p>まえの おきゃくさまが いたり、スタッフが いないばあいは、「ごあんないしますので、おかけいただいて、しょうしょう　おまちください」とおつたえして、イスにすわってもらう。</p>
+    <!-- 音声：ci-4 -->
+    <audio controls><source src="../assets/audio/checkin-out/ci-4.mp3" type="audio/mpeg"></audio>
+  </div>
+</section>
+
+<section class="block" id="ci-5">
+  <div class="head"><h2>5. にもつをはこぶ</h2></div>
+  <div class="body">
+    <p><b>にもつの かくにんとはこぶ</b></p>
+    <p>チェックインじに おきゃくさまの にもつを へやに はこんでもよいかかくにんします。</p>
+    <p>へやめいと はこんでもよい にもつを かくにんして、にもつを へやにはこびます。</p>
+  </div>
+</section>
+
+<section class="block" id="ci-6">
+  <div class="head"><h2>6. マッチャとヨウカンのじゅんび</h2></div>
+  <div class="body">
+    <p><b>じゅんび さぎょう</b></p>
+    <p>マッチャと ヨウカンの じゅんびをします。</p>
+  </div>
+</section>
+
+<section class="block" id="ci-7">
+  <div class="head"><h2>7. ゆかたのとりあつかい</h2></div>
+  <div class="body">
+    <p><b>ゆかたと コモノの おあずかり</b></p>
+    <p>じょせいの　おきゃくさまが、ゆかたと　コモノを　えらびおえたら、おあずかりして「あとで、おちゃといっしょに、へやに、はこばせていただきます。」とおつたえします。</p>
+  </div>
+</section>
+
+<section class="block" id="ci-8">
+  <div class="head"><h2>8. おへやへのはいぜん</h2></div>
+  <div class="body">
+    <p><b>へやに　トウチャク</b></p>
+    <p>おきゃくさまが　エレベーターで、へやにあがったら、マッチャをたてて、ゆかたといっしょに　へやに　はこびます。</p>
+    <p>へやのドアを　3かいノックし、「しつれいいたします。」といいながら　へやに　はいります。</p>
+
+    <p><b>マッチャと　ヨウカンの　はいぜん</b></p>
+    <p>「おちゃの　ごよういを　させていただきます。」といい、テーブルに、マッチャと　ヨウカンを　はいぜんします。</p>
+    <p>「こちらは、マッチャと、ジカセイの　ヨウカンですので、おめしあがりください。」と　せつめいします。</p>
+    <!-- 音声：ci-8 -->
+    <audio controls><source src="../assets/audio/checkin-out/ci-8.mp3" type="audio/mpeg"></audio>
+  </div>
+</section>
+
+<section class="block" id="ci-9">
+  <div class="head"><h2>9. タブレットと　チョウショクの　あんない</h2></div>
+  <div class="body">
+    <p><b>タブレットの　つかいかた</b></p>
+    <p>「こちらの　タブレットに、インフォメーションを　ごよういしておりますので、ごらんください。」とおつたえします。</p>
+
+    <p><b>チョウショクの　あんない</b></p>
+    <p>o    「こちらは、チョウショクの　ごあんないです。キホンのセットに、したの3つのチョイスから　おすきなものを　えらんでください。ごユウショクの　さいに　おうかがいします。」とあんないします。</p>
+
+    <p>·         SPちょうしょくの　あんない<br>
+    　「こちらは、ちょうしょくの　ごあんないとなります。　　　</p>
+    <p>　　おひとりさまづつ　おすきなのみものと　たまごのり　　</p>
+    <p>　　ょうりをえらんでいただいております。</p>
+    <p>　　ごゆうしょくの　さいに、おうかがいさせて　いただ　</p>
+    <p>　　きますので、それまでに　おきめください。</p>
+    <!-- 音声：ci-9 -->
+    <audio controls><source src="../assets/audio/checkin-out/ci-9.mp3" type="audio/mpeg"></audio>
+  </div>
+</section>
+
+<section class="block" id="ci-10">
+  <div class="head"><h2>10. へやセツビのあんない</h2></div>
+  <div class="body">
+    <p><b>デンワの　つかいかた</b></p>
+    <p>「なにかございましたら、こちらの　デンワの　ジュワキをあげて、フロントボタンをおして、ごれんらく　ください。」とあんないします。</p>
+    <!-- 音声：ci-10 -->
+    <audio controls><source src="../assets/audio/checkin-out/ci-10.mp3" type="audio/mpeg"></audio>
+  </div>
+</section>
+
+<section class="block" id="ci-11">
+  <div class="head"><h2>11. ゆかたの　しまいかた</h2></div>
+  <div class="body">
+    <p><b>ゆかたと　こものの　セイリ</b></p>
+    <p>「おえらびいただいた　ゆかたをしまわせていただきます。」といいながら　ゆかたをしまいます。</p>
+    <p>「こちらに　ゆかたと　バスタオル、フリーサイズのサムエがあります。　カンナイは　どちらでもだいじょうぶですので、すごしやすいかっこうですごしてください。」とせつめい　します。</p>
+    <!-- 音声：ci-11 -->
+    <audio controls><source src="../assets/audio/checkin-out/ci-11.mp3" type="audio/mpeg"></audio>
+  </div>
+</section>
+
+<section class="block" id="ci-12">
+  <div class="head"><h2>12. へやをでる</h2></div>
+  <div class="body">
+    <p><b>へやをでる</b></p>
+    <p>「ごゆっくり、おすごしください。」とつたえ、へやを　でます。</p>
+
+    <p><b>くつとスリッパのこうかん</b></p>
+    <p>へやを　でたあと、ゲンカンの　おきゃくさまの　くつとスリッパをこうかんします。</p>
+
+    <!-- 音声：ci-12 -->
+    <audio controls><source src="../assets/audio/checkin-out/ci-12.mp3" type="audio/mpeg"></audio>
+
+    <!-- 画像：館内図（2/2） -->
+    <img class="img-full" src="../assets/img/checkin-out/map.jpg" alt="かんないず">
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ================= チェックアウト ================= -->
+
+<section class="block" id="co-1">
+  <div class="head"><h2>1. きほん ぎょうむ の ながれ</h2></div>
+  <div class="body">
+    <p>あさ の ふつう の しごと を しながら、タブレット の えいぞう で フロント の じょうきょう を かくにん。</p>
+    <p>9じ50ふん に なったら、おきゃくさま の チェックアウト の じょうきょう に おうじて フロント ちかく で たいき し、チェックアウト たいおう を ゆうせん。</p>
+    <p>フロント に おきゃくさま が きて チェックアウト を される ばあい、または フロント から の よびだし が あった ばあい は すみやか に むかう。</p>
+    <p>9じ50ふんまえ の チェックアウト の とき、しごと に もどる か たいき を つづける か はんだん が むずかしい ばあい は、かならず おかみ または せんむ に かくにん を とる。</p>
+    <!-- 音声：co-1 -->
+    <audio controls><source src="../assets/audio/checkin-out/co-1.mp3" type="audio/mpeg"></audio>
+  </div>
+</section>
+
+<section class="block" id="co-2">
+  <div class="head"><h2>2. チェックアウト の たいおう</h2></div>
+  <div class="body">
+    <p><b>かいけい の たいき</b></p>
+    <p>チェックアウトを　している（まっている）　おきゃくさまに「ありがとうございました。」と　あいさつをいって、フロント にて おきゃくさま の かいけい が おわる まで たいき。</p>
+    <p>かいけい しゅうりょう ご、えがお で おれい を いう。</p>
+
+    <p><b>きねん さつえい の あんない</b></p>
+    <p>「よろしければ げんかんまえ で きねん さつえい を している の ですが、いかが でしょうか？」と おこえがけ。</p>
+    <p>※にもつが　あるときは　フロントにおいて　さつえいをすることを　おすすめする</p>
+    <p>おきゃくさま から カメラ や スマートフォン を あずかり、げんかん いりぐち の かんばん を ふくめた じょうたい で 1まい から 2まい ほど さつえい する。</p>
+    <p>さつえい ご、おきゃくさま に おれい を いって おかえし する。</p>
+
+    <p><b>おみおくり の たいおう</b></p>
+    <p>あるいて かえる おきゃくさま：いりぐち まで ごあんない し、おみおくり。</p>
+    <p>バス・タクシー を りよう する おきゃくさま：</p>
+    <p>「おこえがけ します ので、なか で かけて おまち ください」 と ごあんない。</p>
+    <p>そうげい しゃりょう が とうちゃく したら、おきゃくさま を しゃりょう まで あんない。</p>
+    <p>じたくしゃ の おきゃくさま：</p>
+    <p>「おにもつ を おくるま まで おはこび いたします」 と おこえがけ。</p>
+    <p>おにもつ を はこび、おくるま まで ごあんない。</p>
+    <p>おみおくり を し、おきゃくさま の しゅっぱつ を みとどける。</p>
+  </div>
+</section>
+
+<section class="block" id="co-3">
+  <div class="head"><h2>3. チェックアウト ご の ぎょうむ</h2></div>
+  <div class="body">
+    <p>9じ50ふんまえ で あれば、バス や タクシー を まつ おきゃくさま には、きねん さつえい ご に せき で おまち いただく よう ごあんない し、ふつう の しごと（ちょうしょく の かたづけ など） に もどる。</p>
+    <p>ほか に チェックアウト の おきゃくさま が いない ばあい、ふつう の しごと に もどる。</p>
+    <p>チェックアウト の おきゃくさま が つづく ばあい は、たいおう を ゆうせん。</p>
+    <p>チェックアウト が おちついたら、フロント まわり の せいり・せいそう を おこなう。</p>
+
+    <p><b>ポイント</b></p>
+    <p>えがお で ていねい な たいおう を こころがける。</p>
+    <p>おきゃくさま が スムーズ に しゅっぱつ できる よう、すみやか に こうどう する。</p>
+    <p>ひつよう に おうじて フロント スタッフ と れんけい を とる。</p>
+    <p>9じ50ふんまえ の たいおう の はんだん が むずかしい ばあい は、かならず おかみ または せんむ に かくにん する こと を てってい する。</p>
+  </div>
+</section>
 
 </main>
 
+<!-- 右下 丸ボタン：上＝とっぷへ ／ 下＝ほーむへ -->
 <div class="fab-wrap" aria-label="くいっく なび">
   <button class="fab" id="fab-top" title="ぺーじ うえ へ" aria-label="ぺーじ うえ へ">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -169,15 +323,18 @@
 </div>
 
 <script>
+/* HOMEリンク（Pages/ローカル じどう きりかえ） */
 (function(){
   const setHome=el=>{
     if(!el)return;
     const isPages=location.pathname.includes('/fudotaki-manual/');
-    el.href=isPages?'/fudotaki-manual/index.html':'../index.html';
+    el.href = isPages ? '/fudotaki-manual/index.html' : '../index.html';
   };
   setHome(document.getElementById('btn-home'));
   setHome(document.getElementById('fab-home'));
 })();
+
+/* スクロール量に応じて右下ボタン表示 */
 (function(){
   const topBtn=document.getElementById('fab-top');
   const homeBtn=document.getElementById('fab-home');
@@ -191,7 +348,9 @@
   window.addEventListener('load',onScroll);
   topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 })();
-if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js');}
+
+/* Service Worker 登録（../sw.js） */
+if('serviceWorker' in navigator){ navigator.serviceWorker.register('../sw.js'); }
 </script>
 </body>
 </html>
