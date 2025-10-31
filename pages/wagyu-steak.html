@@ -59,6 +59,23 @@
   .nav{display:flex;gap:8px;justify-content:space-between;margin-top:12px}
   .nav a{flex:1;text-align:center;padding:10px;border:1px solid var(--bd);border-radius:10px;background:#fff;color:var(--acc-2)}
 
+  /* 右下の丸ボタン */
+  .float-btns {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 100;
+  }
+  .float-btns button{
+    width:48px;height:48px;border-radius:50%;
+    border:none;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.15);
+    font-size:22px;cursor:pointer;transition:transform .2s, background .2s;
+  }
+  .float-btns button:hover{transform:scale(1.08);background:#f1f5f9;}
+
   @media (max-width:480px){ .hero img{height:220px} }
 </style>
 </head>
@@ -232,6 +249,12 @@
   </section>
 
 </main>
+
+<!-- 右下の丸ボタン -->
+<div class="float-btns">
+  <button class="btn-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="ページ上へ">⬆</button>
+  <button class="btn-home" onclick="location.href='../index.html'" title="ホームへ">🏠</button>
+</div>
 
 <script>
   // HOMEリンク（/pages/ 直下でも正しく戻る）
