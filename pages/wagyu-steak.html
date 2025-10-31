@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>和牛会席・ステーキプラン 説明（wagyu-steak）</title>
+<style>
+  :root{
+    --bg:#f6f7f8; --card:#ffffff; --ink:#1f2a37; --muted:#64748b;
+    --acc:#0f766e; --acc-2:#155e75; --bd:#e5e7eb; --radius:18px;
+    --maxw:980px; --shadow:0 6px 18px rgba(0,0,0,.06);
+  }
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family:system-ui,-apple-system,"Segoe UI","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.7;
+    scroll-behavior:smooth;}
+  a{color:var(--acc);text-decoration:none}
+
+  /* ヘッダ */
+  header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#fff,rgba(255,255,255,.9));
+    backdrop-filter:saturate(180%) blur(8px); border-bottom:1px solid var(--bd)}
+  header .inner{max-width:var(--maxw);margin:auto;padding:10px 16px;display:flex;gap:12px;align-items:center}
+  header .home{color:var(--acc-2)}
+  header .brand{margin-left:auto;color:var(--muted);font-weight:700}
+  header .toc{padding:6px 10px;border:1px solid var(--bd);border-radius:10px;background:#fff;color:var(--acc-2)}
+
+  /* ヒーロー */
+  .hero{position:relative;max-width:var(--maxw);margin:12px auto;border-radius:var(--radius);overflow:hidden;
+    box-shadow:var(--shadow);background:#000}
+  .hero img{width:100%;height:280px;object-fit:cover;object-position:center}
+  .hero .hero-title{position:absolute;left:20px;bottom:18px;color:#fff;font-size:clamp(18px,3.2vw,28px);
+    font-weight:700;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+
+  main{max-width:var(--maxw);margin:0 auto 80px;padding:0 12px;}
+
+  /* 目次カード */
+  #toc .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:8px 0 0}
+  .card{background:#fff;border:1px solid var(--bd);border-radius:14px;padding:12px;box-shadow:var(--shadow)}
+  .card small{color:var(--muted);display:block}
+
+  /* セクション */
+  section.block{margin:24px 0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .head{background:#fff;border-bottom:1px solid var(--bd);padding:12px 16px}
+  .head h2{margin:0;font-size:clamp(18px,3vw,22px)}
+  .head .sub{color:var(--muted);font-size:.9em;margin-top:4px}
+  .body{background:#fff;padding:14px 16px}
+
+  .bul{margin:0 0 0 1.2em;padding:0}
+  .bul li{margin:6px 0}
+  .lv p{margin:6px 0}
+  .warn{color:#d12626}
+
+  /* オーディオ表示 */
+  .band{background:#0d5874;padding:28px 0}
+  .aud-wrap{background:#121212;border:1px solid #333;border-radius:12px;padding:14px 16px;
+    box-shadow:0 8px 20px rgba(0,0,0,.35);max-width:680px;margin:0 auto}
+  audio{width:100%;display:block}
+
+  /* セクション前後ナビ */
+  .nav{display:flex;gap:8px;justify-content:space-between;margin-top:12px}
+  .nav a{flex:1;text-align:center;padding:10px;border:1px solid var(--bd);border-radius:10px;background:#fff;color:var(--acc-2)}
+
+  @media (max-width:480px){ .hero img{height:220px} }
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <a class="home" href="../index.html">← トップ</a>
+    <span class="brand">wagyu-steak</span>
+    <a class="toc" href="#toc">目次</a>
+  </div>
+</header>
+
+<div class="hero">
+  <img src="../assets/img/wagyu-steak/top2.jpg" alt="">
+  <div class="hero-title">和牛会席・ステーキプラン 説明</div>
+</div>
+
+<main>
+
+  <!-- 目次 -->
+  <section id="toc" class="block">
+    <div class="head"><h2>目次</h2></div>
+    <div class="body">
+      <div class="cards">
+        <div class="card"><a href="#sukiyaki">すきやき せつめい<small>Lv1/Lv2/Lv3</small></a></div>
+        <div class="card"><a href="#steak-sample">ステーキ サンプル うかがいかた<small>手順・定型セリフ</small></a></div>
+        <div class="card"><a href="#fry">フライ せつめい<small>Lv1/Lv2/Lv3</small></a></div>
+        <div class="card"><a href="#tare">ステーキ タレの せつめい<small>提供タイミング</small></a></div>
+        <div class="card"><a href="#steak">ステーキ せつめい<small>Lv1/Lv2/Lv3</small></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1) すきやき -->
+  <section class="block" id="sukiyaki">
+    <div class="head">
+      <h2>わぎゅう　かいせき　すきやき　せつめい</h2>
+      <div class="sub">Lv1 / Lv2 / Lv3</div>
+    </div>
+    <div class="body">
+      <div class="lv">
+        <p><b>レベル1：</b>こちらは、ニモノになります。</p>
+        <p><b>レベル2：</b>トチギワギュウの、サーロインと、モモニクを、スキヤキジタテの にものに したものになります。</p>
+        <p><b>レベル3：</b>（必要に応じて追記）</p>
+      </div>
+
+      <div class="band">
+        <div class="aud-wrap">
+          <audio controls preload="none">
+            <source src="../assets/audio/wagyu-steak/sukiyaki.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+
+      <div class="nav">
+        <span></span>
+        <a href="#steak-sample">次へ ▶ ステーキ サンプル</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2) ステーキ サンプルの伺い方 -->
+  <section class="block" id="steak-sample">
+    <div class="head"><h2>ステーキ サンプル　うかがいかた</h2></div>
+    <div class="body">
+      <ul class="bul">
+        <li>むしもの（わぎゅうかいせきは すきやき）と いっしょに、にくのサンプルを もっていく。</li>
+        <li>にくは サーロイン（150g）、フィレにく（100g）を よういしています。</li>
+        <li>ニクのシュルイは よやくじに チョイスしていただいています。</li>
+        <li>わぎゅうかいせきは すべてフィレにくを よういしています。</li>
+        <li>むしものを ていきょうしたあとに、にくを みせて せつめいをする。</li>
+      </ul>
+      <p>「こちら、このあとの ステーキで やかせていただく、おにくで ございます。」</p>
+      <p>「おこのみの やきかげんで めしあがっていただいておりますが、やきかげんは いかがいたしますか？」</p>
+      <p class="warn">※ ごくじょうかいせきの にもの と ちがい、ひとりずつ やきかげん を うかがいます。</p>
+      <p>提供後、火の通りかげん・やきかげん・男女内訳をメモ → 調理場へ にく と メモ を同封で渡す。</p>
+
+      <div class="band">
+        <div class="aud-wrap">
+          <audio controls preload="none">
+            <source src="../assets/audio/wagyu-steak/steak-sample.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+
+      <div class="nav">
+        <a href="#sukiyaki">◀ 前へ</a>
+        <a href="#fry">次へ ▶ フライ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3) フライ -->
+  <section class="block" id="fry">
+    <div class="head">
+      <h2>わぎゅう　かいせき　フライ　せつめい</h2>
+      <div class="sub">Lv1 / Lv2 / Lv3</div>
+    </div>
+    <div class="body">
+      <div class="lv">
+        <p><b>レベル1：</b>こちらは、アゲモノになります。</p>
+        <p><b>レベル2：</b>トチギワギュウの フィレにくを フライにしたものになります。</p>
+        <p><b>レベル3：</b>ガンエンと、ウスターソースを ごよういしておりますので、おこのみで めしあがってください。</p>
+      </div>
+
+      <div class="band">
+        <div class="aud-wrap">
+          <audio controls preload="none">
+            <source src="../assets/audio/wagyu-steak/fry.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+
+      <div class="nav">
+        <a href="#steak-sample">◀ 前へ</a>
+        <a href="#tare">次へ ▶ タレの説明</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4) タレ -->
+  <section class="block" id="tare">
+    <div class="head"><h2>ステーキ タレの せつめい</h2></div>
+    <div class="body">
+      <ol class="bul">
+        <li>ステーキ前の あげもの提供時に、タレを いっしょに もっていく。</li>
+        <li>料理説明後、ステーキの タレ を 提供して 説明する。</li>
+        <li>「こちらは ステーキの タレになります。」</li>
+        <li>「いちばん うえは『ショウガス』。ショウユは『もろみしょうゆ』。『モジオ』と『クロコショウ』も ごよういしております。」</li>
+      </ol>
+
+      <div class="band">
+        <div class="aud-wrap">
+          <audio controls preload="none">
+            <source src="../assets/audio/wagyu-steak/tare.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+
+      <div class="nav">
+        <a href="#fry">◀ 前へ</a>
+        <a href="#steak">次へ ▶ ステーキ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5) ステーキ -->
+  <section class="block" id="steak">
+    <div class="head"><h2>わぎゅう　かいせき・ステーキプラン　ステーキ　せつめい</h2></div>
+    <div class="body">
+      <div class="lv">
+        <p><b>レベル1：</b>こちらは、ステーキになります。</p>
+        <p><b>レベル2：</b>しおで あじつけ しておりますが、おこのみで タレにつけて おめしあがりください。</p>
+        <p><b>レベル3：</b>（必要に応じて追記）</p>
+      </div>
+      <p class="warn">※ ステーキのあとは ごはん になりますので、ようい を しても よいか うかがいます。</p>
+
+      <div class="band">
+        <div class="aud-wrap">
+          <audio controls preload="none">
+            <source src="../assets/audio/wagyu-steak/steak.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+
+      <div class="nav">
+        <a href="#tare">◀ 前へ</a>
+        <span></span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // HOMEリンク（/pages/ 直下でも正しく戻る）
+  (function fixHome(){
+    const a=document.querySelector('header .home');
+    if(location.pathname.includes('/pages/')) a.href='../index.html';
+  })();
+
+  // スワイプで前後移動（閾値60px）
+  (function swipeNav(){
+    let x0=null,y0=null; const th=60;
+    addEventListener('touchstart',e=>{x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
+    addEventListener('touchend',e=>{
+      if(x0==null)return;
+      const dx=e.changedTouches[0].clientX-x0, dy=e.changedTouches[0].clientY-y0;
+      if(Math.abs(dx)>Math.abs(dy) && Math.abs(dx)>th){
+        const links=[...document.querySelectorAll('.nav a')];
+        const prev=links.find(a=>a.textContent.includes('前へ'));
+        const next=links.find(a=>a.textContent.includes('次へ'));
+        if(dx>0 && prev) location.hash=prev.getAttribute('href');
+        if(dx<0 && next) location.hash=next.getAttribute('href');
+      }
+      x0=y0=null;
+    },{passive:true});
+  })();
+</script>
+</body>
+</html>
