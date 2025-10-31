@@ -1,0 +1,99 @@
+:root{
+  --bg:#f6f7f8;
+  --card:#ffffff;
+  --ink:#1f2a37;
+  --muted:#64748b;
+  --acc:#0f766e;
+  --bd:#e5e7eb;
+  --radius:18px;
+  --maxw:980px;
+  --shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* base */
+html,body{
+  margin:0;padding:0;
+  background:#f6f7f8 url("/fudotaki-manual/assets/img/top/washi-bg.jpg");
+  background-size:cover;
+  background-attachment:fixed;
+  background-repeat:repeat;
+  font-family:"Noto Sans JP", system-ui, sans-serif;
+  color:var(--ink); line-height:1.6;
+}
+a{ color:inherit; }
+
+/* header (固定) */
+header{
+  position:sticky; top:0; z-index:20;
+  text-align:center;
+  padding:1.5rem 1rem;
+  background:var(--acc);
+  color:#fff;
+  font-size:1.25rem;
+  letter-spacing:0.05em;
+}
+
+/* hero（トップ・各ページ共通） */
+.hero{ text-align:center; padding:2rem 1rem 1rem; }
+.hero img{
+  width:100%; max-width:360px; height:auto;
+  border-radius:50%;
+  box-shadow:var(--shadow);
+  display:block; margin:0 auto;
+}
+.hero-title{ font-size:1.4rem; font-weight:600; margin-top:1rem; }
+
+/* カード一覧（トップ） */
+main.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1.2rem;
+  max-width:var(--maxw);
+  margin:2rem auto 3rem; padding:0 1rem;
+}
+.card{
+  background:rgba(255,255,255,.95);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:1.2rem; text-align:center;
+  transition:transform .2s, box-shadow .2s;
+  border:1px solid #e8e4d9; /* 和紙になじむ線色 */
+}
+.card:hover{ transform:scale(1.03); box-shadow:0 8px 22px rgba(0,0,0,.1); }
+.card a{ display:block; font-size:1rem; text-decoration:none; font-weight:500; }
+
+/* セクション共通（下層ページ） */
+.block{
+  max-width:var(--maxw); margin:1rem auto; padding:0 1rem;
+}
+.block .head h2{
+  font-size:1.15rem; margin:0; padding:.6rem .8rem;
+  background:#fff; border:1px solid var(--bd); border-radius:12px;
+  box-shadow:var(--shadow);
+}
+.block .body{
+  background:#fff; border:1px solid var(--bd); border-radius:12px;
+  box-shadow:var(--shadow);
+  padding:1rem; margin-top:.6rem;
+}
+.block img{ max-width:100%; border-radius:12px; display:block; }
+
+/* オフライン準備ボタン等 */
+button, .btn{
+  appearance:none; border:1px solid var(--bd);
+  background:#fff; padding:.65rem 1rem; border-radius:12px;
+  box-shadow:var(--shadow); cursor:pointer;
+}
+button:hover{ transform:translateY(-1px); }
+
+/* 音声 */
+audio{ width:100%; margin-top:.5rem; }
+
+/* 前へ・次へナビ（任意） */
+.nav{
+  display:flex; gap:.5rem; justify-content:space-between; margin-top:1rem;
+}
+.nav a{
+  padding:.6rem .9rem; border:1px solid var(--bd); border-radius:12px; background:#fff;
+  text-decoration:none;
+}
