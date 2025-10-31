@@ -16,7 +16,11 @@
 }
 html,body{
   margin:0;padding:0;
-  background:linear-gradient(180deg,#f0fdfa,#f6f7f8);
+  /* 和紙風の淡い質感を全体に */
+  background:#f6f7f8 url("assets/img/top/washi-bg.png");
+  background-size:cover;
+  background-attachment:fixed;
+  background-repeat:repeat;
   font-family:"Noto Sans JP", system-ui, sans-serif;
   color:#1f2a37; line-height:1.6;
 }
@@ -30,29 +34,24 @@ header{
 }
 .hero{
   text-align:center;
-  padding:2rem 1rem;
+  padding:2rem 1rem 1rem;
 }
-.hero img {
-  width: 100%;
-  max-width: 320px;  /* ←スマホでもきれいに収まるサイズ */
-  height: auto;
-  border-radius: 50%;
-  box-shadow: var(--shadow);
-  display: block;
-  margin: 0 auto;
-}
-.hero-title{
-  font-size:1.4rem;
-  font-weight:600;
-  margin-top:1rem;
+.hero img{
+  width:100%;
+  max-width:360px;   /* 少しだけ存在感アップ */
+  height:auto;
+  border-radius:50%;
+  box-shadow:var(--shadow);
+  display:block;
+  margin:0 auto;
 }
 main{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:1.2rem;
   max-width:var(--maxw);
-  margin:2rem auto;
-  padding:0 1rem 3rem;
+  margin:2rem auto 3rem;
+  padding:0 1rem;
 }
 .card{
   background:var(--card);
@@ -74,12 +73,6 @@ main{
   text-decoration:none;
   font-weight:500;
 }
-footer{
-  text-align:center;
-  color:#64748b;
-  font-size:0.85rem;
-  margin-bottom:2rem;
-}
 </style>
 </head>
 <body>
@@ -87,18 +80,17 @@ footer{
 <header>すたっふ まにゅある</header>
 
 <div class="hero">
- <img src="assets/img/top/top2.jpg" alt="Fudotaki Manual">
+  <!-- 画像は .png を使用中（assets/img/top/top2.png） -->
+  <img src="assets/img/top/top2.png" alt="Fudotaki Manual">
 </div>
 
 <main>
   <div class="card"><a href="pages/season-dinner.html">🍱 きせつの ゆうしょく せつめい</a></div>
   <div class="card"><a href="pages/dinner-guide.html">🍲 ゆうしょく あんない せつめい</a></div>
-  <div class="card"><a href="pages/breakfast.html">☕ あさごはん あんない せつめい</a></div>
+  <div class="card"><a href="pages/breakfast-guide.html">☕ あさごはん あんない せつめい</a></div>
   <div class="card"><a href="pages/wagyu-steak.html">🥩 わぎゅうかいせき・すてーきぷらん せつめい</a></div>
   <div class="card"><a href="pages/checkin-out.html">🛎 ちぇっくいん・あうと せつめい</a></div>
 </main>
-
-<footer>（のちほど あらいんばん対応を入れます）</footer>
 
 <script>
 if('serviceWorker' in navigator){
