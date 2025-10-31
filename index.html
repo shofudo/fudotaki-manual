@@ -1,35 +1,111 @@
 <!doctype html>
 <html lang="ja">
-<head><link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="theme-color" content="#0f766e">
-
+<head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>すたっふまにゅある｜きぬがわふどうたき</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>きぬ川不動瀧 スタッフマニュアル</title>
 <style>
-  :root { --bg:#f7f7f8; --ink:#222; --card:#fff; }
-  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,'Noto Sans JP',sans-serif}
-  header{padding:16px 20px;font-weight:700;font-size:20px}
-  .grid{display:grid;gap:14px;padding:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
-  a.card{display:flex;align-items:center;justify-content:center;text-align:center;
-    background:var(--card);border-radius:16px;min-height:120px;padding:18px;text-decoration:none;color:var(--ink);
-    box-shadow:0 2px 8px rgba(0,0,0,.06);font-size:18px;font-weight:700}
-  a.card:active{transform:scale(.98)}
-  footer{padding:16px;text-align:center;font-size:12px;opacity:.7}
+:root{
+  --bg:#f6f7f8;
+  --card:#ffffff;
+  --acc:#0f766e;
+  --bd:#e5e7eb;
+  --radius:18px;
+  --maxw:980px;
+  --shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+html,body{
+  margin:0;padding:0;
+  background:linear-gradient(180deg,#f0fdfa,#f6f7f8);
+  font-family:"Noto Sans JP", system-ui, sans-serif;
+  color:#1f2a37; line-height:1.6;
+}
+header{
+  text-align:center;
+  padding:1.5rem 1rem;
+  background:var(--acc);
+  color:#fff;
+  font-size:1.25rem;
+  letter-spacing:0.05em;
+}
+.hero{
+  text-align:center;
+  padding:2rem 1rem;
+}
+.hero img {
+  width: 100%;
+  max-width: 320px;  /* ←スマホでもきれいに収まるサイズ */
+  height: auto;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+  display: block;
+  margin: 0 auto;
+}
+.hero-title{
+  font-size:1.4rem;
+  font-weight:600;
+  margin-top:1rem;
+}
+main{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1.2rem;
+  max-width:var(--maxw);
+  margin:2rem auto;
+  padding:0 1rem 3rem;
+}
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:1.2rem;
+  text-align:center;
+  transition:transform .2s, box-shadow .2s;
+  border:1px solid var(--bd);
+}
+.card:hover{
+  transform:scale(1.03);
+  box-shadow:0 8px 22px rgba(0,0,0,0.1);
+}
+.card a{
+  display:block;
+  color:#1f2a37;
+  font-size:1rem;
+  text-decoration:none;
+  font-weight:500;
+}
+footer{
+  text-align:center;
+  color:#64748b;
+  font-size:0.85rem;
+  margin-bottom:2rem;
+}
 </style>
 </head>
 <body>
-  <header>すたっふ まにゅある</header>
-  <main class="grid">
-    <a class="card" href="pages/season-dinner.html">きせつの ゆうしょく せつめい</a>
-    <a class="card" href="pages/dinner-guide.html">ゆうしょく あんない せつめい</a>
-    <a class="card" href="pages/breakfast-guide.html">あさごはん あんない せつめい</a>
-    <a class="card" href="pages/wagyu-steak.html">わぎゅうかいせき・すてーき ぷらん せつめい</a>
-    <a class="card" href="pages/checkin-out.html">ちぇっくいん・あうと せつめい</a>
-  </main>
-  <footer>（のちほど おふらいん対応を入れます）</footer>
+
+<header>すたっふ まにゅある</header>
+
+<div class="hero">
+ <img src="assets/img/top/top2.jpg" alt="Fudotaki Manual">
+  <div class="hero-title">館内業務・料理説明</div>
+</div>
+
+<main>
+  <div class="card"><a href="pages/season-dinner.html">🍱 きせつの ゆうしょく せつめい</a></div>
+  <div class="card"><a href="pages/dinner-guide.html">🍲 ゆうしょく あんない せつめい</a></div>
+  <div class="card"><a href="pages/breakfast.html">☕ あさごはん あんない せつめい</a></div>
+  <div class="card"><a href="pages/wagyu-steak.html">🥩 わぎゅうかいせき・すてーきぷらん せつめい</a></div>
+  <div class="card"><a href="pages/checkin-out.html">🛎 ちぇっくいん・あうと せつめい</a></div>
+</main>
+
+<footer>（のちほど あらいんばん対応を入れます）</footer>
+
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('./sw.js');
+}
+</script>
+
 </body>
 </html>
