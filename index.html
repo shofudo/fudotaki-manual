@@ -1,6 +1,17 @@
 <!doctype html>
 <html lang="ja">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>きぬ川不動瀧 スタッフマニュアル</title>
+
+  <!-- 共通CSS -->
+  <link rel="stylesheet" href="/fudotaki-manual/assets/css/theme.css">
+
+  <!-- ★ ここを追加：ヒーロー画像を先読み -->
+  <link rel="preload" as="image" href="/fudotaki-manual/assets/img/top/top2.jpg">
+</head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>きぬ川不動瀧 スタッフマニュアル</title>
@@ -80,8 +91,11 @@ main{
 <header>すたっふ まにゅある</header>
 
 <div class="hero">
-  <!-- 画像は JPG 版 -->
-  <img src="assets/img/top/top2.jpg" alt="Fudotaki Manual">
+  <!-- ★ これに置き換え：取得優先度UP + キャッシュバスター -->
+  <img src="/fudotaki-manual/assets/img/top/top2.jpg?v=3"
+       alt="Fudotaki Manual"
+       fetchpriority="high"
+       decoding="async">
 </div>
 
 <main>
