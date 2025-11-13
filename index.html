@@ -8,84 +8,79 @@
   <!-- 共通CSS -->
   <link rel="stylesheet" href="/fudotaki-manual/assets/css/theme.css">
 
-  <!-- ★ ここを追加：ヒーロー画像を先読み -->
+  <!-- ヒーロー画像先読み -->
   <link rel="preload" as="image" href="/fudotaki-manual/assets/img/top/top2.jpg">
-</head>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>きぬ川不動瀧 スタッフマニュアル</title>
-<style>
-:root{
-  --bg:#f6f7f8;
-  --card:#ffffff;
-  --acc:#0f766e;
-  --bd:#e5e7eb;
-  --radius:18px;
-  --maxw:980px;
-  --shadow:0 6px 18px rgba(0,0,0,0.08);
-}
-html,body{
-  margin:0;padding:0;
-  /* 和紙風の淡い質感を全体に */
-  background:#f6f7f8 url("assets/img/top/washi-bg.jpg");
-  background-size:cover;
-  background-attachment:fixed;
-  background-repeat:repeat;
-  font-family:"Noto Sans JP", system-ui, sans-serif;
-  color:#1f2a37; line-height:1.6;
-}
-header{
-  text-align:center;
-  padding:1.5rem 1rem;
-  background:var(--acc);
-  color:#fff;
-  font-size:1.25rem;
-  letter-spacing:0.05em;
-}
-.hero{
-  text-align:center;
-  padding:2rem 1rem 1rem;
-}
-.hero img{
-  width:100%;
-  max-width:360px;
-  height:auto;
-  border-radius:50%;
-  box-shadow:var(--shadow);
-  display:block;
-  margin:0 auto;
-}
-main{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:1.2rem;
-  max-width:var(--maxw);
-  margin:2rem auto 3rem;
-  padding:0 1rem;
-}
-.card{
-  background:var(--card);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:1.2rem;
-  text-align:center;
-  transition:transform .2s, box-shadow .2s;
-  border:1px solid var(--bd);
-}
-.card:hover{
-  transform:scale(1.03);
-  box-shadow:0 8px 22px rgba(0,0,0,0.1);
-}
-.card a{
-  display:block;
-  color:#1f2a37;
-  font-size:1rem;
-  text-decoration:none;
-  font-weight:500;
-}
-</style>
-</head><link rel="stylesheet" href="/fudotaki-manual/assets/css/theme.css">
+  <style>
+    :root{
+      --bg:#f6f7f8;
+      --card:#ffffff;
+      --acc:#0f766e;
+      --bd:#e5e7eb;
+      --radius:18px;
+      --maxw:980px;
+      --shadow:0 6px 18px rgba(0,0,0,0.08);
+    }
+    html,body{
+      margin:0;padding:0;
+      background:#f6f7f8 url("assets/img/top/washi-bg.jpg");
+      background-size:cover;
+      background-attachment:fixed;
+      background-repeat:repeat;
+      font-family:"Noto Sans JP", system-ui, sans-serif;
+      color:#1f2a37; line-height:1.6;
+    }
+    header{
+      text-align:center;
+      padding:1.5rem 1rem;
+      background:var(--acc);
+      color:#fff;
+      font-size:1.25rem;
+      letter-spacing:0.05em;
+    }
+    .hero{
+      text-align:center;
+      padding:2rem 1rem 1rem;
+    }
+    .hero img{
+      width:100%;
+      max-width:360px;
+      height:auto;
+      border-radius:50%;
+      box-shadow:var(--shadow);
+      display:block;
+      margin:0 auto;
+    }
+    main{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:1.2rem;
+      max-width:var(--maxw);
+      margin:2rem auto 3rem;
+      padding:0 1rem;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:1.2rem;
+      text-align:center;
+      transition:transform .2s, box-shadow .2s;
+      border:1px solid var(--bd);
+    }
+    .card:hover{
+      transform:scale(1.03);
+      box-shadow:0 8px 22px rgba(0,0,0,0.1);
+    }
+    .card a{
+      display:block;
+      color:#1f2a37;
+      font-size:1rem;
+      text-decoration:none;
+      font-weight:500;
+    }
+  </style>
+</head>
 <body>
 
 <header>すたっふ まにゅある</header>
