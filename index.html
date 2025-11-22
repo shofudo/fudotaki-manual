@@ -2,109 +2,243 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f766e">
   <title>きぬ川不動瀧 スタッフマニュアル</title>
+  
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="preload" as="image" href="assets/img/top/top2.jpg">
 
-  <!-- 共通CSS -->
-  <link rel="stylesheet" href="/fudotaki-manual/assets/css/theme.css">
+<style>
+  :root {
+    --bg: #f6f7f8;
+    --card: #ffffff;
+    --acc: #0f766e;     /* 基本アクセント（緑） */
+    --acc-morning: #d97706; /* 朝食（オレンジ） */
+    --acc-dinner: #1e3a8a;  /* 夕食（紺） */
+    --acc-work: #475569;    /* 業務（グレー） */
+    --bd: #e5e7eb;
+    --radius: 18px;
+    --maxw: 600px; /* スマホで見やすいよう少し幅を絞る */
+    --shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
 
-  <!-- ヒーロー画像先読み -->
-  <link rel="preload" as="image" href="/fudotaki-manual/assets/img/top/top2.jpg">
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg) url("assets/img/top/washi-bg.jpg");
+    background-size: cover; background-attachment: fixed;
+    font-family: "Noto Sans JP", system-ui, -apple-system, sans-serif;
+    color: #1f2a37; line-height: 1.6;
+  }
 
-  <style>
-    :root{
-      --bg:#f6f7f8;
-      --card:#ffffff;
-      --acc:#0f766e;
-      --bd:#e5e7eb;
-      --radius:18px;
-      --maxw:980px;
-      --shadow:0 6px 18px rgba(0,0,0,0.08);
-    }
-    html,body{
-      margin:0;padding:0;
-      background:#f6f7f8 url("assets/img/top/washi-bg.jpg");
-      background-size:cover;
-      background-attachment:fixed;
-      background-repeat:repeat;
-      font-family:"Noto Sans JP", system-ui, sans-serif;
-      color:#1f2a37; line-height:1.6;
-    }
-    header{
-      text-align:center;
-      padding:1.5rem 1rem;
-      background:var(--acc);
-      color:#fff;
-      font-size:1.25rem;
-      letter-spacing:0.05em;
-    }
-    .hero{
-      text-align:center;
-      padding:2rem 1rem 1rem;
-    }
-    .hero img{
-      width:100%;
-      max-width:360px;
-      height:auto;
-      border-radius:50%;
-      box-shadow:var(--shadow);
-      display:block;
-      margin:0 auto;
-    }
-    main{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:1.2rem;
-      max-width:var(--maxw);
-      margin:2rem auto 3rem;
-      padding:0 1rem;
-    }
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:1.2rem;
-      text-align:center;
-      transition:transform .2s, box-shadow .2s;
-      border:1px solid var(--bd);
-    }
-    .card:hover{
-      transform:scale(1.03);
-      box-shadow:0 8px 22px rgba(0,0,0,0.1);
-    }
-    .card a{
-      display:block;
-      color:#1f2a37;
-      font-size:1rem;
-      text-decoration:none;
-      font-weight:500;
-    }
-  </style>
+  /* ヘッダーエリア */
+  header {
+    position: relative;
+    background: var(--acc);
+    color: #fff;
+    padding: 2rem 1rem 4rem; /* 下に余白を持たせてカーブを作る */
+    text-align: center;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0,100,100,0.2);
+  }
+  .app-title {
+    font-size: 1.2rem; font-weight: 700; letter-spacing: 0.05em; margin: 0;
+  }
+  .greeting {
+    font-size: 0.9rem; opacity: 0.9; margin-top: 8px; font-weight: 500;
+  }
+
+  /* メインコンテンツ */
+  main {
+    max-width: var(--maxw);
+    margin: -3rem auto 3rem; /* ヘッダーに食い込ませる */
+    padding: 0 16px;
+    position: relative; z-index: 10;
+  }
+
+  /* メイン画像（アイコン的に） */
+  .hero-icon {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin: 0 auto 20px;
+    background: #fff;
+  }
+  .hero-icon img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+
+  /* お知らせバッジ（季節メニュー更新用） */
+  .notice-badge {
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    padding: 10px 14px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    display: flex; align-items: center; gap: 10px;
+    font-size: 0.9rem; color: var(--acc);
+    border: 1px solid var(--acc);
+  }
+  .notice-icon { font-size: 1.2em; }
+
+  /* グリッドレイアウト */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* カードデザイン */
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:active { transform: scale(0.98); }
+  
+  /* 左側のカラーバー */
+  .card::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px;
+    background: var(--bd);
+  }
+  
+  /* カテゴリ別の色設定 */
+  .type-dinner::before { background: var(--acc-dinner); }
+  .type-morning::before { background: var(--acc-morning); }
+  .type-work::before { background: var(--acc-work); }
+
+  .icon-box {
+    font-size: 28px;
+    margin-right: 14px;
+    width: 40px; text-align: center;
+  }
+  .text-box { flex: 1; }
+  .card-title {
+    display: block;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 2px;
+    color: #333;
+  }
+  .card-desc {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .arrow {
+    color: var(--bd); font-weight: bold;
+  }
+
+  /* フッター */
+  footer {
+    text-align: center; font-size: 0.75rem; color: var(--muted);
+    padding: 2rem 0;
+  }
+
+  @media (min-width: 480px) {
+    .grid { grid-template-columns: 1fr 1fr; }
+    /* PC/タブレットなら最初のカード（季節メニュー）は横長に強調 */
+    .card:first-child { grid-column: 1 / -1; background: linear-gradient(to right, #fff, #f0fdfa); }
+  }
+</style>
 </head>
 <body>
 
-<header>すたっふ まにゅある</header>
-
-<div class="hero">
-  <!-- ★ これに置き換え：取得優先度UP + キャッシュバスター -->
-  <img src="/fudotaki-manual/assets/img/top/top2.jpg?v=3"
-       alt="Fudotaki Manual"
-       fetchpriority="high"
-       decoding="async">
-</div>
+<header>
+  <div class="app-title">Fudotaki Manual</div>
+  <div class="greeting" id="greeting">おつかれさまです</div>
+</header>
 
 <main>
-  <div class="card"><a href="pages/season-dinner.html">🍱 きせつの ゆうしょく せつめい</a></div>
-  <div class="card"><a href="pages/dinner-guide.html">🍲 ゆうしょく あんない せつめい</a></div>
-  <div class="card"><a href="pages/breakfast-guide.html">☕ あさごはん あんない せつめい</a></div>
-  <div class="card"><a href="pages/wagyu-steak.html">🥩 わぎゅうかいせき・すてーきぷらん せつめい</a></div>
-  <div class="card"><a href="pages/checkin-out.html">🛎 ちぇっくいん・あうと せつめい</a></div>
+  <div class="hero-icon">
+    <img src="assets/img/top/top2.jpg?v=3" alt="Top Image">
+  </div>
+
+  <div class="notice-badge">
+    <span class="notice-icon">🍁</span>
+    <span><strong>New:</strong> 秋の献立に切り替わりました</span>
+  </div>
+
+  <div class="grid">
+    <a href="pages/season-dinner.html" class="card type-dinner">
+      <div class="icon-box">🍱</div>
+      <div class="text-box">
+        <span class="card-title">季節の献立</span>
+        <span class="card-desc">料理説明・提供手順・音声</span>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+
+    <a href="pages/wagyu-steak.html" class="card type-dinner">
+      <div class="icon-box">🥩</div>
+      <div class="text-box">
+        <span class="card-title">和牛・ステーキ</span>
+        <span class="card-desc">焼き加減・タレの説明</span>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+
+    <a href="pages/dinner-guide.html" class="card type-dinner">
+      <div class="icon-box">🍲</div>
+      <div class="text-box">
+        <span class="card-title">夕食のご案内</span>
+        <span class="card-desc">席案内・ドリンク・ご飯</span>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+
+    <a href="pages/breakfast-guide.html" class="card type-morning">
+      <div class="icon-box">☀️</div>
+      <div class="text-box">
+        <span class="card-title">朝食のご案内</span>
+        <span class="card-desc">お茶・配膳・おかわり</span>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+
+    <a href="pages/checkin-out.html" class="card type-work">
+      <div class="icon-box">🛎️</div>
+      <div class="text-box">
+        <span class="card-title">イン・アウト業務</span>
+        <span class="card-desc">お迎え・お見送り・荷物</span>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+  </div>
 </main>
 
+<footer>
+  &copy; Kinugawa Fudotaki Staff Manual
+</footer>
+
 <script>
-if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('./sw.js');
-}
+  // Service Worker 登録
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('./sw.js');
+  }
+
+  // 時間帯に合わせて挨拶を変えるスクリプト
+  const h = new Date().getHours();
+  const el = document.getElementById('greeting');
+  if (h >= 4 && h < 11) {
+    el.textContent = "おはようございます。今日も笑顔で！";
+  } else if (h >= 11 && h < 17) {
+    el.textContent = "こんにちは。午後も頑張りましょう。";
+  } else {
+    el.textContent = "おつかれさまです。体調に気をつけて。";
+  }
 </script>
 
 </body>
