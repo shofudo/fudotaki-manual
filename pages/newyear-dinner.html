@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ja">
+<head><link rel="stylesheet" href="/fudotaki-manual/assets/css/theme.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ねんまつねんし の こんだて</title>
+<style>
+  :root{
+    --bg:#f6f7f8; --card:#ffffff; --ink:#1f2a37; --muted:#64748b;
+    --acc:#0f766e; --acc-2:#155e75;
+    --bd:#e5e7eb; --radius:18px; --maxw:980px; --shadow:0 6px 18px rgba(0,0,0,.06);
+  }
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family:system-ui,-apple-system,"Segoe UI","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.65;}
+  /* ヘッダ */
+  header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#fff,rgba(255,255,255,.92));
+    backdrop-filter:saturate(160%) blur(6px);border-bottom:1px solid var(--bd)}
+  .wrap{max-width:var(--maxw);margin:auto;padding:10px 16px;display:flex;gap:12px;align-items:center}
+  .brand{font-weight:700;letter-spacing:.02em}
+  .btn{appearance:none;border:1px solid var(--bd);background:#fff;color:var(--ink);padding:10px 14px;border-radius:12px;
+    text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+  .btn:active{transform:translateY(1px)}
+  .btn-accent{border-color:transparent;background:linear-gradient(135deg,var(--acc),var(--acc-2));color:#fff}
+  .spacer{flex:1}
+
+  /* ヒーロー（TOP画像） */
+  .hero{position:relative;width:100%;max-width:var(--maxw);margin:14px auto 0;padding:0 16px}
+  .hero img{width:100%;height:auto;aspect-ratio:16/5;object-fit:cover;border-radius:18px;border:1px solid var(--bd);box-shadow:var(--shadow);display:block}
+  .hero-title{position:absolute;left:16px;bottom:16px;padding:10px 16px;border-radius:999px;font-weight:700;letter-spacing:.02em;
+    color:#fff;background:rgba(0,0,0,.35);backdrop-filter:blur(2px);font-size:clamp(16px,3.2vw,22px)}
+
+  /* メイン */
+  main{max-width:var(--maxw);margin:16px auto 100px;padding:0 16px}
+
+  /* 目次カード */
+  .toc-head{margin:24px 0 8px;font-size:18px;color:var(--acc-2);border-bottom:2px solid var(--bd);padding-bottom:4px;font-weight:bold;}
+  .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:0 0 24px}
+  .toc-card{background:var(--card);border:1px solid var(--bd);border-radius:16px;box-shadow:var(--shadow);
+    padding:14px;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+  .toc-icon{font-size:20px}
+  .toc-title{font-weight:600}
+  .muted{color:var(--muted);font-size:13px}
+
+  /* セクションカード */
+  .block{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);box-shadow:var(--shadow);margin:16px 0}
+  .head{display:flex;align-items:baseline;gap:10px;padding:14px 16px;border-bottom:1px solid var(--bd);background:linear-gradient(180deg,#fff,#fafafa)}
+  .head h2{margin:0;font-size:18px} /* フォントサイズ調整 */
+  .head small{color:var(--muted)}
+  .body{padding:14px 16px}
+  .body p{margin:.8em 0; font-size:1.05em;} /* 読みやすく少し大きく */
+  .audio-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:12px;background:#f3f4f6;padding:10px;border-radius:12px;}
+  audio{width:100%;height:32px;}
+  .nav{display:flex;gap:10px;justify-content:space-between;padding:12px 16px;border-top:1px solid var(--bd);background:#fafafa;border-radius:0 0 var(--radius) var(--radius)}
+  .nav a{flex:1;text-align:center;text-decoration:none;border:1px solid var(--bd);padding:12px;border-radius:12px;background:#fff;color:var(--ink)}
+  .nav a.next{background:linear-gradient(135deg,var(--acc),var(--acc-2));color:#fff;border-color:transparent}
+
+  /* 右下フローティング */
+  .fab-stack{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:50}
+  .fab{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--acc),var(--acc-2));
+    color:#fff;text-decoration:none;border:0;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.20)}
+  .fab.secondary{background:#111827}
+  .fab svg{width:22px;height:22px;display:block;fill:#fff}
+  .fab:active{transform:translateY(1px)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="btn" href="../index.html">← TOP</a>
+    <span class="brand">New Year Dinner</span>
+    <div class="spacer"></div>
+    <a class="btn btn-accent" href="#toc">もくじ</a>
+  </div>
+</header>
+
+<div class="hero">
+  <img src="../assets/img/season-dinner/top2.jpg" alt="New Year Dinner">
+  <div class="hero-title">ねんまつ ねんし とくべつ こんだて</div>
+</div>
+
+<main id="content">
+
+  <section class="block" id="toc">
+    <div class="head"><h2>もくじ (Menu)</h2></div>
+    <div class="body">
+      
+      <div class="toc-head">📅 おおみそか (12/31)</div>
+      <div class="toc-grid">
+        <a class="toc-card" href="#omi-1"><span class="toc-icon">🐡</span><div><div class="toc-title">とらふぐ すいもの</div></div></a>
+        <a class="toc-card" href="#omi-2"><span class="toc-icon">🥩</span><div><div class="toc-title">わぎゅう たたき</div></div></a>
+        <a class="toc-card" href="#omi-3"><span class="toc-icon">🍠</span><div><div class="toc-title">みぞれ むし</div></div></a>
+        <a class="toc-card" href="#omi-4"><span class="toc-icon">🍤</span><div><div class="toc-title">わぎゅう あげもの</div></div></a>
+        <a class="toc-card" href="#omi-5"><span class="toc-icon">🍚</span><div><div class="toc-title">あゆそば ごはん</div></div></a>
+        <a class="toc-card" href="#omi-6"><span class="toc-icon">🍨</span><div><div class="toc-title">しお アイス</div></div></a>
+      </div>
+
+      <div class="toc-head">🎍 さんがにち (1/3)</div>
+      <div class="toc-grid">
+        <a class="toc-card" href="#san-1"><span class="toc-icon">🐚</span><div><div class="toc-title">はまぐり すいもの</div></div></a>
+        <a class="toc-card" href="#san-2"><span class="toc-icon">🥗</span><div><div class="toc-title">かさいもり</div></div></a>
+        <a class="toc-card" href="#san-3"><span class="toc-icon">🥩</span><div><div class="toc-title">わぎゅう やきもの</div></div></a>
+        <a class="toc-card" href="#san-4"><span class="toc-icon">🍱</span><div><div class="toc-title">さんしゅ もり</div></div></a>
+        <a class="toc-card" href="#san-5"><span class="toc-icon">🍲</span><div><div class="toc-title">わぎゅう あわに</div></div></a>
+        <a class="toc-card" href="#san-6"><span class="toc-icon">🍚</span><div><div class="toc-title">ごもく ごはん</div></div></a>
+        <a class="toc-card" href="#san-7"><span class="toc-icon">🍓</span><div><div class="toc-title">いちご と ゆりね</div></div></a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="block" id="omi-1">
+    <div class="head"><h2>[12/31] とらふぐ の おすいもの</h2></div>
+    <div class="body">
+      <p>こちらは、 とらふぐ を つかった おすいもの で ございます。</p>
+      <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/omisoka-suimono.mp3" type="audio/mpeg"></audio></div>
+    </div>
+    <div class="nav"><a href="#toc">もくじ へ</a><a class="next" href="#omi-2">つぎ へ</a></div>
+  </section>
+
+  <section class="block" id="omi-2">
+    <div class="head"><h2>[12/31] とちぎ わぎゅう の たたき</h2></div>
+    <div class="body">
+      <p>こちらは、 とちぎ わぎゅう の たたき で ございます。</p>
+      <p>たれ と やくみ を おこのみ で あわせて、 おめしあがり ください。</p>
+      <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/omisoka-tataki.mp3" type="audio/mpeg"></audio></div>
+    </div>
+    <div class="nav"><a href="#omi-1">まえ へ</a><a class="next" href="#omi-3">つぎ へ</a></div>
+  </section>
+
+  <section class="block" id="omi-3">
+    <div class="head"><h2>[12/31] とちぎ ゆめポーク の みぞれむし</h2></div>
+    <div class="body">
+      <p>こちらは、 とちぎ ゆめポーク を つかった みぞれむし で ございます。</p>
+      <p>おはし でも おめしあがり いただけます が、 スプーン も ごようい して おります ので、 たべやすい ほう で おたのしみ ください。</p>
+      <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/omisoka-mushimono.mp3" type="audio/mpeg"></audio></div>
+    </div>
+    <div class="nav"><a href="#omi-2">まえ へ</a><a class="next" href="#omi-4">つぎ へ</a></div>
+  </section>
+
+  <section class="block" id="omi-4">
+    <div class="head"><h2>[12/31] とちぎ わぎゅう の あげもの</h2></div>
+    <div class="body">
+      <p>こちらは、 とちぎ わぎゅう を つかった あげもの で ございます。</p>
+      <p>もじお（しお） と ウスターソース を ごようい して おります ので、 おこのみ で おめしあがり ください。</p>
+      <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/omisoka-agemono.mp3" type="audio/mpeg"></audio></div>
+    </div>
+    <div class="nav"><a href="#omi-3">まえ へ</a><a class="next" href="#omi-5">つぎ へ</a></div>
+  </section>
+
+  <section class="block" id="omi-5">
+    <div class="head"><h2>[12/31] あゆ しょうゆ そば と いくら の ごはん</h2></div>
+    <div class="body">
+      <p>こちらは、 あゆ しょうゆ そば と、 いくら の ごはん で ございます。</p>
+      <p>おかわり も ごようい して おります ので、 よろしければ おこえがけ ください。</p>
+      <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/omisoka-gohan.mp3" type="audio/mpeg"></audio></div>
+    </div>
+    <div class="nav"><a href="#omi-4">まえ へ</a><a class="next" href="#omi-6">つぎ へ</a></div>
+  </section>
+
+  <section class="block" id="omi-6">
+    <div class="head"><h2>[12/31] しお と ぎゅうにゅう の アイス</h2></div>
+    <div class="body">
+      <p>こちらは、 しお と ぎゅうにゅう の アイス に なります。</p>
+      <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/omisoka-dessert.mp3" type="audio/mpeg"></audio></div>
+    </div>
+    <div class="nav"><a href="#omi-5">まえ へ</a><a class="next" href="#san-1">つぎ (1/3) へ</a></div>
+  </section>
+
+
+  <section class="block" id="san-1">
+    <div class="head"><h2>[1/3] はまぐり の おすいもの</h2></div>
+    <div class="body">
+      <p>こちらは、 はまぐり の おすいもの で ございます。</p>
+      <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/sanganichi-suimono.mp3" type="audio/mpeg"></audio></div>
+    </div>
+    <div class="nav"><a href="#omi-6">まえ へ</a><a class="next" href="#san-2">つぎ へ</a></div>
+  </section>
+
+  <section class="block" id="san-2">
+    <div class="head"><h2>[1/3] かさいもり</h2></div>
+    <div class="body">
+      <p>こちらは、 かさいもり で ございます。</p>
+      <p>ちゅうおう に くみあげ ゆば を、 まわり に おさかな と おやさい を そえて おります。</p>
+      <p>たれ は、 もろみ しょうゆ と みそず を ごようい して おります。</p>
+      <p>ゆば は しょうゆ で おめしあがり いただく の が おすすめ です が、 ほかの もの は おこのみ で おめしあがり ください。</p>
+      <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/sanganichi-kasaimori.mp3" type="audio/mpeg"></audio></div>
+    </div>
+    <div class="nav"><a href="#san-1">まえ へ</a><a class="next" href="#san-3">つぎ へ</a></div>
+  </section>
+
+  <section class="block" id="san-3">
+    <div class="head"><h2>[1/3] とちぎ わぎゅう と ばれいしょ の やきもの</h2></div>
+    <div class="body">
+      <p>こちらは、 とちぎ わぎゅう と ばれいしょ（じゃがいも） を つかった やきもの で ございます。</p>
+      <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/sanganichi-yakimono.mp3" type="audio/mpeg"></audio></div>
+    </div>
+    <div class="nav"><a href="#san-2">まえ へ</a><a class="next" href="#san-4">つぎ へ</a></div>
+  </section>
+
+  <section class="block" id="san-4">
+    <div class="head"><h2>[1/3] さんしゅ もり</h2></div>
+    <div class="body">
+      <p>こちらは、 さんしな の あいざかな で ございます。</p>
+      <p>ブロッコリー と カリフラワー の ひろうす、 ごまどうふ の フカヒレ あんかけ、 かぶ の ごまあえ で ございます。</p>
+      <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/sanganichi-sansyu.mp3" type="audio/mpeg"></audio></div>
+    </div>
+    <div class="nav"><a href="#san-3">まえ へ</a><a class="next" href="#san-5">つぎ へ</a></div>
+  </section>
+
+  <section class="block" id="san-5">
+    <div class="head"><h2>[1/3] とちぎ わぎゅう の あわに</h2></div>
+    <div class="body">
+      <p>こちらは、 とちぎ わぎゅう の あわに で ございます。</p>
+      <p>そのまま でも おめしあがり いただけます が、 おこのみ で ごまだれ に つけて おめしあがり ください。</p>
+      <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/sanganichi-nimono.mp3" type="audio/mpeg"></audio></div>
+    </div>
+    <div class="nav"><a href="#san-4">まえ へ</a><a class="next" href="#san-6">つぎ へ</a></div>
+  </section>
+
+  <section class="block" id="san-6">
+    <div class="head"><h2>[1/3] ごもく ごはん</h2></div>
+    <div class="body">
+      <p>こちらは、 ごもく ごはん で ございます。</p>
+      <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/sanganichi-gohan.mp3" type="audio/mpeg"></audio></div>
+    </div>
+    <div class="nav"><a href="#san-5">まえ へ</a><a class="next" href="#san-7">つぎ へ</a></div>
+  </section>
+
+  <section class="block" id="san-7">
+    <div class="head"><h2>[1/3] いちご と ゆりね の デザート</h2></div>
+    <div class="body">
+      <p>こちらは、 とちぎ けんさん の いちご と あまざけ を つかった シャーベット と、</p>
+      <p>うえ に じゅくせい みりん を よせた もの を そえた、 ゆりね の プリン で ございます。</p>
+      <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/sanganichi-dessert.mp3" type="audio/mpeg"></audio></div>
+    </div>
+    <div class="nav"><a href="#san-6">まえ へ</a><a class="next" href="#toc">もくじ へ</a></div>
+  </section>
+
+</main>
+
+<div class="fab-stack">
+  <div class="fab-wrap">
+    <button class="fab" id="btn-top"><svg viewBox="0 0 24 24"><path d="M12 5l7 7-1.4 1.4L13 8.8V20h-2V8.8L6.4 13.4 5 12l7-7z"/></svg></button>
+  </div>
+  <div class="fab-wrap">
+    <button class="fab secondary" id="btn-home"><svg viewBox="0 0 24 24"><path d="M12 3l9 8-1.5 1.3L19 11.5V20a1 1 0 0 1-1 1h-5v-6H11v6H6a1 1 0 0 1-1-1v-8.5L4.5 12.3 3 11l9-8z"/></svg></button>
+  </div>
+</div>
+
+<script>
+  // 上へ
+  document.getElementById('btn-top')?.addEventListener('click', e=>{
+    e.preventDefault();
+    document.getElementById('toc').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  // ホーム
+  const HOME = location.hostname.endsWith('github.io') ? '/fudotaki-manual/' : '/';
+  document.getElementById('btn-home')?.addEventListener('click', e=>{
+    e.preventDefault(); location.href = HOME;
+  });
+  // スワイプ
+  let sx=null, sy=null, t0=0;
+  addEventListener('touchstart', e=>{const t=e.changedTouches[0]; sx=t.clientX; sy=t.clientY; t0=Date.now();},{passive:true});
+  addEventListener('touchend', e=>{
+    if(sx===null) return;
+    const t=e.changedTouches[0], dx=t.clientX-sx, dy=t.clientY-sy, dt=Date.now()-t0; sx=sy=null;
+    if(Math.abs(dx)>60 && Math.abs(dy)<40 && dt<500){
+      const blocks=[...document.querySelectorAll('.block')];
+      const center=scrollY+innerHeight/2;
+      const idx=blocks.findIndex(el=>{const r=el.getBoundingClientRect();const t=r.top+scrollY, m=t+r.height/2;return Math.abs(m-center)<r.height/2});
+      const next=dx<0?Math.min(blocks.length-1,idx+1):Math.max(0,idx-1);
+      const el=blocks[next]; if(el){ el.scrollIntoView({behavior:'smooth',block:'start'}); }
+    }
+  },{passive:true});
+</script>
+</body>
+</html>
