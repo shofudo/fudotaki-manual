@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ja">
 <head><link rel="stylesheet" href="/fudotaki-manual/assets/css/theme.css">
 <meta charset="utf-8" />
@@ -6,62 +6,39 @@
 <title>breakfast あさごはん</title>
 
 <style>
-  :root{
-    --bg:#f6f7f8;--card:#fff;--ink:#1f2a37;--muted:#64748b;
-    --bd:#e5e7eb;--radius:18px;--maxw:980px;--shadow:0 6px 18px rgba(0,0,0,.10);
-    --accent:#0f766e;--accent-2:#155e75;
-  }
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
-    font-family:system-ui,-apple-system,"Segoe UI","Noto Sans JP",sans-serif;line-height:1.7;scroll-behavior:smooth;}
-  /* --- ヘッダー --- */
-  header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#fff,rgba(255,255,255,.92));
-    backdrop-filter:saturate(180%) blur(6px);border-bottom:1px solid var(--bd);}
-  header .in{max-width:var(--maxw);margin:auto;display:flex;gap:12px;align-items:center;padding:10px 14px;}
+  :root{--bg:#f4efe8;--card:rgba(255,251,245,.9);--ink:#221c18;--muted:#756a62;--bd:rgba(108,88,69,.14);--radius:24px;--maxw:1040px;--shadow:0 24px 60px rgba(34,28,24,.10);--accent:#6c5845;--accent-2:#3f4d61;}
+  html,body{margin:0;padding:0;background:radial-gradient(circle at top, rgba(255,255,255,.64), transparent 42%),linear-gradient(180deg,#f7f2eb,#efe7dd);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75;scroll-behavior:smooth;}
+  header{position:sticky;top:0;z-index:20;background:rgba(248,243,236,.82);backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid var(--bd);}
+  header .in{max-width:var(--maxw);margin:auto;display:flex;gap:12px;align-items:center;padding:12px 18px;}
   header a,header .brand{color:var(--accent-2);text-decoration:none;font-weight:600}
   header .brand{margin-inline:auto;color:var(--ink)}
-  header .btn{padding:6px 10px;border:1px solid var(--bd);border-radius:10px;background:#fff}
-
-  /* --- ヒーロー --- */
-  .hero{position:relative;width:100%;max-width:var(--maxw);margin:14px auto 0;}
-  .hero img{width:100%;height:auto;aspect-ratio:16/5;object-fit:cover;border-radius:var(--radius);
-    border:1px solid var(--bd);box-shadow:var(--shadow);display:block;}
-  .hero-title{position:absolute;left:24px;bottom:24px;padding:10px 16px;border-radius:999px;
-    font-weight:700;letter-spacing:.02em;color:#fff;background:rgba(0,0,0,.35);
-    backdrop-filter:blur(2px);font-size:clamp(16px,3.2vw,22px);}
-
-  /* --- ブロック --- */
-  .block{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);
-    box-shadow:var(--shadow);margin:20px auto;padding:20px;}
-  .head h2{margin:6px 6px 12px;font-size:18px;}
+  header .btn{padding:8px 12px;border:1px solid var(--bd);border-radius:999px;background:rgba(255,251,245,.92)}
+  .hero{position:relative;width:100%;max-width:var(--maxw);margin:20px auto 0;padding:0 18px;box-sizing:border-box;}
+  .hero img{width:100%;height:auto;aspect-ratio:16/5;object-fit:cover;border-radius:var(--radius);border:1px solid var(--bd);box-shadow:var(--shadow);display:block;filter:saturate(.88) contrast(1.02);}
+  .hero-title{position:absolute;left:24px;bottom:24px;padding:10px 16px;border-radius:999px;font-weight:700;letter-spacing:.02em;color:#fff;background:rgba(24,20,18,.42);backdrop-filter:blur(12px);font-size:clamp(16px,3.2vw,22px);}
+  .block{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);box-shadow:var(--shadow);margin:20px auto;padding:22px;backdrop-filter:blur(16px);}
+  .head h2{margin:6px 6px 12px;font-size:18px;display:flex;align-items:center;gap:10px;}
   .note{font-size:13px;color:#6b7280;margin-top:4px;}
-
-  /* --- 目次 --- */
-  .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;padding:8px;}
-  .toc-card{display:flex;align-items:center;gap:8px;padding:12px 14px;border:1px solid var(--bd);
-    border-radius:14px;background:#fff;text-decoration:none;color:#111;}
-  .toc-card:hover{outline:2px solid #d1fae5;}
+  .mono-icon{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;border-radius:12px;background:rgba(63,77,97,.1);color:var(--accent-2)}
+  .mono-icon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .toc-icon{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;border-radius:12px;background:rgba(63,77,97,.1);color:var(--accent-2);flex:0 0 auto}
+  .toc-icon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;padding:8px;}
+  .toc-card{display:flex;align-items:center;gap:8px;padding:12px 14px;border:1px solid var(--bd);border-radius:18px;background:rgba(255,255,255,.84);text-decoration:none;color:#111;}
+  .toc-card:hover{outline:2px solid rgba(63,77,97,.14);}
   .muted{color:var(--muted);font-size:12px}
-
-  /* --- 画像 --- */
   .steps{display:flex;justify-content:center;}
   .steps_img{width:100%;max-width:900px;border-radius:12px;border:1px solid var(--bd);box-shadow:var(--shadow);display:block;margin:0 auto;}
-
-  /* --- 音声 --- */
   audio{width:100%;margin:10px 0;}
-
-  /* --- 右下ボタン --- */
   .fab-stack{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:50}
-  .fab{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
-    background:var(--accent);color:#fff;text-decoration:none;border:0;cursor:pointer;
-    box-shadow:0 8px 22px rgba(0,0,0,.20);}
+  .fab{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#544337,var(--accent-2));color:#fff;text-decoration:none;border:0;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.20);}
   .fab svg{width:22px;height:22px;fill:#fff}
   .fab:active{transform:translateY(1px)}
-  .tooltip{position:absolute;right:58px;background:#111;color:#fff;font-size:12px;
-    padding:6px 8px;border-radius:8px;opacity:0;pointer-events:none;transition:.15s}
+  .tooltip{position:absolute;right:58px;background:#111;color:#fff;font-size:12px;padding:6px 8px;border-radius:8px;opacity:0;pointer-events:none;transition:.15s}
   .fab-wrap{position:relative}
   .fab-wrap:hover .tooltip{opacity:.9}
 </style>
-</head><link rel="stylesheet" href="/fudotaki-manual/assets/css/theme.css">
+</head>
 
 
 <body>
@@ -85,15 +62,15 @@
 
   <!-- 目次 -->
   <section class="block" id="toc">
-    <div class="head"><h2>目次</h2></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 6h11"/><path d="M8 12h11"/><path d="M8 18h11"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg></span>目次</h2></div>
     <div class="toc-grid">
-      <a class="toc-card" href="#title">📄 ちょうしょくていきょう／せつめい</a>
-      <a class="toc-card" href="#greeting">👋 1. おきゃくさまを　せきに　あんない</a>
-      <a class="toc-card" href="#tea">🍵 2. せんちゃを　いれて　ていきょうする</a>
-      <a class="toc-card" href="#set">🍚 3. ごはん、みそしる、やきざかなを　ていきょうする</a>
-      <a class="toc-card" href="#refill">🍽️ 4. ごはんを　ていきょうして10-15ぷんごに　おかわりをきく</a>
-      <a class="toc-card" href="#fruit">🍓 5. フルーツをていきょうする</a>
-      <a class="toc-card" href="#donabe">🍲 SPちょうしょく　ドナベごはんについて</a>
+      <a class="toc-card" href="#title"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4h10"/><path d="M7 8h10"/><path d="M7 12h10"/><path d="M7 16h7"/></svg></span><span>ちょうしょくていきょう／せつめい</span></a>
+      <a class="toc-card" href="#greeting"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19h16"/><path d="M6 19v-7l6-4 6 4v7"/><path d="M10 19v-4h4v4"/></svg></span><span>1. おきゃくさまを　せきに　あんない</span></a>
+      <a class="toc-card" href="#tea"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14h16"/><path d="M6 14a6 6 0 0 1 12 0"/><path d="M7 18h10"/></svg></span><span>2. せんちゃを　いれて　ていきょうする</span></a>
+      <a class="toc-card" href="#set"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14h16"/><path d="M6 14a6 6 0 0 1 12 0"/><path d="M7 18h10"/></svg></span><span>3. ごはん、みそしる、やきざかなを　ていきょうする</span></a>
+      <a class="toc-card" href="#refill"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8h14"/><path d="M7 8v8a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V8"/><path d="M9.5 5.5v2.5"/><path d="M14.5 5.5v2.5"/></svg></span><span>4. ごはんを　ていきょうして10-15ぷんごに　おかわりをきく</span></a>
+      <a class="toc-card" href="#fruit"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 7c3 0 6 2.4 6 5.5S15 18 12 18s-6-2.4-6-5.5S9 7 12 7z"/><path d="M12 7c0-2 1.2-3 3-3"/></svg></span><span>5. フルーツをていきょうする</span></a>
+      <a class="toc-card" href="#donabe"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14h16"/><path d="M6 14a6 6 0 0 1 12 0"/><path d="M7 18h10"/></svg></span><span>SPちょうしょく　ドナベごはんについて</span></a>
     </div>
   </section>
 
@@ -196,3 +173,5 @@
 </script>
 </body>
 </html>
+
+

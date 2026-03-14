@@ -1,51 +1,36 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ja">
 <head><link rel="stylesheet" href="/fudotaki-manual/assets/css/theme.css">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>checkin-out ちぇっくいん・ちぇっくあうと</title>
 <style>
-  :root{
-    --bg:#f6f7f8; --card:#ffffff; --ink:#1f2a37; --muted:#64748b;
-    --acc:#0f766e; --acc-2:#155e75; --bd:#e5e7eb; --radius:18px; --maxw:980px;
-    --shadow:0 6px 18px rgba(0,0,0,.06);
-  }
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
-    font-family:system-ui,-apple-system,"Segoe UI","Noto Sans JP","Yu Gothic",sans-serif;
-    line-height:1.9; scroll-behavior:smooth; letter-spacing:.02em;}
-  /* ヘッダー */
-  header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#fff,rgba(255,255,255,.92));
-    backdrop-filter:saturate(180%) blur(6px); border-bottom:1px solid var(--bd);}
-  header .in{max-width:var(--maxw);margin:auto;display:flex;gap:12px;align-items:center;padding:10px 14px;}
+  :root{--bg:#f4efe8; --card:rgba(255,251,245,.9); --ink:#221c18; --muted:#756a62; --acc:#6c5845; --acc-2:#3f4d61; --bd:rgba(108,88,69,.14); --radius:24px; --maxw:1040px; --shadow:0 24px 60px rgba(34,28,24,.10);}
+  html,body{margin:0;padding:0;background:radial-gradient(circle at top, rgba(255,255,255,.64), transparent 42%),linear-gradient(180deg,#f7f2eb,#efe7dd);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.9; scroll-behavior:smooth; letter-spacing:.02em;}
+  header{position:sticky;top:0;z-index:20;background:rgba(248,243,236,.82);backdrop-filter:saturate(180%) blur(16px); border-bottom:1px solid var(--bd);}
+  header .in{max-width:var(--maxw);margin:auto;display:flex;gap:12px;align-items:center;padding:12px 18px;}
   header a, header .brand{color:var(--acc-2);text-decoration:none;font-weight:600}
   header .brand{margin-inline:auto;color:var(--ink)}
-  header .btn{padding:6px 10px;border:1px solid var(--bd);border-radius:10px;background:#fff}
-  /* ヒーロー */
-  .hero{position:relative;max-width:var(--maxw);margin:12px auto 0;overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow);}
-  .hero img{display:block;width:100%;height:34vh;object-fit:cover;object-position:center;border:1px solid var(--bd);}
-  .hero .hero-title{position:absolute;left:16px;bottom:14px;color:#fff;background:rgba(0,0,0,.35);
-    padding:8px 12px;border-radius:12px;font-weight:700;letter-spacing:.03em}
-  main{max-width:var(--maxw);margin:14px auto 40px;padding:0 12px}
-  /* ブロック */
-  .block{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);box-shadow:var(--shadow);
-    margin:16px 0;overflow:hidden}
-  .block .head{display:flex;align-items:center;gap:8px;padding:14px 14px;border-bottom:1px solid var(--bd);background:#fff}
+  header .btn{padding:8px 12px;border:1px solid var(--bd);border-radius:999px;background:rgba(255,251,245,.92)}
+  .hero{position:relative;max-width:var(--maxw);margin:20px auto 0;overflow:hidden;border-radius:32px;box-shadow:var(--shadow);}
+  .hero img{display:block;width:100%;height:34vh;object-fit:cover;object-position:center;border:1px solid var(--bd);filter:saturate(.88) contrast(1.02);}
+  .hero .hero-title{position:absolute;left:20px;bottom:18px;color:#fff;background:rgba(24,20,18,.42);padding:10px 16px;border-radius:999px;font-weight:700;letter-spacing:.03em;backdrop-filter:blur(12px)}
+  main{max-width:var(--maxw);margin:18px auto 40px;padding:0 18px}
+  .block{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);box-shadow:var(--shadow);margin:18px 0;overflow:hidden;backdrop-filter:blur(16px)}
+  .block .head{display:flex;align-items:center;gap:8px;padding:16px 18px;border-bottom:1px solid var(--bd);background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(247,240,232,.88))}
   .block .head h2{margin:0;font-size:18px}
-  .block .body{padding:16px}
+  .block .head h2{display:flex;align-items:center;gap:10px}
+  .block .body{padding:18px}
   .block p{margin:0 0 12px}
-  /* 目次 */
-  #toc .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-  #toc a{display:block;border:1px solid var(--bd);background:#fff;border-radius:14px;padding:12px;text-decoration:none;color:var(--ink)}
+  .mono-icon{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;border-radius:12px;background:rgba(63,77,97,.1);color:var(--acc-2)}
+  .mono-icon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  #toc .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  #toc a{display:block;border:1px solid var(--bd);background:rgba(255,255,255,.84);border-radius:18px;padding:14px;text-decoration:none;color:var(--ink)}
   #toc a b{display:block;color:var(--acc-2);margin-bottom:4px}
-  /* 画像 */
   .img-full{display:block;width:100%;height:auto;border:1px solid var(--bd);border-radius:12px;box-shadow:var(--shadow)}
-  /* 区切り */
-  .divider{margin:22px 0; height:1px; background:linear-gradient(90deg,transparent,#dbe0e6,transparent)}
-  /* 右下 丸ボタン（上＝トップへ ／ 下＝ホームへ） */
+  .divider{margin:22px 0; height:1px; background:linear-gradient(90deg,transparent,rgba(108,88,69,.22),transparent)}
   .fab-wrap{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;flex-direction:column;gap:10px}
-  .fab{width:52px;height:52px;border-radius:999px;border:1px solid var(--bd);background:#fff;box-shadow:var(--shadow);
-       display:grid;place-items:center;text-decoration:none;color:#111;opacity:0;transform:translateY(10px);
-       transition:opacity .2s ease, transform .2s ease}
+  .fab{width:52px;height:52px;border-radius:999px;border:1px solid var(--bd);background:rgba(255,251,245,.94);box-shadow:var(--shadow);display:grid;place-items:center;text-decoration:none;color:#111;opacity:0;transform:translateY(10px);transition:opacity .2s ease, transform .2s ease}
   .fab svg{width:22px;height:22px}
   .fab.show{opacity:1;transform:none}
   .fab:active{transform:scale(.97)}
@@ -73,7 +58,7 @@
 
 <!-- 目次 -->
 <section class="block" id="toc">
-  <div class="head"><h2>📑 もくじ</h2></div>
+  <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 6h11"/><path d="M8 12h11"/><path d="M8 18h11"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg></span>もくじ</h2></div>
   <div class="body">
     <div class="cards">
       <a href="#ci-1"><b>1. しゅっきんじのじゅんび</b></a>
@@ -356,3 +341,4 @@ if('serviceWorker' in navigator){ navigator.serviceWorker.register('../sw.js'); 
 </script>
 </body>
 </html>
+

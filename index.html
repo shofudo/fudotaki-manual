@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
@@ -11,87 +11,130 @@
 
 <style>
   :root {
-    --bg: #f6f7f8;
-    --card: #ffffff;
-    --acc: #0f766e;     /* 基本アクセント（緑） */
-    --acc-morning: #d97706; /* 朝食（オレンジ） */
-    --acc-dinner: #1e3a8a;  /* 夕食（紺） */
-    --acc-work: #475569;    /* 業務（グレー） */
-    --bd: #e5e7eb;
-    --radius: 18px;
-    --maxw: 600px; /* スマホで見やすいよう少し幅を絞る */
-    --shadow: 0 4px 20px rgba(0,0,0,0.06);
+    --bg: #f3efe7;
+    --bg-soft: rgba(255, 252, 247, 0.88);
+    --card: rgba(255, 251, 245, 0.9);
+    --ink: #201a17;
+    --muted: #6f655d;
+    --acc: #6f5a47;
+    --acc-morning: #9b6b35;
+    --acc-dinner: #45556f;
+    --acc-work: #56615f;
+    --bd: rgba(111, 90, 71, 0.16);
+    --radius: 24px;
+    --maxw: 720px;
+    --shadow: 0 24px 60px rgba(38, 28, 21, 0.12);
   }
 
   html, body {
-    margin: 0; padding: 0;
-    background: var(--bg) url("assets/img/top/washi-bg.jpg");
-    background-size: cover; background-attachment: fixed;
-    font-family: "Noto Sans JP", system-ui, -apple-system, sans-serif;
-    color: #1f2a37; line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background:
+      linear-gradient(180deg, rgba(24, 20, 18, 0.28), rgba(24, 20, 18, 0.08)),
+      radial-gradient(circle at top, rgba(255, 255, 255, 0.7), transparent 48%),
+      var(--bg) url("assets/img/top/washi-bg.jpg");
+    background-size: auto, auto, cover;
+    background-attachment: fixed;
+    font-family: "Hiragino Sans", "Noto Sans JP", system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    line-height: 1.7;
   }
 
-  /* ヘッダーエリア */
   header {
     position: relative;
-    background: var(--acc);
+    background:
+      linear-gradient(135deg, rgba(29, 24, 21, 0.9), rgba(74, 57, 46, 0.78)),
+      url("assets/img/top/top2.jpg") center/cover;
     color: #fff;
-    padding: 2rem 1rem 4rem; /* 下に余白を持たせてカーブを作る */
+    padding: 3rem 1rem 5.5rem;
     text-align: center;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0,100,100,0.2);
-  }
-  .app-title {
-    font-size: 1.2rem; font-weight: 700; letter-spacing: 0.05em; margin: 0;
-  }
-  .greeting {
-    font-size: 0.9rem; opacity: 0.9; margin-top: 8px; font-weight: 500;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 22px 50px rgba(24, 19, 17, 0.2);
   }
 
-  /* メインコンテンツ */
+  .app-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .greeting {
+    font-size: 0.92rem;
+    opacity: 0.84;
+    margin-top: 12px;
+    font-weight: 500;
+  }
+
   main {
     max-width: var(--maxw);
-    margin: -3rem auto 3rem; /* ヘッダーに食い込ませる */
-    padding: 0 16px;
-    position: relative; z-index: 10;
+    margin: -4rem auto 3.5rem;
+    padding: 0 18px;
+    position: relative;
+    z-index: 10;
   }
 
-  /* メイン画像（アイコン的に） */
   .hero-icon {
-    width: 100px; height: 100px;
+    width: 116px;
+    height: 116px;
     border-radius: 50%;
-    border: 4px solid #fff;
+    border: 5px solid rgba(255, 250, 243, 0.95);
     box-shadow: var(--shadow);
     overflow: hidden;
-    margin: 0 auto 20px;
+    margin: 0 auto 24px;
     background: #fff;
   }
+
   .hero-icon img {
-    width: 100%; height: 100%; object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
-  /* お知らせバッジ（季節メニュー更新用） */
   .notice-badge {
-    background: rgba(255,255,255,0.95);
-    border-radius: 12px;
-    padding: 10px 14px;
-    margin-bottom: 20px;
+    background: var(--bg-soft);
+    border-radius: 18px;
+    padding: 14px 16px;
+    margin-bottom: 24px;
     box-shadow: var(--shadow);
-    display: flex; align-items: center; gap: 10px;
-    font-size: 0.9rem; color: var(--acc);
-    border: 1px solid var(--acc);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.92rem;
+    color: var(--acc);
+    border: 1px solid var(--bd);
+    backdrop-filter: blur(14px);
   }
-  .notice-icon { font-size: 1.2em; }
 
-  /* グリッドレイアウト */
+  .notice-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    background: rgba(69, 85, 111, 0.12);
+    color: var(--acc-dinner);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+  .notice-icon svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+  }
+
   .grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 16px;
   }
 
-  /* カードデザイン */
   .card {
     background: var(--card);
     border-radius: var(--radius);
@@ -100,57 +143,115 @@
     color: inherit;
     display: flex;
     align-items: center;
-    padding: 16px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: 1px solid transparent;
+    padding: 18px 18px 18px 22px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    border: 1px solid var(--bd);
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(18px);
   }
-  .card:active { transform: scale(0.98); }
-  
-  /* 左側のカラーバー */
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 30px 60px rgba(38, 28, 21, 0.14);
+    border-color: rgba(111, 90, 71, 0.28);
+  }
+
+  .card:active {
+    transform: scale(0.99);
+  }
+
   .card::before {
-    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
     background: var(--bd);
   }
-  
-  /* カテゴリ別の色設定 */
+
+  .card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.32), transparent 50%);
+    pointer-events: none;
+  }
+
   .type-dinner::before { background: var(--acc-dinner); }
   .type-morning::before { background: var(--acc-morning); }
   .type-work::before { background: var(--acc-work); }
 
   .icon-box {
-    font-size: 28px;
-    margin-right: 14px;
-    width: 40px; text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 44px;
+    padding: 0;
+    border-radius: 14px;
+    background: rgba(69, 85, 111, 0.1);
+    color: var(--acc-dinner);
+    margin-right: 16px;
+    opacity: 0.88;
   }
-  .text-box { flex: 1; }
+  .icon-box svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .type-morning .icon-box {
+    background: rgba(155, 107, 53, 0.12);
+    color: var(--acc-morning);
+  }
+  .type-work .icon-box {
+    background: rgba(86, 97, 95, 0.12);
+    color: var(--acc-work);
+  }
+
+  .text-box {
+    flex: 1;
+  }
+
   .card-title {
     display: block;
     font-weight: 700;
-    font-size: 1.05rem;
-    margin-bottom: 2px;
-    color: #333;
+    font-size: 1.02rem;
+    margin-bottom: 4px;
+    color: var(--ink);
   }
+
   .card-desc {
     display: block;
     font-size: 0.8rem;
     color: var(--muted);
-  }
-  .arrow {
-    color: var(--bd); font-weight: bold;
+    letter-spacing: 0.02em;
   }
 
-  /* フッター */
+  .arrow {
+    color: rgba(111, 90, 71, 0.45);
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
   footer {
-    text-align: center; font-size: 0.75rem; color: var(--muted);
-    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(255, 250, 243, 0.72);
+    padding: 1.4rem 0 2rem;
   }
 
   @media (min-width: 480px) {
     .grid { grid-template-columns: 1fr 1fr; }
-    /* PC/タブレットなら最初のカード（季節メニュー）は横長に強調 */
-    .card:first-child { grid-column: 1 / -1; background: linear-gradient(to right, #fff, #f0fdfa); }
+    .card:first-child {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(255, 252, 247, 0.98), rgba(241, 235, 226, 0.92));
+    }
   }
 </style>
 </head>
@@ -167,7 +268,11 @@
   </div>
 
   <div class="notice-badge">
-    <span class="notice-icon">🍁</span>
+    <span class="notice-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 3l2.7 6.3L21 12l-6.3 2.7L12 21l-2.7-6.3L3 12l6.3-2.7L12 3z"/>
+      </svg>
+    </span>
 
     <span><strong>New:</strong> チェクインの　でんわの　あんないがヘンコウになりました。</span>
 
@@ -175,7 +280,14 @@
 
   <div class="grid">
     <a href="pages/season-dinner.html" class="card type-dinner">
-      <div class="icon-box">🍱</div>
+      <div class="icon-box" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M4 8h16"/>
+          <path d="M6 8v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/>
+          <path d="M9 5v3"/>
+          <path d="M15 5v3"/>
+        </svg>
+      </div>
       <div class="text-box">
         <span class="card-title">キセツのこんだて</span>
         <span class="card-desc">Dish Descriptions & Serving Procedures</span>
@@ -193,7 +305,13 @@
     </a> -->
 
     <a href="pages/wagyu-steak.html" class="card type-dinner">
-      <div class="icon-box">🥩</div>
+      <div class="icon-box" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M7 7c2-2 5-3 8-2 2 .6 3 2.2 3 4.2 0 4-3.2 7.8-8.2 9.6-1.6.6-3.4-.1-4.1-1.7C4.5 14.3 5.1 10.2 7 7z"/>
+          <path d="M10 9c1.4-.6 3-.4 4.2.5"/>
+          <path d="M9.5 12.5c1.2-.5 2.5-.4 3.5.3"/>
+        </svg>
+      </div>
       <div class="text-box">
         <span class="card-title">わぎゅうかいせき・ステーキ</span>
         <span class="card-desc">Meat Doneness & Sauce Descriptions</span>
@@ -202,7 +320,14 @@
     </a>
 
     <a href="pages/dinner-guide.html" class="card type-dinner">
-      <div class="icon-box">🍲</div>
+      <div class="icon-box" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M6 5.5A2.5 2.5 0 0 1 8.5 3H19v15H8.5A2.5 2.5 0 0 0 6 20.5z"/>
+          <path d="M6 5.5v15"/>
+          <path d="M10 7h5"/>
+          <path d="M10 11h5"/>
+        </svg>
+      </div>
       <div class="text-box">
         <span class="card-title">ゆうしょく　あんない</span>
         <span class="card-desc">Dish Info & Service Steps</span>
@@ -211,7 +336,15 @@
     </a>
 
     <a href="pages/breakfast-guide.html" class="card type-morning">
-      <div class="icon-box">☀️</div>
+      <div class="icon-box" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M6 15a6 6 0 0 1 12 0"/>
+          <path d="M4 19h16"/>
+          <path d="M12 3v3"/>
+          <path d="M5.6 6.6l2.1 2.1"/>
+          <path d="M18.4 6.6l-2.1 2.1"/>
+        </svg>
+      </div>
       <div class="text-box">
         <span class="card-title">チョウショクあんない</span>
         <span class="card-desc">お茶・配膳・おかわり</span>
@@ -220,7 +353,15 @@
     </a>
 
     <a href="pages/checkin-out.html" class="card type-work">
-      <div class="icon-box">🛎️</div>
+      <div class="icon-box" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M5 18h14"/>
+          <path d="M7 18v-5a5 5 0 0 1 10 0v5"/>
+          <path d="M9 9V7a3 3 0 0 1 6 0v2"/>
+          <path d="M10 18v2"/>
+          <path d="M14 18v2"/>
+        </svg>
+      </div>
       <div class="text-box">
         <span class="card-title">チェックイン・アウト</span>
         <span class="card-desc">お迎え・お見送り・荷物</span>

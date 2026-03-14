@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ja">
 <head><link rel="stylesheet" href="/fudotaki-manual/assets/css/theme.css">
 
@@ -6,38 +6,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ゆうしょく あんない (dinner-guide)</title>
 <style>
-  :root{--bg:#f6f7f8;--card:#fff;--ink:#1f2a37;--muted:#64748b;--acc:#0f766e;--acc-2:#155e75;--bd:#e5e7eb;--radius:18px;--maxw:980px;--shadow:0 6px 18px rgba(0,0,0,.06)}
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.7;scroll-behavior:smooth}
-  header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#fff,rgba(255,255,255,.92));backdrop-filter:saturate(180%) blur(6px);border-bottom:1px solid var(--bd)}
-  header .in{max-width:var(--maxw);margin:auto;display:flex;gap:12px;align-items:center;padding:10px 14px}
+  :root{--bg:#f4efe8;--card:rgba(255,251,245,.9);--ink:#221c18;--muted:#756a62;--acc:#6c5845;--acc-2:#3f4d61;--bd:rgba(108,88,69,.14);--radius:24px;--maxw:1040px;--shadow:0 24px 60px rgba(34,28,24,.10)}
+  html,body{margin:0;padding:0;background:radial-gradient(circle at top, rgba(255,255,255,.64), transparent 42%),linear-gradient(180deg,#f7f2eb,#efe7dd);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.75;scroll-behavior:smooth}
+  header{position:sticky;top:0;z-index:20;background:rgba(248,243,236,.82);backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid var(--bd)}
+  header .in{max-width:var(--maxw);margin:auto;display:flex;gap:12px;align-items:center;padding:12px 18px}
   header a,header .brand{color:var(--acc-2);text-decoration:none;font-weight:600}
   header .brand{margin-inline:auto;color:var(--ink)}
-  header .btn{padding:6px 10px;border:1px solid var(--bd);border-radius:10px;background:#fff}
-  .hero{position:relative;max-width:var(--maxw);margin:12px auto 0;overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow)}
-  .hero img{display:block;width:100%;height:34vh;object-fit:cover;object-position:center}
-  .hero .hero-title{position:absolute;left:16px;bottom:14px;color:#fff;background:rgba(0,0,0,.35);padding:8px 12px;border-radius:12px;font-weight:700;letter-spacing:.02em}
-  main{max-width:var(--maxw);margin:14px auto 40px;padding:0 12px}
-  .block{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);box-shadow:var(--shadow);margin:14px 0;overflow:hidden}
-  .block .head{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid var(--bd);background:#fff}
+  header .btn{padding:8px 12px;border:1px solid var(--bd);border-radius:999px;background:rgba(255,251,245,.92)}
+  .hero{position:relative;max-width:var(--maxw);margin:20px auto 0;overflow:hidden;border-radius:32px;box-shadow:var(--shadow)}
+  .hero img{display:block;width:100%;height:34vh;object-fit:cover;object-position:center;filter:saturate(.88) contrast(1.02)}
+  .hero .hero-title{position:absolute;left:20px;bottom:18px;color:#fff;background:rgba(24,20,18,.42);padding:10px 16px;border-radius:999px;font-weight:700;letter-spacing:.04em;backdrop-filter:blur(12px)}
+  main{max-width:var(--maxw);margin:18px auto 40px;padding:0 18px}
+  .block{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);box-shadow:var(--shadow);margin:18px 0;overflow:hidden;backdrop-filter:blur(16px)}
+  .block .head{display:flex;align-items:center;gap:8px;padding:16px 18px;border-bottom:1px solid var(--bd);background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(247,240,232,.88))}
   .block .head h2{margin:0;font-size:18px}
-  .block .body{padding:14px}
+  .block .body{padding:18px}
   .block p{margin:.6em 0}
   .block .note{color:var(--muted);font-size:.95em}
+  .head h2{display:flex;align-items:center;gap:10px}
+  .mono-icon{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;border-radius:12px;background:rgba(63,77,97,.1);color:var(--acc-2)}
+  .mono-icon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
   .img-full{display:block;width:100%;height:auto;border:1px solid var(--bd);border-radius:12px;box-sizing:border-box}
-  #toc .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-  #toc a{display:block;border:1px solid var(--bd);background:#fff;border-radius:14px;padding:12px;text-decoration:none;color:var(--ink)}
+  #toc .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  #toc a{display:block;border:1px solid var(--bd);background:rgba(255,255,255,.84);border-radius:18px;padding:14px;text-decoration:none;color:var(--ink)}
   #toc a b{display:block;color:var(--acc-2);margin-bottom:4px}
   .nav{display:flex;gap:8px;justify-content:space-between;margin-top:12px}
-  .nav a{display:inline-block;padding:8px 10px;border:1px solid var(--bd);border-radius:10px;background:#fff;color:var(--acc-2);text-decoration:none}
+  .nav a{display:inline-block;padding:10px 12px;border:1px solid var(--bd);border-radius:999px;background:rgba(255,255,255,.86);color:var(--acc-2);text-decoration:none}
   audio{width:100%;margin-top:8px}
-  /* 右下の丸ボタン */
   .fab-wrap{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;flex-direction:column;gap:10px}
-  .fab{width:52px;height:52px;border-radius:999px;border:1px solid var(--bd);background:#fff;box-shadow:var(--shadow);
-       display:grid;place-items:center;text-decoration:none;color:var(--acc-2);opacity:0;transform:translateY(10px);
-       transition:opacity .2s ease, transform .2s ease}
+  .fab{width:52px;height:52px;border-radius:999px;border:1px solid var(--bd);background:rgba(255,251,245,.94);box-shadow:var(--shadow);display:grid;place-items:center;text-decoration:none;color:var(--acc-2);opacity:0;transform:translateY(10px);transition:opacity .2s ease, transform .2s ease}
   .fab svg{width:22px;height:22px}
   .fab.show{opacity:1;transform:none}
   .fab:active{transform:scale(.97)}
+  .callout-link{display:block;margin-top:12px;padding:20px;border:1px solid rgba(122,84,47,.22);border-radius:18px;text-decoration:none;color:#7a542f;font-weight:700;text-align:center;font-size:1.02em;background:linear-gradient(135deg,rgba(255,248,240,.98),rgba(247,236,221,.92))}
+  .callout-link .mono-icon{margin:0 auto 10px}
+  .menu-title{display:flex;align-items:center;gap:10px;font-size:1.1rem;border-left:5px solid #6c5845;padding-left:10px;margin-bottom:10px}
   @media (max-width:640px){#toc .cards{grid-template-columns:1fr}}
 </style>
 </head>
@@ -58,7 +61,7 @@
 <main>
 
   <section class="block" id="toc">
-    <div class="head"><h2>📑 もくじ</h2></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 6h11"/><path d="M8 12h11"/><path d="M8 18h11"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg></span>もくじ</h2></div>
     <div class="body">
       <div class="cards">
         <a href="#entrance"><b>1. せきに あんない</b>いりぐちでの あいさつ～せきまで</a>
@@ -71,7 +74,7 @@
   </section>
 
   <section class="block" id="entrance">
-    <div class="head"><h2>1️⃣ せきに あんない（いりぐち～せき）</h2></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19h16"/><path d="M6 19v-7l6-4 6 4v7"/><path d="M10 19v-4h4v4"/></svg></span>せきに あんない（いりぐち～せき）</h2></div>
     <div class="body">
       <p>しょくじばしょ の いりぐちで おきゃくさま を むかえ、あいさつ を します。</p>
       <p>「いらっしゃいませ。」</p>
@@ -85,7 +88,7 @@
   </section>
 
   <section class="block" id="at-seat">
-    <div class="head"><h2>2️⃣ せきに ついた あと の ごあんない</h2></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8h14"/><path d="M7 8v8a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V8"/><path d="M9.5 5.5v2.5"/><path d="M14.5 5.5v2.5"/></svg></span>せきに ついた あと の ごあんない</h2></div>
     <div class="body">
       <p>「ごせつめい を させて いただきます。」</p>
       <p>「こちらは しょくぜんしゅ の ゆずしゅ で ございます。」</p>
@@ -99,7 +102,7 @@
   </section>
 
   <section class="block" id="steak-sauce">
-    <div class="head"><h2>3️⃣ ステーキ タレ の せつめい（ステーキプラン／わぎゅうかいせき）</h2></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7c2-2 5-3 8-2 2 .6 3 2.2 3 4.2 0 4-3.2 7.8-8.2 9.6-1.6.6-3.4-.1-4.1-1.7C4.5 14.3 5.1 10.2 7 7z"/><path d="M10 9c1.4-.6 3-.4 4.2.5"/></svg></span>ステーキ タレ の せつめい（ステーキプラン／わぎゅうかいせき）</h2></div>
     <div class="body">
       <ol>
         <li>ステーキ の まえ の りょうり（あげもの）を ていきょう するとき に、ステーキ の タレ を いっしょ に もって いく。</li>
@@ -114,7 +117,7 @@
   </section>
 
   <section class="block" id="rice-timing">
-    <div class="head"><h2>4️⃣ ごはん の うかがいかた（ニモノ／ステーキ の あと）</h2></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14h16"/><path d="M6 14a6 6 0 0 1 12 0"/><path d="M7 18h10"/></svg></span>ごはん の うかがいかた（ニモノ／ステーキ の あと）</h2></div>
     <div class="body">
       <p>ニモノ の せつめい の あと、つぎ の ように うかがいます。</p>
       <p>「このあと、ごはん となりますが、ごようい させて いただいても よろしい でしょうか？」</p>
@@ -128,21 +131,22 @@
   </section>
 
   <section class="block" id="dessert-check">
-    <div class="head"><h2>5️⃣ かんみ ていきょう まえ の かくにん</h2></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 11a6 6 0 0 1 12 0"/><path d="M5 15h14"/><path d="M8 18h8"/></svg></span>かんみ ていきょう まえ の かくにん</h2></div>
     <div class="body">
       <p>ほうじちゃ を おもち し、げぜん を しながら ようす を うかがいます。</p>
       <p>「このあと、デザート の ごようい と なりますが、おもち しても よろしい でしょうか？」</p>
       <p>「また、おやしょく よう に、めしあがって いただいた ごはん を おにぎり に して おもち しております が、ごようい いたします か？」</p>
       <audio controls><source src="../assets/audio/dinner-guide/dessert-check.mp3" type="audio/mpeg"></audio>
-<a href="highball.html" style="display:block; margin-top:12px; padding:20px; background:#fff7ed; border:3px dashed #ea580c; border-radius:12px; text-decoration:none; color:#ea580c; font-weight:bold; text-align:center; font-size:1.1em;">
-  🥃 ハイボール を たのまれたら<br>
+<a href="highball.html" class="callout-link">
+  <span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4h10"/><path d="M9 4v4l3 4v6"/><path d="M15 4v4l-3 4"/><path d="M9 18h6"/></svg></span><br>
+  ハイボール を たのまれたら<br>
   （ここ を おして かくにん）
 </a>
 <div style="margin-top: 20px;">
-  <h3 style="font-size:1.1rem; border-left:5px solid #0f766e; padding-left:10px; margin-bottom:10px;">🥤 のみもの メニュー</h3>
+  <h3 class="menu-title"><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4h8"/><path d="M9 4v6a3 3 0 0 0 6 0V4"/><path d="M8 13h8"/><path d="M10 20h4"/></svg></span>のみもの メニュー</h3>
   
   <details class="menu-acc">
-    <summary>🍺 ビール</summary>
+    <summary><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 7h7a2 2 0 0 1 2 2v6a3 3 0 0 1-3 3h-3a3 3 0 0 1-3-3z"/><path d="M17 9h2a2 2 0 0 1 0 4h-2"/><path d="M8 10h9"/></svg></span>ビール</summary>
     <div class="menu-content">
       <ul>
         <li><b>なまビール（350ml）</b> <span class="tag">なまG（ﾅﾏG）</span></li>
@@ -166,7 +170,7 @@
   </details>
 
   <details class="menu-acc">
-    <summary>🥃 ウイスキー</summary>
+    <summary><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5h8"/><path d="M9 5v6l3 3 3-3V5"/><path d="M12 14v5"/><path d="M9 19h6"/></svg></span>ウイスキー</summary>
     <div class="menu-content">
       <ul>
         <li><b>チタ</b> <span class="tag">ちた</span></li>
@@ -179,7 +183,7 @@
   </details>
 
   <details class="menu-acc">
-    <summary>🍶 日本酒（にほんしゅ）</summary>
+    <summary><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4h6"/><path d="M10 4v6a2 2 0 0 0 4 0V4"/><path d="M8 14h8"/><path d="M10 18h4"/></svg></span>日本酒（にほんしゅ）</summary>
     <div class="menu-content">
       <ul>
         <li><b>さわひめ</b> <span class="tag">さわひめ</span></li>
@@ -192,7 +196,7 @@
   </details>
 
   <details class="menu-acc">
-    <summary>🍑 果実酒（かじつしゅ）</summary>
+    <summary><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 7c3 0 6 2.4 6 5.5S15 18 12 18s-6-2.4-6-5.5S9 7 12 7z"/><path d="M12 7c0-2 1.2-3 3-3"/><path d="M9 11c1-.8 2-.8 3 0"/></svg></span>果実酒（かじつしゅ）</summary>
     <div class="menu-content">
       <ul>
         <li><b>ほうおうびでん じゅくせいうめしゅ</b> <span class="tag">うめ（ウメ）</span></li>
@@ -204,7 +208,7 @@
   </details>
 
   <details class="menu-acc">
-    <summary>🍷 ワイン</summary>
+    <summary><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4h8"/><path d="M8 4v4a4 4 0 0 0 8 0V4"/><path d="M12 12v7"/><path d="M9 19h6"/></svg></span>ワイン</summary>
     <div class="menu-content">
       <ul>
         <li><b>あかわいん グラス</b> <span class="tag">あかG（アカG）</span></li>
@@ -220,7 +224,7 @@
   </details>
 
    <details class="menu-acc">
-    <summary>🍶 焼酎（しょうちゅう）</summary>
+    <summary><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4h6"/><path d="M10 4v5"/><path d="M14 4v5"/><path d="M8 10h8"/><path d="M9 10v8h6v-8"/></svg></span>焼酎（しょうちゅう）</summary>
     <div class="menu-content">
       <ul>
         <li><b>てんしのゆうわく（いも）</b> <span class="tag">てんし（テンシ）</span></li>
@@ -244,7 +248,7 @@
   </details>
 
   <details class="menu-acc">
-    <summary>🍹 ソフトドリンク</summary>
+    <summary><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4h6"/><path d="M10 4v4"/><path d="M14 4v4"/><path d="M8 9h8"/><path d="M9 9l1 10h4l1-10"/></svg></span>ソフトドリンク</summary>
     <div class="menu-content">
      <ul>
         <li><b>しまなみみかんじゅーす</b> <span class="tag">みかんJ</span></li>
@@ -283,63 +287,18 @@
   </details>
 
 <style>
-  /* デザイン設定 */
-  .menu-acc {
-    margin-bottom: 8px;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    background: #fff;
-  }
-  .menu-acc summary {
-    padding: 12px 16px;
-    font-weight: bold;
-    cursor: pointer;
-    list-style: none;
-    background: #f9fafb;
-    display: flex; justify-content: space-between; align-items: center;
-    border-radius: 8px;
-  }
-  .menu-acc[open] summary {
-    border-bottom: 1px solid #e5e7eb;
-    border-radius: 8px 8px 0 0;
-  }
-  .menu-acc summary::after {
-    content: "▼"; font-size: 10px; color: #9ca3af;
-  }
+  .menu-acc {margin-bottom: 10px;border: 1px solid var(--bd);border-radius: 18px;background: rgba(255,255,255,.84);box-shadow: 0 16px 32px rgba(34,28,24,.06);}
+  .menu-acc summary {padding: 14px 18px;font-weight: bold;cursor: pointer;list-style: none;background: rgba(248,243,236,.74);display: flex; justify-content: space-between; align-items: center;border-radius: 18px;gap:10px}
+  .menu-acc[open] summary {border-bottom: 1px solid var(--bd);border-radius: 18px 18px 0 0;}
+  .menu-acc summary::after {content: "▼"; font-size: 10px; color: #9ca3af;}
   .menu-acc[open] summary::after { transform: rotate(180deg); }
-  
-  .menu-content { padding: 0 16px 10px; }
+  .menu-content { padding: 4px 18px 14px; }
   .menu-content ul { margin: 0; padding: 0; list-style: none; }
-  
-  /* リストのアイテム */
-  .menu-content li {
-    padding: 10px 0;
-    border-bottom: 1px dashed #eee;
-    display: flex;
-    justify-content: space-between; /* 名前と書き方を左右に配置 */
-    align-items: center;
-  }
+  .menu-content li {padding: 12px 0;border-bottom: 1px dashed rgba(108,88,69,.16);display: flex;justify-content: space-between;align-items: center;gap: 12px;}
   .menu-content li:last-child { border-bottom: none; }
-  
-  /* のみものめい（太字） */
-  .menu-content li b {
-    font-size: 16px;
-    color: #1f2a37;
-  }
-
-  /* かきたか（タグデザイン） */
-  .tag {
-    background: #e0f2fe;
-    color: #0284c7;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 4px 8px;
-    border-radius: 6px;
-    white-space: nowrap; /* 改行させない */
-  }
-  /* かきたかが無い場合は表示しない */
+  .menu-content li b {font-size: 16px;color: #1f2a37;}
+  .tag {background: rgba(63,77,97,.1);color: #3f4d61;font-size: 13px;font-weight: bold;padding: 5px 9px;border-radius: 999px;white-space: nowrap;}
   .tag:empty { display: none; }
-  
   .note { font-size: 12px; color: #6b7280; margin-top: 5px; display: block; }
 </style>
       <div class="nav"><a href="#rice-timing">← まえへ</a><span></span></div>
@@ -419,3 +378,5 @@
 </script>
 </body>
 </html>
+
+

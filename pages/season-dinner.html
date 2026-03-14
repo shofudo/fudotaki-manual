@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ja">
 <head><link rel="stylesheet" href="/fudotaki-manual/assets/css/theme.css">
 <meta charset="utf-8">
@@ -6,68 +6,54 @@
 <title>季節の献立（season-dinner）</title>
 <style>
   :root{
-    --bg:#f6f7f8; --card:#ffffff; --ink:#1f2a37; --muted:#64748b;
-    --acc:#0f766e; --acc-2:#155e75;
-    --bd:#e5e7eb; --radius:18px; --maxw:980px; --shadow:0 6px 18px rgba(0,0,0,.06);
+    --bg:#f4efe8; --card:rgba(255,251,245,.9); --ink:#221c18; --muted:#756a62;
+    --acc:#6c5845; --acc-2:#3f4d61; --bd:rgba(108,88,69,.14); --radius:24px; --maxw:1040px;
+    --shadow:0 24px 60px rgba(34,28,24,.10);
   }
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
-    font-family:system-ui,-apple-system,"Segoe UI","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.65;}
-  /* ヘッダ */
-  header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#fff,rgba(255,255,255,.92));
-    backdrop-filter:saturate(160%) blur(6px);border-bottom:1px solid var(--bd)}
-  .wrap{max-width:var(--maxw);margin:auto;padding:10px 16px;display:flex;gap:12px;align-items:center}
-  .brand{font-weight:700;letter-spacing:.02em}
-  .btn{appearance:none;border:1px solid var(--bd);background:#fff;color:var(--ink);padding:10px 14px;border-radius:12px;
-    text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+  html,body{margin:0;padding:0;background:radial-gradient(circle at top, rgba(255,255,255,.65), transparent 42%),linear-gradient(180deg,#f7f2eb,#efe7dd);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.72;}
+  header{position:sticky;top:0;z-index:20;background:rgba(248,243,236,.82);backdrop-filter:saturate(160%) blur(16px);border-bottom:1px solid var(--bd)}
+  .wrap{max-width:var(--maxw);margin:auto;padding:12px 18px;display:flex;gap:12px;align-items:center}
+  .brand{font-weight:700;letter-spacing:.08em}
+  .btn{appearance:none;border:1px solid var(--bd);background:rgba(255,251,245,.92);color:var(--ink);padding:10px 14px;border-radius:999px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 18px rgba(34,28,24,.06)}
   .btn:active{transform:translateY(1px)}
-  .btn-accent{border-color:transparent;background:linear-gradient(135deg,var(--acc),var(--acc-2));color:#fff}
+  .btn-accent{border-color:transparent;background:linear-gradient(135deg,#544337,var(--acc-2));color:#fff}
   .spacer{flex:1}
-
-  /* ヒーロー（TOP画像） */
-  .hero{position:relative;width:100%;max-width:var(--maxw);margin:14px auto 0;padding:0 16px}
-  .hero img{width:100%;height:auto;aspect-ratio:16/5;object-fit:cover;border-radius:18px;border:1px solid var(--bd);box-shadow:var(--shadow);display:block}
-  .hero-title{position:absolute;left:16px;bottom:16px;padding:10px 16px;border-radius:999px;font-weight:700;letter-spacing:.02em;
-    color:#fff;background:rgba(0,0,0,.35);backdrop-filter:blur(2px);font-size:clamp(16px,3.2vw,22px)}
-
-  /* メイン */
-  main{max-width:var(--maxw);margin:16px auto 100px;padding:0 16px}
-
-  /* 目次カード */
-  .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:14px 0 6px}
-  .toc-card{background:var(--card);border:1px solid var(--bd);border-radius:16px;box-shadow:var(--shadow);
-    padding:14px;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+  .hero{position:relative;width:100%;max-width:var(--maxw);margin:20px auto 0;padding:0 18px}
+  .hero img{width:100%;height:auto;aspect-ratio:16/5;object-fit:cover;border-radius:30px;border:1px solid var(--bd);box-shadow:var(--shadow);display:block;filter:saturate(.88) contrast(1.03)}
+  .hero-title{position:absolute;left:16px;bottom:16px;padding:10px 16px;border-radius:999px;font-weight:700;letter-spacing:.02em;color:#fff;background:rgba(24,20,18,.42);backdrop-filter:blur(12px);font-size:clamp(16px,3.2vw,22px)}
+  main{max-width:var(--maxw);margin:18px auto 100px;padding:0 18px}
+  .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin:14px 0 6px}
+  .toc-card{background:var(--card);border:1px solid var(--bd);border-radius:16px;box-shadow:var(--shadow);padding:15px;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);backdrop-filter:blur(12px)}
   .toc-icon{font-size:20px}
   .toc-title{font-weight:600}
   .muted{color:var(--muted);font-size:13px}
-
-  /* セクションカード */
-  .block{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);box-shadow:var(--shadow);margin:16px 0}
-  .head{display:flex;align-items:baseline;gap:10px;padding:14px 16px;border-bottom:1px solid var(--bd);background:linear-gradient(180deg,#fff,#fafafa)}
+  .toc-icon{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;border-radius:12px;background:rgba(63,77,97,.1);color:var(--acc-2)}
+  .toc-icon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .head h2{display:flex;align-items:center;gap:10px}
+  .mono-icon{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;border-radius:12px;background:rgba(63,77,97,.1);color:var(--acc-2)}
+  .mono-icon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .block{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);box-shadow:var(--shadow);margin:18px 0;backdrop-filter:blur(16px)}
+  .head{display:flex;align-items:baseline;gap:10px;padding:16px 18px;border-bottom:1px solid var(--bd);background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(247,240,232,.88))}
   .head h2{margin:0;font-size:21px}
   .head small{color:var(--muted)}
-  .body{padding:14px 16px}
+  .body{padding:18px}
   .levels p{margin:.45em 0}
   .chips{display:flex;gap:8px;flex-wrap:wrap;margin:.5rem 0}
-  .chip{border:1px solid var(--bd);border-radius:999px;padding:4px 10px;font-size:12px;background:#fff;color:#374151}
+  .chip{border:1px solid var(--bd);border-radius:999px;padding:6px 12px;font-size:12px;background:rgba(255,255,255,.86);color:#4f443e}
   .audio-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px}
   audio{width:300px;max-width:100%}
-  .nav{display:flex;gap:10px;justify-content:space-between;padding:12px 16px;border-top:1px solid var(--bd);background:#fafafa;border-radius:0 0 var(--radius) var(--radius)}
-  .nav a{flex:1;text-align:center;text-decoration:none;border:1px solid var(--bd);padding:12px;border-radius:12px;background:#fff;color:var(--ink)}
-  .nav a.next{background:linear-gradient(135deg,var(--acc),var(--acc-2));color:#fff;border-color:transparent}
-
-  /* 右下フローティング（breakfastと同じUI） */
+  .nav{display:flex;gap:10px;justify-content:space-between;padding:14px 18px;border-top:1px solid var(--bd);background:rgba(244,237,228,.72);border-radius:0 0 var(--radius) var(--radius)}
+  .nav a{flex:1;text-align:center;text-decoration:none;border:1px solid var(--bd);padding:12px;border-radius:999px;background:rgba(255,255,255,.86);color:var(--ink)}
+  .nav a.next{background:linear-gradient(135deg,#544337,var(--acc-2));color:#fff;border-color:transparent}
   .fab-stack{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:50}
-  .fab{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--acc),var(--acc-2));
-    color:#fff;text-decoration:none;border:0;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.20)}
+  .fab{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#544337,var(--acc-2));color:#fff;text-decoration:none;border:0;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.20)}
   .fab.secondary{background:#111827}
   .fab svg{width:22px;height:22px;display:block;fill:#fff}
   .fab:active{transform:translateY(1px)}
   .tooltip{position:absolute;right:58px;background:#111;color:#fff;font-size:12px;padding:6px 8px;border-radius:8px;opacity:0;pointer-events:none;transition:.15s}
   .fab-wrap{position:relative}
   .fab-wrap:hover .tooltip{opacity:.9}
-
-  /* スワイプ強調 */
-  .focus{outline:3px solid rgba(15,118,110,.35);transition:outline-color .4s}
+  .focus{outline:3px solid rgba(63,77,97,.28);transition:outline-color .4s}
 </style>
 </head>
 <body>
@@ -95,27 +81,27 @@
     <div class="head"><h2>目次</h2></div>
     <div class="body">
       <div class="toc-grid">
-        <a class="toc-card" href="#suimono"><span class="toc-icon">🍵</span><div><div class="toc-title">吸物</div><div class="muted">すいもの</div></div></a>
-        <a class="toc-card" href="#breakfast-choice"><span class="toc-icon">🍽️</span><div><div class="toc-title">朝食チョイス案内</div><div class="muted">案内音声</div></div></a>
-        <a class="toc-card" href="#sp-breakfast"><span class="toc-icon">🥚</span><div><div class="toc-title">SP朝食案内</div><div class="muted">案内音声</div></div></a>
-        <a class="toc-card" href="#kasaimori"><span class="toc-icon">🥗</span><div><div class="toc-title">果菜盛り</div><div class="muted">かさいもり</div></div></a>
-        <a class="toc-card" href="#mushimono"><span class="toc-icon">🍠</span><div><div class="toc-title">蒸物替り</div><div class="muted">むしものがわり</div></div></a>
-        <a class="toc-card" href="#shiizakana"><span class="toc-icon">🍖</span><div><div class="toc-title">強肴</div><div class="muted">しいざかな</div></div></a>
-        <a class="toc-card" href="#meat-sample"><span class="toc-icon">🥩</span><div><div class="toc-title">メイン肉サンプル</div><div class="muted">案内音声</div></div></a>
-        <a class="toc-card" href="#nimono"><span class="toc-icon">🍲</span><div><div class="toc-title">煮物</div><div class="muted">にもの</div></div></a>
-        <a class="toc-card" href="#gohan-ask"><span class="toc-icon">🍚</span><div><div class="toc-title">ごはん うかがい</div><div class="muted">案内音声</div></div></a>
-        <a class="toc-card" href="#katemeshi"><span class="toc-icon">🍚</span><div><div class="toc-title">かてめし</div></div></a>
-        <a class="toc-card" href="#kanmi-check"><span class="toc-icon">🍵</span><div><div class="toc-title">甘味 前確認</div><div class="muted">案内音声</div></div></a>
-        <a class="toc-card" href="#kanmi"><span class="toc-icon">🍨</span><div><div class="toc-title">甘味</div><div class="muted">かんみ</div></div></a>
-        <a class="toc-card" href="#kogashi"><span class="toc-icon">🍘</span><div><div class="toc-title">小菓子</div></div></a>
-        <a class="toc-card" href="#onigiri"><span class="toc-icon">🍙</span><div><div class="toc-title">おにぎり案内</div></div></a>
+        <a class="toc-card" href="#suimono"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14h16"/><path d="M6 14a6 6 0 0 1 12 0"/><path d="M7 18h10"/></svg></span><div><div class="toc-title">吸物</div><div class="muted">すいもの</div></div></a>
+        <a class="toc-card" href="#breakfast-choice"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8h14"/><path d="M7 8v8a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V8"/><path d="M9.5 5.5v2.5"/><path d="M14.5 5.5v2.5"/></svg></span><div><div class="toc-title">朝食チョイス案内</div><div class="muted">案内音声</div></div></a>
+        <a class="toc-card" href="#sp-breakfast"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 7c3 0 5 2 5 5s-2 5-5 5-5-2-5-5 2-5 5-5z"/><path d="M12 4v3"/></svg></span><div><div class="toc-title">SP朝食案内</div><div class="muted">案内音声</div></div></a>
+        <a class="toc-card" href="#kasaimori"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 14c2-5 10-5 12 0"/><path d="M4 14h16"/><path d="M10 10c0-2 1-3 2-4"/><path d="M14 10c0-1 1-2 2-3"/></svg></span><div><div class="toc-title">果菜盛り</div><div class="muted">かさいもり</div></div></a>
+        <a class="toc-card" href="#mushimono"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 15c0-4 2-7 5-9"/><path d="M12 6c3 2 5 5 5 9"/><path d="M6 18h12"/></svg></span><div><div class="toc-title">蒸物替り</div><div class="muted">むしものがわり</div></div></a>
+        <a class="toc-card" href="#shiizakana"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7c2-2 5-3 8-2 2 .6 3 2.2 3 4.2 0 4-3.2 7.8-8.2 9.6-1.6.6-3.4-.1-4.1-1.7C4.5 14.3 5.1 10.2 7 7z"/></svg></span><div><div class="toc-title">強肴</div><div class="muted">しいざかな</div></div></a>
+        <a class="toc-card" href="#meat-sample"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7c2-2 5-3 8-2 2 .6 3 2.2 3 4.2 0 4-3.2 7.8-8.2 9.6-1.6.6-3.4-.1-4.1-1.7C4.5 14.3 5.1 10.2 7 7z"/><path d="M10 9c1.4-.6 3-.4 4.2.5"/></svg></span><div><div class="toc-title">メイン肉サンプル</div><div class="muted">案内音声</div></div></a>
+        <a class="toc-card" href="#nimono"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14h16"/><path d="M6 14a6 6 0 0 1 12 0"/><path d="M7 18h10"/></svg></span><div><div class="toc-title">煮物</div><div class="muted">にもの</div></div></a>
+        <a class="toc-card" href="#gohan-ask"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14h16"/><path d="M6 14a6 6 0 0 1 12 0"/><path d="M7 18h10"/></svg></span><div><div class="toc-title">ごはん うかがい</div><div class="muted">案内音声</div></div></a>
+        <a class="toc-card" href="#katemeshi"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14h16"/><path d="M6 14a6 6 0 0 1 12 0"/><path d="M7 18h10"/></svg></span><div><div class="toc-title">かてめし</div></div></a>
+        <a class="toc-card" href="#kanmi-check"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 11a6 6 0 0 1 12 0"/><path d="M5 15h14"/><path d="M8 18h8"/></svg></span><div><div class="toc-title">甘味 前確認</div><div class="muted">案内音声</div></div></a>
+        <a class="toc-card" href="#kanmi"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 11a6 6 0 0 1 12 0"/><path d="M5 15h14"/><path d="M8 18h8"/></svg></span><div><div class="toc-title">甘味</div><div class="muted">かんみ</div></div></a>
+        <a class="toc-card" href="#kogashi"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 10h10"/><path d="M6 14h12"/><path d="M8 18h8"/><path d="M9 6h6"/></svg></span><div><div class="toc-title">小菓子</div></div></a>
+        <a class="toc-card" href="#onigiri"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5l6 11a2 2 0 0 1-1.7 3H7.7A2 2 0 0 1 6 16z"/><path d="M10 14h4"/></svg></span><div><div class="toc-title">おにぎり案内</div></div></a>
       </div>
     </div>
   </section>
 
   <!-- 吸物 -->
   <section class="block" id="suimono" data-order="1">
-    <div class="head"><h2>🍵 吸物</h2><small>（すいもの）</small></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14h16"/><path d="M6 14a6 6 0 0 1 12 0"/><path d="M7 18h10"/></svg></span>吸物</h2><small>（すいもの）</small></div>
     <div class="body">
       <div class="levels">
         <p>レベル1: こちらは、 スイモノ でございます。</p>
@@ -130,7 +116,7 @@
 
   <!-- 朝食チョイス案内 -->
   <section class="block" id="breakfast-choice" data-order="2">
-    <div class="head"><h2>🍽️ ちょうしょくチョイス　あんない</h2></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8h14"/><path d="M7 8v8a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V8"/><path d="M9.5 5.5v2.5"/><path d="M14.5 5.5v2.5"/></svg></span>ちょうしょくチョイス　あんない</h2></div>
     <div class="body">
       <div class="chips"><span class="chip">すいもの ていきょう＆せつめいご</span></div>
       <div class="audio-row">
@@ -143,7 +129,7 @@
 
   <!-- SP朝食案内 -->
   <section class="block" id="sp-breakfast" data-order="3">
-    <div class="head"><h2>🥚 SPちょうしょくプラン　あんない</h2></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 7c3 0 5 2 5 5s-2 5-5 5-5-2-5-5 2-5 5-5z"/><path d="M12 4v3"/></svg></span>SPちょうしょくプラン　あんない</h2></div>
     <div class="body">
       <div class="chips"><span class="chip">すいもの ていきょう＆せつめいご</span></div>
       <div class="audio-row">
@@ -156,7 +142,7 @@
 
   <!-- 果菜盛り -->
   <section class="block" id="kasaimori" data-order="4">
-    <div class="head"><h2>🥗 果菜盛り</h2><small>（かさいもり）</small></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 14c2-5 10-5 12 0"/><path d="M4 14h16"/><path d="M10 10c0-2 1-3 2-4"/><path d="M14 10c0-1 1-2 2-3"/></svg></span>果菜盛り</h2><small>（かさいもり）</small></div>
     <div class="body">
       <div class="levels">
         <p>レベル1: こちらは、 カサイモリ でございます。</p>
@@ -173,7 +159,7 @@
 
   <!-- 蒸物替り -->
   <section class="block" id="mushimono" data-order="5">
-    <div class="head"><h2>🍠 蒸物替り</h2><small>（むしものがわり）</small></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 15c0-4 2-7 5-9"/><path d="M12 6c3 2 5 5 5 9"/><path d="M6 18h12"/></svg></span>蒸物替り</h2><small>（むしものがわり）</small></div>
     <div class="body">
       <div class="levels">
         <p>レベル1: こちらは　ヤキモノ　になります。</p>
@@ -190,7 +176,7 @@
 
   <!-- 強肴 -->
   <section class="block" id="shiizakana" data-order="6">
-    <div class="head"><h2>🍖 強肴</h2><small>（しいざかな）</small></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7c2-2 5-3 8-2 2 .6 3 2.2 3 4.2 0 4-3.2 7.8-8.2 9.6-1.6.6-3.4-.1-4.1-1.7C4.5 14.3 5.1 10.2 7 7z"/></svg></span>強肴</h2><small>（しいざかな）</small></div>
     <div class="body">
       <div class="levels">
         <p>レベル1: こちらは、 ウド と アスパラガス を つかった ヒリュウズ と、<br>
@@ -207,7 +193,7 @@
 
   <!-- メイン肉サンプル -->
   <section class="block" id="meat-sample" data-order="7">
-    <div class="head"><h2>🥩 メインよう にくのサンプルあんない</h2></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7c2-2 5-3 8-2 2 .6 3 2.2 3 4.2 0 4-3.2 7.8-8.2 9.6-1.6.6-3.4-.1-4.1-1.7C4.5 14.3 5.1 10.2 7 7z"/><path d="M10 9c1.4-.6 3-.4 4.2.5"/></svg></span>メインよう にくのサンプルあんない</h2></div>
     <div class="body">
       <p class="muted">ごくじょうかいせきの にもの（あわに・すきやき）サンプル うかがいかたについて</p>
       <p class="muted">あげものをていきょうしたあとに、にくをみせてせつめいをする</p>
@@ -229,7 +215,7 @@
 
   <!-- 煮物 -->
   <section class="block" id="nimono" data-order="8">
-    <div class="head"><h2>🍲 煮物</h2><small>（にもの）</small></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14h16"/><path d="M6 14a6 6 0 0 1 12 0"/><path d="M7 18h10"/></svg></span>煮物</h2><small>（にもの）</small></div>
     <div class="body">
       <div class="levels">
         <p>レベル1: こちらは、 ニモノ に なります。</p>
@@ -243,7 +229,7 @@
 
   <!-- ごはん うかがい -->
   <section class="block" id="gohan-ask" data-order="9">
-    <div class="head"><h2>🍚 ごはんの　うかがいかたに　ついて（ニモノをだしたあと）</h2></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14h16"/><path d="M6 14a6 6 0 0 1 12 0"/><path d="M7 18h10"/></svg></span>ごはんの　うかがいかたに　ついて（ニモノをだしたあと）</h2></div>
     <div class="body">
       <p>1. ニモノのセツメイのあと　ごはんをよういしても　よいかをきく</p>
       <div class="audio-row">
@@ -261,7 +247,7 @@
 
   <!-- かてめし -->
   <section class="block" id="katemeshi" data-order="10">
-    <div class="head"><h2>🍚 かてめし</h2></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14h16"/><path d="M6 14a6 6 0 0 1 12 0"/><path d="M7 18h10"/></svg></span>かてめし</h2></div>
     <div class="body">
       <div class="levels">
         <p>レベル1: こちらは、 ゴハン の ごヨウイ に なります。</p>
@@ -275,7 +261,7 @@
 
   <!-- 甘味 前確認 -->
   <section class="block" id="kanmi-check" data-order="11">
-    <div class="head"><h2>🍵 かんみ ていきょうまえの かくにん</h2></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 11a6 6 0 0 1 12 0"/><path d="M5 15h14"/><path d="M8 18h8"/></svg></span>かんみ ていきょうまえの かくにん</h2></div>
     <div class="body">
       <p>ほうじちゃを　もっていき、げぜんを　しながら　ようすをうかがいます。</p>
       <div class="audio-row">
@@ -291,7 +277,7 @@
 
   <!-- 甘味 -->
   <section class="block" id="kanmi" data-order="12">
-    <div class="head"><h2>🍨 甘味</h2><small>（かんみ）</small></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 11a6 6 0 0 1 12 0"/><path d="M5 15h14"/><path d="M8 18h8"/></svg></span>甘味</h2><small>（かんみ）</small></div>
     <div class="body">
       <div class="levels">
         <p>レベル1: こちらは、 デザート に なります。</p>
@@ -307,7 +293,7 @@
 
   <!-- 小菓子 -->
   <section class="block" id="kogashi" data-order="13">
-    <div class="head"><h2>🍘 小菓子</h2></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 10h10"/><path d="M6 14h12"/><path d="M8 18h8"/><path d="M9 6h6"/></svg></span>小菓子</h2></div>
     <div class="body">
       <div class="levels">
         <p>レベル1: こちらはコガシになります。</p>
@@ -321,7 +307,7 @@
 
   <!-- おにぎり案内 -->
   <section class="block" id="onigiri" data-order="14">
-    <div class="head"><h2>🍙 おにぎりのせつめい</h2></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5l6 11a2 2 0 0 1-1.7 3H7.7A2 2 0 0 1 6 16z"/><path d="M10 14h4"/></svg></span>おにぎりのせつめい</h2></div>
     <div class="body">
       <div class="audio-row">
         <audio controls preload="metadata"><source src="../assets/audio/season-dinner/onigiri.mp3" type="audio/mpeg"></audio>
@@ -384,3 +370,4 @@
 </script>
 </body>
 </html>
+

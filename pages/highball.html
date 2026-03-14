@@ -95,7 +95,12 @@
   }
   .scene.reverse { flex-direction: row-reverse; }
   .char { text-align: center; flex-shrink: 0; width: 75px; }
-  .char-icon { font-size: 48px; display: block; margin-bottom: 5px; filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1)); }
+  .char-icon {
+    width: 56px; height: 56px; display: grid; place-items: center; margin: 0 auto 8px;
+    color: #fff; background: linear-gradient(135deg, #6c5845, #3f4d61); border-radius: 18px;
+    box-shadow: 0 12px 24px rgba(34,28,24,0.16);
+  }
+  .char-icon svg { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
   .char-name { font-size: 13px; font-weight: 800; background: #333; color: #fff; padding: 4px 8px; border-radius: 12px; }
   
   /* ふきだし */
@@ -129,10 +134,14 @@
     position: relative;
   }
   .menu-board::after {
-    content: "📌"; position: absolute; top: -15px; right: -10px; font-size: 24px;
+    content: "MENU"; position: absolute; top: -14px; right: 14px; font-size: 11px; letter-spacing: .18em;
+    color: #7c2d12; background: #fff7ed; border: 1px solid rgba(124,45,18,.18); border-radius: 999px; padding: 4px 10px;
   }
   .menu-item { font-size: 20px; font-weight: 800; margin: 12px 0; display: flex; align-items: center; color: #431407; }
-  .menu-item::before { content: "🥃"; margin-right: 12px; font-size: 22px; }
+  .menu-item::before {
+    content: ""; width: 10px; height: 10px; margin-right: 12px; border-radius: 999px;
+    background: linear-gradient(135deg, #ea580c, #9a3412); box-shadow: 0 0 0 4px rgba(234,88,12,.12);
+  }
 
   /* センムの警告エリア */
   .alert-box {
@@ -149,9 +158,16 @@
     padding: 8px 20px; border-radius: 99px; margin-top: -35px; border: 3px solid #fff;
   }
   .senmu-icon {
-    font-size: 64px; background: #fff; border-radius: 50%; width: 90px; height: 90px;
-    line-height: 90px; border: 3px solid #eab308; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background: #fff; border-radius: 50%; width: 90px; height: 90px;
+    display: grid; place-items: center; border: 3px solid #eab308; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    color: #7c2d12;
   }
+  .senmu-icon svg { width: 42px; height: 42px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .title-mark {
+    display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-right: 10px;
+    border-radius: 12px; background: rgba(255,255,255,.16); vertical-align: middle;
+  }
+  .title-mark svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
   .alert-text { font-size: 18px; }
   .alert-strong { font-size: 24px; color: #a16207; font-weight: 800; display: block; margin-top: 10px; background: linear-gradient(transparent 70%, #fde047 70%); }
 
@@ -182,13 +198,13 @@
 <body>
 
 <div class="comic-container">
-  <h1 class="comic-title">🍺 ハイボール を たのまれたら</h1>
+  <h1 class="comic-title"><span class="title-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5h8"/><path d="M9 5v6l3 3 3-3V5"/><path d="M12 14v5"/><path d="M9 19h6"/></svg></span>ハイボール を たのまれたら</h1>
 
   <div class="panel">
     <div class="panel-num">1</div>
     <div class="scene reverse">
       <div class="char">
-        <span class="char-icon">🙋‍♂️</span>
+        <span class="char-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M6 19c1.5-3 4-4.5 6-4.5s4.5 1.5 6 4.5"/></svg></span>
         <span class="char-name">おきゃく</span>
       </div>
       <div class="bubble">
@@ -198,7 +214,7 @@
     </div>
     <div class="scene">
       <div class="char">
-        <span class="char-icon">👩‍🍳</span>
+        <span class="char-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 10c-1.5 0-2.5-1-2.5-2.3S6.6 5 8 5c.5-1.2 1.6-2 3-2s2.5.8 3 2c1.4 0 2.5 1.1 2.5 2.7S15.5 10 14 10"/><path d="M8 10v2.5a4 4 0 0 0 8 0V10"/><path d="M10 17h4"/></svg></span>
         <span class="char-name">スタッフ</span>
       </div>
       <div class="bubble">
@@ -212,7 +228,7 @@
     <div class="panel-num">2</div>
     <div class="scene">
       <div class="char">
-        <span class="char-icon">👩‍🍳</span>
+        <span class="char-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 10c-1.5 0-2.5-1-2.5-2.3S6.6 5 8 5c.5-1.2 1.6-2 3-2s2.5.8 3 2c1.4 0 2.5 1.1 2.5 2.7S15.5 10 14 10"/><path d="M8 10v2.5a4 4 0 0 0 8 0V10"/><path d="M10 17h4"/></svg></span>
         <span class="char-name">スタッフ</span>
       </div>
       <div class="bubble">
@@ -237,7 +253,7 @@
     <div class="panel-num">3</div>
     <div class="scene reverse">
       <div class="char">
-        <span class="char-icon">🙋‍♂️</span>
+        <span class="char-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M6 19c1.5-3 4-4.5 6-4.5s4.5 1.5 6 4.5"/></svg></span>
         <span class="char-name">おきゃく</span>
       </div>
       <div class="bubble">
@@ -246,7 +262,7 @@
     </div>
     <div class="scene">
       <div class="char">
-        <span class="char-icon">👩‍🍳</span>
+        <span class="char-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 10c-1.5 0-2.5-1-2.5-2.3S6.6 5 8 5c.5-1.2 1.6-2 3-2s2.5.8 3 2c1.4 0 2.5 1.1 2.5 2.7S15.5 10 14 10"/><path d="M8 10v2.5a4 4 0 0 0 8 0V10"/><path d="M10 17h4"/></svg></span>
         <span class="char-name">スタッフ</span>
       </div>
       <div class="bubble">
@@ -261,7 +277,7 @@
     <div class="panel-num" style="background:#eab308;">4</div>
     <div class="alert-box">
       <div class="alert-title">だいじな　ルール</div>
-      <div class="senmu-icon">👓</div>
+      <div class="senmu-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="12" r="3"/><circle cx="16" cy="12" r="3"/><path d="M11 12h2"/><path d="M5 12H3"/><path d="M21 12h-2"/></svg></div>
       <div class="alert-text">
         ウイスキー　が　ない　とき、<br>
         わからない　とき　は…<br>
@@ -272,7 +288,7 @@
 
   <div class="back-btn-area">
     <a href="dinner-guide.html" class="back-btn">
-      ↩️ ゆうしょく あんない へ もどる
+      ゆうしょく あんない へ もどる
     </a>
   </div>
 

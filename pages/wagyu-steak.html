@@ -1,82 +1,47 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ja">
 <head><link rel="stylesheet" href="/fudotaki-manual/assets/css/theme.css">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>わぎゅう かいせき・すてーきぷらん せつめい（wagyu-steak）</title>
 <style>
-  :root{
-    --bg:#f6f7f8; --card:#ffffff; --ink:#1f2a37; --muted:#64748b;
-    --acc:#0f766e; --acc-2:#155e75; --bd:#e5e7eb; --radius:18px;
-    --maxw:980px; --shadow:0 6px 18px rgba(0,0,0,.06);
-  }
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
-    font-family:system-ui,-apple-system,"Segoe UI","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.7;
-    scroll-behavior:smooth;}
+  :root{--bg:#f4efe8; --card:rgba(255,251,245,.9); --ink:#221c18; --muted:#756a62; --acc:#6c5845; --acc-2:#3f4d61; --bd:rgba(108,88,69,.14); --radius:24px; --maxw:1040px; --shadow:0 24px 60px rgba(34,28,24,.10);}
+  html,body{margin:0;padding:0;background:radial-gradient(circle at top, rgba(255,255,255,.64), transparent 42%),linear-gradient(180deg,#f7f2eb,#efe7dd);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.75;scroll-behavior:smooth;}
   a{color:var(--acc);text-decoration:none}
-
-  /* へっだー */
-  header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#fff,rgba(255,255,255,.9));
-    backdrop-filter:saturate(180%) blur(8px); border-bottom:1px solid var(--bd)}
-  header .inner{max-width:var(--maxw);margin:auto;padding:10px 16px;display:flex;gap:12px;align-items:center}
+  header{position:sticky;top:0;z-index:20;background:rgba(248,243,236,.82);backdrop-filter:saturate(180%) blur(16px); border-bottom:1px solid var(--bd)}
+  header .inner{max-width:var(--maxw);margin:auto;padding:12px 18px;display:flex;gap:12px;align-items:center}
   header .home{color:var(--acc-2)}
   header .brand{margin-left:auto;color:var(--muted);font-weight:700}
-  header .toc{padding:6px 10px;border:1px solid var(--bd);border-radius:10px;background:#fff;color:var(--acc-2)}
-
-  /* ひーろー */
-  .hero{position:relative;max-width:var(--maxw);margin:12px auto;border-radius:var(--radius);overflow:hidden;
-    box-shadow:var(--shadow);background:#000}
-  .hero img{width:100%;height:280px;object-fit:cover;object-position:center}
-  .hero .hero-title{position:absolute;left:20px;bottom:18px;color:#fff;font-size:clamp(18px,3.2vw,28px);
-    font-weight:700;text-shadow:0 2px 10px rgba(0,0,0,.4)}
-
-  main{max-width:var(--maxw);margin:0 auto 80px;padding:0 12px;}
-
-  /* もくじ かーど */
+  header .toc{padding:8px 12px;border:1px solid var(--bd);border-radius:999px;background:rgba(255,251,245,.92);color:var(--acc-2)}
+  .hero{position:relative;max-width:var(--maxw);margin:12px auto;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#000}
+  .hero img{width:100%;height:320px;object-fit:cover;object-position:center;filter:saturate(.88) contrast(1.03)}
+  .hero .hero-title{position:absolute;left:20px;bottom:18px;color:#fff;font-size:clamp(18px,3.2vw,28px);font-weight:700;text-shadow:0 2px 10px rgba(0,0,0,.4);background:rgba(24,20,18,.36);padding:10px 16px;border-radius:999px;backdrop-filter:blur(12px)}
+  main{max-width:var(--maxw);margin:0 auto 80px;padding:0 18px;}
   #toc .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:8px 0 0}
-  .card{background:#fff;border:1px solid var(--bd);border-radius:14px;padding:12px;box-shadow:var(--shadow)}
+  .mono-icon,.toc-icon{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;border-radius:12px;background:rgba(63,77,97,.1);color:var(--acc-2);flex:0 0 auto}
+  .mono-icon svg,.toc-icon svg,.float-btns button svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .head h2{display:flex;align-items:center;gap:10px}
+  .card{background:rgba(255,255,255,.84);border:1px solid var(--bd);border-radius:18px;padding:14px;box-shadow:var(--shadow);backdrop-filter:blur(12px)}
+  .card a{display:flex;align-items:flex-start;gap:10px;color:inherit}
   .card small{color:var(--muted);display:block}
-
-  /* せくしょん */
-  section.block{margin:24px 0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-  .head{background:#fff;border-bottom:1px solid var(--bd);padding:12px 16px}
+  section.block{margin:24px 0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);backdrop-filter:blur(16px)}
+  .head{background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(247,240,232,.88));border-bottom:1px solid var(--bd);padding:16px 18px}
   .head h2{margin:0;font-size:clamp(18px,3vw,22px)}
   .head .sub{color:var(--muted);font-size:.9em;margin-top:4px}
-  .body{background:#fff;padding:14px 16px}
-
+  .body{background:var(--card);padding:18px}
   .bul{margin:0 0 0 1.2em;padding:0}
   .bul li{margin:6px 0}
   .lv p{margin:6px 0}
   .warn{color:#d12626}
-
-  /* おーでぃお ひょうじ */
-  .band{background:#0d5874;padding:28px 0}
-  .aud-wrap{background:#121212;border:1px solid #333;border-radius:12px;padding:14px 16px;
-    box-shadow:0 8px 20px rgba(0,0,0,.35);max-width:680px;margin:0 auto}
+  .band{background:linear-gradient(135deg,#45362d,#3f4d61);padding:28px 0;border-radius:20px}
+  .aud-wrap{background:rgba(17,17,17,.7);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:14px 16px;box-shadow:0 8px 20px rgba(0,0,0,.35);max-width:680px;margin:0 auto}
   audio{width:100%;display:block}
-
-  /* まえへ／つぎへ */
   .nav{display:flex;gap:8px;justify-content:space-between;margin-top:12px}
-  .nav a{flex:1;text-align:center;padding:10px;border:1px solid var(--bd);border-radius:10px;background:#fff;color:var(--acc-2)}
-
-  /* みぎした の まるぼたん */
-  .float-btns {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 100;
-  }
-  .float-btns button{
-    width:48px;height:48px;border-radius:50%;
-    border:none;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.15);
-    font-size:22px;cursor:pointer;transition:transform .2s, background .2s;
-  }
-  .float-btns button:hover{transform:scale(1.08);background:#f1f5f9;}
-
-  @media (max-width:480px){ .hero img{height:220px} }
+  .nav a{flex:1;text-align:center;padding:11px;border:1px solid var(--bd);border-radius:999px;background:rgba(255,255,255,.86);color:var(--acc-2)}
+  .float-btns {position: fixed;right: 20px;bottom: 20px;display: flex;flex-direction: column;gap: 12px;z-index: 100;}
+  .float-btns button{width:48px;height:48px;border-radius:50%;border:none;background:rgba(255,251,245,.94);box-shadow:0 12px 30px rgba(34,28,24,.12);color:var(--acc-2);cursor:pointer;transition:transform .2s, background .2s;display:grid;place-items:center;}
+  .float-btns button:hover{transform:scale(1.08);background:#f5efe7;}
+  @media (max-width:480px){ .hero img{height:240px} }
 </style>
 </head>
 <body>
@@ -97,14 +62,14 @@
 
   <!-- もくじ -->
   <section id="toc" class="block">
-    <div class="head"><h2>もくじ</h2></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 6h11"/><path d="M8 12h11"/><path d="M8 18h11"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg></span>もくじ</h2></div>
     <div class="body">
       <div class="cards">
-        <div class="card"><a href="#sukiyaki">すきやき せつめい<small>れべる1／れべる2／れべる3</small></a></div>
-        <div class="card"><a href="#steak-sample">すてーき さんぷる うかがいかた<small>てじゅん・ていけい せりふ</small></a></div>
-        <div class="card"><a href="#fry">ふらい せつめい<small>れべる1／れべる2／れべる3</small></a></div>
-        <div class="card"><a href="#tare">すてーき たれ の せつめい<small>ていきょう の たいみんぐ</small></a></div>
-        <div class="card"><a href="#steak">すてーき せつめい<small>れべる1／れべる2／れべる3</small></a></div>
+        <div class="card"><a href="#sukiyaki"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14h16"/><path d="M6 14a6 6 0 0 1 12 0"/><path d="M7 18h10"/></svg></span><span>すきやき せつめい<small>れべる1／れべる2／れべる3</small></span></a></div>
+        <div class="card"><a href="#steak-sample"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7c2-2 5-3 8-2 2 .6 3 2.2 3 4.2 0 4-3.2 7.8-8.2 9.6-1.6.6-3.4-.1-4.1-1.7C4.5 14.3 5.1 10.2 7 7z"/><path d="M10 9c1.4-.6 3-.4 4.2.5"/></svg></span><span>すてーき さんぷる うかがいかた<small>てじゅん・ていけい せりふ</small></span></a></div>
+        <div class="card"><a href="#fry"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 6h12"/><path d="M7 10h10"/><path d="M8 14h8"/><path d="M9 18h6"/></svg></span><span>ふらい せつめい<small>れべる1／れべる2／れべる3</small></span></a></div>
+        <div class="card"><a href="#tare"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4h6"/><path d="M10 4v6a2 2 0 0 0 4 0V4"/><path d="M8 14h8"/><path d="M10 18h4"/></svg></span><span>すてーき たれ の せつめい<small>ていきょう の たいみんぐ</small></span></a></div>
+        <div class="card"><a href="#steak"><span class="toc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7c2-2 5-3 8-2 2 .6 3 2.2 3 4.2 0 4-3.2 7.8-8.2 9.6-1.6.6-3.4-.1-4.1-1.7C4.5 14.3 5.1 10.2 7 7z"/></svg></span><span>すてーき せつめい<small>れべる1／れべる2／れべる3</small></span></a></div>
       </div>
     </div>
   </section>
@@ -252,8 +217,8 @@
 
 <!-- みぎした の まるぼたん -->
 <div class="float-btns">
-  <button class="btn-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="ぺーじ の うえへ">⬆</button>
-  <button class="btn-home" onclick="location.href='../index.html'" title="ほーむ へ">🏠</button>
+  <button class="btn-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="ぺーじ の うえへ" aria-label="ぺーじ の うえへ"><svg viewBox="0 0 24 24"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg></button>
+  <button class="btn-home" onclick="location.href='../index.html'" title="ほーむ へ" aria-label="ほーむ へ"><svg viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5"/><path d="M7 10.5V19h10v-8.5"/><path d="M10 19v-4h4v4"/></svg></button>
 </div>
 
 <script>
@@ -283,3 +248,4 @@
 </script>
 </body>
 </html>
+
