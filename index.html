@@ -97,15 +97,10 @@
     display: block;
     width: 18px;
     height: 18px;
-    background-color: currentColor;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: contain;
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 2.8l1.6 4.1 4.4-1.5-1.5 4.4H21l-3.8 2.7 1.5 4.1-4-1.7.3 5.1-3-2.2-3 2.2.3-5.1-4 1.7 1.5-4.1L3 9.8h4.5L6 5.4l4.4 1.5z'/%3E%3C/svg%3E");
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    -webkit-mask-size: contain;
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 2.8l1.6 4.1 4.4-1.5-1.5 4.4H21l-3.8 2.7 1.5 4.1-4-1.7.3 5.1-3-2.2-3 2.2.3-5.1-4 1.7 1.5-4.1L3 9.8h4.5L6 5.4l4.4 1.5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3.2l1.1 3.3L17 5.2l-1.3 3.2h3.4l-2.8 2.1 1.1 3.2-3-1.4.2 4.1-2.6-1.8-2.6 1.8.2-4.1-3 1.4 1.1-3.2-2.8-2.1h3.4L7 5.2l3.9 1.3L12 3.2z' fill='none' stroke='%230f766e' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
   .notice-icon svg { width: 18px; height: 18px; display: none; }
 
@@ -146,64 +141,59 @@
 
   .icon-box {
     margin-right: 14px;
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 14px;
+    border-radius: 999px;
     text-align: center;
-    background: #f8fafc;
+    background: #fafafa;
     color: #5b6472;
     flex-shrink: 0;
     font-size: 0;
     line-height: 0;
+    border: 1px solid rgba(15, 23, 42, 0.08);
   }
   .icon-box::before {
     content: "";
     display: block;
-    width: 24px;
-    height: 24px;
-    background-color: currentColor;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    -webkit-mask-size: contain;
+    width: 22px;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
   .icon-box svg { width: 24px; height: 24px; display: none; }
   .type-dinner .icon-box {
-    background: #eef2ff;
-    color: #3347a8;
+    background: rgba(30, 58, 138, 0.05);
+    color: #4154a6;
+    border-color: rgba(30, 58, 138, 0.12);
   }
   .type-morning .icon-box {
-    background: #fff4e8;
-    color: #b96812;
+    background: rgba(217, 119, 6, 0.06);
+    color: #b46b1e;
+    border-color: rgba(217, 119, 6, 0.14);
   }
   .type-work .icon-box {
-    background: #f1f5f9;
-    color: #4b5563;
+    background: rgba(71, 85, 105, 0.06);
+    color: #586474;
+    border-color: rgba(71, 85, 105, 0.14);
   }
   a[href="pages/season-dinner.html"] .icon-box::before {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M4 14h16v2H4zm2-6 3 2 3-4 3 4 3-2v5H6z'/%3E%3C/svg%3E");
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M4 14h16v2H4zm2-6 3 2 3-4 3 4 3-2v5H6z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4.5 15h15M6.5 15V8.7l3 2 2.5-3.4 2.5 3.4 3-2V15M3.5 18.5h17' fill='none' stroke='%234154a6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
   a[href="pages/wagyu-steak.html"] .icon-box::before {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M10 4c-3.9 0-7 3-7 6.9C3 16.3 8.4 20 12.3 20c4.8 0 8.7-3.4 8.7-8.2C21 7.4 17.1 4 12.4 4c-1.7 0-3 .4-4.6 1.5C8.3 4.6 9.1 4 10 4zm1.7 6.1a2 2 0 1 0 0 4 2 2 0 0 0 0-4z'/%3E%3C/svg%3E");
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M10 4c-3.9 0-7 3-7 6.9C3 16.3 8.4 20 12.3 20c4.8 0 8.7-3.4 8.7-8.2C21 7.4 17.1 4 12.4 4c-1.7 0-3 .4-4.6 1.5C8.3 4.6 9.1 4 10 4zm1.7 6.1a2 2 0 1 0 0 4 2 2 0 0 0 0-4z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9.8 5.2c-3.3 0-5.8 2.5-5.8 5.8 0 4.8 4.6 7.7 8.2 7.7 4.1 0 7.8-2.8 7.8-6.9 0-3.9-3-6.6-6.8-6.6-1.5 0-2.7.4-4 1.4' fill='none' stroke='%234154a6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='11.8' cy='11.8' r='1.7' fill='none' stroke='%234154a6' stroke-width='1.6'/%3E%3C/svg%3E");
   }
   a[href="pages/dinner-guide.html"] .icon-box::before {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M4 11h16a8 8 0 0 1-16 0zm4 5h8v2H8zm1-9c0-1 .7-1.4.7-2.4h1.6C11.3 5.6 10.6 6 10.6 7zm4 0c0-1 .7-1.4.7-2.4h1.6C15.3 5.6 14.6 6 14.6 7z'/%3E%3C/svg%3E");
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M4 11h16a8 8 0 0 1-16 0zm4 5h8v2H8zm1-9c0-1 .7-1.4.7-2.4h1.6C11.3 5.6 10.6 6 10.6 7zm4 0c0-1 .7-1.4.7-2.4h1.6C15.3 5.6 14.6 6 14.6 7z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 11.5h14a7 7 0 0 1-14 0ZM8.2 15.5h7.6M9 7.3c0-.9.7-1.4.7-2.2M12 7.3c0-.9.7-1.4.7-2.2M15 7.3c0-.9.7-1.4.7-2.2' fill='none' stroke='%234154a6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
   a[href="pages/breakfast-guide.html"] .icon-box::before {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 4a1 1 0 0 1 1 1v2.1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 6a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm7-1a1 1 0 0 1 0 2h-2.1a1 1 0 1 1 0-2zM8.1 10a1 1 0 1 1 0 2H6a1 1 0 1 1 0-2zm7.5-3.9a1 1 0 0 1 1.4 0l1.5 1.5a1 1 0 1 1-1.4 1.4l-1.5-1.5a1 1 0 0 1 0-1.4zM6.9 15.5a1 1 0 0 1 1.4 0l1.5 1.5a1 1 0 0 1-1.4 1.4L6.9 17a1 1 0 0 1 0-1.4zm10.2 2.9a1 1 0 0 1-1.4-1.4l1.5-1.5a1 1 0 1 1 1.4 1.4zm-8.7-8a1 1 0 0 1-1.4-1.4l1.5-1.5A1 1 0 1 1 9.9 8.9z'/%3E%3C/svg%3E");
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 4a1 1 0 0 1 1 1v2.1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 6a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm7-1a1 1 0 0 1 0 2h-2.1a1 1 0 1 1 0-2zM8.1 10a1 1 0 1 1 0 2H6a1 1 0 1 1 0-2zm7.5-3.9a1 1 0 0 1 1.4 0l1.5 1.5a1 1 0 1 1-1.4 1.4l-1.5-1.5a1 1 0 0 1 0-1.4zM6.9 15.5a1 1 0 0 1 1.4 0l1.5 1.5a1 1 0 0 1-1.4 1.4L6.9 17a1 1 0 0 1 0-1.4zm10.2 2.9a1 1 0 0 1-1.4-1.4l1.5-1.5a1 1 0 1 1 1.4 1.4zm-8.7-8a1 1 0 0 1-1.4-1.4l1.5-1.5A1 1 0 1 1 9.9 8.9z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='3.8' fill='none' stroke='%23b46b1e' stroke-width='1.6'/%3E%3Cpath d='M12 3.5v2.2M12 18.3v2.2M20.5 12h-2.2M5.7 12H3.5M18 6l-1.6 1.6M7.6 16.4 6 18M18 18l-1.6-1.6M7.6 7.6 6 6' fill='none' stroke='%23b46b1e' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
   }
   a[href="pages/checkin-out.html"] .icon-box::before {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 4a7 7 0 0 1 7 7H5a7 7 0 0 1 7-7zm-9 8h18v2H3zm3 3h12v2H6zm4 3h4v2h-4z'/%3E%3C/svg%3E");
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 4a7 7 0 0 1 7 7H5a7 7 0 0 1 7-7zm-9 8h18v2H3zm3 3h12v2H6zm4 3h4v2h-4z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 5.2a6.2 6.2 0 0 1 6.2 6.2H5.8A6.2 6.2 0 0 1 12 5.2ZM3.8 12.8h16.4M6.5 15.7h11M10.3 18.6h3.4' fill='none' stroke='%23586474' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
   .text-box { flex: 1; }
   .card-title {
