@@ -4,325 +4,385 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0f766e">
-  <title>きぬ川不動瀧 スタッフマニュアル</title>
-  
+  <title>不動滝 スタッフマニュアル</title>
+
   <link rel="stylesheet" href="assets/css/theme.css">
   <link rel="preload" as="image" href="assets/img/top/top2.jpg">
 
-<style>
-  :root {
-    --bg: #f6f7f8;
-    --card: #ffffff;
-    --acc: #0f766e;     /* 基本アクセント（緑） */
-    --acc-morning: #d97706; /* 朝食（オレンジ） */
-    --acc-dinner: #1e3a8a;  /* 夕食（紺） */
-    --acc-work: #475569;    /* 業務（グレー） */
-    --bd: #e5e7eb;
-    --radius: 18px;
-    --maxw: 600px; /* スマホで見やすいよう少し幅を絞る */
-    --shadow: 0 4px 20px rgba(0,0,0,0.06);
-  }
+  <style>
+    :root {
+      --bg: #f6f3ea;
+      --card: rgba(255, 255, 255, 0.94);
+      --acc: #177c73;
+      --acc-morning: #d97706;
+      --acc-dinner: #2747a7;
+      --acc-work: #5b6472;
+      --text: #1f2a37;
+      --muted: #667085;
+      --soft: #98a2b3;
+      --bd: #dfe3ea;
+      --radius: 18px;
+      --maxw: 600px;
+      --shadow: 0 8px 24px rgba(31, 42, 55, 0.08);
+    }
 
-  html, body {
-    margin: 0; padding: 0;
-    background: var(--bg) url("assets/img/top/washi-bg.jpg");
-    background-size: cover; background-attachment: fixed;
-    font-family: "Noto Sans JP", system-ui, -apple-system, sans-serif;
-    color: #1f2a37; line-height: 1.6;
-  }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg) url("assets/img/top/washi-bg.jpg");
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: "Noto Sans JP", system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.5;
+    }
 
-  /* ヘッダーエリア */
-  header {
-    position: relative;
-    background: var(--acc);
-    color: #fff;
-    padding: 2rem 1rem 4rem; /* 下に余白を持たせてカーブを作る */
-    text-align: center;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0,100,100,0.2);
-  }
-  .app-title {
-    font-size: 1.2rem; font-weight: 700; letter-spacing: 0.05em; margin: 0;
-  }
-  .greeting {
-    font-size: 0.9rem; opacity: 0.9; margin-top: 8px; font-weight: 500;
-  }
+    * {
+      box-sizing: border-box;
+    }
 
-  /* メインコンテンツ */
-  main {
-    max-width: var(--maxw);
-    margin: -3rem auto 3rem; /* ヘッダーに食い込ませる */
-    padding: 0 16px;
-    position: relative; z-index: 10;
-  }
+    header {
+      position: relative;
+      background: linear-gradient(180deg, #1d847b 0%, #177c73 100%);
+      color: #fff;
+      padding: 1.2rem 1rem 3.7rem;
+      text-align: center;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 4px 14px rgba(0, 100, 100, 0.18);
+    }
 
-  /* メイン画像（アイコン的に） */
-  .hero-icon {
-    width: 100px; height: 100px;
-    border-radius: 50%;
-    border: 4px solid #fff;
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    margin: 0 auto 20px;
-    background: #fff;
-  }
-  .hero-icon img {
-    width: 100%; height: 100%; object-fit: cover;
-  }
+    .app-title {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
 
-  /* お知らせバッジ（季節メニュー更新用） */
-  .notice-badge {
-    background: rgba(255,255,255,0.95);
-    border-radius: 12px;
-    padding: 10px 14px;
-    margin-bottom: 20px;
-    box-shadow: var(--shadow);
-    display: flex; align-items: center; gap: 10px;
-    font-size: 0.9rem; color: var(--acc);
-    border: 1px solid var(--acc);
-  }
-  .notice-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 18px;
-    height: 18px;
-    color: var(--acc);
-    font-size: 0;
-    line-height: 0;
-  }
-  .notice-icon::before {
-    content: "";
-    display: block;
-    width: 18px;
-    height: 18px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3.2l1.1 3.3L17 5.2l-1.3 3.2h3.4l-2.8 2.1 1.1 3.2-3-1.4.2 4.1-2.6-1.8-2.6 1.8.2-4.1-3 1.4 1.1-3.2-2.8-2.1h3.4L7 5.2l3.9 1.3L12 3.2z' fill='none' stroke='%230f766e' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  }
-  .notice-icon svg { width: 18px; height: 18px; display: none; }
+    .greeting {
+      margin-top: 0.45rem;
+      font-size: 0.86rem;
+      font-weight: 500;
+      opacity: 0.94;
+    }
 
-  /* グリッドレイアウト */
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: var(--maxw);
+      margin: -2.8rem auto 2.4rem;
+      padding: 0 16px;
+    }
 
-  /* カードデザイン */
-  .card {
-    background: var(--card);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    align-items: center;
-    padding: 16px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: 1px solid transparent;
-    position: relative;
-    overflow: hidden;
-  }
-  .card:active { transform: scale(0.98); }
-  
-  /* 左側のカラーバー */
-  .card::before {
-    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px;
-    background: var(--bd);
-  }
-  
-  /* カテゴリ別の色設定 */
-  .type-dinner::before { background: var(--acc-dinner); }
-  .type-morning::before { background: var(--acc-morning); }
-  .type-work::before { background: var(--acc-work); }
+    .hero-icon {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      border: 4px solid rgba(255, 255, 255, 0.95);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      background: #fff;
+    }
 
-  .icon-box {
-    margin-right: 14px;
-    width: 42px;
-    height: 42px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 999px;
-    text-align: center;
-    background: #fafafa;
-    color: #5b6472;
-    flex-shrink: 0;
-    font-size: 0;
-    line-height: 0;
-    border: 1px solid rgba(15, 23, 42, 0.08);
-  }
-  .icon-box::before {
-    content: "";
-    display: block;
-    width: 22px;
-    height: 22px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }
-  .icon-box svg { width: 24px; height: 24px; display: none; }
-  .type-dinner .icon-box {
-    background: rgba(30, 58, 138, 0.05);
-    color: #4154a6;
-    border-color: rgba(30, 58, 138, 0.12);
-  }
-  .type-morning .icon-box {
-    background: rgba(217, 119, 6, 0.06);
-    color: #b46b1e;
-    border-color: rgba(217, 119, 6, 0.14);
-  }
-  .type-work .icon-box {
-    background: rgba(71, 85, 105, 0.06);
-    color: #586474;
-    border-color: rgba(71, 85, 105, 0.14);
-  }
-  a[href="pages/season-dinner.html"] .icon-box::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4.5 15h15M6.5 15V8.7l3 2 2.5-3.4 2.5 3.4 3-2V15M3.5 18.5h17' fill='none' stroke='%234154a6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  }
-  a[href="pages/wagyu-steak.html"] .icon-box::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9.8 5.2c-3.3 0-5.8 2.5-5.8 5.8 0 4.8 4.6 7.7 8.2 7.7 4.1 0 7.8-2.8 7.8-6.9 0-3.9-3-6.6-6.8-6.6-1.5 0-2.7.4-4 1.4' fill='none' stroke='%234154a6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='11.8' cy='11.8' r='1.7' fill='none' stroke='%234154a6' stroke-width='1.6'/%3E%3C/svg%3E");
-  }
-  a[href="pages/dinner-guide.html"] .icon-box::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 11.5h14a7 7 0 0 1-14 0ZM8.2 15.5h7.6M9 7.3c0-.9.7-1.4.7-2.2M12 7.3c0-.9.7-1.4.7-2.2M15 7.3c0-.9.7-1.4.7-2.2' fill='none' stroke='%234154a6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  }
-  a[href="pages/breakfast-guide.html"] .icon-box::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='3.8' fill='none' stroke='%23b46b1e' stroke-width='1.6'/%3E%3Cpath d='M12 3.5v2.2M12 18.3v2.2M20.5 12h-2.2M5.7 12H3.5M18 6l-1.6 1.6M7.6 16.4 6 18M18 18l-1.6-1.6M7.6 7.6 6 6' fill='none' stroke='%23b46b1e' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
-  }
-  a[href="pages/checkin-out.html"] .icon-box::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 5.2a6.2 6.2 0 0 1 6.2 6.2H5.8A6.2 6.2 0 0 1 12 5.2ZM3.8 12.8h16.4M6.5 15.7h11M10.3 18.6h3.4' fill='none' stroke='%23586474' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  }
-  .text-box { flex: 1; }
-  .card-title {
-    display: block;
-    font-weight: 700;
-    font-size: 1.05rem;
-    margin-bottom: 2px;
-    color: #333;
-  }
-  .card-desc {
-    display: block;
-    font-size: 0.8rem;
-    color: var(--muted);
-  }
-  .arrow {
-    color: var(--bd); font-weight: bold;
-  }
+    .hero-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-  /* フッター */
-  footer {
-    text-align: center; font-size: 0.75rem; color: var(--muted);
-    padding: 2rem 0;
-  }
+    .notice-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding: 10px 14px;
+      border: 1px solid rgba(23, 124, 115, 0.8);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: var(--shadow);
+      color: var(--acc);
+      font-size: 0.84rem;
+    }
 
-  @media (min-width: 480px) {
-    .grid { grid-template-columns: 1fr 1fr; }
-    /* PC/タブレットなら最初のカード（季節メニュー）は横長に強調 */
-    .card:first-child { grid-column: 1 / -1; background: linear-gradient(to right, #fff, #f0fdfa); }
-  }
-</style>
+    .notice-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      font-size: 0;
+      line-height: 0;
+    }
+
+    .notice-icon::before {
+      content: "";
+      display: block;
+      width: 18px;
+      height: 18px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3.2l1.1 3.3L17 5.2l-1.3 3.2h3.4l-2.8 2.1 1.1 3.2-3-1.4.2 4.1-2.6-1.8-2.6 1.8.2-4.1-3 1.4 1.1-3.2-2.8-2.1h3.4L7 5.2l3.9 1.3L12 3.2z' fill='none' stroke='%23177c73' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      color: inherit;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:active {
+      transform: scale(0.985);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 6px;
+      background: var(--bd);
+    }
+
+    .type-dinner::before {
+      background: var(--acc-dinner);
+    }
+
+    .type-morning::before {
+      background: var(--acc-morning);
+    }
+
+    .type-work::before {
+      background: var(--acc-work);
+    }
+
+    .icon-box {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      background: #fafafa;
+      font-size: 0;
+      line-height: 0;
+    }
+
+    .icon-box::before {
+      content: "";
+      display: block;
+      width: 22px;
+      height: 22px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    .type-dinner .icon-box {
+      background: rgba(39, 71, 167, 0.06);
+      border-color: rgba(39, 71, 167, 0.12);
+    }
+
+    .type-morning .icon-box {
+      background: rgba(217, 119, 6, 0.06);
+      border-color: rgba(217, 119, 6, 0.14);
+    }
+
+    .type-work .icon-box {
+      background: rgba(91, 100, 114, 0.07);
+      border-color: rgba(91, 100, 114, 0.14);
+    }
+
+    a[href="pages/season-dinner.html"] .icon-box::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4.5 15h15M6.5 15V8.7l3 2 2.5-3.4 2.5 3.4 3-2V15M3.5 18.5h17' fill='none' stroke='%232747a7' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+
+    a[href="pages/wagyu-steak.html"] .icon-box::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9.8 5.2c-3.3 0-5.8 2.5-5.8 5.8 0 4.8 4.6 7.7 8.2 7.7 4.1 0 7.8-2.8 7.8-6.9 0-3.9-3-6.6-6.8-6.6-1.5 0-2.7.4-4 1.4' fill='none' stroke='%232747a7' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='11.8' cy='11.8' r='1.7' fill='none' stroke='%232747a7' stroke-width='1.6'/%3E%3C/svg%3E");
+    }
+
+    a[href="pages/dinner-guide.html"] .icon-box::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 11.5h14a7 7 0 0 1-14 0ZM8.2 15.5h7.6M9 7.3c0-.9.7-1.4.7-2.2M12 7.3c0-.9.7-1.4.7-2.2M15 7.3c0-.9.7-1.4.7-2.2' fill='none' stroke='%232747a7' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+
+    a[href="pages/breakfast-guide.html"] .icon-box::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='3.8' fill='none' stroke='%23c56f11' stroke-width='1.6'/%3E%3Cpath d='M12 3.5v2.2M12 18.3v2.2M20.5 12h-2.2M5.7 12H3.5M18 6l-1.6 1.6M7.6 16.4 6 18M18 18l-1.6-1.6M7.6 7.6 6 6' fill='none' stroke='%23c56f11' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+    }
+
+    a[href="pages/checkin-out.html"] .icon-box::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 5.2a6.2 6.2 0 0 1 6.2 6.2H5.8A6.2 6.2 0 0 1 12 5.2ZM3.8 12.8h16.4M6.5 15.7h11M10.3 18.6h3.4' fill='none' stroke='%235b6472' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+
+    .text-box {
+      flex: 1;
+      min-width: 0;
+      display: grid;
+      gap: 2px;
+    }
+
+    .card-kana {
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.22;
+      letter-spacing: 0.01em;
+      color: #233041;
+      word-break: keep-all;
+    }
+
+    .card-ja,
+    .card-ne {
+      display: block;
+      line-height: 1.2;
+    }
+
+    .card-ja {
+      font-size: 0.73rem;
+      color: #4a5565;
+    }
+
+    .card-ne {
+      font-size: 0.68rem;
+      color: var(--soft);
+      letter-spacing: 0.01em;
+    }
+
+    .arrow {
+      flex-shrink: 0;
+      color: #d0d5dd;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    @media (min-width: 480px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .card:first-child {
+        grid-column: 1 / -1;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.96), rgba(240, 253, 250, 0.96));
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="app-title">Fudotaki Manual</div>
+    <div class="greeting" id="greeting">こんにちは。きょうも がんばりましょう。</div>
+  </header>
 
-<header>
-  <div class="app-title">Fudotaki Manual</div>
-  <div class="greeting" id="greeting">おつかれさまです</div>
-</header>
+  <main>
+    <div class="hero-icon">
+      <img src="assets/img/top/top2.jpg?v=3" alt="不動滝の案内画像">
+    </div>
 
-<main>
-  <div class="hero-icon">
-    <img src="assets/img/top/top2.jpg?v=3" alt="Top Image">
-  </div>
+    <div class="notice-badge">
+      <span class="notice-icon" aria-hidden="true"></span>
+      <span><strong>New:</strong> チェックインの てんわ あんないが ハンコウになりました。</span>
+    </div>
 
-  <div class="notice-badge">
-    <span class="notice-icon">🍁</span>
+    <div class="grid">
+      <a href="pages/season-dinner.html" class="card type-dinner">
+        <div class="icon-box" aria-hidden="true"></div>
+        <div class="text-box">
+          <span class="card-kana">きせつの こんだて</span>
+          <span class="card-ja">季節の献立</span>
+          <span class="card-ne">मौसमी मेनु</span>
+        </div>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
 
-    <span><strong>New:</strong> チェクインの　でんわの　あんないがヘンコウになりました。</span>
+      <a href="pages/wagyu-steak.html" class="card type-dinner">
+        <div class="icon-box" aria-hidden="true"></div>
+        <div class="text-box">
+          <span class="card-kana">わぎゅう かいせき すてーき</span>
+          <span class="card-ja">和牛懐石・ステーキ</span>
+          <span class="card-ne">वाग्यु स्टेक</span>
+        </div>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
 
-  </div>
+      <a href="pages/dinner-guide.html" class="card type-dinner">
+        <div class="icon-box" aria-hidden="true"></div>
+        <div class="text-box">
+          <span class="card-kana">ゆうしょく あんない</span>
+          <span class="card-ja">夕食案内</span>
+          <span class="card-ne">बेलुकाको भोजन जानकारी</span>
+        </div>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
 
-  <div class="grid">
-    <a href="pages/season-dinner.html" class="card type-dinner">
-      <div class="icon-box">🍱</div>
-      <div class="text-box">
-        <span class="card-title">キセツのこんだて</span>
-        <span class="card-desc">Dish Descriptions & Serving Procedures</span>
-      </div>
-      <span class="arrow">›</span>
-    </a>
+      <a href="pages/breakfast-guide.html" class="card type-morning">
+        <div class="icon-box" aria-hidden="true"></div>
+        <div class="text-box">
+          <span class="card-kana">ちょうしょく あんない</span>
+          <span class="card-ja">朝食案内</span>
+          <span class="card-ne">बिहानको भोजन जानकारी</span>
+        </div>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
 
-    <!-- <a href="pages/newyear-dinner.html" class="card type-dinner">
-      <div class="icon-box">🎍</div>
-      <div class="text-box">
-        <span class="card-title">ネンマツネンシ　こんだて</span>
-        <span class="card-desc">Dish Descriptions & Serving Procedures</span>
-      </div>
-      <span class="arrow">›</span>
-    </a> -->
-    <a href="pages/wagyu-steak.html" class="card type-dinner">
-      <div class="icon-box">🥩</div>
-      <div class="text-box">
-        <span class="card-title">わぎゅうかいせき・ステーキ</span>
-        <span class="card-desc">Meat Doneness & Sauce Descriptions</span>
-      </div>
-      <span class="arrow">›</span>
-    </a>
+      <a href="pages/checkin-out.html" class="card type-work">
+        <div class="icon-box" aria-hidden="true"></div>
+        <div class="text-box">
+          <span class="card-kana">ちぇっくいん あうと</span>
+          <span class="card-ja">チェックイン・アウト</span>
+          <span class="card-ne">चेक-इन / चेक-आउट</span>
+        </div>
+        <span class="arrow" aria-hidden="true">›</span>
+      </a>
+    </div>
+  </main>
 
-    <a href="pages/dinner-guide.html" class="card type-dinner">
-      <div class="icon-box">🍲</div>
-      <div class="text-box">
-        <span class="card-title">ゆうしょく　あんない</span>
-        <span class="card-desc">Dish Info & Service Steps</span>
-      </div>
-      <span class="arrow">›</span>
-    </a>
+  <footer>
+    &copy; Kinugawa Fudotaki Staff Manual
+  </footer>
 
-    <a href="pages/breakfast-guide.html" class="card type-morning">
-      <div class="icon-box">☀️</div>
-      <div class="text-box">
-        <span class="card-title">チョウショクあんない</span>
-        <span class="card-desc">お茶・配膳・おかわり</span>
-      </div>
-      <span class="arrow">›</span>
-    </a>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js");
+    }
 
-    <a href="pages/checkin-out.html" class="card type-work">
-      <div class="icon-box">🛎️</div>
-      <div class="text-box">
-        <span class="card-title">チェックイン・アウト</span>
-        <span class="card-desc">お迎え・お見送り・荷物</span>
-      </div>
-      <span class="arrow">›</span>
-    </a>
-  </div>
-</main>
+    const hour = new Date().getHours();
+    const greeting = document.getElementById("greeting");
 
-<footer>
-  &copy; Kinugawa Fudotaki Staff Manual
-</footer>
-
-<script>
-  // Service Worker 登録
-  if('serviceWorker' in navigator){
-    navigator.serviceWorker.register('./sw.js');
-  }
-
-  // 時間帯に合わせて挨拶を変えるスクリプト
-  const h = new Date().getHours();
-  const el = document.getElementById('greeting');
-  if (h >= 4 && h < 11) {
-    el.textContent = "おはようございます。";
-  } else if (h >= 11 && h < 17) {
-
-    el.textContent = "こんにちは。ガンバリましょう。";
-
-  } else {
-    el.textContent = "おつかれさまです。タイチョウにきをつけて。";
-  }
-</script>
-
+    if (hour >= 4 && hour < 11) {
+      greeting.textContent = "おはようございます。きょうも よろしくおねがいします。";
+    } else if (hour >= 11 && hour < 17) {
+      greeting.textContent = "こんにちは。きょうも がんばりましょう。";
+    } else {
+      greeting.textContent = "おつかれさまです。さいごまで よろしくおねがいします。";
+    }
+  </script>
 </body>
 </html>
