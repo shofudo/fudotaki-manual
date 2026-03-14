@@ -6,77 +6,80 @@
 <title>わぎゅう かいせき・すてーきぷらん せつめい（wagyu-steak）</title>
 <style>
   :root{
-    --bg:#f6f7f8; --card:#ffffff; --ink:#1f2a37; --muted:#64748b;
+    --bg:#f6f7f8; --card:#ffffff; --ink:#1f2a37; --muted:#64748b; --soft:#94a3b8;
     --acc:#0f766e; --acc-2:#155e75; --bd:#e5e7eb; --radius:18px;
-    --maxw:980px; --shadow:0 6px 18px rgba(0,0,0,.06);
+    --maxw:760px; --shadow:0 6px 18px rgba(0,0,0,.06);
   }
   html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
-    font-family:system-ui,-apple-system,"Segoe UI","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.7;
+    font-family:system-ui,-apple-system,"Segoe UI","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.6;
     scroll-behavior:smooth;}
+  *{box-sizing:border-box}
   a{color:var(--acc);text-decoration:none}
 
-  /* へっだー */
-  header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#fff,rgba(255,255,255,.9));
+  header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#fff,rgba(255,255,255,.94));
     backdrop-filter:saturate(180%) blur(8px); border-bottom:1px solid var(--bd)}
-  header .inner{max-width:var(--maxw);margin:auto;padding:10px 16px;display:flex;gap:12px;align-items:center}
+  header .inner{max-width:var(--maxw);margin:auto;padding:10px 14px;display:flex;gap:10px;align-items:center}
   header .home{color:var(--acc-2)}
   header .brand{margin-left:auto;color:var(--muted);font-weight:700}
   header .toc{padding:6px 10px;border:1px solid var(--bd);border-radius:10px;background:#fff;color:var(--acc-2)}
 
-  /* ひーろー */
   .hero{position:relative;max-width:var(--maxw);margin:12px auto;border-radius:var(--radius);overflow:hidden;
     box-shadow:var(--shadow);background:#000}
   .hero img{width:100%;height:280px;object-fit:cover;object-position:center}
-  .hero .hero-title{position:absolute;left:20px;bottom:18px;color:#fff;font-size:clamp(18px,3.2vw,28px);
-    font-weight:700;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+  .hero .hero-title{position:absolute;left:18px;right:18px;bottom:16px;color:#fff;
+    text-shadow:0 2px 10px rgba(0,0,0,.45)}
 
   main{max-width:var(--maxw);margin:0 auto 80px;padding:0 12px;}
 
-  /* もくじ かーど */
-  #toc .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:8px 0 0}
+  #toc .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:8px 0 0}
   .card{background:#fff;border:1px solid var(--bd);border-radius:14px;padding:12px;box-shadow:var(--shadow)}
-  .card small{color:var(--muted);display:block}
+  .card a{display:block}
 
-  /* せくしょん */
-  section.block{margin:24px 0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-  .head{background:#fff;border-bottom:1px solid var(--bd);padding:12px 16px}
-  .head h2{margin:0;font-size:clamp(18px,3vw,22px)}
-  .head .sub{color:var(--muted);font-size:.9em;margin-top:4px}
-  .body{background:#fff;padding:14px 16px}
+  section.block{margin:18px 0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .head{background:#fff;border-bottom:1px solid var(--bd);padding:12px 14px}
+  .head h2{margin:0}
+  .body{background:#fff;padding:14px}
 
-  .bul{margin:0 0 0 1.2em;padding:0}
-  .bul li{margin:6px 0}
-  .lv p{margin:6px 0}
-  .warn{color:#d12626}
+  .triple{display:block}
+  .triple + .triple{margin-top:4px}
+  .kana{display:block;font-size:clamp(1rem,2.8vw,1.16rem);font-weight:700;line-height:1.35;letter-spacing:.01em}
+  .ja{display:block;margin-top:2px;font-size:.79rem;line-height:1.35;color:#475569}
+  .ne{display:block;margin-top:1px;font-size:.72rem;line-height:1.3;color:var(--soft)}
+  .hero-title .kana{font-size:clamp(1.1rem,4vw,1.8rem)}
+  .hero-title .ja{font-size:clamp(.78rem,2.4vw,.95rem);color:#e2e8f0}
+  .hero-title .ne{font-size:clamp(.7rem,2vw,.82rem);color:#cbd5e1}
 
-  /* おーでぃお ひょうじ */
-  .band{background:#0d5874;padding:28px 0}
+  .bul{margin:0 0 0 1.15em;padding:0}
+  .bul li{margin:8px 0}
+  .lv p{margin:8px 0}
+  .warn .kana,.warn .ja,.warn .ne{color:#b42318}
+
+  .band{background:#0d5874;padding:24px 12px}
   .aud-wrap{background:#121212;border:1px solid #333;border-radius:12px;padding:14px 16px;
     box-shadow:0 8px 20px rgba(0,0,0,.35);max-width:680px;margin:0 auto}
   audio{width:100%;display:block}
 
-  /* まえへ／つぎへ */
   .nav{display:flex;gap:8px;justify-content:space-between;margin-top:12px}
   .nav a{flex:1;text-align:center;padding:10px;border:1px solid var(--bd);border-radius:10px;background:#fff;color:var(--acc-2)}
 
-  /* みぎした の まるぼたん */
-  .float-btns {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 100;
+  .float-btns{
+    position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:10px;z-index:100;
   }
   .float-btns button{
-    width:48px;height:48px;border-radius:50%;
-    border:none;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.15);
-    font-size:22px;cursor:pointer;transition:transform .2s, background .2s;
+    width:46px;height:46px;border-radius:50%;border:none;background:#fff;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);font-size:22px;cursor:pointer;transition:transform .2s, background .2s;
   }
   .float-btns button:hover{transform:scale(1.08);background:#f1f5f9;}
 
-  @media (max-width:480px){ .hero img{height:220px} }
+  @media (max-width:480px){
+    .hero img{height:220px}
+    header .inner{padding:10px 12px}
+    .body{padding:12px}
+    .card{padding:10px}
+    .kana{font-size:1rem}
+    .ja{font-size:.76rem}
+    .ne{font-size:.69rem}
+  }
 </style>
 </head>
 <body>
@@ -90,34 +93,84 @@
 
 <div class="hero">
   <img src="../assets/img/wagyu-steak/top2.jpg" alt="">
-  <div class="hero-title">わぎゅう かいせき・すてーきぷらん せつめい</div>
+  <div class="hero-title triple">
+    <span class="kana">わぎゅう かいせき・すてーきぷらん せつめい</span>
+    <span class="ja">和牛懐石・ステーキプラン説明</span>
+    <span class="ne">वाग्यु काइसेकि र स्टेक योजना विवरण</span>
+  </div>
 </div>
 
 <main>
 
-  <!-- もくじ -->
   <section id="toc" class="block">
-    <div class="head"><h2>もくじ</h2></div>
+    <div class="head">
+      <h2 class="triple">
+        <span class="kana">もくじ</span>
+        <span class="ja">目次</span>
+        <span class="ne">विषयसूची</span>
+      </h2>
+    </div>
     <div class="body">
       <div class="cards">
-        <div class="card"><a href="#sukiyaki">すきやき せつめい</a></div>
-        <div class="card"><a href="#steak-sample">すてーき さんぷる うかがいかた<small>てじゅん・ていけい せりふ</small></a></div>
-        <div class="card"><a href="#fry">ふらい せつめい</a></div>
-        <div class="card"><a href="#tare">すてーき たれ の せつめい<small>ていきょう の たいみんぐ</small></a></div>
-        <div class="card"><a href="#steak">すてーき せつめい</a></div>
+        <div class="card">
+          <a href="#sukiyaki" class="triple">
+            <span class="kana">すきやき せつめい</span>
+            <span class="ja">すき焼き説明</span>
+            <span class="ne">सुकीयाकी विवरण</span>
+          </a>
+        </div>
+        <div class="card">
+          <a href="#steak-sample" class="triple">
+            <span class="kana">すてーき さんぷる うかがいかた</span>
+            <span class="ja">ステーキサンプルの伺い方</span>
+            <span class="ne">स्टेक नमूना देखाएर सोध्ने तरिका</span>
+          </a>
+        </div>
+        <div class="card">
+          <a href="#fry" class="triple">
+            <span class="kana">ふらい せつめい</span>
+            <span class="ja">フライ説明</span>
+            <span class="ne">फ्राइ विवरण</span>
+          </a>
+        </div>
+        <div class="card">
+          <a href="#tare" class="triple">
+            <span class="kana">すてーき たれ の せつめい</span>
+            <span class="ja">ステーキのたれの説明</span>
+            <span class="ne">स्टेक ससको विवरण</span>
+          </a>
+        </div>
+        <div class="card">
+          <a href="#steak" class="triple">
+            <span class="kana">すてーき せつめい</span>
+            <span class="ja">ステーキ説明</span>
+            <span class="ne">स्टेक विवरण</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 1) すきやき -->
   <section class="block" id="sukiyaki">
     <div class="head">
-      <h2>わぎゅう かいせき すきやき せつめい</h2>
+      <h2 class="triple">
+        <span class="kana">わぎゅう かいせき すきやき せつめい</span>
+        <span class="ja">和牛懐石 すき焼き説明</span>
+        <span class="ne">वाग्यु काइसेकि सुकीयाकी विवरण</span>
+      </h2>
     </div>
     <div class="body">
       <div class="lv">
-        <p>こちらは、にもの に なります。</p>
-        <p>とちぎわぎゅう の さーろいん と ももにく を、すきやき したて の にもの に した もの に なります。</p>
+        <p class="triple">
+          <span class="kana">こちらは、にもの に なります。</span>
+          <span class="ja">こちらは、煮物になります。</span>
+          <span class="ne">यो पकवान उमालेको परिकार हो।</span>
+        </p>
+        <p class="triple">
+          <span class="kana">とちぎわぎゅう の さーろいん と ももにく を、すきやき したて の にもの に した もの に なります。</span>
+          <span class="ja">とちぎ和牛のサーロインともも肉を、すき焼き仕立ての煮物にしたものになります。</span>
+          <span class="ne">यो तोचिगी वाग्युको सरलोइन र मोमो मासुबाट बनाइएको सुकीयाकी शैलीको पकवान हो।</span>
+        </p>
       </div>
 
       <div class="band">
@@ -135,21 +188,62 @@
     </div>
   </section>
 
-  <!-- 2) すてーき さんぷる の うかがいかた -->
   <section class="block" id="steak-sample">
-    <div class="head"><h2>すてーき さんぷる うかがいかた</h2></div>
+    <div class="head">
+      <h2 class="triple">
+        <span class="kana">すてーき さんぷる うかがいかた</span>
+        <span class="ja">ステーキサンプルの伺い方</span>
+        <span class="ne">स्टेक नमूना देखाएर सोध्ने तरिका</span>
+      </h2>
+    </div>
     <div class="body">
       <ul class="bul">
-        <li>むしもの（わぎゅう かいせき は すきやき）と いっしょに、にく の さんぷる を もっていく。</li>
-        <li>にく は さーろいん（150g）、ふぃれにく（100g）を ようい しています。</li>
-        <li>にく の しゅるい は よやくじ に ちょいす して いただいて います。</li>
-        <li>わぎゅう かいせき は すべて ふぃれにく を ようい しています。</li>
-        <li>むしもの を ていきょう した あと に、にく を みせて せつめい を する。</li>
+        <li class="triple">
+          <span class="kana">むしもの（わぎゅう かいせき は すきやき）と いっしょに、にく の さんぷる を もっていく。</span>
+          <span class="ja">蒸し物（和牛懐石はすき焼き）と一緒に、肉のサンプルを持っていく。</span>
+          <span class="ne">भापमा पकाएको परिकारसँगै, मासुको नमूना लिएर जानुहोस्। वाग्यु काइसेकिमा सुकीयाकी पर्छ।</span>
+        </li>
+        <li class="triple">
+          <span class="kana">にく は さーろいん（150g）、ふぃれにく（100g）を ようい しています。</span>
+          <span class="ja">肉はサーロイン（150g）、フィレ肉（100g）をご用意しています。</span>
+          <span class="ne">मासुका लागि सरलोइन 150g र फिले 100g तयार गरिएको छ।</span>
+        </li>
+        <li class="triple">
+          <span class="kana">にく の しゅるい は よやくじ に ちょいす して いただいて います。</span>
+          <span class="ja">肉の種類は予約時にチョイスしていただいています。</span>
+          <span class="ne">मासुको प्रकार पाहुनाले बुकिङ गर्दा नै छनोट गर्नुभएको हुन्छ।</span>
+        </li>
+        <li class="triple">
+          <span class="kana">わぎゅう かいせき は すべて ふぃれにく を ようい しています。</span>
+          <span class="ja">和牛懐石はすべてフィレ肉をご用意しています。</span>
+          <span class="ne">वाग्यु काइसेकि सबैका लागि फिले मासु तयार गरिएको हुन्छ।</span>
+        </li>
+        <li class="triple">
+          <span class="kana">むしもの を ていきょう した あと に、にく を みせて せつめい を する。</span>
+          <span class="ja">蒸し物を提供した後に、肉を見せて説明をする。</span>
+          <span class="ne">भापमा पकाएको परिकार दिएको पछि, मासु देखाएर व्याख्या गर्नुहोस्।</span>
+        </li>
       </ul>
-      <p>「こちら、 この あと の すてーき で やかせて いただく おにく で ございます。」</p>
-      <p>「おこのみ の やきかげん で めしあがって いただいて おりますが、やきかげん は いかが いたしますか？」</p>
-      <p class="warn">※ ごくじょう かいせき の にもの と ちがい、ひとり ずつ やきかげん を うかがいます。</p>
-      <p>ていきょう ご、ひ の とおりかげん・やきかげん・だんじょ の うちわけ を めも。→ ちょうりば へ、にく と いっしょに わたす。</p>
+      <p class="triple">
+        <span class="kana">「こちら、 この あと の すてーき で やかせて いただく おにく で ございます。」</span>
+        <span class="ja">「こちら、この後のステーキで焼かせていただくお肉でございます。」</span>
+        <span class="ne">"यो अहिलेपछि स्टेकको रूपमा पकाएर पस्किने मासु हो।"</span>
+      </p>
+      <p class="triple">
+        <span class="kana">「おこのみ の やきかげん で めしあがって いただいて おりますが、やきかげん は いかが いたしますか？」</span>
+        <span class="ja">「お好みの焼き加減で召し上がっていただいておりますが、焼き加減はいかがいたしますか？」</span>
+        <span class="ne">"कृपया आफ्नो मनपर्ने पकाइको स्तर बताइदिनुहोस्, कस्तो पकाइ चाहनुहुन्छ?"</span>
+      </p>
+      <p class="triple warn">
+        <span class="kana">※ ごくじょう かいせき の にもの と ちがい、ひとり ずつ やきかげん を うかがいます。</span>
+        <span class="ja">※ 極上懐石の煮物と違い、一人ずつ焼き加減を伺います。</span>
+        <span class="ne">विशेष: गोकुजो काइसेकिको पकवानभन्दा फरक, प्रत्येक व्यक्तिको पकाइ अलग-अलग सोध्नुहोस्।</span>
+      </p>
+      <p class="triple">
+        <span class="kana">ていきょう ご、ひ の とおりかげん・やきかげん・だんじょ の うちわけ を めも。→ ちょうりば へ、にく と いっしょに わたす。</span>
+        <span class="ja">提供後、火の通り加減・焼き加減・男女の内訳をメモし、調理場へ肉と一緒に渡す。</span>
+        <span class="ne">पेश गरेपछि, पकाइको स्तर र पुरुष-महिलाको संख्या नोट गरेर मासुसँगै भान्सामा दिनुहोस्।</span>
+      </p>
 
       <div class="band">
         <div class="aud-wrap">
@@ -166,16 +260,31 @@
     </div>
   </section>
 
-  <!-- 3) ふらい -->
   <section class="block" id="fry">
     <div class="head">
-      <h2>わぎゅう かいせき ふらい せつめい</h2>
+      <h2 class="triple">
+        <span class="kana">わぎゅう かいせき ふらい せつめい</span>
+        <span class="ja">和牛懐石 フライ説明</span>
+        <span class="ne">वाग्यु काइसेकि फ्राइ विवरण</span>
+      </h2>
     </div>
     <div class="body">
       <div class="lv">
-        <p>こちらは、あげもの に なります。</p>
-        <p>とちぎわぎゅう の ふぃれにく を ふらい に した もの に なります。</p>
-        <p>がんえん と うすたーそーす を ごようい しております ので、おこのみ で めしあがって ください。</p>
+        <p class="triple">
+          <span class="kana">こちらは、あげもの に なります。</span>
+          <span class="ja">こちらは、揚げ物になります。</span>
+          <span class="ne">यो तारेको परिकार हो।</span>
+        </p>
+        <p class="triple">
+          <span class="kana">とちぎわぎゅう の ふぃれにく を ふらい に した もの に なります。</span>
+          <span class="ja">とちぎ和牛のフィレ肉をフライにしたものになります。</span>
+          <span class="ne">यो तोचिगी वाग्युको फिले मासु फ्राइ गरेर बनाइएको परिकार हो।</span>
+        </p>
+        <p class="triple">
+          <span class="kana">がんえん と うすたーそーす を ごようい しております ので、おこのみ で めしあがって ください。</span>
+          <span class="ja">岩塩とウスターソースをご用意しておりますので、お好みで召し上がってください。</span>
+          <span class="ne">ढुंगे नुन र उस्टर सस तयार छ, कृपया आफ्नो मनपर्ने तरिकाले खानुहोस्।</span>
+        </p>
       </div>
 
       <div class="band">
@@ -193,15 +302,36 @@
     </div>
   </section>
 
-  <!-- 4) たれ -->
   <section class="block" id="tare">
-    <div class="head"><h2>すてーき たれ の せつめい</h2></div>
+    <div class="head">
+      <h2 class="triple">
+        <span class="kana">すてーき たれ の せつめい</span>
+        <span class="ja">ステーキたれの説明</span>
+        <span class="ne">स्टेक ससको विवरण</span>
+      </h2>
+    </div>
     <div class="body">
       <ol class="bul">
-        <li>すてーき の まえ の あげもの を ていきょう するとき に、たれ を いっしょ に もっていく。</li>
-        <li>りょうり の せつめい の あと に、すてーき の たれ を ていきょう して せつめい する。</li>
-        <li>「こちらは すてーき の たれ に なります。」</li>
-        <li>「いちばん うえ は 〈しょうがす〉。〈しょうゆ〉 は もろみしょうゆ。〈もしお〉 と 〈くろこしょう〉 も ごようい しております。」</li>
+        <li class="triple">
+          <span class="kana">すてーき の まえ の あげもの を ていきょう するとき に、たれ を いっしょ に もっていく。</span>
+          <span class="ja">ステーキの前の揚げ物を提供するときに、たれを一緒に持っていく。</span>
+          <span class="ne">स्टेकअघिको फ्राइ परिकार पस्कँदा सस पनि सँगै लैजानुहोस्।</span>
+        </li>
+        <li class="triple">
+          <span class="kana">りょうり の せつめい の あと に、すてーき の たれ を ていきょう して せつめい する。</span>
+          <span class="ja">料理の説明の後に、ステーキのたれを提供して説明する。</span>
+          <span class="ne">परिकारको व्याख्या गरेपछि, स्टेकको सस पस्केर त्यसको पनि व्याख्या गर्नुहोस्।</span>
+        </li>
+        <li class="triple">
+          <span class="kana">「こちらは すてーき の たれ に なります。」</span>
+          <span class="ja">「こちらはステーキのたれになります。」</span>
+          <span class="ne">"यो स्टेकको सस हो।"</span>
+        </li>
+        <li class="triple">
+          <span class="kana">「いちばん うえ は 〈しょうがす〉。〈しょうゆ〉 は もろみしょうゆ。〈もしお〉 と 〈くろこしょう〉 も ごようい しております。」</span>
+          <span class="ja">「一番上は〈生姜酢〉、〈醤油〉はもろみ醤油、〈藻塩〉と〈黒胡椒〉もご用意しております。」</span>
+          <span class="ne">"सबैभन्दा माथि अदुवा सिरका छ, सोया सस मोरोमी सोया सस हो, साथै समुद्री नुन र कालो मरिच पनि तयार छ।"</span>
+        </li>
       </ol>
 
       <div class="band">
@@ -219,15 +349,32 @@
     </div>
   </section>
 
-  <!-- 5) すてーき -->
   <section class="block" id="steak">
-    <div class="head"><h2>わぎゅう かいせき・すてーきぷらん すてーき せつめい</h2></div>
+    <div class="head">
+      <h2 class="triple">
+        <span class="kana">わぎゅう かいせき・すてーきぷらん すてーき せつめい</span>
+        <span class="ja">和牛懐石・ステーキプラン ステーキ説明</span>
+        <span class="ne">वाग्यु काइसेकि र स्टेक योजना: स्टेक विवरण</span>
+      </h2>
+    </div>
     <div class="body">
       <div class="lv">
-        <p>こちらは、すてーき に なります。</p>
-        <p>しお で あじつけ して おります が、おこのみ で たれ に つけて おめしあがり ください。</p>
+        <p class="triple">
+          <span class="kana">こちらは、すてーき に なります。</span>
+          <span class="ja">こちらは、ステーキになります。</span>
+          <span class="ne">यो स्टेक हो।</span>
+        </p>
+        <p class="triple">
+          <span class="kana">しお で あじつけ して おります が、おこのみ で たれ に つけて おめしあがり ください。</span>
+          <span class="ja">塩で味付けしておりますが、お好みでたれにつけてお召し上がりください。</span>
+          <span class="ne">यसमा नुनले स्वाद मिलाइएको छ, चाहनु भए ससमा डुबाएर खानुहोस्।</span>
+        </p>
       </div>
-      <p class="warn">※ すてーき の あと は ごはん に なります ので、ようい を しても よいか うかがいます。</p>
+      <p class="triple warn">
+        <span class="kana">※ すてーき の あと は ごはん に なります ので、ようい を しても よいか うかがいます。</span>
+        <span class="ja">※ ステーキの後はご飯になりますので、用意をしてもよいか伺います。</span>
+        <span class="ne">विशेष: स्टेकपछि भात आउँछ, त्यसैले तयार गर्न मिल्छ कि भनेर सोध्नुहोस्।</span>
+      </p>
 
       <div class="band">
         <div class="aud-wrap">
@@ -246,20 +393,17 @@
 
 </main>
 
-<!-- みぎした の まるぼたん -->
 <div class="float-btns">
   <button class="btn-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="ぺーじ の うえへ">⬆</button>
   <button class="btn-home" onclick="location.href='../index.html'" title="ほーむ へ">🏠</button>
 </div>
 
 <script>
-  // とっぷ への りんく（/pages/ でも ただしく もどる）
   (function fixHome(){
     const a=document.querySelector('header .home');
     if(location.pathname.includes('/pages/')) a.href='../index.html';
   })();
 
-  // すわいぷ で まえ／つぎ（しきいち 60px）
   (function swipeNav(){
     let x0=null,y0=null; const th=60;
     addEventListener('touchstart',e=>{x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
