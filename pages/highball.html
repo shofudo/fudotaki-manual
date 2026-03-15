@@ -3,296 +3,516 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ハイボール　の　マニュアル</title>
+<title>ハイボール の マニュアル</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg-color: #f9f4ef;
-    --container-bg: #fff;
-    --accent: #ea580c;
-    --panel-border: #444;
-    --bubble-staff: #dcfce7;
-    --bubble-guest: #f3f4f6;
-    --text: #2d3748;
+    --bg: #f4efe7;
+    --paper: rgba(255, 251, 246, 0.96);
+    --paper-strong: #fffdf9;
+    --ink: #241c17;
+    --muted: #6d5d52;
+    --line: rgba(98, 74, 56, 0.18);
+    --line-strong: rgba(86, 62, 46, 0.28);
+    --accent: #7c4d35;
+    --accent-soft: #efe1d2;
+    --gold: #b8945c;
+    --guest-bg: #f7f1ea;
+    --staff-bg: #f1e6d8;
+    --alert-bg: #fcf6de;
+    --alert-line: #c69d43;
+    --shadow: 0 16px 42px rgba(36, 28, 23, 0.08);
   }
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
   body {
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    background: var(--bg-color);
     margin: 0;
-    padding: 20px;
-    color: var(--text);
-    line-height: 1.6;
+    padding: 28px 18px 40px;
+    color: var(--ink);
+    font-family: "Noto Sans JP", "Yu Gothic UI", "Segoe UI", sans-serif;
+    line-height: 1.8;
+    letter-spacing: 0.01em;
+    background:
+      radial-gradient(circle at top left, rgba(184, 148, 92, 0.12), transparent 32%),
+      radial-gradient(circle at 85% 18%, rgba(124, 77, 53, 0.08), transparent 24%),
+      linear-gradient(180deg, #faf7f2 0%, #f2ebe3 100%);
   }
-  .comic-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: var(--container-bg);
-    padding: 30px 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    border-radius: 20px;
-    padding-bottom: 40px; /* ボタン用の余白 */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)),
+      repeating-linear-gradient(90deg, transparent 0 44px, rgba(124,77,53,0.015) 44px 45px);
+    opacity: 0.5;
   }
-  
-  /* タイトル */
-  h1.comic-title {
-    text-align: center;
-    color: #fff;
-    background: var(--accent);
-    font-size: 24px;
-    margin: -10px -30px 30px;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  .manual {
     position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--paper);
+    border: 1px solid rgba(98, 74, 56, 0.12);
+    border-radius: 30px;
+    padding: 34px 24px 40px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(12px);
   }
-  h1.comic-title::before, h1.comic-title::after {
-    content: ""; position: absolute; top: 10px; z-index: -1;
-    border-style: solid;
+  .manual-header {
+    margin: -8px -8px 26px;
+    padding: 22px 22px 20px;
+    border-radius: 24px;
+    color: #fffaf4;
+    background:
+      linear-gradient(135deg, rgba(64, 41, 29, 0.92), rgba(124, 77, 53, 0.88)),
+      linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
   }
-  h1.comic-title::before {
-    left: -15px; border-width: 0 0 20px 20px; border-color: transparent transparent #9a3412 transparent;
+  .eyebrow {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.08);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
-  h1.comic-title::after {
-    right: -15px; border-width: 0 20px 20px 0; border-color: transparent #9a3412 transparent transparent;
+  h1 {
+    margin: 14px 0 6px;
+    font-family: "Noto Serif JP", Georgia, serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1.35;
   }
-
-  /* コマ */
+  .subtitle-ja {
+    margin: 0;
+    font-size: 1rem;
+    color: rgba(255,250,244,0.9);
+  }
+  .subtitle-ne {
+    margin: 6px 0 0;
+    color: rgba(255,246,238,0.82);
+  }
+  .ne {
+    display: block;
+    margin-top: 4px;
+    font-family: "Noto Sans Devanagari", sans-serif;
+    font-size: 0.95em;
+    line-height: 1.75;
+    color: var(--muted);
+  }
   .hero-image {
-    margin: 0 0 28px;
-    border-radius: 18px;
+    margin: 0 0 26px;
     overflow: hidden;
-    background: #fff7ed;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-    border: 2px solid rgba(234, 88, 12, 0.18);
+    border-radius: 24px;
+    border: 1px solid rgba(124, 77, 53, 0.16);
+    background: var(--paper-strong);
+    box-shadow: 0 18px 38px rgba(36, 28, 23, 0.08);
   }
   .hero-image img {
     display: block;
     width: 100%;
     height: auto;
   }
-  .panel {
-    border: 3px solid var(--panel-border);
-    border-radius: 16px;
-    padding: 20px 15px;
-    margin-bottom: 25px;
-    background: #fff;
-    position: relative;
-    box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
+  .steps {
+    display: grid;
+    gap: 16px;
   }
-  .panel-num {
-    position: absolute;
-    top: -18px;
-    left: -10px;
-    background: var(--accent);
-    color: #fff;
-    width: 36px;
-    height: 36px;
+  .step-card {
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    border-radius: 22px;
+    background: rgba(255,255,255,0.82);
+    box-shadow: 0 10px 28px rgba(36, 28, 23, 0.05);
+  }
+  .step-card.alert {
+    background: var(--alert-bg);
+    border-color: rgba(198, 157, 67, 0.45);
+  }
+  .step-card summary {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 18px 16px;
+    cursor: pointer;
+    list-style: none;
+  }
+  .step-card summary::-webkit-details-marker {
+    display: none;
+  }
+  .step-no {
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    text-align: center;
-    line-height: 36px;
-    font-weight: 800;
-    font-size: 18px;
-    border: 3px solid #fff;
-    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    border: 1px solid rgba(124,77,53,0.22);
+    background: linear-gradient(180deg, #fffdf8, #f0e1d3);
+    color: var(--accent);
+    display: grid;
+    place-items: center;
+    font-family: "Noto Serif JP", serif;
+    font-size: 1.05rem;
+    font-weight: 700;
   }
-
-  /* キャラクターとセリフ */
-  .scene {
-    display: flex; align-items: flex-start; gap: 15px; margin-bottom: 15px;
+  .step-copy {
+    flex: 1 1 auto;
+    min-width: 0;
   }
-  .scene.reverse { flex-direction: row-reverse; }
-  .char { text-align: center; flex-shrink: 0; width: 75px; }
-  .char-icon { font-size: 48px; display: block; margin-bottom: 5px; filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1)); }
-  .char-name { font-size: 13px; font-weight: 800; background: #333; color: #fff; padding: 4px 8px; border-radius: 12px; }
-  
-  /* ふきだし */
-  .bubble {
-    background: var(--bubble-staff);
-    padding: 18px;
-    border-radius: 20px;
-    position: relative;
-    font-size: 18px;
-    font-weight: 500;
-    width: 100%;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  .step-title {
+    display: block;
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.5;
   }
-  .bubble::before {
-    content: ""; position: absolute; top: 20px; border-style: solid;
-    border-width: 12px 18px 12px 0; border-color: transparent var(--bubble-staff) transparent transparent; left: -14px;
+  .step-summary {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.7;
   }
-  .reverse .bubble { background: var(--bubble-guest); }
-  .reverse .bubble::before {
-    left: auto; right: -14px; border-width: 12px 0 12px 18px; border-color: transparent transparent transparent var(--bubble-guest);
+  .step-toggle {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 64px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(124,77,53,0.18);
+    background: rgba(255,255,255,0.74);
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
   }
-
-  /* メニューボード */
+  .step-card[open] .step-toggle::before {
+    content: "CLOSE";
+  }
+  .step-card:not([open]) .step-toggle::before {
+    content: "OPEN";
+  }
+  .step-body {
+    padding: 0 18px 18px;
+    border-top: 1px solid rgba(98, 74, 56, 0.1);
+  }
+  .dialogue {
+    display: grid;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .speech {
+    padding: 14px 16px;
+    border-radius: 18px;
+    border: 1px solid rgba(98, 74, 56, 0.12);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.55);
+  }
+  .speech.guest {
+    background: var(--guest-bg);
+  }
+  .speech.staff {
+    background: var(--staff-bg);
+  }
+  .speaker {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.72);
+    border: 1px solid rgba(98, 74, 56, 0.1);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+  .speaker .ne {
+    margin-top: 0;
+    font-size: 0.88rem;
+    color: var(--accent);
+  }
+  .line-ja {
+    display: block;
+    font-size: 1rem;
+    color: var(--ink);
+    line-height: 1.8;
+  }
+  .line-ne {
+    display: block;
+    margin-top: 6px;
+    font-family: "Noto Sans Devanagari", sans-serif;
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
   .menu-board {
-    background: #fffbeb;
-    border: 3px dashed var(--accent);
-    border-radius: 14px;
-    padding: 20px;
-    margin: 10px 0 10px 90px;
-    box-shadow: inset 0 0 10px rgba(234, 88, 12, 0.1);
-    position: relative;
+    margin-top: 14px;
+    padding: 16px;
+    border-radius: 18px;
+    border: 1px solid rgba(184, 148, 92, 0.26);
+    background: linear-gradient(180deg, rgba(255,251,243,0.95), rgba(248,239,226,0.95));
   }
-  .menu-board::after {
-    content: "📌"; position: absolute; top: -15px; right: -10px; font-size: 24px;
+  .menu-label {
+    margin-bottom: 10px;
+    color: var(--accent);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
   }
-  .menu-item { font-size: 20px; font-weight: 800; margin: 12px 0; display: flex; align-items: center; color: #431407; }
-  .menu-item::before { content: "🥃"; margin-right: 12px; font-size: 22px; }
-
-  /* センムの警告エリア */
+  .menu-item {
+    padding: 10px 0;
+    border-top: 1px dashed rgba(124,77,53,0.14);
+  }
+  .menu-item:first-of-type {
+    border-top: 0;
+  }
+  .item-ja {
+    display: block;
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #3d2a1f;
+  }
+  .item-ne {
+    display: block;
+    margin-top: 4px;
+    font-family: "Noto Sans Devanagari", sans-serif;
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
   .alert-box {
-    background: #fefce8;
-    border: 4px solid #eab308;
-    border-radius: 16px;
-    padding: 25px;
-    text-align: center;
-    display: flex; flex-direction: column; align-items: center; gap: 15px;
-    box-shadow: 0 4px 10px rgba(234, 179, 8, 0.3);
+    margin-top: 16px;
+    padding: 18px;
+    border-radius: 18px;
+    border: 1px solid rgba(198, 157, 67, 0.38);
+    background: rgba(255, 251, 235, 0.84);
+  }
+  .alert-role {
+    display: inline-flex;
+    padding: 5px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(198,157,67,0.34);
+    background: rgba(255,255,255,0.7);
+    color: #8b6a28;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
   }
   .alert-title {
-    font-size: 22px; font-weight: 800; color: #fff; background: #eab308;
-    padding: 8px 20px; border-radius: 99px; margin-top: -35px; border: 3px solid #fff;
+    margin: 12px 0 0;
+    font-family: "Noto Serif JP", serif;
+    font-size: 1.2rem;
+    color: #6d521d;
+    line-height: 1.6;
   }
-  .senmu-icon {
-    font-size: 64px; background: #fff; border-radius: 50%; width: 90px; height: 90px;
-    line-height: 90px; border: 3px solid #eab308; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  .alert-strong {
+    display: block;
+    margin-top: 10px;
+    color: #7d5a10;
+    font-weight: 800;
   }
-  .alert-text { font-size: 18px; }
-  .alert-strong { font-size: 24px; color: #a16207; font-weight: 800; display: block; margin-top: 10px; background: linear-gradient(transparent 70%, #fde047 70%); }
-
-  /* 戻るボタンのデザイン */
   .back-btn-area {
-    margin-top: 40px;
+    margin-top: 28px;
     text-align: center;
   }
   .back-btn {
     display: inline-block;
+    padding: 13px 22px;
+    border-radius: 999px;
+    border: 1px solid rgba(98, 74, 56, 0.18);
+    background: rgba(255,255,255,0.86);
+    color: var(--accent);
     text-decoration: none;
-    background: #fff;
-    color: var(--text);
-    border: 2px solid #ccc;
-    padding: 15px 30px;
-    border-radius: 50px;
-    font-weight: 800;
-    font-size: 18px;
-    transition: all 0.2s;
-    box-shadow: 0 4px 0 #ccc;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    box-shadow: 0 12px 24px rgba(36, 28, 23, 0.06);
   }
-  .back-btn:active {
-    transform: translateY(4px);
-    box-shadow: none;
+  @media (max-width: 640px) {
+    body {
+      padding: 18px 12px 32px;
+    }
+    .manual {
+      padding: 22px 16px 28px;
+      border-radius: 24px;
+    }
+    .manual-header {
+      padding: 18px 16px;
+    }
+    h1 {
+      font-size: 1.55rem;
+    }
+    .step-card summary {
+      padding: 14px;
+      align-items: flex-start;
+    }
+    .step-title {
+      font-size: 0.98rem;
+    }
+    .step-summary,
+    .line-ne,
+    .item-ne,
+    .subtitle-ne,
+    .ne {
+      font-size: 0.88rem;
+    }
+    .line-ja {
+      font-size: 0.95rem;
+    }
+    .step-toggle {
+      min-width: 58px;
+      padding: 7px 10px;
+      font-size: 0.72rem;
+    }
+    .step-body {
+      padding: 0 14px 14px;
+    }
   }
 </style>
 </head>
 <body>
 
-<div class="comic-container">
-  <h1 class="comic-title">🍺 ハイボール を たのまれたら</h1>
+<div class="manual">
+  <div class="manual-header">
+    <div class="eyebrow">Dinner Service Guide</div>
+    <h1>ハイボール を たのまれたら</h1>
+    <p class="subtitle-ja">落ち着いて確認しながら、銘柄をうかがってご案内するための手順です。</p>
+    <p class="subtitle-ne ne">यदि ग्राहकले हाइबोल मागेमा, शान्त रूपमा पुष्टि गर्दै कुन व्हिस्की प्रयोग गर्ने भनेर सोधेर सेवा गर्ने प्रक्रिया हो।</p>
+  </div>
 
   <div class="hero-image">
     <img src="../assets/img/dinner-guide/highball.jpg?v=20260315" alt="ハイボールをたのまれたらの説明画像">
   </div>
 
-  <div class="panel">
-    <div class="panel-num">1</div>
-    <div class="scene reverse">
-      <div class="char">
-        <span class="char-icon">🙋‍♂️</span>
-        <span class="char-name">おきゃく</span>
+  <div class="steps">
+    <details class="step-card">
+      <summary>
+        <span class="step-no">1</span>
+        <span class="step-copy">
+          <span class="step-title">注文を聞く<span class="ne">अर्डर सुन्नु</span></span>
+          <span class="step-summary">「ハイボールください」と言われたら、まずは受けてよいことを伝えます。<span class="ne">यदि ग्राहकले "हाइबोल दिनुहोस्" भन्नुभयो भने, पहिले उपलब्ध छ भनेर बताउनुहोस्।</span></span>
+        </span>
+        <span class="step-toggle" aria-hidden="true"></span>
+      </summary>
+      <div class="step-body">
+        <div class="dialogue">
+          <div class="speech guest">
+            <div class="speaker">おきゃく <span class="ne">ग्राहक</span></div>
+            <span class="line-ja">すいません、ハイボール ください。</span>
+            <span class="line-ne">माफ गर्नुहोस्, हाइबोल दिनुहोस्।</span>
+          </div>
+          <div class="speech staff">
+            <div class="speaker">スタッフ <span class="ne">कर्मचारी</span></div>
+            <span class="line-ja">ハイ、デキマス。（ハイ、かしこまりました）</span>
+            <span class="line-ne">हुन्छ, बनाउन सक्छौं। (हुन्छ, बुझें।)</span>
+          </div>
+        </div>
       </div>
-      <div class="bubble">
-        すいません、<br>
-        ハイボール　ください。
-      </div>
-    </div>
-    <div class="scene">
-      <div class="char">
-        <span class="char-icon">👩‍🍳</span>
-        <span class="char-name">スタッフ</span>
-      </div>
-      <div class="bubble">
-        ハイ、デキマス。<br>
-        （ハイ、かしこまりました）
-      </div>
-    </div>
-  </div>
+    </details>
 
-  <div class="panel">
-    <div class="panel-num">2</div>
-    <div class="scene">
-      <div class="char">
-        <span class="char-icon">👩‍🍳</span>
-        <span class="char-name">スタッフ</span>
+    <details class="step-card">
+      <summary>
+        <span class="step-no">2</span>
+        <span class="step-copy">
+          <span class="step-title">ウイスキー を えらんでもらう<span class="ne">व्हिस्की छान्न अनुरोध गर्नु</span></span>
+          <span class="step-summary">今ある銘柄を伝えて、どれで作るかを確認します。<span class="ne">अहिले उपलब्ध ब्रान्डहरू बताएर, कुन प्रयोग गर्ने भनेर पुष्टि गर्नुहोस्।</span></span>
+        </span>
+        <span class="step-toggle" aria-hidden="true"></span>
+      </summary>
+      <div class="step-body">
+        <div class="dialogue">
+          <div class="speech staff">
+            <div class="speaker">スタッフ <span class="ne">कर्मचारी</span></div>
+            <span class="line-ja">いま は、チタ、ヨイチ、イチローズモルト、バランタイン が あります。どれ で つくりますか？</span>
+            <span class="line-ne">अहिले चिता, योइची, इचिरोज मोल्ट, र बालेन्टाइन उपलब्ध छन्। कुन व्हिस्कीले बनाउने?</span>
+          </div>
+        </div>
+        <div class="menu-board">
+          <div class="menu-label">銘柄の確認 <span class="ne">उपलब्ध ब्रान्डहरू</span></div>
+          <div class="menu-item">
+            <span class="item-ja">1. チタ（ちた）</span>
+            <span class="item-ne">१. चिता</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-ja">2. ヨイチ（よいち）</span>
+            <span class="item-ne">२. योइची</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-ja">3. イチローズモルト</span>
+            <span class="item-ne">३. इचिरोज मोल्ट</span>
+          </div>
+          <div class="menu-item">
+            <span class="item-ja">4. バランタイン</span>
+            <span class="item-ne">४. बालेन्टाइन</span>
+          </div>
+        </div>
       </div>
-      <div class="bubble">
-        いま　は、<br>
-        チタ、ヨイチ、<br>
-        イチローズモルト、バランタイン<br>
-        が　あります。<br>
-        <br>
-        どれ　で　つくりますか？
-      </div>
-    </div>
-    
-    <div class="menu-board">
-      <div class="menu-item">1. チタ（ちた）</div>
-      <div class="menu-item">2. ヨイチ（よいち）</div>
-      <div class="menu-item">3. イチローズモルト</div>
-      <div class="menu-item">4. バランタイン</div>
-    </div>
-  </div>
+    </details>
 
-  <div class="panel">
-    <div class="panel-num">3</div>
-    <div class="scene reverse">
-      <div class="char">
-        <span class="char-icon">🙋‍♂️</span>
-        <span class="char-name">おきゃく</span>
+    <details class="step-card">
+      <summary>
+        <span class="step-no">3</span>
+        <span class="step-copy">
+          <span class="step-title">注文を確認する<span class="ne">अर्डर दोहोर्याएर पुष्टि गर्नु</span></span>
+          <span class="step-summary">選ばれた銘柄を復唱して、すぐ持っていくことを伝えます。<span class="ne">छानिएको ब्रान्ड दोहोर्याएर पुष्टि गरी, छिट्टै ल्याइदिने कुरा बताउनुहोस्।</span></span>
+        </span>
+        <span class="step-toggle" aria-hidden="true"></span>
+      </summary>
+      <div class="step-body">
+        <div class="dialogue">
+          <div class="speech guest">
+            <div class="speaker">おきゃく <span class="ne">ग्राहक</span></div>
+            <span class="line-ja">ヨイチ で おねがいします。</span>
+            <span class="line-ne">योइचीले बनाइदिनुहोस्।</span>
+          </div>
+          <div class="speech staff">
+            <div class="speaker">スタッフ <span class="ne">कर्मचारी</span></div>
+            <span class="line-ja">かしこまりました。ヨイチ ですね。すぐ おもちします。</span>
+            <span class="line-ne">ठीक छ। योइची हो, होइन? म तुरुन्तै लिएर आउँछु।</span>
+          </div>
+        </div>
       </div>
-      <div class="bubble">
-        ヨイチ　で　おねがいします。
-      </div>
-    </div>
-    <div class="scene">
-      <div class="char">
-        <span class="char-icon">👩‍🍳</span>
-        <span class="char-name">スタッフ</span>
-      </div>
-      <div class="bubble">
-        かしこまりました。<br>
-        ヨイチ　ですね。<br>
-        すぐ　おもちします！
-      </div>
-    </div>
-  </div>
+    </details>
 
-  <div class="panel" style="border-color: #eab308; background: #fffce8;">
-    <div class="panel-num" style="background:#eab308;">4</div>
-    <div class="alert-box">
-      <div class="alert-title">だいじな　ルール</div>
-      <div class="senmu-icon">👓</div>
-      <div class="alert-text">
-        ウイスキー　が　ない　とき、<br>
-        わからない　とき　は…<br>
-        <strong class="alert-strong">センム　に　かくにん<br>して　ください！</strong>
+    <details class="step-card alert">
+      <summary>
+        <span class="step-no">4</span>
+        <span class="step-copy">
+          <span class="step-title">わからない とき は センム に かくにん<span class="ne">नबुझेमा प्रबन्धकसँग पुष्टि गर्नु</span></span>
+          <span class="step-summary">ウイスキーがない時や判断に迷う時は、その場でセンム確認を優先します。<span class="ne">व्हिस्की नभएको बेला वा निर्णयमा अन्योल भएमा, त्यही समयमा प्रबन्धकसँग पुष्टि गर्नुहोस्।</span></span>
+        </span>
+        <span class="step-toggle" aria-hidden="true"></span>
+      </summary>
+      <div class="step-body">
+        <div class="alert-box">
+          <div class="alert-role">センム <span class="ne">प्रबन्धक</span></div>
+          <div class="alert-title">
+            だいじな ルール
+            <span class="ne">महत्त्वपूर्ण नियम</span>
+          </div>
+          <span class="line-ja">ウイスキー が ない とき、わからない とき は…</span>
+          <span class="line-ne">व्हिस्की नभएको बेला, वा नबुझेको बेला...</span>
+          <strong class="alert-strong">
+            センム に かくにん して ください！
+            <span class="ne">कृपया प्रबन्धकसँग अवश्य पुष्टि गर्नुहोस्।</span>
+          </strong>
+        </div>
       </div>
-    </div>
+    </details>
   </div>
 
   <div class="back-btn-area">
-    <a href="dinner-guide.html" class="back-btn">
-      ↩️ ゆうしょく あんない へ もどる
-    </a>
+    <a href="dinner-guide.html" class="back-btn">ゆうしょく あんない へ もどる</a>
   </div>
-
 </div>
 
 </body>
