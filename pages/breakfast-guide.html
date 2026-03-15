@@ -7,13 +7,14 @@
 
 <style>
   :root{
-    --bg:#f6f7f8;--card:#fff;--ink:#1f2a37;--muted:#64748b;
+    --bg:#f6f7f8;--card:#fff;--ink:#1f2a37;--muted:#64748b;--soft:#94a3b8;
     --bd:#e5e7eb;--radius:18px;--maxw:980px;--shadow:0 6px 18px rgba(0,0,0,.10);
     --accent:#0f766e;--accent-2:#155e75;
   }
   html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
     font-family:system-ui,-apple-system,"Segoe UI","Noto Sans JP",sans-serif;line-height:1.7;scroll-behavior:smooth;}
-  /* --- ヘッダー --- */
+  *{box-sizing:border-box}
+
   header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#fff,rgba(255,255,255,.92));
     backdrop-filter:saturate(180%) blur(6px);border-bottom:1px solid var(--bd);}
   header .in{max-width:var(--maxw);margin:auto;display:flex;gap:12px;align-items:center;padding:10px 14px;}
@@ -21,35 +22,38 @@
   header .brand{margin-inline:auto;color:var(--ink)}
   header .btn{padding:6px 10px;border:1px solid var(--bd);border-radius:10px;background:#fff}
 
-  /* --- ヒーロー --- */
   .hero{position:relative;width:100%;max-width:var(--maxw);margin:14px auto 0;}
   .hero img{width:100%;height:auto;aspect-ratio:16/5;object-fit:cover;border-radius:var(--radius);
     border:1px solid var(--bd);box-shadow:var(--shadow);display:block;}
-  .hero-title{position:absolute;left:24px;bottom:24px;padding:10px 16px;border-radius:999px;
-    font-weight:700;letter-spacing:.02em;color:#fff;background:rgba(0,0,0,.35);
-    backdrop-filter:blur(2px);font-size:clamp(16px,3.2vw,22px);}
+  .hero-title{position:absolute;left:24px;bottom:24px;max-width:min(92%,680px);padding:12px 16px;border-radius:18px;
+    color:#fff;background:rgba(0,0,0,.35);backdrop-filter:blur(2px);}
 
-  /* --- ブロック --- */
   .block{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);
     box-shadow:var(--shadow);margin:20px auto;padding:20px;}
-  .head h2{margin:6px 6px 12px;font-size:18px;}
-  .note{font-size:13px;color:#6b7280;margin-top:4px;}
+  .head h2{margin:0}
+  .note{font-size:13px;color:#6b7280;margin-top:10px;}
 
-  /* --- 目次 --- */
-  .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;padding:8px;}
-  .toc-card{display:flex;align-items:center;gap:8px;padding:12px 14px;border:1px solid var(--bd);
+  .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;padding:8px;}
+  .toc-card{display:block;padding:12px 14px;border:1px solid var(--bd);
     border-radius:14px;background:#fff;text-decoration:none;color:#111;}
   .toc-card:hover{outline:2px solid #d1fae5;}
-  .muted{color:var(--muted);font-size:12px}
 
-  /* --- 画像 --- */
+  .triple{display:block}
+  .triple + .triple{margin-top:10px}
+  .kana{display:block;font-size:clamp(1rem,2.5vw,1.14rem);font-weight:700;line-height:1.4;letter-spacing:.01em}
+  .ja{display:block;margin-top:2px;font-size:.8rem;line-height:1.35;color:#475569}
+  .ne{display:block;margin-top:1px;font-size:.72rem;line-height:1.3;color:var(--soft)}
+  .hero-title .kana{font-size:clamp(1.1rem,3vw,1.45rem)}
+  .hero-title .ja{font-size:clamp(.78rem,2vw,.9rem);color:#e2e8f0}
+  .hero-title .ne{font-size:clamp(.7rem,1.8vw,.82rem);color:#cbd5e1}
+  .head .kana{font-size:clamp(1.02rem,2.2vw,1.18rem)}
+  p{margin:10px 0 0}
+
   .steps{display:flex;justify-content:center;}
   .steps_img{width:100%;max-width:900px;border-radius:12px;border:1px solid var(--bd);box-shadow:var(--shadow);display:block;margin:0 auto;}
 
-  /* --- 音声 --- */
-  audio{width:100%;margin:10px 0;}
+  audio{width:100%;margin:12px 0 0;}
 
-  /* --- 右下ボタン --- */
   .fab-stack{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:50}
   .fab{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
     background:var(--accent);color:#fff;text-decoration:none;border:0;cursor:pointer;
@@ -60,13 +64,21 @@
     padding:6px 8px;border-radius:8px;opacity:0;pointer-events:none;transition:.15s}
   .fab-wrap{position:relative}
   .fab-wrap:hover .tooltip{opacity:.9}
+
+  @media (max-width:640px){
+    .block{padding:16px}
+    .hero-title{left:14px;right:14px;bottom:14px}
+    .toc-grid{grid-template-columns:1fr}
+    .kana{font-size:1rem}
+    .ja{font-size:.77rem}
+    .ne{font-size:.69rem}
+  }
 </style>
 </head><link rel="stylesheet" href="/fudotaki-manual/assets/css/theme.css">
 
 
 <body>
 
-<!-- ヘッダー（トップ／目次） -->
 <header>
   <div class="in">
     <a class="btn" id="btn-home" href="../index.html">← トップ</a>
@@ -75,90 +87,252 @@
   </div>
 </header>
 
-<!-- ヒーロー -->
 <div class="hero">
   <img src="../assets/img/breakfast/top2.jpg" alt="朝食の会席 提供イメージ">
-  <div class="hero-title">breakfast あさごはん</div>
+  <div class="hero-title triple">
+    <span class="kana">breakfast あさごはん</span>
+    <span class="ja">朝食</span>
+    <span class="ne">बिहानको खाना</span>
+  </div>
 </div>
 
 <main id="content">
-
-  <!-- 目次 -->
   <section class="block" id="toc">
-    <div class="head"><h2>目次</h2></div>
+    <div class="head">
+      <h2 class="triple">
+        <span class="kana">もくじ</span>
+        <span class="ja">目次</span>
+        <span class="ne">सूची</span>
+      </h2>
+    </div>
     <div class="toc-grid">
-      <a class="toc-card" href="#title">📄 ちょうしょくていきょう／せつめい</a>
-      <a class="toc-card" href="#greeting">👋 1. おきゃくさまを　せきに　あんない</a>
-      <a class="toc-card" href="#tea">🍵 2. せんちゃを　いれて　ていきょうする</a>
-      <a class="toc-card" href="#set">🍚 3. ごはん、みそしる、やきざかなを　ていきょうする</a>
-      <a class="toc-card" href="#refill">🍽️ 4. ごはんを　ていきょうして10-15ぷんごに　おかわりをきく</a>
-      <a class="toc-card" href="#fruit">🍓 5. フルーツをていきょうする</a>
-      <a class="toc-card" href="#donabe">🍲 SPちょうしょく　ドナベごはんについて</a>
+      <a class="toc-card triple" href="#title">
+        <span class="kana">📄 ちょうしょくていきょう ／ せつめい</span>
+        <span class="ja">朝食提供 ／ 説明</span>
+        <span class="ne">बिहानको खाना सेवा / विवरण</span>
+      </a>
+      <a class="toc-card triple" href="#greeting">
+        <span class="kana">👋 1. おきゃくさまを せきに あんない</span>
+        <span class="ja">1. お客様を席に案内</span>
+        <span class="ne">१. पाहुनालाई सिटमा लैजानु</span>
+      </a>
+      <a class="toc-card triple" href="#tea">
+        <span class="kana">🍵 2. せんちゃを いれて ていきょうする</span>
+        <span class="ja">2. 煎茶を入れて提供する</span>
+        <span class="ne">२. सेन्चा तयार गरेर सेवा गर्नु</span>
+      </a>
+      <a class="toc-card triple" href="#set">
+        <span class="kana">🍚 3. ごはん、みそしる、やきざかなを ていきょうする</span>
+        <span class="ja">3. ご飯、味噌汁、焼き魚を提供する</span>
+        <span class="ne">३. भात, मिसो सूप र ग्रिल माछा सेवा गर्नु</span>
+      </a>
+      <a class="toc-card triple" href="#refill">
+        <span class="kana">🍽️ 4. ごはんを ていきょうして10-15ぷんごに おかわりをきく</span>
+        <span class="ja">4. ご飯を提供して10〜15分後におかわりを聞く</span>
+        <span class="ne">४. भात सेवा गरेको १०〜१५ मिनेटपछि थप चाहिन्छ कि सोध्नु</span>
+      </a>
+      <a class="toc-card triple" href="#fruit">
+        <span class="kana">🍓 5. フルーツを ていきょうする</span>
+        <span class="ja">5. フルーツを提供する</span>
+        <span class="ne">५. फलफूल सेवा गर्नु</span>
+      </a>
+      <a class="toc-card triple" href="#donabe">
+        <span class="kana">🍲 SPちょうしょく ドナベごはんについて</span>
+        <span class="ja">SP朝食 土鍋ご飯について</span>
+        <span class="ne">विशेष बिहानको खाना: डोनाबे भातबारे</span>
+      </a>
     </div>
   </section>
 
-  <!-- 各セクション -->
   <section class="block" id="title">
-    <div class="head"><h2>ちょうしょくていきょう　／　せつめい</h2></div>
-    <p>ちょうしょく　ていきょうじの　せつめい</p>
+    <div class="head">
+      <h2 class="triple">
+        <span class="kana">ちょうしょくていきょう ／ せつめい</span>
+        <span class="ja">朝食提供 ／ 説明</span>
+        <span class="ne">बिहानको खाना सेवा / विवरण</span>
+      </h2>
+    </div>
+    <p class="triple">
+      <span class="kana">ちょうしょく ていきょうじの せつめい</span>
+      <span class="ja">朝食提供時の説明</span>
+      <span class="ne">बिहानको खाना सेवा गर्दा प्रयोग हुने विवरण</span>
+    </p>
   </section>
 
   <section class="block" id="greeting">
-    <div class="head"><h2>1. おきゃくさまを　せきに　あんない</h2></div>
-    <p>しょくじばしょの　いりぐちに　おきゃくさまが　きたら、あいさつをします。</p>
-    <p>「おはようございます。」</p>
-    <p>へやの　なまえを　かくにんし、おせきに　ごあんないします。</p>
-    <p>「おせきにごあんないいたします。」</p>
-    <p>ゆうしょくと　おなじせきに　あんないします。</p>
-    <p>「おちゃを　おもちいたしますので、しょうしょう　おまちください。」</p>
+    <div class="head">
+      <h2 class="triple">
+        <span class="kana">1. おきゃくさまを せきに あんない</span>
+        <span class="ja">1. お客様を席に案内</span>
+        <span class="ne">१. पाहुनालाई सिटमा लैजानु</span>
+      </h2>
+    </div>
+    <p class="triple">
+      <span class="kana">しょくじばしょの いりぐちに おきゃくさまが きたら、あいさつをします。</span>
+      <span class="ja">食事場所の入口にお客様が来たら、あいさつをします。</span>
+      <span class="ne">भोजनस्थलको प्रवेशद्वारमा पाहुना आउनुहुँदा अभिवादन गर्नुहोस्。</span>
+    </p>
+    <p class="triple">
+      <span class="kana">「おはようございます。」</span>
+      <span class="ja">「おはようございます。」</span>
+      <span class="ne">「शुभ प्रभात。」</span>
+    </p>
+    <p class="triple">
+      <span class="kana">へやの なまえを かくにんし、おせきに ごあんないします。</span>
+      <span class="ja">部屋の名前を確認し、お席にご案内します。</span>
+      <span class="ne">कोठाको नाम पुष्टि गरेर सिटमा लैजानुहोस्。</span>
+    </p>
+    <p class="triple">
+      <span class="kana">「おせきにごあんないいたします。」</span>
+      <span class="ja">「お席にご案内いたします。」</span>
+      <span class="ne">「म तपाईंलाई सिटमा लैजान्छु。」</span>
+    </p>
+    <p class="triple">
+      <span class="kana">ゆうしょくと おなじせきに あんないします。</span>
+      <span class="ja">夕食と同じ席に案内します。</span>
+      <span class="ne">बेलुकाको खानामा जस्तै उही सिटमा लैजानुहोस्。</span>
+    </p>
+    <p class="triple">
+      <span class="kana">「おちゃを おもちいたしますので、しょうしょう おまちください。」</span>
+      <span class="ja">「お茶をお持ちいたしますので、少々お待ちください。」</span>
+      <span class="ne">「चिया लिएर आउँछु, कृपया केही बेर पर्खनुहोस्。」</span>
+    </p>
     <audio controls><source src="../assets/audio/breakfast/breakfast-1.mp3" type="audio/mpeg"></audio>
   </section>
 
   <section class="block" id="tea">
-    <div class="head"><h2>2. せんちゃを　いれて　ていきょうする</h2></div>
-    <p>「おはようございます。」</p>
-    <p>おちゃを　ていきょうします。</p>
-    <p>こんだてと　サラダの　ドレッシングの　せつめいをします。</p>
-    <p>「こちらの　しろいかみに　けさのこんだてを　ごよういしておりますので、ごらんください。」</p>
-    <p>「けさは　こちらに　やさいサラダをごよういしています。ドレッシングは、じかせいのにんじんドレッシング、イギリスさんの　マルドンシーソルトという　つぶのおおきい　しお、しょうゆベースの　しそドレッシングになりますので、おすきなもので　サラダを　おめしあがりください。」</p>
-    <p>「いま、ごはんも　ごよういしてまいります。」</p>
+    <div class="head">
+      <h2 class="triple">
+        <span class="kana">2. せんちゃを いれて ていきょうする</span>
+        <span class="ja">2. 煎茶を入れて提供する</span>
+        <span class="ne">२. सेन्चा तयार गरेर सेवा गर्नु</span>
+      </h2>
+    </div>
+    <p class="triple">
+      <span class="kana">「おはようございます。」</span>
+      <span class="ja">「おはようございます。」</span>
+      <span class="ne">「शुभ प्रभात。」</span>
+    </p>
+    <p class="triple">
+      <span class="kana">おちゃを ていきょうします。</span>
+      <span class="ja">お茶を提供します。</span>
+      <span class="ne">चिया सेवा गर्नुहोस्।</span>
+    </p>
+    <p class="triple">
+      <span class="kana">こんだてと サラダの ドレッシングの せつめいをします。</span>
+      <span class="ja">献立とサラダのドレッシングを説明します。</span>
+      <span class="ne">मेनु र सलाद ड्रेसिङबारे जानकारी दिनुहोस्。</span>
+    </p>
+    <p class="triple">
+      <span class="kana">「こちらの しろいかみに けさのこんだてを ごよういしておりますので、ごらんください。」</span>
+      <span class="ja">「こちらの白い紙に今朝の献立をご用意しておりますので、ご覧ください。」</span>
+      <span class="ne">「आज बिहानको मेनु यो सेतो कागजमा राखिएको छ, कृपया हेर्नुहोस्。」</span>
+    </p>
+    <p class="triple">
+      <span class="kana">「けさは こちらに やさいサラダをごよういしています。ドレッシングは、じかせいのにんじんドレッシング、イギリスさんの マルドンシーソルトという つぶのおおきい しお、しょうゆベースの しそドレッシングになりますので、おすきなもので サラダを おめしあがりください。」</span>
+      <span class="ja">「今朝はこちらに野菜サラダをご用意しています。ドレッシングは、自家製のにんじんドレッシング、イギリス産のマルドンシーソルトという粒の大きい塩、しょうゆベースのしそドレッシングがありますので、お好きなものでサラダをお召し上がりください。」</span>
+      <span class="ne">「आज बिहान तरकारी सलाद तयार छ。 ドレッシングका लागि घरमा बनाएको गाजर ड्रेसिङ, इङ्ग्ल्यान्डको माल्डन सी सोल्ट, र सोया सस आधारको शिसो ड्रेसिङ छन्。 मनपर्ने स्वादमा सलाद लिनुहोस्。」</span>
+    </p>
+    <p class="triple">
+      <span class="kana">「いま、ごはんも ごよういしてまいります。」</span>
+      <span class="ja">「今、ご飯もご用意してまいります。」</span>
+      <span class="ne">「अहिले भात पनि लिएर आउँछु。」</span>
+    </p>
     <audio controls><source src="../assets/audio/breakfast/breakfast-2.mp3" type="audio/mpeg"></audio>
   </section>
 
   <section class="block" id="set">
-    <div class="head"><h2>3. ごはん、みそしる、やきざかなを　ていきょうする</h2></div>
-    <p>みそしるを　みぎてがわ、ごはんを　ひだりてがわに　ていきょうします。（ヒダリキキの　ヒトは　ぎゃくに　おきます）</p>
-    <p>「みそしるは　こんさいを　つかった　おみそしる、やきざかなは　カレイの　ゆうあんやきで　ございます。」</p>
-    <p>「みそしるや　ドレッシングの　おかわりを　ごよういしていますので、おこえがけください。」</p>
+    <div class="head">
+      <h2 class="triple">
+        <span class="kana">3. ごはん、みそしる、やきざかなを ていきょうする</span>
+        <span class="ja">3. ご飯、味噌汁、焼き魚を提供する</span>
+        <span class="ne">३. भात, मिसो सूप र ग्रिल माछा सेवा गर्नु</span>
+      </h2>
+    </div>
+    <p class="triple">
+      <span class="kana">みそしるを みぎてがわ、ごはんを ひだりてがわに ていきょうします。（ヒダリキキの ヒトは ぎゃくに おきます）</span>
+      <span class="ja">味噌汁を右手側、ご飯を左手側に提供します。（左利きの人は逆に置きます）</span>
+      <span class="ne">मिसो सूप दायाँतिर, भात बायाँतिर राख्नुहोस्。 बायाँहाते पाहुनाका लागि उल्टो राख्नुहोस्。</span>
+    </p>
+    <p class="triple">
+      <span class="kana">「みそしるは こんさいを つかった おみそしる、やきざかなは カレイの ゆうあんやきで ございます。」</span>
+      <span class="ja">「味噌汁は根菜を使ったお味噌汁、焼き魚はカレイの幽庵焼きでございます。」</span>
+      <span class="ne">「मिसो सूप जरा तरकारी प्रयोग गरेर बनाइएको हो, र ग्रिल माछा करेको युआनयाकी हो。」</span>
+    </p>
+    <p class="triple">
+      <span class="kana">「みそしるや ドレッシングの おかわりを ごよういしていますので、おこえがけください。」</span>
+      <span class="ja">「味噌汁やドレッシングのおかわりをご用意していますので、お声がけください。」</span>
+      <span class="ne">「मिसो सूप र ड्रेसिङ थप चाहिनु भए कृपया भन्नुहोस्。」</span>
+    </p>
     <audio controls><source src="../assets/audio/breakfast/breakfast-3.mp3" type="audio/mpeg"></audio>
   </section>
 
   <section class="block" id="refill">
-    <div class="head"><h2>4. ごはんを　ていきょうして10-15ぷんごに　おかわりをきく</h2></div>
-    <p>「おみそしるや　ドレッシングの　おかわりは　いかがですか？」</p>
-    <p>みそしる、ドレッシング、ごはんなどの　おかわりを　かくにんします。</p>
-    <p>ごはんは　おひつをさげて、ほじゅうをします。</p>
+    <div class="head">
+      <h2 class="triple">
+        <span class="kana">4. ごはんを ていきょうして10-15ぷんごに おかわりをきく</span>
+        <span class="ja">4. ご飯を提供して10〜15分後におかわりを聞く</span>
+        <span class="ne">४. भात सेवा गरेको १०〜１５ मिनेटपछि थप चाहिन्छ कि सोध्नु</span>
+      </h2>
+    </div>
+    <p class="triple">
+      <span class="kana">「おみそしるや ドレッシングの おかわりは いかがですか？」</span>
+      <span class="ja">「お味噌汁やドレッシングのおかわりはいかがですか？」</span>
+      <span class="ne">「मिसो सूप वा ड्रेसिङ थप लिनुहुन्छ?」</span>
+    </p>
+    <p class="triple">
+      <span class="kana">みそしる、ドレッシング、ごはんなどの おかわりを かくにんします。</span>
+      <span class="ja">味噌汁、ドレッシング、ご飯などのおかわりを確認します。</span>
+      <span class="ne">मिसो सूप, ड्रेसिङ, भात आदि थप चाहिन्छ कि पुष्टि गर्नुहोस्。</span>
+    </p>
+    <p class="triple">
+      <span class="kana">ごはんは おひつをさげて、ほじゅうをします。</span>
+      <span class="ja">ご飯はおひつを下げて、補充をします。</span>
+      <span class="ne">भातको ओहिट्सु फिर्ता लिएर पुनः भर्नुहोस्。</span>
+    </p>
     <audio controls><source src="../assets/audio/breakfast/breakfast-4.mp3" type="audio/mpeg"></audio>
   </section>
 
   <section class="block" id="fruit">
-    <div class="head"><h2>5. フルーツをていきょうする</h2></div>
-    <p>きせつによって　ないようが　かわるので、そのときの　てきせつな　ないようを　せつめいをします。</p>
-    <p>「フロント　にコーヒーを　ごよういしております。」</p>
-    <p>「おへやに　おもちいただいても　だいじょうぶですので、よろしければ　おたちよりください。」</p>
+    <div class="head">
+      <h2 class="triple">
+        <span class="kana">5. フルーツを ていきょうする</span>
+        <span class="ja">5. フルーツを提供する</span>
+        <span class="ne">५. फलफूल सेवा गर्नु</span>
+      </h2>
+    </div>
+    <p class="triple">
+      <span class="kana">きせつによって ないようが かわるので、そのときの てきせつな ないようを せつめいをします。</span>
+      <span class="ja">季節によって内容が変わるので、その時の適切な内容を説明します。</span>
+      <span class="ne">मौसम अनुसार सामग्री बदलिने भएकाले, त्यस समयको उपयुक्त जानकारी दिनुहोस्。</span>
+    </p>
+    <p class="triple">
+      <span class="kana">「フロント にコーヒーを ごよういしております。」</span>
+      <span class="ja">「フロントにコーヒーをご用意しております。」</span>
+      <span class="ne">「फ्रन्टमा कफी तयार छ。」</span>
+    </p>
+    <p class="triple">
+      <span class="kana">「おへやに おもちいただいても だいじょうぶですので、よろしければ おたちよりください。」</span>
+      <span class="ja">「お部屋にお持ちいただいても大丈夫ですので、よろしければお立ち寄りください。」</span>
+      <span class="ne">「कोठामा लैजानु पनि ठीक छ, चाहनुहुन्छ भने कृपया लिएर जानुहोस्。」</span>
+    </p>
     <audio controls><source src="../assets/audio/breakfast/breakfast-5.mp3" type="audio/mpeg"></audio>
   </section>
 
   <section class="block" id="donabe">
-    <div class="head"><h2>SPちょうしょく　ドナベごはんについて</h2></div>
+    <div class="head">
+      <h2 class="triple">
+        <span class="kana">SPちょうしょく ドナベごはんについて</span>
+        <span class="ja">SP朝食 土鍋ご飯について</span>
+        <span class="ne">विशेष बिहानको खाना: डोनाबे भातबारे</span>
+      </h2>
+    </div>
     <div class="steps">
       <img class="steps_img" src="../assets/img/breakfast/donabe.jpg" alt="ドナベごはん">
     </div>
-    <p class="note">※ いまは画像のみ（テキスト・音声なし）で運用します。</p>
   </section>
 </main>
 
-<!-- 右下フローティングボタン -->
 <div class="fab-stack" aria-label="操作ボタン">
   <div class="fab-wrap">
     <button class="fab" id="btn-top" aria-label="ページ上部へ">
@@ -175,13 +349,11 @@
 </div>
 
 <script>
-  // 上へ移動
   document.getElementById('btn-top')?.addEventListener('click', e=>{
     e.preventDefault();
     window.scrollTo({top:0,behavior:'smooth'});
   });
 
-  // ホームへ移動（環境に応じ切替）
   const HOME = location.pathname.includes('/fudotaki-manual/')
     ? '/fudotaki-manual/index.html'
     : '../index.html';
@@ -189,7 +361,6 @@
     e.preventDefault(); location.href = HOME;
   });
 
-  // Service Worker 登録
   if('serviceWorker' in navigator){
     navigator.serviceWorker.register('../sw.js');
   }
