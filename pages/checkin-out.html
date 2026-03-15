@@ -31,6 +31,11 @@
     margin:16px 0;overflow:hidden}
   .block .head{display:flex;align-items:center;gap:8px;padding:14px 14px;border-bottom:1px solid var(--bd);background:#fff}
   .block .head h2{margin:0;font-size:18px}
+  .jp-main{display:block}
+  .subcopy{display:block;margin-top:2px;font-size:12px;line-height:1.5;color:var(--muted);font-weight:500}
+  .subcopy .np{display:inline}
+  .subcopy .sep{opacity:.55;padding:0 .35em}
+  .body b{display:block;line-height:1.6}
   .block .body{padding:16px}
   .block p{margin:0 0 12px}
   /* 目次 */
@@ -49,7 +54,10 @@
   .fab svg{width:22px;height:22px}
   .fab.show{opacity:1;transform:none}
   .fab:active{transform:scale(.97)}
-  @media (max-width:640px){ #toc .cards{grid-template-columns:1fr} }
+  @media (max-width:640px){
+    #toc .cards{grid-template-columns:1fr}
+    .subcopy{font-size:11px}
+  }
 </style>
 </head>
 <body>
@@ -101,34 +109,34 @@
 <!-- ================= チェックイン ================= -->
 
 <section class="block" id="ci-1">
-  <div class="head"><h2>1.   しゅっきんじのじゅんび</h2></div>
+  <div class="head"><h2><span class="jp-main">1. しゅっきんじのじゅんび</span><span class="subcopy">出勤時の準備<span class="sep">/</span><span class="np">काममा आउने बेलाको तयारी</span></span></h2></div>
   <div class="body">
     <p>ジムショへ アイサツ、ショクジバショの ヘヤワリを かく</p>
     <p>ノイヒンされた ユカタなどが、テーブルにあれば、かたづけます。</p>
 
-    <p><b>タブレットの ボウハンカメラ きどう</b></p>
+    <p><b><span class="jp-main">タブレットの ボウハンカメラ きどう</span><span class="subcopy">タブレットの防犯カメラ起動<span class="sep">/</span><span class="np">ट्याब्लेटको सुरक्षा क्यामेरा सुरु गर्नु</span></span></b></p>
     <p>タブレットで ボウハンカメラを きどうし、つねに カンシ できるようにします。</p>
 
-    <p><b>みずやのかたづけ</b></p>
+    <p><b><span class="jp-main">みずやのかたづけ</span><span class="subcopy">水屋の片付け<span class="sep">/</span><span class="np">मिजुया सफा गर्ने</span></span></b></p>
     <p>みずやの グラスなどをかたづけ、ジムショに マッチャわんや ヨウカンをもっていきます。</p>
 
-    <p><b>ポットの おんどへんこう</b></p>
+    <p><b><span class="jp-main">ポットの おんどへんこう</span><span class="subcopy">ポットの温度変更<span class="sep">/</span><span class="np">पोटको तापक्रम परिवर्तन</span></span></b></p>
     <p>ポットのおんどを90どから98どにへんこうします。</p>
   </div>
 </section>
 
 <section class="block" id="ci-2">
-  <div class="head"><h2>2. おきゃくさまの ライカンかくにん</h2></div>
+  <div class="head"><h2><span class="jp-main">2. おきゃくさまの ライカンかくにん</span><span class="subcopy">お客様の来館確認<span class="sep">/</span><span class="np">पाहुनाको आगमन पुष्टि</span></span></h2></div>
   <div class="body">
-    <p><b>タブレットかくにん</b></p>
+    <p><b><span class="jp-main">タブレットかくにん</span><span class="subcopy">タブレット確認<span class="sep">/</span><span class="np">ट्याब्लेट जाँच</span></span></b></p>
     <p>さぎょうしながら、タブレットの カメラがめんを かくにんし、おきゃくさまの ライカンをチェックします。</p>
   </div>
 </section>
 
 <section class="block" id="ci-3">
-  <div class="head"><h2>3. おきゃくさまのおむかえ</h2></div>
+  <div class="head"><h2><span class="jp-main">3. おきゃくさまのおむかえ</span><span class="subcopy">お客様のお迎え<span class="sep">/</span><span class="np">पाहुनालाई स्वागत गर्ने</span></span></h2></div>
   <div class="body">
-    <p><b>チュウシャジョウでの たいおう</b></p>
+    <p><b><span class="jp-main">チュウシャジョウでの たいおう</span><span class="subcopy">駐車場での対応<span class="sep">/</span><span class="np">पार्किङमा गरिने सेवा</span></span></b></p>
     <p>くるまが チュウシャジョウに トウチャクしたら、おきゃくさまを むかえにいき、「いらっしゃいませ」とあいさつします。</p>
     <p>「おはこびできる、おにもつ があれば、おてつだいします。」とおつたえし、にもつを はこんでフロントへ あんないします。</p>
     <!-- 音声：ci-3 -->
@@ -137,12 +145,12 @@
 </section>
 
 <section class="block" id="ci-4">
-  <div class="head"><h2>4. フロントでのたいおう</h2></div>
+  <div class="head"><h2><span class="jp-main">4. フロントでのたいおう</span><span class="subcopy">フロントでの対応<span class="sep">/</span><span class="np">फ्रन्टमा गरिने सेवा</span></span></h2></div>
   <div class="body">
-    <p><b>にもつのとりあつかい</b></p>
+    <p><b><span class="jp-main">にもつのとりあつかい</span><span class="subcopy">荷物の取り扱い<span class="sep">/</span><span class="np">सामान सम्हाल्ने</span></span></b></p>
     <p>フロントに あんないしたら、「にもつを テーブルに おかせていただきます。」とおつたえし、にもつを おきます。</p>
 
-    <p><b>チェックインのてつづき</b></p>
+    <p><b><span class="jp-main">チェックインのてつづき</span><span class="subcopy">チェックインの手続き<span class="sep">/</span><span class="np">चेकइन प्रक्रिया</span></span></b></p>
     <p>おきゃくさまに チェックインを　していただきます。</p>
     <p>まえの おきゃくさまが いたり、スタッフが いないばあいは、「ごあんないしますので、おかけいただいて、しょうしょう　おまちください」とおつたえして、イスにすわってもらう。</p>
     <!-- 音声：ci-4 -->
@@ -151,38 +159,38 @@
 </section>
 
 <section class="block" id="ci-5">
-  <div class="head"><h2>5. にもつをはこぶ</h2></div>
+  <div class="head"><h2><span class="jp-main">5. にもつをはこぶ</span><span class="subcopy">荷物を運ぶ<span class="sep">/</span><span class="np">सामान बोक्ने</span></span></h2></div>
   <div class="body">
-    <p><b>にもつの かくにんとはこぶ</b></p>
+    <p><b><span class="jp-main">にもつの かくにんとはこぶ</span><span class="subcopy">荷物の確認と運搬<span class="sep">/</span><span class="np">सामान जाँच र बोकाइ</span></span></b></p>
     <p>チェックインじに おきゃくさまの にもつを へやに はこんでもよいかかくにんします。</p>
     <p>へやめいと はこんでもよい にもつを かくにんして、にもつを へやにはこびます。</p>
   </div>
 </section>
 
 <section class="block" id="ci-6">
-  <div class="head"><h2>6. マッチャとヨウカンのじゅんび</h2></div>
+  <div class="head"><h2><span class="jp-main">6. マッチャとヨウカンのじゅんび</span><span class="subcopy">抹茶と羊羹の準備<span class="sep">/</span><span class="np">माचा र योउकानको तयारी</span></span></h2></div>
   <div class="body">
-    <p><b>じゅんび さぎょう</b></p>
+    <p><b><span class="jp-main">じゅんび さぎょう</span><span class="subcopy">準備作業<span class="sep">/</span><span class="np">तयारीको काम</span></span></b></p>
     <p>マッチャと ヨウカンの じゅんびをします。</p>
   </div>
 </section>
 
 <section class="block" id="ci-7">
-  <div class="head"><h2>7. ゆかたのとりあつかい</h2></div>
+  <div class="head"><h2><span class="jp-main">7. ゆかたのとりあつかい</span><span class="subcopy">浴衣の取り扱い<span class="sep">/</span><span class="np">युकाता सम्हाल्ने तरिका</span></span></h2></div>
   <div class="body">
-    <p><b>ゆかたと コモノの おあずかり</b></p>
+    <p><b><span class="jp-main">ゆかたと コモノの おあずかり</span><span class="subcopy">浴衣と小物のお預かり<span class="sep">/</span><span class="np">युकाता र सामान राखेर लिने</span></span></b></p>
     <p>じょせいの　おきゃくさまが、ゆかたと　コモノを　えらびおえたら、おあずかりして「あとで、おちゃといっしょに、へやに、はこばせていただきます。」とおつたえします。</p>
   </div>
 </section>
 
 <section class="block" id="ci-8">
-  <div class="head"><h2>8. おへやへのはいぜん</h2></div>
+  <div class="head"><h2><span class="jp-main">8. おへやへのはいぜん</span><span class="subcopy">お部屋への配膳<span class="sep">/</span><span class="np">कोठामा सेवा पुर्‍याउने</span></span></h2></div>
   <div class="body">
-    <p><b>へやに　トウチャク</b></p>
+    <p><b><span class="jp-main">へやに　トウチャク</span><span class="subcopy">部屋に到着<span class="sep">/</span><span class="np">कोठामा पुग्ने</span></span></b></p>
     <p>おきゃくさまが　エレベーターで、へやにあがったら、マッチャをたてて、ゆかたといっしょに　へやに　はこびます。</p>
     <p>へやのドアを　3かいノックし、「しつれいいたします。」といいながら　へやに　はいります。</p>
 
-    <p><b>マッチャと　ヨウカンの　はいぜん</b></p>
+    <p><b><span class="jp-main">マッチャと　ヨウカンの　はいぜん</span><span class="subcopy">抹茶と羊羹の配膳<span class="sep">/</span><span class="np">माचा र योउकान सेवा गर्ने</span></span></b></p>
     <p>「おちゃの　ごよういを　させていただきます。」といい、テーブルに、マッチャと　ヨウカンを　はいぜんします。</p>
     <p>「こちらは、マッチャと、ジカセイの　ヨウカンですので、おめしあがりください。」と　せつめいします。</p>
     <!-- 音声：ci-8 -->
@@ -191,12 +199,12 @@
 </section>
 
 <section class="block" id="ci-9">
-  <div class="head"><h2>9. タブレットと　チョウショクの　あんない</h2></div>
+  <div class="head"><h2><span class="jp-main">9. タブレットと　チョウショクの　あんない</span><span class="subcopy">タブレットと朝食の案内<span class="sep">/</span><span class="np">ट्याब्लेट र बिहानको खानाको जानकारी</span></span></h2></div>
   <div class="body">
-    <p><b>タブレットの　つかいかた</b></p>
+    <p><b><span class="jp-main">タブレットの　つかいかた</span><span class="subcopy">タブレットの使い方<span class="sep">/</span><span class="np">ट्याब्लेट कसरी प्रयोग गर्ने</span></span></b></p>
     <p>「こちらの　タブレットに、インフォメーションを　ごよういしておりますので、ごらんください。」とおつたえします。</p>
 
-    <p><b>チョウショクの　あんない</b></p>
+    <p><b><span class="jp-main">チョウショクの　あんない</span><span class="subcopy">朝食の案内<span class="sep">/</span><span class="np">बिहानको खानाको जानकारी</span></span></b></p>
     <p>o    「こちらは、チョウショクの　ごあんないです。キホンのセットに、したの3つのチョイスから　おすきなものを　えらんでください。ごユウショクの　さいに　おうかがいします。」とあんないします。</p>
 
     <p>·         SPちょうしょくの　あんない<br>
@@ -211,9 +219,9 @@
 </section>
 
 <section class="block" id="ci-10">
-  <div class="head"><h2>10. へやセツビのあんない</h2></div>
+  <div class="head"><h2><span class="jp-main">10. へやセツビのあんない</span><span class="subcopy">部屋設備の案内<span class="sep">/</span><span class="np">कोठाका सुविधाको जानकारी</span></span></h2></div>
   <div class="body">
-    <p><b>デンワの　つかいかた</b></p>
+    <p><b><span class="jp-main">デンワの　つかいかた</span><span class="subcopy">電話の使い方<span class="sep">/</span><span class="np">फोन प्रयोग गर्ने तरिका</span></span></b></p>
     <p>「なにかございましたら、こちらの　デンワの　ジュワキをあげて、フロントに、ごれんらく　ください。」とあんないします。</p>
     <!-- 音声：ci-10 -->
     <audio controls><source src="../assets/audio/checkin-out/ci-10.mp3" type="audio/mpeg"></audio>
@@ -221,9 +229,9 @@
 </section>
 
 <section class="block" id="ci-11">
-  <div class="head"><h2>11. ゆかたの　しまいかた</h2></div>
+  <div class="head"><h2><span class="jp-main">11. ゆかたの　しまいかた</span><span class="subcopy">浴衣のしまい方<span class="sep">/</span><span class="np">युकाता मिलाएर राख्ने तरिका</span></span></h2></div>
   <div class="body">
-    <p><b>ゆかたと　こものの　セイリ</b></p>
+    <p><b><span class="jp-main">ゆかたと　こものの　セイリ</span><span class="subcopy">浴衣と小物の整理<span class="sep">/</span><span class="np">युकाता र साना सामान मिलाउने</span></span></b></p>
     <p>「おえらびいただいた　ゆかたをしまわせていただきます。」といいながら　ゆかたをしまいます。</p>
     <p>「こちらに　ゆかたと　バスタオル、フリーサイズのサムエがあります。　カンナイは　どちらでもだいじょうぶですので、すごしやすいかっこうですごしてください。」とせつめい　します。</p>
     <!-- 音声：ci-11 -->
@@ -232,12 +240,12 @@
 </section>
 
 <section class="block" id="ci-12">
-  <div class="head"><h2>12. へやをでる</h2></div>
+  <div class="head"><h2><span class="jp-main">12. へやをでる</span><span class="subcopy">部屋を出る<span class="sep">/</span><span class="np">कोठाबाट बाहिर निस्कने</span></span></h2></div>
   <div class="body">
-    <p><b>へやをでる</b></p>
+    <p><b><span class="jp-main">へやをでる</span><span class="subcopy">部屋を出る<span class="sep">/</span><span class="np">कोठाबाट बाहिर निस्कने</span></span></b></p>
     <p>「ごゆっくり、おすごしください。」とつたえ、へやを　でます。</p>
 
-    <p><b>くつとスリッパのこうかん</b></p>
+    <p><b><span class="jp-main">くつとスリッパのこうかん</span><span class="subcopy">靴とスリッパの交換<span class="sep">/</span><span class="np">जुत्ता र स्लिपर साट्ने</span></span></b></p>
     <p>へやを　でたあと、ゲンカンの　おきゃくさまの　くつとスリッパをこうかんします。</p>
 
     <!-- 音声：ci-12 -->
@@ -253,7 +261,7 @@
 <!-- ================= チェックアウト ================= -->
 
 <section class="block" id="co-1">
-  <div class="head"><h2>1. きほん ぎょうむ の ながれ</h2></div>
+  <div class="head"><h2><span class="jp-main">1. きほん ぎょうむ の ながれ</span><span class="subcopy">基本業務の流れ<span class="sep">/</span><span class="np">आधारभूत कामको क्रम</span></span></h2></div>
   <div class="body">
     <p>あさ の ふつう の しごと を しながら、タブレット の えいぞう で フロント の じょうきょう を かくにん。</p>
     <p>9じ50ふん に なったら、おきゃくさま の チェックアウト の じょうきょう に おうじて フロント ちかく で たいき し、チェックアウト たいおう を ゆうせん。</p>
@@ -263,19 +271,19 @@
 </section>
 
 <section class="block" id="co-2">
-  <div class="head"><h2>2. チェックアウト の たいおう</h2></div>
+  <div class="head"><h2><span class="jp-main">2. チェックアウト の たいおう</span><span class="subcopy">チェックアウトの対応<span class="sep">/</span><span class="np">चेकआउटको सेवा</span></span></h2></div>
   <div class="body">
-    <p><b>かいけい の たいき</b></p>
+    <p><b><span class="jp-main">かいけい の たいき</span><span class="subcopy">会計時の待機<span class="sep">/</span><span class="np">भुक्तानी हुँदा प्रतीक्षा</span></span></b></p>
     <p>チェックアウトを　している（まっている）　おきゃくさまに「ありがとうございました。」と　あいさつをいって、フロント にて おきゃくさま の かいけい が おわる まで たいき。</p>
     <p>かいけい しゅうりょう ご、えがお で おれい を いう。</p>
 
-    <p><b>きねん さつえい の あんない</b></p>
+    <p><b><span class="jp-main">きねん さつえい の あんない</span><span class="subcopy">記念撮影の案内<span class="sep">/</span><span class="np">स्मरण फोटोको जानकारी</span></span></b></p>
     <p>「よろしければ げんかんまえ で きねん さつえい を している の ですが、いかが でしょうか？」と おこえがけ。</p>
     <p>※にもつが　あるときは　フロントにおいて　さつえいをすることを　おすすめする</p>
     <p>おきゃくさま から カメラ や スマートフォン を あずかり、げんかん いりぐち の かんばん を ふくめた じょうたい で 1まい から 2まい ほど さつえい する。</p>
     <p>さつえい ご、おきゃくさま に おれい を いって おかえし する。</p>
 
-    <p><b>おみおくり の たいおう</b></p>
+    <p><b><span class="jp-main">おみおくり の たいおう</span><span class="subcopy">お見送りの対応<span class="sep">/</span><span class="np">बिदाइ गर्ने सेवा</span></span></b></p>
     <p>あるいて かえる おきゃくさま：いりぐち まで ごあんない し、おみおくり。</p>
     <p>バス・タクシー を りよう する おきゃくさま：</p>
     <p>「おこえがけ します ので、なか で かけて おまち ください」 と ごあんない。</p>
@@ -292,14 +300,14 @@
 
 
 <section class="block" id="co-3">
-  <div class="head"><h2>3. チェックアウト ご の ぎょうむ</h2></div>
+  <div class="head"><h2><span class="jp-main">3. チェックアウト ご の ぎょうむ</span><span class="subcopy">チェックアウト後の業務<span class="sep">/</span><span class="np">चेकआउटपछि गर्ने काम</span></span></h2></div>
   <div class="body">
     <p>9じ50ふんまえ で あれば、バス や タクシー を まつ おきゃくさま には、きねん さつえい ご に せき で おまち いただく よう ごあんない し、ふつう の しごと（ちょうしょく の かたづけ など） に もどる。</p>
     <p>ほか に チェックアウト の おきゃくさま が いない ばあい、ふつう の しごと に もどる。</p>
     <p>チェックアウト の おきゃくさま が つづく ばあい は、たいおう を ゆうせん。</p>
     <p>チェックアウト が おちついたら、フロント まわり の せいり・せいそう を おこなう。</p>
 
-    <p><b>ポイント</b></p>
+    <p><b><span class="jp-main">ポイント</span><span class="subcopy">要点<span class="sep">/</span><span class="np">मुख्य बुँदा</span></span></b></p>
     <p>えがお で ていねい な たいおう を こころがける。</p>
     <p>おきゃくさま が スムーズ に しゅっぱつ できる よう、すみやか に こうどう する。</p>
     <p>ひつよう に おうじて フロント スタッフ と れんけい を とる。</p>
