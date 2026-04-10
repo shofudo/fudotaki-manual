@@ -57,7 +57,8 @@
 
   /* ── シーズンタブ ── */
   .season-nav{display:flex;gap:8px;max-width:var(--maxw);margin:14px auto 0;padding:0 18px}
-  .season-tab{flex:1;padding:11px 0;border:1px solid var(--bd);border-radius:999px;background:rgba(255,251,245,.92);color:var(--muted);font-weight:700;font-size:15px;cursor:pointer;transition:.18s;text-align:center;backdrop-filter:blur(8px)}
+  .season-tab{flex:1;padding:10px 0 9px;border:1px solid var(--bd);border-radius:999px;background:rgba(255,251,245,.92);color:var(--muted);font-weight:700;font-size:15px;cursor:pointer;transition:.18s;text-align:center;backdrop-filter:blur(8px);line-height:1.3}
+  .season-tab .tab-sub{display:block;font-size:10px;font-weight:400;margin-top:2px;opacity:.75;letter-spacing:.01em}
   .season-tab:active{transform:translateY(1px)}
   .season-tab[data-season="spring"].active{background:linear-gradient(135deg,#d4858a,#c97b6e);color:#fff;border-color:transparent;box-shadow:0 6px 16px rgba(201,123,110,.35)}
   .season-tab[data-season="summer"].active{background:linear-gradient(135deg,#3a9bd5,#38b89e);color:#fff;border-color:transparent;box-shadow:0 6px 16px rgba(56,184,158,.35)}
@@ -93,10 +94,10 @@
 
 <!-- シーズンタブ -->
 <div class="season-nav" role="tablist" aria-label="季節選択">
-  <button class="season-tab" data-season="spring" role="tab" aria-selected="false">春</button>
-  <button class="season-tab" data-season="summer" role="tab" aria-selected="false">夏</button>
-  <button class="season-tab" data-season="autumn" role="tab" aria-selected="false">秋</button>
-  <button class="season-tab" data-season="winter" role="tab" aria-selected="false">冬</button>
+  <button class="season-tab" data-season="spring" role="tab" aria-selected="false">春<span class="tab-sub">はる / बसन्त</span></button>
+  <button class="season-tab" data-season="summer" role="tab" aria-selected="false">夏<span class="tab-sub">なつ / गर्मी</span></button>
+  <button class="season-tab" data-season="autumn" role="tab" aria-selected="false">秋<span class="tab-sub">あき / शरद</span></button>
+  <button class="season-tab" data-season="winter" role="tab" aria-selected="false">冬<span class="tab-sub">ふゆ / जाडो</span></button>
 </div>
 
 <main id="content">
@@ -126,15 +127,20 @@
 
   <!-- 吸物 -->
   <section class="block" id="suimono" data-order="1">
-    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14h16"/><path d="M6 14a6 6 0 0 1 12 0"/><path d="M7 18h10"/></svg></span>吸物</h2><small>（すいもの）</small></div>
+    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14h16"/><path d="M6 14a6 6 0 0 1 12 0"/><path d="M7 18h10"/></svg></span>吸物<span class="season-badge-here"></span></h2><small>（すいもの）</small></div>
     <div class="body">
-      <div class="levels">
-        <p>レベル1: こちらは、 スイモノ でございます。</p>
-        <p>レベル2: おダシは、トリと、カツオブシでとった、おダシになります。</p>
-        <p>レベル3: ワンダネには、クレソンと、シイタケが　はいっております。</p>
+      <div class="season-panel" data-season="spring">
+        <div class="levels">
+          <p>レベル1: こちらは、 スイモノ でございます。</p>
+          <p>レベル2: おダシは、トリと、カツオブシでとった、おダシになります。</p>
+          <p>レベル3: ワンダネには、クレソンと、シイタケが　はいっております。</p>
+        </div>
+        <div class="chips"><span class="chip">すいもの ていきょう＆せつめいご</span></div>
+        <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/suimono.mp3" type="audio/mpeg"></audio></div>
       </div>
-      <div class="chips"><span class="chip">すいもの ていきょう＆せつめいご</span></div>
-      <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/suimono.mp3" type="audio/mpeg"></audio></div>
+      <div class="season-panel" data-season="summer"><div class="season-placeholder">夏の内容を入力してください</div></div>
+      <div class="season-panel" data-season="autumn"><div class="season-placeholder">秋の内容を入力してください</div></div>
+      <div class="season-panel" data-season="winter"><div class="season-placeholder">冬の内容を入力してください</div></div>
     </div>
     <div class="nav"><a href="#breakfast-choice">朝食チョイス案内へ</a><a class="next" href="#breakfast-choice">次へ</a></div>
   </section>
