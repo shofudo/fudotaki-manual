@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /c/Users/saria/Documents/GitHub/fudotaki-manual/ branch -a)",
+      "Bash(git -C /c/Users/saria/Documents/GitHub/fudotaki-manual/ log --oneline main)",
+      "Bash(git -C /c/Users/saria/Documents/GitHub/fudotaki-manual/ log --oneline spring-2026)",
+      "Bash(git -C /c/Users/saria/Documents/GitHub/fudotaki-manual/ log --oneline main..spring-2026)",
+      "Bash(git -C /c/Users/saria/Documents/GitHub/fudotaki-manual/ diff main..spring-2026 --stat)",
+      "Bash(git -C /c/Users/saria/Documents/GitHub/fudotaki-manual/ checkout main)",
+      "Bash(git merge spring-2026 --no-ff -m ':*)",
+      "Bash(git -C /c/Users/saria/Documents/GitHub/fudotaki-manual/ log --oneline spring-2026..main)",
+      "Bash(git -C /c/Users/saria/Documents/GitHub/fudotaki-manual/ show 02f7e17 --stat)",
+      "Bash(git -C /c/Users/saria/Documents/GitHub/fudotaki-manual/ status)",
+      "Bash(git -C /c/Users/saria/Documents/GitHub/fudotaki-manual/ log --oneline -5)",
+      "Bash(git -C /c/Users/saria/Documents/GitHub/fudotaki-manual/ push origin main)"
+    ]
+  }
+}
