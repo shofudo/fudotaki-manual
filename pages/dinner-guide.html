@@ -1,321 +1,353 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ja">
 <head><link rel="stylesheet" href="/fudotaki-manual/assets/css/theme.css">
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ゆうしょく あんない (dinner-guide)</title>
+<title>ゆうしょく あんない / 夕食案内 / बेलुकाको भोजन मार्गदर्शन</title>
 <style>
-  :root{--bg:#f4efe8;--card:rgba(255,251,245,.9);--ink:#221c18;--muted:#756a62;--acc:#6c5845;--acc-2:#3f4d61;--bd:rgba(108,88,69,.14);--radius:24px;--maxw:1040px;--shadow:0 24px 60px rgba(34,28,24,.10)}
-  html,body{margin:0;padding:0;background:radial-gradient(circle at top, rgba(255,255,255,.64), transparent 42%),linear-gradient(180deg,#f7f2eb,#efe7dd);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.75;scroll-behavior:smooth}
-  header{position:sticky;top:0;z-index:20;background:rgba(248,243,236,.82);backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid var(--bd)}
-  header .in{max-width:var(--maxw);margin:auto;display:flex;gap:12px;align-items:center;padding:12px 18px}
-  header a,header .brand{color:var(--acc-2);text-decoration:none;font-weight:600}
-  header .brand{margin-inline:auto;color:var(--ink)}
-  header .btn{padding:8px 12px;border:1px solid var(--bd);border-radius:999px;background:rgba(255,251,245,.92)}
-  .hero{position:relative;max-width:var(--maxw);margin:20px auto 0;overflow:hidden;border-radius:32px;box-shadow:var(--shadow)}
-  .hero img{display:block;width:100%;height:34vh;object-fit:cover;object-position:center;filter:saturate(.88) contrast(1.02)}
-  .hero .hero-title{position:absolute;left:20px;bottom:18px;color:#fff;background:rgba(24,20,18,.42);padding:10px 16px;border-radius:999px;font-weight:700;letter-spacing:.04em;backdrop-filter:blur(12px)}
-  main{max-width:var(--maxw);margin:18px auto 40px;padding:0 18px}
-  .block{background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);box-shadow:var(--shadow);margin:18px 0;overflow:hidden;backdrop-filter:blur(16px)}
-  .block .head{display:flex;align-items:center;gap:8px;padding:16px 18px;border-bottom:1px solid var(--bd);background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(247,240,232,.88))}
-  .block .head h2{margin:0;font-size:18px}
-  .block .body{padding:18px}
-  .block p{margin:.6em 0}
-  .block .note{color:var(--muted);font-size:.95em}
-  .head h2{display:flex;align-items:center;gap:10px}
-  .mono-icon{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;border-radius:12px;background:rgba(63,77,97,.1);color:var(--acc-2)}
-  .mono-icon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-  .img-full{display:block;width:100%;height:auto;border:1px solid var(--bd);border-radius:12px;box-sizing:border-box}
+  :root{--bg:#f4efe8;--bg-soft:#fbf7f1;--card:rgba(255,251,245,.82);--ink:#241d1a;--muted:#75655b;--muted-2:#8b7b70;--acc:#7b3f35;--acc-2:#b18a56;--bd:rgba(97,71,54,.18);--line:rgba(97,71,54,.1);--radius:28px;--radius-sm:16px;--maxw:1080px;--shadow:0 18px 50px rgba(36,29,26,.08)}
+  html,body{margin:0;padding:0;color:var(--ink);font-family:"Noto Sans JP","Noto Sans Devanagari","Yu Gothic UI","Segoe UI",sans-serif;line-height:1.8;scroll-behavior:smooth;background:radial-gradient(circle at top left, rgba(177,138,86,.14), transparent 32%),radial-gradient(circle at 85% 18%, rgba(123,63,53,.08), transparent 24%),linear-gradient(180deg,#f9f5ef 0%,#f3ede6 100%)}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(rgba(255,255,255,.18),rgba(255,255,255,.18)),repeating-linear-gradient(90deg,transparent 0 39px,rgba(123,63,53,.018) 39px 40px);opacity:.5}
+  header{position:sticky;top:0;z-index:20;background:rgba(248,243,236,.82);backdrop-filter:saturate(150%) blur(16px);border-bottom:1px solid var(--line)}
+  header .in{max-width:var(--maxw);margin:auto;display:flex;gap:12px;align-items:center;padding:14px 20px}
+  header a,header .brand{color:var(--acc);text-decoration:none;font-weight:600;letter-spacing:.04em}
+  header .brand{margin-inline:auto;color:var(--ink);font-family:"Times New Roman",Georgia,serif;font-size:1.05rem;text-transform:uppercase;letter-spacing:.12em}
+  header .btn{padding:9px 14px;border:1px solid var(--bd);border-radius:999px;background:rgba(255,255,255,.65);transition:background .2s ease,border-color .2s ease,transform .2s ease}
+  header .btn:hover{background:#fff;border-color:rgba(123,63,53,.3);transform:translateY(-1px)}
+  .hero{position:relative;max-width:var(--maxw);margin:28px auto 0;overflow:hidden;border-radius:36px;box-shadow:var(--shadow);isolation:isolate}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,10,.1) 0%,rgba(20,14,10,.22) 46%,rgba(20,14,10,.62) 100%),linear-gradient(90deg,rgba(20,14,10,.55) 0%,transparent 55%)}
+  .hero img{display:block;width:100%;height:min(52vh,580px);object-fit:cover;object-position:center;transform:scale(1.02)}
+  .hero .hero-title{position:absolute;left:32px;bottom:28px;z-index:1;max-width:min(92%,620px);color:#fffaf3;background:rgba(48,33,25,.28);border:1px solid rgba(255,250,243,.22);padding:14px 18px;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.16)}
+  main{max-width:var(--maxw);margin:28px auto 72px;padding:0 18px;position:relative;z-index:1}
+  .block{margin:22px 0;overflow:hidden;background:var(--card);border:1px solid var(--bd);border-radius:var(--radius);box-shadow:var(--shadow);backdrop-filter:blur(14px)}
+  .block .head{display:flex;align-items:center;gap:8px;padding:22px 28px 18px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.4),rgba(255,255,255,.08))}
+  .block .head h2{margin:0;font-size:clamp(1.05rem,1.8vw,1.35rem);font-weight:700;letter-spacing:.03em}
+  .block .body{padding:24px 28px 28px}
+  .block p,.block li{margin:.75em 0}
+  .block ol{padding-left:1.4em;margin:0}
+  .block .note{color:var(--muted);font-size:.94em}
+  .img-full{display:block;width:100%;height:auto;border:1px solid var(--bd);border-radius:22px;box-sizing:border-box;margin-top:16px;box-shadow:0 14px 30px rgba(36,29,26,.08)}
   #toc .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-  #toc a{display:block;border:1px solid var(--bd);background:rgba(255,255,255,.84);border-radius:18px;padding:14px;text-decoration:none;color:var(--ink)}
-  #toc a b{display:block;color:var(--acc-2);margin-bottom:4px}
-  .nav{display:flex;gap:8px;justify-content:space-between;margin-top:12px}
-  .nav a{display:inline-block;padding:10px 12px;border:1px solid var(--bd);border-radius:999px;background:rgba(255,255,255,.86);color:var(--acc-2);text-decoration:none}
-  audio{width:100%;margin-top:8px}
-  .fab-wrap{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;flex-direction:column;gap:10px}
-  .fab{width:52px;height:52px;border-radius:999px;border:1px solid var(--bd);background:rgba(255,251,245,.94);box-shadow:var(--shadow);display:grid;place-items:center;text-decoration:none;color:var(--acc-2);opacity:0;transform:translateY(10px);transition:opacity .2s ease, transform .2s ease}
+  #toc a{display:block;border:1px solid var(--bd);background:linear-gradient(180deg,rgba(255,255,255,.78),rgba(255,248,241,.52));border-radius:22px;padding:18px 18px 16px;text-decoration:none;color:var(--ink);min-height:92px;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+  #toc a:hover{transform:translateY(-2px);border-color:rgba(123,63,53,.28);background:rgba(255,255,255,.88)}
+  #toc a b{display:block;color:var(--acc);margin-bottom:8px;font-family:"Times New Roman",Georgia,serif;letter-spacing:.06em;font-size:1rem}
+  .triple{display:block}
+  .jp-main{display:block;font-weight:700;line-height:1.55}
+  .subcopy{display:block;margin-top:4px;font-size:.82rem;line-height:1.6;color:var(--muted);font-weight:500}
+  .subcopy .sep{opacity:.55;padding:0 .35em}
+  .subcopy .np{color:var(--muted-2);font-family:"Noto Sans Devanagari","Noto Sans JP",sans-serif}
+  .triple .jp-main{font-size:1rem}
+  .triple .subcopy{font-size:.84rem}
+  header .btn .jp-main{font-size:.96rem}
+  header .btn .subcopy{font-size:.68rem;line-height:1.45}
+  .hero-title .jp-main{font-size:clamp(1.1rem,2vw,1.5rem);color:#fffaf3;letter-spacing:.08em}
+  .hero-title .subcopy{font-size:clamp(.72rem,1.3vw,.9rem);color:#f0e6df}
+  .nav{display:flex;gap:10px;justify-content:space-between;margin-top:22px}
+  .nav a{display:inline-block;padding:10px 14px;border:1px solid var(--bd);border-radius:999px;background:rgba(255,255,255,.64);color:var(--acc);text-decoration:none;transition:background .2s ease,border-color .2s ease}
+  .nav a:hover{background:#fff;border-color:rgba(123,63,53,.3)}
+  .nav a .jp-main{font-size:.95rem}
+  .nav a .subcopy{font-size:.64rem;margin-top:2px}
+  audio{width:100%;margin-top:16px;accent-color:var(--acc)}
+  .menu-heading{margin:28px 0 14px;padding-left:14px;border-left:2px solid #b18a56;font-size:1.05rem;color:#241d1a;letter-spacing:.06em;font-family:"Times New Roman",Georgia,serif}
+  .menu-acc{margin-bottom:12px;border:1px solid rgba(97,71,54,.14);border-radius:20px;background:rgba(255,252,247,.78);box-shadow:inset 0 1px 0 rgba(255,255,255,.6);overflow:hidden}
+  .menu-acc summary{padding:16px 18px;font-weight:700;cursor:pointer;list-style:none;background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(255,248,241,.28));display:flex;justify-content:space-between;align-items:center;gap:12px;letter-spacing:.04em}
+  .menu-acc summary::-webkit-details-marker{display:none}
+  .menu-acc[open] summary{border-bottom:1px solid rgba(97,71,54,.1)}
+  .menu-acc summary::after{content:"▼";font-size:10px;color:#9ca3af}
+  .menu-acc[open] summary::after{transform:rotate(180deg)}
+  .menu-content{padding:4px 18px 12px}
+  .menu-content ul{margin:0;padding:0;list-style:none}
+  .menu-content li{padding:12px 0;border-bottom:1px solid rgba(97,71,54,.08);display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .menu-content li:last-child{border-bottom:none}
+  .menu-content li b{font-size:15px;color:#241d1a;font-weight:600}
+  .tag{background:rgba(177,138,86,.12);color:#7b3f35;font-size:12px;font-weight:700;padding:5px 9px;border:1px solid rgba(177,138,86,.24);border-radius:999px;white-space:nowrap}
+  .tag:empty{display:none}
+  .highball-card{display:block;margin-top:18px;padding:22px 20px;background:linear-gradient(135deg, rgba(123,63,53,.95), rgba(64,36,31,.95));border:1px solid rgba(255,250,243,.25);border-radius:22px;text-decoration:none;color:#fff9f2;box-shadow:0 18px 36px rgba(64,36,31,.18)}
+  .highball-card .jp-main,.highball-card .subcopy{color:#fff9f2}
+  .highball-card .subcopy{color:#f5ddd4}
+  .fab-wrap{position:fixed;right:18px;bottom:18px;z-index:50;display:flex;flex-direction:column;gap:10px}
+  .fab{width:52px;height:52px;border-radius:18px;border:1px solid var(--bd);background:rgba(255,251,245,.88);box-shadow:0 18px 30px rgba(36,29,26,.14);display:grid;place-items:center;text-decoration:none;color:var(--acc-2);opacity:0;transform:translateY(10px);transition:opacity .2s ease, transform .2s ease, background .2s ease}
   .fab svg{width:22px;height:22px}
   .fab.show{opacity:1;transform:none}
+  .fab:hover{background:#fff}
   .fab:active{transform:scale(.97)}
-  .callout-link{display:block;margin-top:12px;padding:20px;border:1px solid rgba(122,84,47,.22);border-radius:18px;text-decoration:none;color:#7a542f;font-weight:700;text-align:center;font-size:1.02em;background:linear-gradient(135deg,rgba(255,248,240,.98),rgba(247,236,221,.92))}
-  .callout-link .mono-icon{margin:0 auto 10px}
-  .menu-title{display:flex;align-items:center;gap:10px;font-size:1.1rem;border-left:5px solid #6c5845;padding-left:10px;margin-bottom:10px}
-  @media (max-width:640px){#toc .cards{grid-template-columns:1fr}}
+  @media (max-width:780px){.hero{margin-top:18px;border-radius:28px}.hero .hero-title{left:20px;right:20px;bottom:20px}.block .head{padding:18px 20px 14px}.block .body{padding:20px}#toc .cards{grid-template-columns:1fr}.subcopy{font-size:.76rem}.menu-content li{align-items:flex-start}.tag{white-space:normal}}
 </style>
 </head>
 <body>
 <header>
   <div class="in">
-    <a class="btn" id="btn-home" href="../index.html">← トップ</a>
+    <a class="btn triple" id="btn-home" href="../index.html">
+      <span class="jp-main">← とっぷ</span>
+      <span class="subcopy">← トップ<span class="sep">/</span><span class="np">← शीर्ष</span></span>
+    </a>
     <span class="brand">dinner-guide</span>
-    <a class="btn" href="#toc">目次</a>
+    <a class="btn triple" href="#toc">
+      <span class="jp-main">もくじ</span>
+      <span class="subcopy">目次<span class="sep">/</span><span class="np">विषयसूची</span></span>
+    </a>
   </div>
 </header>
 
 <div class="hero">
-  <img src="../assets/img/dinner-guide/top2.jpg" alt="">
-  <div class="hero-title">ゆうしょく　あんない</div>
+  <img src="../assets/img/dinner-guide/top2.jpg" alt="夕食案内">
+  <div class="hero-title triple">
+    <span class="jp-main">ゆうしょく あんない</span>
+    <span class="subcopy">夕食案内<span class="sep">/</span><span class="np">बेलुकाको भोजन मार्गदर्शन</span></span>
+  </div>
 </div>
 
 <main>
-
   <section class="block" id="toc">
-    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 6h11"/><path d="M8 12h11"/><path d="M8 18h11"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg></span>もくじ</h2></div>
+    <div class="head"><h2 class="triple"><span class="jp-main">📑 もくじ</span><span class="subcopy">目次<span class="sep">/</span><span class="np">विषयसूची</span></span></h2></div>
     <div class="body">
       <div class="cards">
-        <a href="#entrance"><b>1. せきに あんない</b>いりぐちでの あいさつ～せきまで</a>
-        <a href="#at-seat"><b>2. せきでの ごあんない</b>しょくぜんしゅ／メニュー／のみもの</a>
-        <a href="#steak-sauce"><b>3. ステーキ タレの せつめい</b>タレの ないよう・つかいかた</a>
-        <a href="#rice-timing"><b>4. ごはんの うかがいかた</b>ニモノやステーキの あと</a>
-        <a href="#dessert-check"><b>5. かんみ まえの かくにん</b>デザート／おにぎり の ごようい</a>
+        <a href="#entrance" class="triple"><b><span class="jp-main">1. せきに あんない</span><span class="subcopy">1. 席に案内<span class="sep">/</span><span class="np">1. सिटमा मार्गदर्शन</span></span></b><span class="subcopy">入口での挨拶から席まで<span class="sep">/</span><span class="np">प्रवेशद्वारमा अभिवादनदेखि सिटसम्म</span></span></a>
+        <a href="#at-seat" class="triple"><b><span class="jp-main">2. せきでの ごあんない</span><span class="subcopy">2. 席でのご案内<span class="sep">/</span><span class="np">2. सिटमा गरिने जानकारी</span></span></b><span class="subcopy">食前酒・メニュー・飲み物<span class="sep">/</span><span class="np">भोजनअघि दिने मदिरा, मेनु, र पेय</span></span></a>
+        <a href="#steak-sauce" class="triple"><b><span class="jp-main">3. ステーキ タレの せつめい</span><span class="subcopy">3. ステーキたれの説明<span class="sep">/</span><span class="np">3. स्टेक ससको व्याख्या</span></span></b><span class="subcopy">たれの内容と使い方<span class="sep">/</span><span class="np">ससको प्रकार र प्रयोग गर्ने तरिका</span></span></a>
+        <a href="#rice-timing" class="triple"><b><span class="jp-main">4. ごはんの うかがいかた</span><span class="subcopy">4. ご飯のうかがい方<span class="sep">/</span><span class="np">4. भात कहिले ल्याउने भनेर सोध्ने तरिका</span></span></b><span class="subcopy">煮物やステーキのあと<span class="sep">/</span><span class="np">निमोनो वा स्टेकपछि</span></span></a>
+        <a href="#dessert-check" class="triple"><b><span class="jp-main">5. かんみ まえの かくにん</span><span class="subcopy">5. 甘味前の確認<span class="sep">/</span><span class="np">5. मिठाई अघि पुष्टि</span></span></b><span class="subcopy">デザートとおにぎりのご用意<span class="sep">/</span><span class="np">डेजर्ट र ओनिगिरि तयार गर्ने पुष्टि</span></span></a>
       </div>
     </div>
   </section>
 
   <section class="block" id="entrance">
-    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19h16"/><path d="M6 19v-7l6-4 6 4v7"/><path d="M10 19v-4h4v4"/></svg></span>せきに あんない（いりぐち～せき）</h2></div>
+    <div class="head"><h2><span class="jp-main">1. せきに あんない（いりぐち から せきまで）</span><span class="subcopy">1. 席に案内（入口から席まで）<span class="sep">/</span><span class="np">1. सिटमा मार्गदर्शन (प्रवेशद्वारदेखि सिटसम्म)</span></span></h2></div>
     <div class="body">
-      <p>しょくじばしょ の いりぐちで おきゃくさま を むかえ、あいさつ を します。</p>
-      <p>「いらっしゃいませ。」</p>
-      <p>へや の なまえ を かくにんし、ようい した せき に ごあんない します。</p>
-      <p>「おせき に ごあんない いたします。」</p>
-      <p class="note">※ のみもの を うかがう スタッフ が いない ばあい：</p>
-      <p>「ただいま ごあんない させて いただきますので、しょうしょう おまちください。」</p>
+      <p class="triple"><span class="jp-main">しょくじばしょ の いりぐちで おきゃくさま を むかえ、あいさつ を します。</span><span class="subcopy">食事場所の入口でお客様を迎え、挨拶をします。<span class="sep">/</span><span class="np">भोजनस्थलको प्रवेशद्वारमा पाहुनालाई स्वागत गरेर अभिवादन गर्नुहोस्。</span></span></p>
+      <p class="triple"><span class="jp-main">「いらっしゃいませ。」</span><span class="subcopy">「いらっしゃいませ。」<span class="sep">/</span><span class="np">"स्वागतम्।"</span></span></p>
+      <p class="triple"><span class="jp-main">へや の なまえ を かくにんし、ようい した せき に ごあんない します。</span><span class="subcopy">部屋の名前を確認し、用意した席にご案内します。<span class="sep">/</span><span class="np">कोठाको नाम पुष्टि गरेर, तयार गरिएको सिटमा लैजानुहोस्。</span></span></p>
+      <p class="triple"><span class="jp-main">「おせき に ごあんない いたします。」</span><span class="subcopy">「お席にご案内いたします。」<span class="sep">/</span><span class="np">"म तपाईंलाई सिटसम्म मार्गदर्शन गर्छु।"</span></span></p>
+      <p class="triple note"><span class="jp-main">※ のみもの を うかがう スタッフ が いない ばあい</span><span class="subcopy">※ 飲み物をうかがうスタッフがいない場合<span class="sep">/</span><span class="np">※ पेय सोध्ने कर्मचारी तत्काल उपलब्ध नभएको अवस्थामा</span></span></p>
+      <p class="triple"><span class="jp-main">「ただいま ごあんない させて いただきますので、しょうしょう おまちください。」</span><span class="subcopy">「ただいまご案内させていただきますので、少々お待ちください。」<span class="sep">/</span><span class="np">"अहिले मार्गदर्शन गर्छौं, कृपया केही बेर पर्खनुहोस्।"</span></span></p>
       <audio controls><source src="../assets/audio/dinner-guide/entrance.mp3" type="audio/mpeg"></audio>
-      <div class="nav"><span></span><a href="#at-seat">つぎへ →</a></div>
+      <div class="nav"><span></span><a href="#at-seat" class="triple"><span class="jp-main">つぎへ →</span><span class="subcopy">次へ<span class="sep">/</span><span class="np">अर्को →</span></span></a></div>
     </div>
   </section>
 
   <section class="block" id="at-seat">
-    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8h14"/><path d="M7 8v8a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V8"/><path d="M9.5 5.5v2.5"/><path d="M14.5 5.5v2.5"/></svg></span>せきに ついた あと の ごあんない</h2></div>
+    <div class="head"><h2><span class="jp-main">2. せきに ついた あと の ごあんない</span><span class="subcopy">2. 席に着いたあとのご案内<span class="sep">/</span><span class="np">2. सिटमा बसेपछि दिने जानकारी</span></span></h2></div>
     <div class="body">
-      <p>「ごせつめい を させて いただきます。」</p>
-      <p>「こちらは しょくぜんしゅ の ゆずしゅ で ございます。」</p>
-      <p class="note">※ ノンアルコール の かた には 「ざくろす」 を ごようい しております。</p>
-      <p>「こちらに ほんじつ の こんだて と、のみもの の メニュー を ごようい しております。」</p>
-      <p>「あたたかい おちゃ と おみず は、むりょう で ごようい できます。<br>おきまり に なりましたら、おしらせ ください。」</p>
-      <p class="note">※ タイミング を みて、のみもの の ちゅうもん を うかがい オーダー します。<br>むりょう の おちゃ は きほん 「ほうじちゃ」。おみず は こおり の あり／なし を かくにん。</p>
+      <p class="triple"><span class="jp-main">「ごせつめい を させて いただきます。」</span><span class="subcopy">「ご説明をさせていただきます。」<span class="sep">/</span><span class="np">"म तपाईंलाई जानकारी दिन्छु।"</span></span></p>
+      <p class="triple"><span class="jp-main">「こちらは しょくぜんしゅ の ゆずしゅ で ございます。」</span><span class="subcopy">「こちらは食前酒の柚子酒でございます。」<span class="sep">/</span><span class="np">"यो भोजनअघि पिउने युजु मदिरा हो।"</span></span></p>
+      <p class="triple note"><span class="jp-main">※ ノンアルコール の かた には 「ざくろす」 を ごようい しております。</span><span class="subcopy">※ ノンアルコールの方には「ざくろ酢」をご用意しております。<span class="sep">/</span><span class="np">※ मदिरा नपिउने पाहुनाका लागि "अनार सिरका पेय" उपलब्ध छ。</span></span></p>
+      <p class="triple"><span class="jp-main">「こちらに ほんじつ の こんだて と、のみもの の メニュー を ごようい しております。」</span><span class="subcopy">「こちらに本日の献立と、飲み物のメニューをご用意しております。」<span class="sep">/</span><span class="np">"यहाँ आजको भोजन सूची र पेय मेनु तयार छ।"</span></span></p>
+      <p class="triple"><span class="jp-main">「あたたかい おちゃ と おみず は、むりょう で ごようい できます。おきまり に なりましたら、おしらせ ください。」</span><span class="subcopy">「温かいお茶とお水は、無料でご用意できます。お決まりになりましたら、お知らせください。」<span class="sep">/</span><span class="np">"तातो चिया र पानी निःशुल्क उपलब्ध छ。 निर्णय भएपछि कृपया बताउनुहोस्。"</span></span></p>
+      <p class="triple note"><span class="jp-main">※ タイミング を みて、のみもの の ちゅうもん を うかがい オーダー します。むりょう の おちゃ は きほん 「ほうじちゃ」。おみず は こおり の あり／なし を かくにん。</span><span class="subcopy">※ タイミングを見て飲み物の注文をうかがい、オーダーします。無料のお茶は基本「ほうじ茶」。お水は氷のあり・なしを確認します。<span class="sep">/</span><span class="np">※ उपयुक्त समयमा पेयको अर्डर लिनुहोस्。 निःशुल्क चिया सामान्यतया होउजिचा हो。 पानीमा बरफ चाहिन्छ कि चाहिँदैन, सोधेर पुष्टि गर्नुहोस्。</span></span></p>
       <audio controls><source src="../assets/audio/dinner-guide/at-seat.mp3" type="audio/mpeg"></audio>
-      <div class="nav"><a href="#entrance">← まえへ</a><a href="#steak-sauce">つぎへ →</a></div>
+      <div class="nav">
+        <a href="#entrance" class="triple"><span class="jp-main">← まえへ</span><span class="subcopy">← 前へ<span class="sep">/</span><span class="np">← अघिल्लो</span></span></a>
+        <a href="#steak-sauce" class="triple"><span class="jp-main">つぎへ →</span><span class="subcopy">次へ<span class="sep">/</span><span class="np">अर्को →</span></span></a>
+      </div>
     </div>
   </section>
 
   <section class="block" id="steak-sauce">
-    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7c2-2 5-3 8-2 2 .6 3 2.2 3 4.2 0 4-3.2 7.8-8.2 9.6-1.6.6-3.4-.1-4.1-1.7C4.5 14.3 5.1 10.2 7 7z"/><path d="M10 9c1.4-.6 3-.4 4.2.5"/></svg></span>ステーキ タレ の せつめい（ステーキプラン／わぎゅうかいせき）</h2></div>
+    <div class="head"><h2><span class="jp-main">3. ステーキ タレ の せつめい（ステーキプラン／わぎゅうかいせき）</span><span class="subcopy">3. ステーキたれの説明（ステーキプラン／和牛会席）<span class="sep">/</span><span class="np">3. स्टेक ससको व्याख्या (स्टेक प्लान / वाग्यु काइसेकि)</span></span></h2></div>
     <div class="body">
       <ol>
-        <li>ステーキ の まえ の りょうり（あげもの）を ていきょう するとき に、ステーキ の タレ を いっしょ に もって いく。</li>
-        <li>りょうり を ていきょう して せつめい した あと に、ステーキ の タレ を ていきょう して せつめい を する。</li>
-        <li>「こちらは ステーキ の タレ に なります。」</li>
-        <li>「いちばん うえ は 『ショウガス』。ショウユ は かさいもり でも ごていきょう した 『もろみしょうゆ』。『モジオ』 と 『クロコショウ』 も ごようい しておりますので、この あと の ステーキ に ごりよう ください。」</li>
+        <li><span class="jp-main">ステーキ の まえ の りょうり（あげもの）を ていきょう するとき に、ステーキ の タレ を いっしょ に もって いく。</span><span class="subcopy">ステーキの前の料理（揚げ物）を提供するときに、ステーキのたれを一緒に持っていきます。<span class="sep">/</span><span class="np">स्टेकअघिको परिकार (तारेको परिकार) लैजाँदा, स्टेकको सस पनि सँगै लिएर जानुहोस्。</span></span></li>
+        <li><span class="jp-main">りょうり を ていきょう して せつめい した あと に、ステーキ の タレ を ていきょう して せつめい を する。</span><span class="subcopy">料理を提供して説明したあとに、ステーキのたれを提供して説明します。<span class="sep">/</span><span class="np">परिकार राखेर व्याख्या गरेपछि, स्टेकको सस पनि राखेर त्यसको व्याख्या गर्नुहोस्。</span></span></li>
+        <li><span class="jp-main">「こちらは ステーキ の タレ に なります。」</span><span class="subcopy">「こちらはステーキのたれになります。」<span class="sep">/</span><span class="np">"यो स्टेकको सस हो।"</span></span></li>
+        <li><span class="jp-main">「いちばん うえ は 『ショウガス』。ショウユ は かさいもり でも ごていきょう した 『もろみしょうゆ』。『モジオ』 と 『クロコショウ』 も ごようい しておりますので、この あと の ステーキ に ごりよう ください。」</span><span class="subcopy">「一番上は『ショウガス』。醤油は火菜盛りでもご提供した『もろみ醤油』。『藻塩』と『黒胡椒』もご用意しておりますので、このあとのステーキにご利用ください。」<span class="sep">/</span><span class="np">"सबैभन्दा माथि अदुवाको सस छ。 सोया सस भने पहिल्यै परोसेको मोरोमी शौयु हो। मोशिओ र कालो मरिच पनि तयार छन्, कृपया त्यसपछिको स्टेकसँग प्रयोग गर्नुहोस्।"</span></span></li>
       </ol>
-      <img class="img-full" src="../assets/img/dinner-guide/steak-sauce.jpg" alt="ステーキのタレ（画像）" style="margin-top:8px">
+      <img class="img-full" src="../assets/img/dinner-guide/steak-sauce.jpg" alt="ステーキのたれの説明画像" style="margin-top:8px">
       <audio controls><source src="../assets/audio/dinner-guide/steak-sauce.mp3" type="audio/mpeg"></audio>
-      <div class="nav"><a href="#at-seat">← まえへ</a><a href="#rice-timing">つぎへ →</a></div>
+      <div class="nav">
+        <a href="#at-seat" class="triple"><span class="jp-main">← まえへ</span><span class="subcopy">← 前へ<span class="sep">/</span><span class="np">← अघिल्लो</span></span></a>
+        <a href="#rice-timing" class="triple"><span class="jp-main">つぎへ →</span><span class="subcopy">次へ<span class="sep">/</span><span class="np">अर्को →</span></span></a>
+      </div>
     </div>
   </section>
 
   <section class="block" id="rice-timing">
-    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14h16"/><path d="M6 14a6 6 0 0 1 12 0"/><path d="M7 18h10"/></svg></span>ごはん の うかがいかた（ニモノ／ステーキ の あと）</h2></div>
+    <div class="head"><h2><span class="jp-main">4. ごはん の うかがいかた（ニモノ／ステーキ の あと）</span><span class="subcopy">4. ご飯のうかがい方（煮物／ステーキのあと）<span class="sep">/</span><span class="np">4. भातको समय सोध्ने तरिका (निमोनो / स्टेकपछि)</span></span></h2></div>
     <div class="body">
-      <p>ニモノ の せつめい の あと、つぎ の ように うかがいます。</p>
-      <p>「このあと、ごはん となりますが、ごようい させて いただいても よろしい でしょうか？」</p>
-      <p class="note">※ りょうり や おさけ が のこって いる とき は、ききかた を かえる：</p>
-      <p>「このあと、ごはん となりますが、すこし じかん を あけた ほうが よろしい でしょうか？」</p>
-      <p>（あいだ を あけて ほしい と いわれたら）</p>
-      <p>「かしこまりました。 ひつよう な とき に おこえがけ ください。」<br><span class="note">※ ボタン の ある へや は 「ボタン を おしてください」 と つたえる。</span></p>
+      <p class="triple"><span class="jp-main">ニモノ の せつめい の あと、つぎ の ように うかがいます。</span><span class="subcopy">煮物の説明のあと、次のようにうかがいます。<span class="sep">/</span><span class="np">निमोनोको व्याख्यापछि, यसरी सोध्नुहोस्。</span></span></p>
+      <p class="triple"><span class="jp-main">「このあと、ごはん と なりますが、ごようい させて いただいても よろしい でしょうか？」</span><span class="subcopy">「このあと、ご飯となりますが、ご用意させていただいてもよろしいでしょうか？」<span class="sep">/</span><span class="np">"अब भात ल्याउने समय हुन्छ, के अहिले तयार गरेर ल्याउन मिल्छ?"</span></span></p>
+      <p class="triple note"><span class="jp-main">※ りょうり や おさけ が のこって いる とき は、ききかた を かえる</span><span class="subcopy">※ 料理やお酒が残っているときは、聞き方を変えます。<span class="sep">/</span><span class="np">※ खाना वा मदिरा अझै बाँकी छ भने, सोध्ने तरिका बदल्नुहोस्。</span></span></p>
+      <p class="triple"><span class="jp-main">「このあと、ごはん と なりますが、すこし じかん を あけた ほうが よろしい でしょうか？」</span><span class="subcopy">「このあと、ご飯となりますが、少し時間を空けたほうがよろしいでしょうか？」<span class="sep">/</span><span class="np">"अब भात ल्याउने बेला हुन्छ, के अलि समय पछि ल्याउनु राम्रो हुन्छ?"</span></span></p>
+      <p class="triple"><span class="jp-main">（あいだ を あけて ほしい と いわれたら）</span><span class="subcopy">（間を空けてほしいと言われたら）<span class="sep">/</span><span class="np">(यदि केही समय पर्खन भन्नुभयो भने)</span></span></p>
+      <p class="triple"><span class="jp-main">「かしこまりました。ひつよう な とき に おこえがけ ください。」</span><span class="subcopy">「かしこまりました。必要なときにお声がけください。」<span class="sep">/</span><span class="np">"हुन्छ। आवश्यक परेमा कृपया बोलाउनुहोस्।"</span></span></p>
+      <p class="triple note"><span class="jp-main">※ ボタン の ある へや は 「ボタン を おしてください」 と つたえる。</span><span class="subcopy">※ ボタンのある部屋は「ボタンを押してください」と伝えます。<span class="sep">/</span><span class="np">※ कल बटन भएको कोठामा "कृपया बटन थिच्नुहोस्" भनेर बताउनुहोस्。</span></span></p>
       <audio controls><source src="../assets/audio/dinner-guide/rice-timing.mp3" type="audio/mpeg"></audio>
-      <div class="nav"><a href="#steak-sauce">← まえへ</a><a href="#dessert-check">つぎへ →</a></div>
+      <div class="nav">
+        <a href="#steak-sauce" class="triple"><span class="jp-main">← まえへ</span><span class="subcopy">← 前へ<span class="sep">/</span><span class="np">← अघिल्लो</span></span></a>
+        <a href="#dessert-check" class="triple"><span class="jp-main">つぎへ →</span><span class="subcopy">次へ<span class="sep">/</span><span class="np">अर्को →</span></span></a>
+      </div>
     </div>
   </section>
 
   <section class="block" id="dessert-check">
-    <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 11a6 6 0 0 1 12 0"/><path d="M5 15h14"/><path d="M8 18h8"/></svg></span>かんみ ていきょう まえ の かくにん</h2></div>
+    <div class="head"><h2><span class="jp-main">5. かんみ ていきょう まえ の かくにん</span><span class="subcopy">5. 甘味提供前の確認<span class="sep">/</span><span class="np">5. मिठाई दिनुअघि पुष्टि</span></span></h2></div>
     <div class="body">
-      <p>ほうじちゃ を おもち し、げぜん を しながら ようす を うかがいます。</p>
-      <p>「このあと、デザート の ごようい と なりますが、おもち しても よろしい でしょうか？」</p>
-      <p>「また、おやしょく よう に、めしあがって いただいた ごはん を おにぎり に して おもち しております が、ごようい いたします か？」</p>
+      <p class="triple"><span class="jp-main">ほうじちゃ を おもち し、げぜん を しながら ようす を うかがいます。</span><span class="subcopy">ほうじ茶をお持ちし、下膳をしながら様子をうかがいます。<span class="sep">/</span><span class="np">होउजिचा लिएर जाँदा, भाँडा झिक्दै पाहुनाको अवस्था हेर्नुहोस्。</span></span></p>
+      <p class="triple"><span class="jp-main">「このあと、デザート の ごようい と なりますが、おもち しても よろしい でしょうか？」</span><span class="subcopy">「このあと、デザートのご用意となりますが、お持ちしてもよろしいでしょうか？」<span class="sep">/</span><span class="np">"अब डेजर्ट तयार छ, के म लिएर आउन सक्छु?"</span></span></p>
+      <p class="triple"><span class="jp-main">「また、おやしょく よう に、めしあがって いただいた ごはん を おにぎり に して おもち しております が、ごようい いたします か？」</span><span class="subcopy">「また、お夜食用に、召し上がっていただいたご飯をおにぎりにしてお持ちしておりますが、ご用意いたしますか？」<span class="sep">/</span><span class="np">"साथै रातिको हल्का खानाका लागि बाँकी भातबाट ओनिगिरि बनाएर ल्याइदिन सक्छौं, के तयार गरौं?"</span></span></p>
       <audio controls><source src="../assets/audio/dinner-guide/dessert-check.mp3" type="audio/mpeg"></audio>
-<a href="highball.html" class="callout-link">
-  <span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4h10"/><path d="M9 4v4l3 4v6"/><path d="M15 4v4l-3 4"/><path d="M9 18h6"/></svg></span><br>
-  ハイボール を たのまれたら<br>
-  （ここ を おして かくにん）
-</a>
-<div style="margin-top: 20px;">
-  <h3 class="menu-title"><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4h8"/><path d="M9 4v6a3 3 0 0 0 6 0V4"/><path d="M8 13h8"/><path d="M10 20h4"/></svg></span>のみもの メニュー</h3>
-  
-  <details class="menu-acc">
-    <summary><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 7h7a2 2 0 0 1 2 2v6a3 3 0 0 1-3 3h-3a3 3 0 0 1-3-3z"/><path d="M17 9h2a2 2 0 0 1 0 4h-2"/><path d="M8 10h9"/></svg></span>ビール</summary>
-    <div class="menu-content">
-      <ul>
-        <li><b>なまビール（350ml）</b> <span class="tag">なまG（ﾅﾏG）</span></li>
-        <li><b>ひとくちなまびーる（180ml）</b> <span class="tag">ひとくちなま（ﾋﾄｸﾁﾅﾏ）</span></li>
-        <li><b>Nikko Belgian Beer Deux</b> <span class="tag">ベルジャン</span></li>
-        <li><b>プレミアムモルツ（500ml）</b> <span class="tag">モルツ</span></li>
-        <li><b>アサヒスーパードライ（500ml）</b> <span class="tag">アサヒ</span></li>
-        <li><b>キリンいちばんしぼり（500ml）</b> <span class="tag">キリン</span></li>
-        <li><b>ドライゼロ（ノンアルコールビール）（334ml）</b> <span class="tag">ドライゼロ</span></li>
-      </ul>
-    </div>
-  </details>
 
-  <details class="menu-acc">
-    <summary>スパークリングワイン</summary>
-    <div class="menu-content">
-      <ul>
-        <li><b>ヴーヴ・デュ・ヴェルネイ ブリュット（200ml）</b> <span class="tag">SW</span></li>
-      </ul>
-    </div>
-  </details>
+      <a href="highball.html" class="highball-card triple">
+        <span class="jp-main">🥃 ハイボール を たのまれたら</span>
+        <span class="subcopy">🥃 ハイボールを頼まれたら<span class="sep">/</span><span class="np">🥃 यदि हाइबोल अर्डर आयो भने</span></span>
+        <span class="subcopy">（ここ を おして かくにん）<span class="sep">/</span><span class="np">(यहाँ थिचेर पुष्टि गर्नुहोस्)</span></span>
+      </a>
 
-  <details class="menu-acc">
-    <summary><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5h8"/><path d="M9 5v6l3 3 3-3V5"/><path d="M12 14v5"/><path d="M9 19h6"/></svg></span>ウイスキー</summary>
-    <div class="menu-content">
-      <ul>
-        <li><b>チタ</b> <span class="tag">ちた</span></li>
-        <li><b>ヨイチ</b> <span class="tag">よいち</span></li>
-        <li><b>イチローズモルト</b><span class="tag">イチローズ</span></li>
-        <li><b>バランタイン 17ねん</b><span class="tag">バランタイン</span></li>
-        <li class="note">※ハイボール・ロック・みずわり</li>
-      </ul>
-    </div>
-  </details>
+      <div style="margin-top:20px;">
+        <h3 class="menu-heading triple"><span class="jp-main">🥤 のみもの メニュー</span><span class="subcopy">🥤 飲み物メニュー<span class="sep">/</span><span class="np">🥤 पेय मेनु</span></span></h3>
 
-  <details class="menu-acc">
-    <summary><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4h6"/><path d="M10 4v6a2 2 0 0 0 4 0V4"/><path d="M8 14h8"/><path d="M10 18h4"/></svg></span>日本酒（にほんしゅ）</summary>
-    <div class="menu-content">
-      <ul>
-        <li><b>さわひめ</b> <span class="tag">さわひめ</span></li>
-        <li><b>そうほまれ</b> <span class="tag">そうほまれ</span></li>
-        <li><b>しきざくら（あまくち）</b> <span class="tag">あまくち（アマクチ）</span></li>
-        <li><b>しきざくら（からくち）</b> <span class="tag">からくち（カラクチ）</span></li>
-        <li><b>だいな ちょうからくち+10（180ml）</b> <span class="tag">だいな（ダイナ）</span></li>
-      </ul>
-    </div>
-  </details>
+        <details class="menu-acc">
+          <summary class="triple"><span class="jp-main">🍺 ビール</span><span class="subcopy">🍺 ビール<span class="sep">/</span><span class="np">🍺 बियर</span></span></summary>
+          <div class="menu-content">
+            <ul>
+              <li><b><span class="jp-main">なまビール（350ml）</span><span class="subcopy">生ビール（350ml）<span class="sep">/</span><span class="np">ड्राफ्ट बियर (350ml)</span></span></b> <span class="tag">なまG（ﾅﾏG）</span></li>
+              <li><b><span class="jp-main">ひとくちなまびーる（180ml）</span><span class="subcopy">ひとくち生ビール（180ml）<span class="sep">/</span><span class="np">सानो ड्राफ्ट बियर (180ml)</span></span></b> <span class="tag">ひとくちなま（ﾋﾄｸﾁﾅﾏ）</span></li>
+              <li><b><span class="jp-main">Nikko Belgian Beer Deux</span><span class="subcopy">Nikko Belgian Beer Deux<span class="sep">/</span><span class="np">निक्को बेल्जियन बियर ड्यु</span></span></b> <span class="tag">ベルジャン</span></li>
+              <li><b><span class="jp-main">プレミアムモルツ（500ml）</span><span class="subcopy">プレミアムモルツ（500ml）<span class="sep">/</span><span class="np">प्रिमियम माल्ट्स (500ml)</span></span></b> <span class="tag">モルツ</span></li>
+              <li><b><span class="jp-main">アサヒスーパードライ（500ml）</span><span class="subcopy">アサヒスーパードライ（500ml）<span class="sep">/</span><span class="np">असाही सुपर ड्राइ (500ml)</span></span></b> <span class="tag">アサヒ</span></li>
+              <li><b><span class="jp-main">キリンいちばんしぼり（500ml）</span><span class="subcopy">キリン一番搾り（500ml）<span class="sep">/</span><span class="np">किरिन इचिबान शिबोरी (500ml)</span></span></b> <span class="tag">キリン</span></li>
+              <li><b><span class="jp-main">ドライゼロ（ノンアルコールビール）（334ml）</span><span class="subcopy">ドライゼロ（ノンアルコールビール）（334ml）<span class="sep">/</span><span class="np">ड्राइ जिरो, नन-अल्कोहल बियर (334ml)</span></span></b> <span class="tag">ドライゼロ</span></li>
+            </ul>
+          </div>
+        </details>
 
-  <details class="menu-acc">
-    <summary><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 7c3 0 6 2.4 6 5.5S15 18 12 18s-6-2.4-6-5.5S9 7 12 7z"/><path d="M12 7c0-2 1.2-3 3-3"/><path d="M9 11c1-.8 2-.8 3 0"/></svg></span>果実酒（かじつしゅ）</summary>
-    <div class="menu-content">
-      <ul>
-        <li><b>ほうおうびでん じゅくせいうめしゅ</b> <span class="tag">うめ（ウメ）</span></li>
-      <li><b>ほうおうびでん ゆずしゅ</b> <span class="tag">ゆず（ユズ）</span></li>
-      <li><b>ほうおうびでん かんじゅくもも</b> <span class="tag">もも（モモ）</span></li>
-      <li class="note">※ロック・ソーダ・みずわり・おゆわり</li>
-      </ul>
-    </div>
-  </details>
+        <details class="menu-acc">
+          <summary class="triple"><span class="jp-main">スパークリングワイン</span><span class="subcopy">スパークリングワイン<span class="sep">/</span><span class="np">स्पार्कलिङ वाइन</span></span></summary>
+          <div class="menu-content">
+            <ul>
+              <li><b><span class="jp-main">ヴーヴ・デュ・ヴェルネイ ブリュット（200ml）</span><span class="subcopy">ヴーヴ・デュ・ヴェルネイ ブリュット（200ml）<span class="sep">/</span><span class="np">वूव डु वेरने ब्रुट (200ml)</span></span></b> <span class="tag">SW</span></li>
+            </ul>
+          </div>
+        </details>
 
-  <details class="menu-acc">
-    <summary><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4h8"/><path d="M8 4v4a4 4 0 0 0 8 0V4"/><path d="M12 12v7"/><path d="M9 19h6"/></svg></span>ワイン</summary>
-    <div class="menu-content">
-      <ul>
-        <li><b>あかわいん グラス</b> <span class="tag">あかG（アカG）</span></li>
-        <li><b>しろわいん グラス</b> <span class="tag">しろG（シロG）</span></li>
-        <li><b>ろぜわいん グラス</b> <span class="tag">ろぜG（ロゼG）</span></li>
-        <li><b>おれんじわいん グラス</b> <span class="tag">おれんじG（オレンジG）</span></li>
- 　　　　<li><b>あかわいん デカンタ</b> <span class="tag">あかD（アカD）</span></li>
-        <li><b>しろわいん デカンタ</b> <span class="tag">しろD（シロD）</span></li>
-        <li><b>ろぜわいん デカンタ</b> <span class="tag">ろぜD（ロゼD）</span></li>
-        <li><b>おれんじわいん デカンタ</b> <span class="tag">おれんじD（オレンジD）</span></li>
-      </ul>
-    </div>
-  </details>
+        <details class="menu-acc">
+          <summary class="triple"><span class="jp-main">🥃 ウイスキー</span><span class="subcopy">🥃 ウイスキー<span class="sep">/</span><span class="np">🥃 व्हिस्की</span></span></summary>
+          <div class="menu-content">
+            <ul>
+              <li><b><span class="jp-main">チタ</span><span class="subcopy">知多<span class="sep">/</span><span class="np">चिता</span></span></b> <span class="tag">ちた</span></li>
+              <li><b><span class="jp-main">ヨイチ</span><span class="subcopy">余市<span class="sep">/</span><span class="np">योइची</span></span></b> <span class="tag">よいち</span></li>
+              <li><b><span class="jp-main">イチローズモルト</span><span class="subcopy">イチローズモルト<span class="sep">/</span><span class="np">इचिरोज मोल्ट</span></span></b><span class="tag">イチローズ</span></li>
+              <li><b><span class="jp-main">バランタイン 17ねん</span><span class="subcopy">バランタイン 17年<span class="sep">/</span><span class="np">बालेन्टाइन 17 वर्ष</span></span></b><span class="tag">バランタイン</span></li>
+              <li class="note"><span class="jp-main">※ ハイボール・ロック・みずわり</span><span class="subcopy">※ ハイボール・ロック・水割り<span class="sep">/</span><span class="np">※ हाइबोल, रक्स, वा पानी मिसाएर</span></span></li>
+            </ul>
+          </div>
+        </details>
 
-   <details class="menu-acc">
-    <summary><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4h6"/><path d="M10 4v5"/><path d="M14 4v5"/><path d="M8 10h8"/><path d="M9 10v8h6v-8"/></svg></span>焼酎（しょうちゅう）</summary>
-    <div class="menu-content">
-      <ul>
-        <li><b>てんしのゆうわく（いも）</b> <span class="tag">てんし（テンシ）</span></li>
-        <li><b>さとうくろ（いも）</b> <span class="tag">さとう（サトウ）</span></li>
-        <li><b>とみのほうざん（いも）</b> <span class="tag">とみの（トミノ）</span></li>
-        <li><b>くろきりしま（いも）</b> <span class="tag">くろきり（クロキリ）</span></li>
-        <li><b>きっちょむ（むぎ）</b> <span class="tag">きっちょむ（キッチョム）</span></li>
-         <li class="note">※ロック・ソーダ・みずわり・おゆわり</li>
-      </ul>
-    </div>
-  </details>
+        <details class="menu-acc">
+          <summary class="triple"><span class="jp-main">🍶 にほんしゅ（にほんしゅ）</span><span class="subcopy">🍶 日本酒<span class="sep">/</span><span class="np">🍶 जापानी साके</span></span></summary>
+          <div class="menu-content">
+            <ul>
+              <li><b><span class="jp-main">さわひめ</span><span class="subcopy">澤姫<span class="sep">/</span><span class="np">सावाहिमे</span></span></b> <span class="tag">さわひめ</span></li>
+              <li><b><span class="jp-main">そうほまれ</span><span class="subcopy">惣誉<span class="sep">/</span><span class="np">सोहोमारे</span></span></b> <span class="tag">そうほまれ</span></li>
+              <li><b><span class="jp-main">しきざくら（あまくち）</span><span class="subcopy">四季桜（甘口）<span class="sep">/</span><span class="np">शिकिजाकुरा (मिठो स्वाद)</span></span></b> <span class="tag">あまくち（アマクチ）</span></li>
+              <li><b><span class="jp-main">しきざくら（からくち）</span><span class="subcopy">四季桜（辛口）<span class="sep">/</span><span class="np">शिकिजाकुरा (ड्राइ स्वाद)</span></span></b> <span class="tag">からくち（カラクチ）</span></li>
+              <li><b><span class="jp-main">だいな ちょうからくち +10（180ml）</span><span class="subcopy">大那 超辛口 +10（180ml）<span class="sep">/</span><span class="np">दाइना सुपर ड्राइ +10 (180ml)</span></span></b> <span class="tag">だいな（ダイナ）</span></li>
+            </ul>
+          </div>
+        </details>
 
-  <details class="menu-acc">
-    <summary>サワー・カクテル</summary>
-    <div class="menu-content">
-      <ul>
-        <li><b>れもんさわー</b> <span class="tag">れもんS</span></li>
-        <li><b>カシスみかん</b> <span class="tag">カシスみかん</span></li>
-      </ul>
-    </div>
-  </details>
+        <details class="menu-acc">
+          <summary class="triple"><span class="jp-main">🍑 かじつしゅ（かじつしゅ）</span><span class="subcopy">🍑 果実酒<span class="sep">/</span><span class="np">🍑 फलको मदिरा</span></span></summary>
+          <div class="menu-content">
+            <ul>
+              <li><b><span class="jp-main">ほうおうびでん じゅくせい うめしゅ</span><span class="subcopy">鳳凰美田 熟成梅酒<span class="sep">/</span><span class="np">होओबिदेन परिपक्व प्लम लिकर</span></span></b> <span class="tag">うめ（ウメ）</span></li>
+              <li><b><span class="jp-main">ほうおうびでん ゆずしゅ</span><span class="subcopy">鳳凰美田 柚子酒<span class="sep">/</span><span class="np">होओबिदेन युजु लिकर</span></span></b> <span class="tag">ゆず（ユズ）</span></li>
+              <li><b><span class="jp-main">ほうおうびでん かんじゅく もも</span><span class="subcopy">鳳凰美田 完熟もも<span class="sep">/</span><span class="np">होओबिदेन पाकेको आरु लिकर</span></span></b> <span class="tag">もも（モモ）</span></li>
+              <li class="note"><span class="jp-main">※ ロック・ソーダ・みずわり・おゆわり</span><span class="subcopy">※ ロック・ソーダ・水割り・お湯割り<span class="sep">/</span><span class="np">※ रक्स, सोडा, पानी, वा तातो पानीसँग</span></span></li>
+            </ul>
+          </div>
+        </details>
 
-  <details class="menu-acc">
-    <summary><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4h6"/><path d="M10 4v4"/><path d="M14 4v4"/><path d="M8 9h8"/><path d="M9 9l1 10h4l1-10"/></svg></span>ソフトドリンク</summary>
-    <div class="menu-content">
-     <ul>
-        <li><b>しまなみみかんじゅーす</b> <span class="tag">みかんJ</span></li>
-        <li><b>COCOファームワイナリーぶどうじゅーす</b> <span class="tag">ぶどうJ</span></li>
-        <li><b>おれんじじゅーす</b> <span class="tag">おれんじJ</span></li>
-        <li><b>さいだー</b> <span class="tag">さいだー</span></li>
-        <li><b>ジンジャーエール</b> <span class="tag">ジンジャーエール</span></li>
-         <li><b>コーラ</b> <span class="tag">コーラ</span></li>
-        <li><b>ウーロンちゃ</b> <span class="tag">ウーロン</span></li>
-      </ul>
-    </div>
-  </details>
-</div>
+        <details class="menu-acc">
+          <summary class="triple"><span class="jp-main">🍷 ワイン</span><span class="subcopy">🍷 ワイン<span class="sep">/</span><span class="np">🍷 वाइन</span></span></summary>
+          <div class="menu-content">
+            <ul>
+              <li><b><span class="jp-main">あかわいん グラス</span><span class="subcopy">赤ワイン グラス<span class="sep">/</span><span class="np">रातो वाइन, गिलास</span></span></b> <span class="tag">あかG（アカG）</span></li>
+              <li><b><span class="jp-main">しろわいん グラス</span><span class="subcopy">白ワイン グラス<span class="sep">/</span><span class="np">सेतो वाइन, गिलास</span></span></b> <span class="tag">しろG（シロG）</span></li>
+              <li><b><span class="jp-main">ろぜわいん グラス</span><span class="subcopy">ロゼワイン グラス<span class="sep">/</span><span class="np">रोसे वाइन, गिलास</span></span></b> <span class="tag">ろぜG（ロゼG）</span></li>
+              <li><b><span class="jp-main">おれんじわいん グラス</span><span class="subcopy">オレンジワイン グラス<span class="sep">/</span><span class="np">अरेन्ज वाइन, गिलास</span></span></b> <span class="tag">おれんじG（オレンジG）</span></li>
+              <li><b><span class="jp-main">あかわいん デカンタ</span><span class="subcopy">赤ワイン デカンタ<span class="sep">/</span><span class="np">रातो वाइन, डेकान्टा</span></span></b> <span class="tag">あかD（アカD）</span></li>
+              <li><b><span class="jp-main">しろわいん デカンタ</span><span class="subcopy">白ワイン デカンタ<span class="sep">/</span><span class="np">सेतो वाइन, डेकान्टा</span></span></b> <span class="tag">しろD（シロD）</span></li>
+              <li><b><span class="jp-main">ろぜわいん デカンタ</span><span class="subcopy">ロゼワイン デカンタ<span class="sep">/</span><span class="np">रोसे वाइन, डेकान्टा</span></span></b> <span class="tag">ろぜD（ロゼD）</span></li>
+              <li><b><span class="jp-main">おれんじわいん デカンタ</span><span class="subcopy">オレンジワイン デカンタ<span class="sep">/</span><span class="np">अरेन्ज वाइन, डेकान्टा</span></span></b> <span class="tag">おれんじD（オレンジD）</span></li>
+            </ul>
+          </div>
+        </details>
 
- <details class="menu-acc">
-    <summary>そのほか</summary>
-    <div class="menu-content">
-      <ul>
-        <li><b>じかせいほんからすみ</b> <span class="tag">からすみ</span></li>
-        <li><b>あゆしょうゆそば（10-15ふんかかります）</b> <span class="tag">あゆそば</span></li>
-        <li><b>ろっくあいす</b> <span class="tag">こおり（コオリ）</span></li>
-      </ul>
-    </div>
-  </details>
+        <details class="menu-acc">
+          <summary class="triple"><span class="jp-main">🍶 しょうちゅう（しょうちゅう）</span><span class="subcopy">🍶 焼酎<span class="sep">/</span><span class="np">🍶 शोचु</span></span></summary>
+          <div class="menu-content">
+            <ul>
+              <li><b><span class="jp-main">てんしの ゆうわく（いも）</span><span class="subcopy">天使の誘惑（芋）<span class="sep">/</span><span class="np">तेन्शि नो युवाकु (मीठो आलु)</span></span></b> <span class="tag">てんし（テンシ）</span></li>
+              <li><b><span class="jp-main">さとうくろ（いも）</span><span class="subcopy">佐藤 黒（芋）<span class="sep">/</span><span class="np">सातो कुरो (मीठो आलु)</span></span></b> <span class="tag">さとう（サトウ）</span></li>
+              <li><b><span class="jp-main">とみのほうざん（いも）</span><span class="subcopy">富乃宝山（芋）<span class="sep">/</span><span class="np">तोमिनो होउजान (मीठो आलु)</span></span></b> <span class="tag">とみの（トミノ）</span></li>
+              <li><b><span class="jp-main">くろきりしま（いも）</span><span class="subcopy">黒霧島（芋）<span class="sep">/</span><span class="np">कुरोकिरिशिमा (मीठो आलु)</span></span></b> <span class="tag">くろきり（クロキリ）</span></li>
+              <li><b><span class="jp-main">きっちょむ（むぎ）</span><span class="subcopy">吉四六（麦）<span class="sep">/</span><span class="np">किच्चोमु (जौ)</span></span></b> <span class="tag">きっちょむ（キッチョム）</span></li>
+              <li class="note"><span class="jp-main">※ ロック・ソーダ・みずわり・おゆわり</span><span class="subcopy">※ ロック・ソーダ・水割り・お湯割り<span class="sep">/</span><span class="np">※ रक्स, सोडा, पानी, वा तातो पानीसँग</span></span></li>
+            </ul>
+          </div>
+        </details>
 
-   <details class="menu-acc">
-    <summary>むりょうサービス</summary>
-    <div class="menu-content">
-      <ul>
-        <li><b>ほうじちゃ</b> <span class="tag">おちゃ（オチャ）</span></li>
-        <li><b>せんちゃ（よるはキホンテキにテキキョウしない）</b> <span class="tag">せんちゃ（センチャ）</span></li>
-        <li><b>みず</b> <span class="tag">みず（ミズ））</span></li>
-        <li><b>こおりみず</b> <span class="tag">こおりみず（コオリミズ）</span></li>
-      </ul>
-    </div>
-  </details>
+        <details class="menu-acc">
+          <summary class="triple"><span class="jp-main">サワー・カクテル</span><span class="subcopy">サワー・カクテル<span class="sep">/</span><span class="np">सावर र ककटेल</span></span></summary>
+          <div class="menu-content">
+            <ul>
+              <li><b><span class="jp-main">れもんさわー</span><span class="subcopy">レモンサワー<span class="sep">/</span><span class="np">लेमन सावर</span></span></b> <span class="tag">れもんS</span></li>
+              <li><b><span class="jp-main">カシスみかん</span><span class="subcopy">カシスみかん<span class="sep">/</span><span class="np">कासिस मिकान</span></span></b> <span class="tag">カシスみかん</span></li>
+            </ul>
+          </div>
+        </details>
 
-<style>
-  .menu-acc {margin-bottom: 10px;border: 1px solid var(--bd);border-radius: 18px;background: rgba(255,255,255,.84);box-shadow: 0 16px 32px rgba(34,28,24,.06);}
-  .menu-acc summary {padding: 14px 18px;font-weight: bold;cursor: pointer;list-style: none;background: rgba(248,243,236,.74);display: flex; justify-content: space-between; align-items: center;border-radius: 18px;gap:10px}
-  .menu-acc[open] summary {border-bottom: 1px solid var(--bd);border-radius: 18px 18px 0 0;}
-  .menu-acc summary::after {content: "▼"; font-size: 10px; color: #9ca3af;}
-  .menu-acc[open] summary::after { transform: rotate(180deg); }
-  .menu-content { padding: 4px 18px 14px; }
-  .menu-content ul { margin: 0; padding: 0; list-style: none; }
-  .menu-content li {padding: 12px 0;border-bottom: 1px dashed rgba(108,88,69,.16);display: flex;justify-content: space-between;align-items: center;gap: 12px;}
-  .menu-content li:last-child { border-bottom: none; }
-  .menu-content li b {font-size: 16px;color: #1f2a37;}
-  .tag {background: rgba(63,77,97,.1);color: #3f4d61;font-size: 13px;font-weight: bold;padding: 5px 9px;border-radius: 999px;white-space: nowrap;}
-  .tag:empty { display: none; }
-  .note { font-size: 12px; color: #6b7280; margin-top: 5px; display: block; }
-</style>
-      <div class="nav"><a href="#rice-timing">← まえへ</a><span></span></div>
+        <details class="menu-acc">
+          <summary class="triple"><span class="jp-main">🍹 ソフトドリンク</span><span class="subcopy">🍹 ソフトドリンク<span class="sep">/</span><span class="np">🍹 सफ्ट ड्रिंक</span></span></summary>
+          <div class="menu-content">
+            <ul>
+              <li><b><span class="jp-main">しまなみ みかんじゅーす</span><span class="subcopy">しまなみみかんジュース<span class="sep">/</span><span class="np">शिमानामी मिकान जुस</span></span></b> <span class="tag">みかんJ</span></li>
+              <li><b><span class="jp-main">COCOファームワイナリー ぶどうじゅーす</span><span class="subcopy">COCOファームワイナリー ぶどうジュース<span class="sep">/</span><span class="np">COCO फार्म वाइनरी अंगुर जुस</span></span></b> <span class="tag">ぶどうJ</span></li>
+              <li><b><span class="jp-main">おれんじじゅーす</span><span class="subcopy">オレンジジュース<span class="sep">/</span><span class="np">अरेन्ज जुस</span></span></b> <span class="tag">おれんじJ</span></li>
+              <li><b><span class="jp-main">さいだー</span><span class="subcopy">サイダー<span class="sep">/</span><span class="np">साइडर</span></span></b> <span class="tag">さいだー</span></li>
+              <li><b><span class="jp-main">ジンジャーエール</span><span class="subcopy">ジンジャーエール<span class="sep">/</span><span class="np">जिन्जर एले</span></span></b> <span class="tag">ジンジャーエール</span></li>
+              <li><b><span class="jp-main">コーラ</span><span class="subcopy">コーラ<span class="sep">/</span><span class="np">कोला</span></span></b> <span class="tag">コーラ</span></li>
+              <li><b><span class="jp-main">ウーロンちゃ</span><span class="subcopy">ウーロン茶<span class="sep">/</span><span class="np">ऊलोंग चिया</span></span></b> <span class="tag">ウーロン</span></li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <details class="menu-acc">
+        <summary class="triple"><span class="jp-main">そのほか</span><span class="subcopy">その他<span class="sep">/</span><span class="np">अन्य</span></span></summary>
+        <div class="menu-content">
+          <ul>
+            <li><b><span class="jp-main">じかせい ほんからすみ</span><span class="subcopy">自家製本からすみ<span class="sep">/</span><span class="np">घरमै बनाएको करासुमि</span></span></b> <span class="tag">からすみ</span></li>
+            <li><b><span class="jp-main">あゆしょうゆそば（10-15ふん かかります）</span><span class="subcopy">鮎醤油そば（10-15分かかります）<span class="sep">/</span><span class="np">आयु सोया सोबा (१०-१५ मिनेट लाग्छ)</span></span></b> <span class="tag">あゆそば</span></li>
+            <li><b><span class="jp-main">ろっくあいす</span><span class="subcopy">ロックアイス<span class="sep">/</span><span class="np">बरफ</span></span></b> <span class="tag">こおり（コオリ）</span></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="menu-acc">
+        <summary class="triple"><span class="jp-main">むりょう サービス</span><span class="subcopy">無料サービス<span class="sep">/</span><span class="np">निःशुल्क सेवा</span></span></summary>
+        <div class="menu-content">
+          <ul>
+            <li><b><span class="jp-main">ほうじちゃ</span><span class="subcopy">ほうじ茶<span class="sep">/</span><span class="np">होउजिचा</span></span></b> <span class="tag">おちゃ（オチャ）</span></li>
+            <li><b><span class="jp-main">せんちゃ（よる は キホンテキ に ていきょう しない）</span><span class="subcopy">煎茶（夜は基本的に提供しない）<span class="sep">/</span><span class="np">सेनचा (राति सामान्यतया दिइँदैन)</span></span></b> <span class="tag">せんちゃ（センチャ）</span></li>
+            <li><b><span class="jp-main">みず</span><span class="subcopy">水<span class="sep">/</span><span class="np">पानी</span></span></b> <span class="tag">みず（ミズ）</span></li>
+            <li><b><span class="jp-main">こおりみず</span><span class="subcopy">氷水<span class="sep">/</span><span class="np">बरफ पानी</span></span></b> <span class="tag">こおりみず（コオリミズ）</span></li>
+          </ul>
+        </div>
+      </details>
+
+      <div class="nav"><a href="#rice-timing" class="triple"><span class="jp-main">← まえへ</span><span class="subcopy">← 前へ<span class="sep">/</span><span class="np">← अघिल्लो</span></span></a><span></span></div>
     </div>
   </section>
-
 </main>
 
-<!-- 右下 丸ボタン：上=トップへ、下=ホーム -->
 <div class="fab-wrap" aria-label="クイックナビ">
-  <!-- 上：トップへ -->
   <button class="fab" id="fab-top" title="ページトップへ" aria-label="ページトップへ">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M12 19V5M5 12l7-7 7 7"/>
     </svg>
   </button>
-  <!-- 下：ホームへ（index.html） -->
   <a class="fab" id="fab-home" href="../index.html" title="ホームへ" aria-label="ホームへ">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M3 10l9-7 9 7v8a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3z"/>
@@ -325,7 +357,6 @@
 </div>
 
 <script>
-/* HOMEリンク（ヘッダーとFABの両方をPages/ローカル自動切替） */
 (function(){
   const adjust = el=>{
     if(!el) return;
@@ -338,7 +369,6 @@
   adjust(document.getElementById('fab-home'));
 })();
 
-/* スワイプで前後セクション移動 */
 (function(){
   const blocks=[...document.querySelectorAll('.block')];
   const indexOf=id=>blocks.findIndex(b=>b.id===id);
@@ -361,7 +391,6 @@
   },{passive:true});
 })();
 
-/* 右下 丸ボタンの表示制御 & 動作 */
 (function(){
   const topBtn=document.getElementById('fab-top');
   const homeBtn=document.getElementById('fab-home');
@@ -378,5 +407,3 @@
 </script>
 </body>
 </html>
-
-
