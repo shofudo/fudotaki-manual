@@ -37,7 +37,8 @@
   .head h2{margin:0;font-size:21px}
   .head small{color:var(--muted)}
   .body{padding:18px}
-  .levels p{margin:.45em 0}
+  .levels p{margin:.6em 0}
+  .level-sub{display:block;font-size:11px;color:var(--muted);margin-top:3px;line-height:1.65;font-weight:400}
   .chips{display:flex;gap:8px;flex-wrap:wrap;margin:.5rem 0}
   .chip{border:1px solid var(--bd);border-radius:999px;padding:6px 12px;font-size:12px;background:rgba(255,255,255,.86);color:#4f443e}
   .audio-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px}
@@ -131,9 +132,9 @@
     <div class="body">
       <div class="season-panel" data-season="spring">
         <div class="levels">
-          <p>レベル1: こちらは、 スイモノ でございます。</p>
-          <p>レベル2: おダシは、トリと、カツオブシでとった、おダシになります。</p>
-          <p>レベル3: ワンダネには、クレソンと、シイタケが　はいっております。</p>
+          <p>こちらは、 スイモノ でございます。<small class="level-sub">こちらは、吸い物でございます。<br>यो सुइमोनो हो।</small></p>
+          <p>おダシは、トリと、カツオブシでとった、おダシになります。<small class="level-sub">お出しは、鶏と、鰹節でとった出汁になります。<br>झोल कुखुरा र काटसुओबुसिले बनाएको दाशि हो।</small></p>
+          <p>ワンダネには、クレソンと、シイタケが　はいっております。<small class="level-sub">お椀の中には、クレソンと、椎茸が入っております。<br>कचौरामा क्रेसन र सिइताके राखिएको छ।</small></p>
         </div>
         <div class="chips"><span class="chip">すいもの ていきょう＆せつめいご</span></div>
         <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/suimono.mp3" type="audio/mpeg"></audio></div>
@@ -177,12 +178,9 @@
     <div class="body">
       <div class="season-panel" data-season="spring">
         <div class="levels">
-          <p>レベル1: こちらは、 カサイモリ でございます。</p>
-          <p>レベル2: ヤサイ と サカナ の モリアワセ に なり、<br>
-            チュウオウ に クミアゲユバ を ごヨウイ しております。</p>
-          <p>レベル3: こちらに、 モロミジョウユ と ミソズ を ごヨウイ しております。<br>
-            ユバ は モロミジョウユ が オススメ ですが、<br>
-            ヤサイ と サカナ は おコノミ の ほう を おツカイ ください。</p>
+          <p>こちらは、 カサイモリ でございます。<small class="level-sub">こちらは、果菜盛りでございます。<br>यो कासाइमोरि हो।</small></p>
+          <p>ヤサイ と サカナ の モリアワセ に なり、<br>チュウオウ に クミアゲユバ を ごヨウイ しております。<small class="level-sub">野菜と魚の盛り合わせになり、中央に汲み上げ湯葉をご用意しております。<br>तरकारी र माछाको मिश्रण छ, बीचमा कुमिआगे युबा राखिएको छ।</small></p>
+          <p>こちらに、 モロミジョウユ と ミソズ を ごヨウイ しております。<br>ユバ は モロミジョウユ が オススメ ですが、<br>ヤサイ と サカナ は おコノミ の ほう を おツカイ ください。<small class="level-sub">こちらに、もろみ醤油と味噌酢をご用意しております。湯葉はもろみ醤油がおすすめですが、野菜と魚はお好みの方をお使いください。<br>यहाँ मोरोमि सोयु र मिसो-ज़ु राखिएको छ। युबाको लागि मोरोमि सोयु सिफारिस छ, तर तरकारी र माछाको लागि आफ्नो मन परेको सस् प्रयोग गर्नुहोस्।</small></p>
         </div>
         <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/kasaimori.mp3" type="audio/mpeg"></audio></div>
       </div>
@@ -199,11 +197,9 @@
     <div class="body">
       <div class="season-panel" data-season="spring">
         <div class="levels">
-          <p>レベル1: こちらは　ヤキモノ　になります。</p>
-          <p>トチギユメポーク　というブタニクを　ヤいたものと、<br>
-            ジャガイモを　あらくすりおろして　<br>
-            むしやきにしたものをあわせたものになります。</p>
-          <p>ぜひとも　おにくと　ジャカイモを　いっしょに　めしあがってください</p>
+          <p>こちらは　ヤキモノ　になります。<small class="level-sub">こちらは焼き物になります。<br>यो याकिमोनो हो।</small></p>
+          <p>トチギユメポーク　というブタニクを　ヤいたものと、<br>ジャガイモを　あらくすりおろして　<br>むしやきにしたものをあわせたものになります。<small class="level-sub">栃木夢ポークという豚肉を焼いたものと、じゃがいもを粗くすり下ろして蒸し焼きにしたものを合わせたものになります。<br>टोचिगि युमे पोर्क नामक सुँगुरको मासु पकाएको र आलु मोटो कद्दुकस गरेर भाँपमा पकाएको मिश्रण हो।</small></p>
+          <p>ぜひとも　おにくと　ジャカイモを　いっしょに　めしあがってください<small class="level-sub">ぜひ、お肉とじゃがいもを一緒に召し上がってください。<br>कृपया मासु र आलु सँगै खानुहोस्।</small></p>
         </div>
         <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/musimono.mp3" type="audio/mpeg"></audio></div>
       </div>
@@ -220,12 +216,8 @@
     <div class="body">
       <div class="season-panel" data-season="spring">
         <div class="levels">
-          <p>レベル1: こちらは、 ウド と アスパラガス を つかった ヒリュウズ と、<br>
-            あたたかい ゴマドウフ に フカヒレ の アン を<br>
-            かけた もの に なります。</p>
-          <p>レベル2: ヒリュウズ は シタアジ が ついて おりますが、モジオ を そえて ありますので
-            おコノミ で つけて メシアガって ください。</p>
-          <p>レベル3: </p>
+          <p>こちらは、 ウド と アスパラガス を つかった ヒリュウズ と、<br>あたたかい ゴマドウフ に フカヒレ の アン を<br>かけた もの に なります。<small class="level-sub">こちらは、独活とアスパラガスを使った飛竜頭と、温かいごま豆腐にフカヒレのあんをかけたものになります。<br>यो उदो र एस्पेरागस प्रयोग गरेको हिर्युज़ु र तातो गोमादोफुमा शार्कको पखेटाको सस् हालेको पकवान हो।</small></p>
+          <p>ヒリュウズ は シタアジ が ついて おりますが、モジオ を そえて ありますので おコノミ で つけて メシアガって ください。<small class="level-sub">飛竜頭は下味がついておりますが、藻塩を添えてありますので、お好みでつけて召し上がってください。<br>हिर्युज़ुमा पहिले नै स्वाद दिइएको छ, तर मोसिओ (समुद्री नुन) राखिएको छ, आफ्नो मन परेअनुसार प्रयोग गर्नुहोस्।</small></p>
         </div>
         <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/shiizakana.mp3" type="audio/mpeg"></audio></div>
       </div>
@@ -264,9 +256,8 @@
     <div class="body">
       <div class="season-panel" data-season="spring">
         <div class="levels">
-          <p>レベル1: こちらは、 ニモノ に なります。</p>
-          <p>レベル2:  トチギワギュウを　スキヤキふうの　にものに　したものになります。</p>
-          <p>レベル3: </p>
+          <p>こちらは、 ニモノ に なります。<small class="level-sub">こちらは、煮物になります。<br>यो निमोनो हो।</small></p>
+          <p>トチギワギュウを　スキヤキふうの　にものに　したものになります。<small class="level-sub">栃木和牛をすき焼き風の煮物にしたものになります。<br>टोचिगि वाग्यु गाईको मासुलाई सुकियाकि शैलीमा पकाएको छ।</small></p>
         </div>
         <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/nimono.mp3" type="audio/mpeg"></audio></div>
       </div>
@@ -301,9 +292,9 @@
     <div class="body">
       <div class="season-panel" data-season="spring">
         <div class="levels">
-          <p>レベル1: こちらは、 ゴハン の ごヨウイ に なります。</p>
-          <p>レベル2: ハルヤサイと　ワカメを　つかった　ごはんとなります。</p>
-          <p>レベル3: つけものは　あさづけの　ごよういと　みそしるは　あかみその　おみそしると　なります。</p>
+          <p>こちらは、 ゴハン の ごヨウイ に なります。<small class="level-sub">こちらは、ご飯のご用意になります。<br>यो भात हो।</small></p>
+          <p>ハルヤサイと　ワカメを　つかった　ごはんとなります。<small class="level-sub">春野菜とわかめを使ったご飯となります。<br>वसन्त तरकारी र वाकामे (समुद्री शैवाल) प्रयोग गरेको भात हो।</small></p>
+          <p>つけものは　あさづけの　ごよういと　みそしるは　あかみその　おみそしると　なります。<small class="level-sub">漬け物は浅漬けのご用意と、味噌汁は赤味噌のお味噌汁となります。<br>अचार हल्का अचार हो, र मिसो सूप रातो मिसोको सूप हो।</small></p>
         </div>
         <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/katemeshi.mp3" type="audio/mpeg"></audio></div>
       </div>
@@ -336,11 +327,9 @@
     <div class="body">
       <div class="season-panel" data-season="spring">
         <div class="levels">
-          <p>レベル1: こちらは、 デザート に なります。</p>
-          <p>レベル2: トチギケンサン の イチゴ と ミカン を つかったシャーベット に、<br>
-            ナスコウゲン の ギュウニュウ を　ニツメて つくった ミルクソース を かけて あります。</p>
-          <p>レベル3: もう ひとつ の、 ちいさい ウツワ に は<br>
-            チーズのプリンと、パイナップルのカラメルニを　かけたものをごヨウイ しております。</p>
+          <p>こちらは、 デザート に なります。<small class="level-sub">こちらは、デザートになります。<br>यो मिठाई हो।</small></p>
+          <p>トチギケンサン の イチゴ と ミカン を つかったシャーベット に、<br>ナスコウゲン の ギュウニュウ を　ニツメて つくった ミルクソース を かけて あります。<small class="level-sub">栃木県産のいちごとみかんを使ったシャーベットに、那須高原の牛乳を煮詰めて作ったミルクソースをかけてあります。<br>टोचिगि प्रान्तको स्ट्रबेरी र सुन्तला प्रयोग गरेको शर्बतमा नासु कोगेनको दूध उमालेर बनाएको मिल्क सस् हालिएको छ।</small></p>
+          <p>もう ひとつ の、 ちいさい ウツワ に は<br>チーズのプリンと、パイナップルのカラメルニを　かけたものをごヨウイ しております。<small class="level-sub">もう一つの小さい器にはチーズのプリンと、パイナップルのキャラメル煮をかけたものをご用意しております。<br>अर्को सानो भाँडामा चिज पुडिङमा अनानासको क्यारमल सस् हालिएको छ।</small></p>
         </div>
         <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/kanmi.mp3" type="audio/mpeg"></audio></div>
       </div>
@@ -356,9 +345,9 @@
     <div class="head"><h2><span class="mono-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 10h10"/><path d="M6 14h12"/><path d="M8 18h8"/><path d="M9 6h6"/></svg></span>小菓子</h2></div>
     <div class="body">
       <div class="levels">
-        <p>レベル1: こちらはコガシになります。</p>
-        <p>レベル2: チョウジをつかったボーロと ショウガのコンペイトウになります。</p>
-        <p>レベル3: シャーベットで冷えたオナカをアタタメますので、サイゴにメシアガってください。</p>
+        <p>こちらはコガシになります。<small class="level-sub">こちらは小菓子になります。<br>यो कोगासि (सानो मिठाई) हो।</small></p>
+        <p>チョウジをつかったボーロと ショウガのコンペイトウになります。<small class="level-sub">丁子を使ったボーロと、生姜の金平糖になります。<br>लौंग प्रयोग गरेको बोरो र अदुवाको कोम्पेइतो (चिनीको मिठाई) हो।</small></p>
+        <p>シャーベットで冷えたオナカをアタタメますので、サイゴにメシアガってください。<small class="level-sub">シャーベットで冷えたお腹を温めますので、最後に召し上がってください。<br>शर्बतले चिसो भएको पेट न्यानो बनाउँछ, त्यसैले अन्तिममा खानुहोस्।</small></p>
       </div>
       <div class="audio-row"><audio controls preload="metadata"><source src="../assets/audio/season-dinner/kogashi.mp3" type="audio/mpeg"></audio></div>
     </div>
