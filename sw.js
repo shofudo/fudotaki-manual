@@ -3,7 +3,7 @@
    - Assets (images/css/js/audio): stale-while-revalidate
    - Immediate update: skipWaiting + clients.claim
 */
-const CACHE_VERSION = 'v1.1.5';
+const CACHE_VERSION = 'v1.1.6';
 const CACHE_NAME    = `fudotaki-manual-${CACHE_VERSION}`;
 
 /* GitHub Pages での配信パス（絶対パス） */
