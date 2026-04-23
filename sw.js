@@ -3,7 +3,7 @@
    - Assets (images/css/js/audio): stale-while-revalidate
    - Immediate update: skipWaiting + clients.claim
 */
-const CACHE_VERSION = 'v1.1.6';
+const CACHE_VERSION = 'v1.1.7';
 const CACHE_NAME    = `fudotaki-manual-${CACHE_VERSION}`;
 
 /* GitHub Pages での配信パス（絶対パス） */
@@ -86,6 +86,10 @@ self.addEventListener('fetch', (e) => {
   }
 
   // 2) 静的アセット（画像/CSS/JS/音声/動画 一般）
+  // 音声/動画の Range リクエストは SW を通さずブラウザに直接処理させる
+  if (req.headers.get('range') && /\.(mp3|m4a|wav|ogg|mp4|webm)$/i.test(url.pathname)) {
+    return;
+  }
   if (/\.(png|jpg|jpeg|gif|svg|webp|css|js|mp3|m4a|wav|ogg|mp4|webm)$/i.test(url.pathname)) {
     e.respondWith(staleWhileRevalidate(req));
     return;
