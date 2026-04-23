@@ -13,7 +13,10 @@
       "Bash(git -C /c/Users/saria/Documents/GitHub/fudotaki-manual/ status)",
       "Bash(git -C /c/Users/saria/Documents/GitHub/fudotaki-manual/ log --oneline -5)",
       "Bash(git -C /c/Users/saria/Documents/GitHub/fudotaki-manual/ push origin main)",
-      "Bash(gh api *)"
+      "Bash(gh api *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   }
 }
