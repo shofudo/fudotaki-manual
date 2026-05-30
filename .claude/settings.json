@@ -19,7 +19,9 @@
       "Bash(git push *)",
       "Bash(git log *)",
       "Bash(git fetch *)",
-      "Bash(xxd)"
+      "Bash(xxd)",
+      "Bash(Select-String -Path \"c:\\\\Users\\\\saria\\\\Documents\\\\GitHub\\\\fudotaki-manual\\\\pages\\\\dinner-guide.html\" -Pattern \"チリ酢\" -CaseSensitive)",
+      "Bash(Select-Object LineNumber, Line)"
     ]
   }
 }
