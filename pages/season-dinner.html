@@ -73,6 +73,31 @@
   .season-label.autumn{background:#fdebd0;color:#c45e2e}
   .season-label.winter{background:#e8eef8;color:#4a6fa5}
   .season-placeholder{padding:28px 18px;text-align:center;color:var(--muted);background:rgba(200,200,200,.08);border-radius:14px;border:1.5px dashed var(--bd);font-size:14px}
+
+  /* ── 横書きの季節献立 ── */
+  .vertical-menu{overflow:hidden}
+  .vertical-menu summary{list-style:none;display:flex;align-items:center;gap:12px;padding:17px 20px;cursor:pointer;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(247,240,232,.9));font-weight:700;letter-spacing:.08em}
+  .vertical-menu summary::-webkit-details-marker{display:none}
+  .vertical-menu summary::after{content:"＋";margin-left:auto;width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--bd);border-radius:50%;font-size:18px;font-weight:400;transition:transform .2s}
+  .vertical-menu[open] summary::after{content:"−";transform:rotate(180deg)}
+  .vertical-menu-hint{font-size:11px;color:var(--muted);font-weight:400;letter-spacing:0}
+  .vertical-menu-scroll{padding:24px 24px 30px;border-top:1px solid var(--bd);background:rgba(255,253,249,.78)}
+  .vertical-menu-sheet{max-width:760px;margin:auto;font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;line-height:1.75}
+  .vertical-menu-title{margin:0 0 22px;padding-bottom:12px;border-bottom:1px solid rgba(113,83,61,.45);text-align:center;font-size:20px;letter-spacing:.16em}
+  .vertical-menu-title .np{display:block;margin-top:5px;font-family:"Noto Sans Devanagari","Noto Sans",sans-serif;font-size:12px;font-weight:400;letter-spacing:0;color:var(--muted)}
+  .vertical-menu-course{display:grid;grid-template-columns:110px 1fr;margin:0;padding:13px 0;border-bottom:1px solid rgba(108,88,69,.16);font-size:15px}
+  .vertical-menu-course dt{grid-row:1 / span 8;font-weight:700;color:#71533d}
+  .vertical-menu-course dt .np{display:block;font-size:11px;font-weight:400}
+  .vertical-menu-course dd{margin:0 0 7px}
+  .vertical-menu-course dd:last-child{margin-bottom:0}
+  .vertical-menu-course .np{display:block;font-family:"Noto Sans Devanagari","Noto Sans",sans-serif;font-size:12px;line-height:1.55;color:#596779;letter-spacing:0}
+  @media (max-width:600px){
+    .vertical-menu summary{padding:15px 16px;align-items:flex-start;flex-wrap:wrap}
+    .vertical-menu-hint{width:100%;padding-left:0}
+    .vertical-menu-scroll{padding:20px 16px 24px}
+    .vertical-menu-course{grid-template-columns:1fr;gap:4px}
+    .vertical-menu-course dt{grid-row:auto;margin-bottom:5px}
+  }
 </style>
 </head>
 <body>
@@ -102,6 +127,90 @@
 </div>
 
 <main id="content">
+
+  <!-- 夏：横書き・日ネ併記の献立（折りたたみ） -->
+  <details class="block vertical-menu season-panel" data-season="summer">
+    <summary>
+      <span>令和八年　夏の　お献立</span>
+      <span class="vertical-menu-hint">押すと献立を表示します / थिचेर मेनु हेर्नुहोस्</span>
+    </summary>
+    <div class="vertical-menu-scroll">
+      <div class="vertical-menu-sheet">
+        <h2 class="vertical-menu-title">令和八年　夏の　お献立<span class="np" lang="ne">रेइवा आठौँ वर्षको गर्मी मौसमको मेनु</span></h2>
+
+        <dl class="vertical-menu-course">
+          <dt>食前酒<span class="np" lang="ne">खानाअघिको मदिरा</span></dt>
+          <dd>鳳凰美田　果実酒<span class="np" lang="ne">होओ बिदेन फलफूलको मदिरा</span></dd>
+        </dl>
+
+        <dl class="vertical-menu-course">
+          <dt>前菜<span class="np" lang="ne">सुरुवाती परिकार</span></dt>
+          <dd>隠元の黒胡麻酢がけ　たたき長芋と縞綱麻<span class="np" lang="ne">कालो तिलको सिरकासहित सिमी・कुटेको नागाइमो र शिमा-त्सुनामा</span></dd>
+          <dd>窯焼き蕃茄　枝豆　茄子寿司　木耳金平<span class="np" lang="ne">भट्टीमा पोलेको गोलभेँडा・एदामामे・भण्टाको सुशी・किकुरागेको किन्पिरा</span></dd>
+        </dl>
+
+        <dl class="vertical-menu-course">
+          <dt>吸物<span class="np" lang="ne">सफा सुप</span></dt>
+          <dd>地鶏と鰹節のおだし<span class="np" lang="ne">स्थानीय कुखुरा र कात्सुओबुसीको दासी</span></dd>
+          <dd>陸鹿尾菜　馬鈴薯　露生姜<span class="np" lang="ne">ओकाहिजिकी・आलु・अदुवाको रस</span></dd>
+        </dl>
+
+        <dl class="vertical-menu-course">
+          <dt>果菜盛り<span class="np" lang="ne">माछा र तरकारीको थाल</span></dt>
+          <dd>真鯛　ヤシオマス　汲み上げ湯波<span class="np" lang="ne">मादाइ・यासिओ ट्राउट・ताजा युबा</span></dd>
+          <dd>松葉独活　長芋たまり漬け　若玉蜀黍　陸蓮根<span class="np" lang="ne">मात्सुबा उदो・तामारीमा डुबाएको नागाइमो・कलिलो मकै・ओकुराको फूल</span></dd>
+          <dd>玉葱酢醤油漬け　二十日大根　小蕃茄<span class="np" lang="ne">सिरका-सोया ससमा डुबाएको प्याज・र्‍याडिस・सानो गोलभेँडा</span></dd>
+          <dd>人参　大根　胡瓜　生姜　山葵　芽紫蘇<span class="np" lang="ne">गाजर・दाइकोन・काँक्रो・अदुवा・वासाबी・सिसोको टुसा</span></dd>
+          <dd>蔵元小田屋もろみ醤油　ちり酢　藻塩<span class="np" lang="ne">ओदाया मोरोमी सोया सस・चिरिजु・समुद्री नुन</span></dd>
+        </dl>
+
+        <dl class="vertical-menu-course">
+          <dt>蒸物替り<span class="np" lang="ne">बफाएको परिकारको सट्टा</span></dt>
+          <dd>茄子餡かけ<span class="np" lang="ne">बाक्लो सससहितको भण्टा</span></dd>
+          <dd>胡麻豆腐　海老　葱と生姜<span class="np" lang="ne">तिल टोफु・झिँगेमाछा・हरियो प्याज र अदुवा</span></dd>
+        </dl>
+
+        <dl class="vertical-menu-course">
+          <dt>強肴<span class="np" lang="ne">मुख्य साइड परिकार</span></dt>
+          <dd>玉蜀黍と松葉独活の飛竜頭　藻塩<span class="np" lang="ne">मकै र मात्सुबा उदोको हिर्योजु・समुद्री नुन</span></dd>
+          <dd>とちぎゆめポークの焦酢煮　茗荷　白胡麻ダレ<span class="np" lang="ne">तोचिगी युमे पोर्कको कोगासु-नि・म्योगा・सेतो तिलको सस</span></dd>
+        </dl>
+
+        <dl class="vertical-menu-course">
+          <dt>煮物<span class="np" lang="ne">झोलमा पकाएको परिकार</span></dt>
+          <dd>とちぎ和牛の淡煮<span class="np" lang="ne">तोचिगी वाग्युको हल्का झोलमा पकाएको परिकार</span></dd>
+          <dd>小松菜　人参　馬鈴薯　ポン酢<span class="np" lang="ne">कोमात्सुना・गाजर・आलु・पोन्जु</span></dd>
+        </dl>
+
+        <dl class="vertical-menu-course">
+          <dt>御飯<span class="np" lang="ne">भात</span></dt>
+          <dd>喜連川鮎と新生姜の御飯　もち麦<span class="np" lang="ne">कित्सुरेगावा आयु माछा र नयाँ अदुवाको भात・मोची जौ</span></dd>
+        </dl>
+
+        <dl class="vertical-menu-course">
+          <dt>香物<span class="np" lang="ne">अचार</span></dt>
+          <dd>浅漬け　甘藍　人参　胡瓜<span class="np" lang="ne">हल्का अचार・बन्दाकोबी・गाजर・काँक्रो</span></dd>
+        </dl>
+
+        <dl class="vertical-menu-course">
+          <dt>止椀<span class="np" lang="ne">अन्तिम मिसो सुप</span></dt>
+          <dd>蔵出野州吟醸味噌　なめこ　三ツ葉　山椒<span class="np" lang="ne">कुरादासी याशु गिन्जो मिसो・नामेको च्याउ・मित्सुबा・सान्स्यो</span></dd>
+        </dl>
+
+        <dl class="vertical-menu-course">
+          <dt>甘味<span class="np" lang="ne">मिठाई</span></dt>
+          <dd>栃木県産いちごと蜜柑のシャーベット<span class="np" lang="ne">तोचिगीको स्ट्रबेरी र मिकान सुन्तलाको शर्बत</span></dd>
+          <dd>あまたにミルクソース<span class="np" lang="ne">आमातानी दूधको सस</span></dd>
+          <dd>甘瓜　熟成本味醂琥珀寄せ<span class="np" lang="ne">खरबुजा・पुरानो होनमिरिनको अम्बर जेली</span></dd>
+        </dl>
+
+        <dl class="vertical-menu-course">
+          <dt>小菓子<span class="np" lang="ne">सानो मिठाई</span></dt>
+          <dd>丁字のボーロ　生姜の金平糖<span class="np" lang="ne">ल्वाङको बोरो बिस्कुट・अदुवाको कोन्पेइतो</span></dd>
+        </dl>
+      </div>
+    </div>
+  </details>
 
   <!-- 目次 -->
   <section class="block" id="toc">
