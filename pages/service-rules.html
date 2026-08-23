@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ne">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#5b7f6a">
+  <title>भाँडा उठाउने र खाना पस्किने नियम｜配膳・下膳のルール</title>
+  <style>
+    :root {
+      --bg: #f7f3ed;
+      --card: #fffdf9;
+      --ink: #29221f;
+      --muted: #756862;
+      --green: #397348;
+      --red: #bd3329;
+      --border: rgba(75, 58, 48, .16);
+      --shadow: 0 14px 34px rgba(55, 42, 34, .10);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Noto Sans Devanagari", "Noto Sans JP", "Yu Gothic", system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(247, 243, 237, .94);
+      backdrop-filter: blur(10px);
+    }
+
+    .back {
+      color: var(--green);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    main {
+      width: min(100% - 28px, 720px);
+      margin: 22px auto 50px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.55rem, 5.7vw, 2.35rem);
+      line-height: 1.35;
+    }
+
+    .ja {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-family: "Noto Sans JP", "Yu Gothic", system-ui, sans-serif;
+      font-size: .78rem;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .important {
+      margin: 20px 0;
+      padding: 18px;
+      border: 2px solid #e9b54d;
+      border-radius: 18px;
+      background: #fff9e9;
+      box-shadow: var(--shadow);
+    }
+
+    .important p {
+      margin: 0;
+      font-size: 1.12rem;
+      font-weight: 800;
+    }
+
+    .important p + p {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(189, 51, 41, .18);
+      color: var(--red);
+    }
+
+    .poster {
+      display: block;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .poster img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hint {
+      margin: 10px 4px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: .82rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="back" href="../index.html">← फर्कनुहोस् <span class="ja" style="display:inline;margin:0 0 0 6px">トップへ戻る</span></a>
+  </header>
+
+  <main>
+    <h1>
+      भाँडा उठाउने र खाना पस्किने नियम
+      <span class="ja">食器を下げるとき・料理を出すときのルール</span>
+    </h1>
+
+    <section class="important" aria-label="सबैभन्दा महत्त्वपूर्ण कुरा">
+      <p>
+        अतिथिको टेबल भाँडा मिलाउने वा थुपार्ने ठाउँ होइन।
+        <span class="ja">お客様のテーブルは、器を重ねたり片付けたりする場所ではありません。</span>
+      </p>
+      <p>
+        अतिथिको मुख लाग्ने ठाउँमा औँला नछुनुहोस्।
+        <span class="ja">お客様が口をつける場所に指を触れないでください。</span>
+      </p>
+    </section>
+
+    <a class="poster" href="../assets/img/dinner-guide/service-rules.png" target="_blank" rel="noopener">
+      <img src="../assets/img/dinner-guide/service-rules.png" alt="भाँडा उठाउने र खाना पस्किने नियमको चित्रसहित म्यानुअल">
+    </a>
+    <p class="hint">तस्बिर ठूलो हेर्न ट्याप गर्नुहोस्。<span class="ja">タップすると画像を大きく表示できます。</span></p>
+  </main>
+</body>
+</html>

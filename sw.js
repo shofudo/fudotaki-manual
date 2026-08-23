@@ -3,7 +3,7 @@
    - Assets (images/css/js/audio): stale-while-revalidate
    - Immediate update: skipWaiting + clients.claim
 */
-const CACHE_VERSION = 'v1.1.7';
+const CACHE_VERSION = 'v1.1.8';
 const CACHE_NAME    = `fudotaki-manual-${CACHE_VERSION}`;
 
 /* GitHub Pages での配信パス（絶対パス） */
@@ -13,6 +13,8 @@ const CORE = [
   '/fudotaki-manual/assets/css/theme.css',
   '/fudotaki-manual/assets/img/top/washi-bg.jpg',
   '/fudotaki-manual/assets/img/top/top2.jpg',
+  '/fudotaki-manual/pages/service-rules.html',
+  '/fudotaki-manual/assets/img/dinner-guide/service-rules.png',
   '/fudotaki-manual/manifest.webmanifest',
 ];
 
@@ -23,6 +25,8 @@ const CORE_LOCAL = [
   './assets/css/theme.css',
   './assets/img/top/washi-bg.jpg',
   './assets/img/top/top2.jpg',
+  './pages/service-rules.html',
+  './assets/img/dinner-guide/service-rules.png',
   './pages/season-dinner.html',
   './manifest.webmanifest',
 ];
