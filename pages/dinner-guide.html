@@ -73,6 +73,28 @@
   .fab:hover{background:#fff}
   .fab:active{transform:scale(.97)}
   @media (max-width:780px){.hero{margin-top:18px;border-radius:28px}.hero .hero-title{left:20px;right:20px;bottom:20px}.block .head{padding:18px 20px 14px}.block .body{padding:20px}#toc .cards{grid-template-columns:1fr}.subcopy{font-size:.76rem}.menu-content li{align-items:flex-start}.tag{white-space:normal}}
+
+  /* 注文メモの説明内だけに適用するスタイル */
+  .order-guide{margin-top:24px;scroll-margin-top:100px}
+  .order-guide summary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px}
+  .order-guide summary .jp-main,.order-guide summary .subcopy{grid-column:1}
+  .order-guide summary::after{grid-column:2;grid-row:1 / 3}
+  .order-guide .subcopy{font-size:.9rem}
+  .order-guide .og-figure{margin:20px 0;padding:16px;border:1px solid var(--bd);border-radius:16px;background:#f7f2e9}
+  .order-guide .og-example-layout{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);align-items:center;gap:24px;max-width:760px;margin:auto}
+  .order-guide .og-example{display:block;width:100%;max-width:320px;height:auto;margin:auto;font-family:"Noto Sans JP","Yu Gothic UI",sans-serif}
+  .order-guide .og-legend{margin:0;font-size:1rem}
+  .order-guide .og-legend dt{font-weight:700;color:var(--acc)}
+  .order-guide .og-legend dd{margin:4px 0 20px}
+  .order-guide .og-legend dd:last-child{margin-bottom:0}
+  .order-guide figcaption{margin-top:16px}
+  .order-guide figcaption .np{display:block;margin-top:6px}
+  .order-guide .og-key{padding:14px 16px;border-left:3px solid var(--acc-2);background:rgba(177,138,86,.1);border-radius:0 10px 10px 0}
+  .order-guide .og-tallies{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;max-width:560px;margin:16px auto 20px}
+  .order-guide .og-tally{padding:8px 2px;border:1px solid var(--bd);border-radius:12px;text-align:center;background:#fffefa}
+  .order-guide .og-tally svg{display:block;width:100%;max-width:74px;margin:auto}
+  .order-guide .og-tally b{display:block;color:#306e66;font-size:18px}
+  @media(max-width:600px){.order-guide .og-example-layout{grid-template-columns:minmax(0,1fr);gap:20px}.order-guide .menu-content{padding:4px 12px 12px}.order-guide .og-figure{padding:12px}.order-guide .og-tallies{gap:5px}}
 </style>
 </head>
 <body>
@@ -334,6 +356,52 @@
             <li><b><span class="jp-main">みず</span><span class="subcopy">水<span class="sep">/</span><span class="np">पानी</span></span></b> <span class="tag">みず（ミズ）</span></li>
             <li><b><span class="jp-main">こおりみず</span><span class="subcopy">氷水<span class="sep">/</span><span class="np">बरफ पानी</span></span></b> <span class="tag">こおりみず（コオリミズ）</span></li>
           </ul>
+        </div>
+      </details>
+
+      <details class="menu-acc order-guide" id="order-memo" open>
+        <summary class="triple"><span class="jp-main">のみものの ちゅうもんメモの かきかた</span><span class="subcopy">飲み物の注文メモの書き方<span class="sep">/</span><span class="np" lang="ne">पेय पदार्थको अर्डर लेख्ने तरिका</span></span></summary>
+        <div class="menu-content">
+          <p class="triple"><span class="jp-main">① いちばん うえに、へやの なまえを ひらがなで かきます。</span><span class="subcopy">一番上に、部屋名をひらがなで書きます。例：やまぶき・さくら<span class="sep">/</span><span class="np" lang="ne">सबैभन्दा माथि कोठाको नाम हिरागानामा लेख्नुहोस्। उदाहरण: やまぶき・さくら</span></span></p>
+          <p class="triple"><span class="jp-main">② その したに、のみものの なまえを かきます。かずは、なまえの まよこに「正」で かきます。</span><span class="subcopy">その下に飲み物名を書き、数量は名前の真横に「正」の字で記入します。<span class="sep">/</span><span class="np" lang="ne">त्यसको तल पेय पदार्थको नाम लेख्नुहोस्। संख्या नामको ठीक छेउमा तल देखाएझैँ धर्का थप्दै लेख्नुहोस्।</span></span></p>
+          <p class="triple"><span class="jp-main">③ べつに グラスが ひつような ときは、のみものの なまえの みぎななめ したに、グラスの かずを かいて、まるで かこみます。</span><span class="subcopy">瓶ビールなど、別にグラスが必要なときは、飲み物名の右斜め下にグラス数を書き、丸で囲みます。<span class="sep">/</span><span class="np" lang="ne">बोतलको बियर जस्ता पेयसँग छुट्टै गिलास चाहिँदा, पेयको नामको दायाँतिर अलि तल गिलासको संख्या अंकमा लेखेर गोलो घेरा लगाउनुहोस्।</span></span></p>
+
+          <figure class="og-figure">
+            <div class="og-example-layout">
+              <svg class="og-example" viewBox="0 0 320 365" role="img" aria-labelledby="og-title og-desc" xmlns="http://www.w3.org/2000/svg">
+                <title id="og-title">注文メモの見本：やまぶき、アサヒ2本・グラス3個、梅サワー1杯 / अर्डरको उदाहरण: यामाबुकी, आसाही बियर २ बोतल, छुट्टै गिलास ३ वटा र उमे सावर १ गिलास</title>
+                <desc id="og-desc">部屋名は上部にひらがな。アサヒの真横に正の字の2画、アサヒの右斜め下に丸で囲んだ3。梅サワーの真横に1画を記入。 / माथि कोठाको नाम हिरागानामा छ। आसाहीको ठीक छेउमा 「正」 का २ धर्का छन् र नामको दायाँतिर अलि तल घेराभित्र ३ छ। उमे सावरको ठीक छेउमा १ धर्का छ。</desc>
+                <rect x="1" y="1" width="318" height="363" rx="8" fill="#fffefa" stroke="#c6b9a6" stroke-width="2"/>
+                <path d="M16 27H304" stroke="#ded4c6"/>
+                <g fill="#241d1a" font-size="31" font-weight="600">
+                  <text x="27" y="91">やまぶき</text>
+                  <text x="27" y="167">アサヒ</text>
+                  <text x="27" y="288" font-size="29">梅サワー</text>
+                </g>
+                <path d="M150 143H188M169 143V181" fill="none" stroke="#306e66" stroke-width="3.5" stroke-linecap="round"/>
+                <circle cx="148" cy="211" r="21" fill="none" stroke="#a3542c" stroke-width="2.5"/>
+                <text x="148" y="219" text-anchor="middle" font-size="25" fill="#a3542c">3</text>
+                <path d="M160 269H198" stroke="#306e66" stroke-width="3.5" stroke-linecap="round"/>
+              </svg>
+              <dl class="og-legend">
+                <dt>へやの なまえ<span class="subcopy np" lang="ne">कोठाको नाम</span></dt><dd>やまぶき（ひらがな）<span class="subcopy np" lang="ne">やまぶき (यामाबुकी) — हिरागानामा</span></dd>
+                <dt>のみものの かず<span class="subcopy np" lang="ne">पेय पदार्थको संख्या</span></dt><dd>アサヒ 2ほん・梅サワー 1ぱい<br>名前の真横に「正」の画数で記入。<span class="subcopy np" lang="ne">आसाही बियर २ बोतल र उमे सावर १ गिलास। पेयको नामको ठीक छेउमा 「正」 का धर्का थपेर संख्या लेख्नुहोस्।</span></dd>
+                <dt>グラスの かず<span class="subcopy np" lang="ne">छुट्टै गिलासको संख्या</span></dt><dd>アサヒ用のグラス 3こ<br>名前の右斜め下に、丸で囲んで記入。<span class="subcopy np" lang="ne">आसाही बियरका लागि छुट्टै गिलास ३ वटा। पेयको नामको दायाँतिर अलि तल संख्या लेखेर गोलो घेरा लगाउनुहोस्।</span></dd>
+              </dl>
+            </div>
+            <figcaption class="subcopy">見本：やまぶきのお客様から、アサヒ2本・グラス3個・梅サワー1杯の注文を受けた場合。<span class="np" lang="ne">उदाहरण: やまぶき कोठाबाट आसाही बियर २ बोतल, छुट्टै गिलास ३ वटा र उमे सावर १ गिलासको अर्डर।</span></figcaption>
+          </figure>
+          <div class="og-key"><span class="jp-main">のみものの かず ＝「正」 ／ グラスの かず ＝ まるで かこんだ すうじ</span><span class="subcopy np" lang="ne">पेय पदार्थको संख्या = धर्का / छुट्टै गिलासको संख्या = घेराभित्र अंक</span></div>
+          <h3 class="menu-heading">「正」の かきかた / 正の字の書き方<span class="subcopy np" lang="ne">「正」 का धर्काले संख्या लेख्ने तरिका</span></h3>
+          <p class="triple"><span class="jp-main">1つ ふえる たびに、1かくずつ たします。5つで「正」に なります。</span><span class="subcopy">1つ増えるたびに1画ずつ足します。5つで「正」が完成します。<span class="sep">/</span><span class="np" lang="ne">एक थपिँदा एउटा धर्का थप्नुहोस्। पाँच धर्काले एक समूह बन्छ।</span></span></p>
+          <div class="og-tallies" aria-label="1から5までの正の字の書き方 / १ देखि ५ सम्म 「正」 का धर्का लेख्ने तरिका">
+            <div class="og-tally"><svg viewBox="0 0 60 60" role="img" aria-label="1個：1画 / १ वटा: १ धर्का"><g fill="none" stroke="#306e66" stroke-width="2.8" stroke-linecap="round"><path d="M10 10H50"/></g></svg><b>1</b></div>
+            <div class="og-tally"><svg viewBox="0 0 60 60" role="img" aria-label="2個：2画 / २ वटा: २ धर्का"><g fill="none" stroke="#306e66" stroke-width="2.8" stroke-linecap="round"><path d="M10 10H50"/><path d="M30 10V50"/></g></svg><b>2</b></div>
+            <div class="og-tally"><svg viewBox="0 0 60 60" role="img" aria-label="3個：3画 / ३ वटा: ३ धर्का"><g fill="none" stroke="#306e66" stroke-width="2.8" stroke-linecap="round"><path d="M10 10H50"/><path d="M30 10V50"/><path d="M30 30H47"/></g></svg><b>3</b></div>
+            <div class="og-tally"><svg viewBox="0 0 60 60" role="img" aria-label="4個：4画 / ४ वटा: ४ धर्का"><g fill="none" stroke="#306e66" stroke-width="2.8" stroke-linecap="round"><path d="M10 10H50"/><path d="M30 10V50"/><path d="M30 30H47"/><path d="M13 30V50"/></g></svg><b>4</b></div>
+            <div class="og-tally"><svg viewBox="0 0 60 60" role="img" aria-label="5個：5画 / ५ वटा: ५ धर्का"><g fill="none" stroke="#306e66" stroke-width="2.8" stroke-linecap="round"><path d="M10 10H50"/><path d="M30 10V50"/><path d="M30 30H47"/><path d="M13 30V50"/><path d="M10 50H50"/></g></svg><b>5</b></div>
+          </div>
+          <p class="triple note"><span class="jp-main">かくにん れんしゅう：「アサヒ 2ほん、グラス 3こ」を メモに かいて みましょう。</span><span class="subcopy">確認練習：「アサヒ2本、グラス3個」をメモに書いてみましょう。<span class="sep">/</span><span class="np" lang="ne">अभ्यास: आसाही बियर २ बोतल र गिलास ३ वटा कागजमा लेख्नुहोस्।</span></span></p>
         </div>
       </details>
 
