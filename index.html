@@ -130,44 +130,6 @@
       object-fit: cover;
     }
 
-    .notice-badge {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 22px;
-      padding: 13px 16px;
-      border: 1px solid rgba(217, 127, 147, 0.28);
-      border-radius: 18px;
-      background: linear-gradient(135deg, rgba(255, 252, 249, 0.96), rgba(255, 240, 233, 0.92));
-      box-shadow: var(--shadow-soft);
-      color: var(--acc);
-      font-size: 0.88rem;
-      backdrop-filter: blur(8px);
-      font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", system-ui, sans-serif;
-    }
-
-    .notice-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-      font-size: 0;
-      line-height: 0;
-    }
-
-    .notice-icon::before {
-      content: "";
-      display: block;
-      width: 18px;
-      height: 18px;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3.2l1.1 3.3L17 5.2l-1.3 3.2h3.4l-2.8 2.1 1.1 3.2-3-1.4.2 4.1-2.6-1.8-2.6 1.8.2-4.1-3 1.4 1.1-3.2-2.8-2.1h3.4L7 5.2l3.9 1.3L12 3.2z' fill='none' stroke='%23d97f93' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    }
-
     .grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -296,10 +258,6 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 5.2a6.2 6.2 0 0 1 6.2 6.2H5.8A6.2 6.2 0 0 1 12 5.2ZM3.8 12.8h16.4M6.5 15.7h11M10.3 18.6h3.4' fill='none' stroke='%235b6472' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     }
 
-    a[href="pages/origami-tsuru.html"] .icon-box::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 17c3-6 7-9 12-9M3 17l5-2M3 17l2-5M15 8l3-4 1 5-4-1ZM8 15c1-2 3-4 7-7' fill='none' stroke='%235b7f6a' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    }
-
     a[href="pages/service-rules.html"] .icon-box::before {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 13h16M6 13a6 6 0 0 1 12 0M8 17h8M7 5v4M12 4v5M17 5v4' fill='none' stroke='%235b7f6a' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     }
@@ -394,26 +352,12 @@
       <img src="assets/img/top/top2.jpg?v=3" alt="不動滝の案内画像">
     </div>
 
-    <div class="notice-badge">
-      <span class="notice-icon" aria-hidden="true"></span>
-      <span><strong>New:</strong> おりがみの つるの はしおきの つくりかたを ついかしました。</span>
-    </div>
-
     <div class="grid">
       <a href="pages/service-rules.html" class="card type-work">
         <div class="icon-box" aria-hidden="true"></div>
         <div class="text-box">
           <span class="card-kana" lang="ne">भाँडा उठाउने र खाना पस्किने नियम</span>
           <span class="card-ja">食器を下げるとき・料理を出すときのルール</span>
-        </div>
-        <span class="arrow" aria-hidden="true">›</span>
-      </a>
-
-      <a href="pages/origami-tsuru.html" class="card type-work">
-        <div class="icon-box" aria-hidden="true"></div>
-        <div class="text-box">
-          <span class="card-kana">おりがみの つるの はしおき</span>
-          <span class="card-ja">折り紙の鶴の箸置き ― 作り方</span>
         </div>
         <span class="arrow" aria-hidden="true">›</span>
       </a>
