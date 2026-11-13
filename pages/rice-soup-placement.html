@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#d97f93">
+  <title>ごはんと みそしるの おきかた｜Fudotaki Manual</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <style>
+    :root {
+      --bg: #fff6f3; --card: #fffcfa; --text: #44383c; --muted: #756267;
+      --green: #5b7f6a; --pink: #d97f93; --border: rgba(184,145,154,.24);
+      --shadow: 0 10px 26px rgba(164,124,133,.12); --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0; color: var(--text); line-height: 1.85;
+      background: linear-gradient(180deg,rgba(255,248,247,.94),rgba(252,244,238,.96)),
+        var(--bg) url("../assets/img/top/washi-bg.jpg");
+      font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", system-ui, sans-serif;
+      overflow-wrap: anywhere;
+    }
+    [lang="ne"] {
+      font-family: "Noto Sans Devanagari", "Nirmala UI", "Mangal", system-ui, sans-serif;
+      line-height: 1.85; letter-spacing: normal;
+    }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      border-bottom: 1px solid var(--border); background: rgba(255,248,247,.96);
+      backdrop-filter: blur(10px);
+    }
+    header .in {
+      max-width: 980px; margin: auto; padding: 12px 16px;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px;
+    }
+    a { color: var(--green); text-underline-offset: .2em; }
+    .back { display: inline-block; padding: 7px 12px; border: 1px solid var(--border);
+      border-radius: 12px; background: #fff; font-weight: 700; text-decoration: none; }
+    .brand { font-size: .85rem; color: var(--muted); }
+    main { width: min(100% - 28px, 980px); margin: 22px auto 40px; }
+    .intro { padding: 26px 20px; border-radius: var(--radius); color: #fff;
+      background: linear-gradient(135deg,#b96177,#5b7f6a); box-shadow: var(--shadow); }
+    h1 { margin: 0; font-size: clamp(1.5rem,5vw,2rem); line-height: 1.6; }
+    .intro p { margin: 10px 0 0; font-size: 1.12rem; }
+    .toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
+    .toc a { padding: 8px 12px; border: 1px solid var(--border); border-radius: 14px;
+      background: var(--card); text-decoration: none; font-size: .9rem; }
+    .block { margin: 18px 0; padding: clamp(16px,3vw,28px); border: 1px solid var(--border);
+      border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); }
+    .label { margin: 0 0 6px; color: var(--green); font-size: .9rem; font-weight: 700; }
+    h2 { margin: 0 0 12px; font-size: clamp(1.2rem,4.4vw,1.55rem); line-height: 1.7; }
+    h2 [lang="ne"] { display: block; margin-top: 6px; font-size: 1.08rem; color: var(--green); }
+    p { margin: 12px 0; }
+    .ne { color: var(--muted); }
+    .note { padding: 14px 16px; border-left: 4px solid var(--pink); border-radius: 0 12px 12px 0;
+      background: #fff0ed; font-size: .95rem; }
+    .note p { margin: 0; }
+    .note p + p { margin-top: 8px; }
+    .poster { margin: 20px 0 0; }
+    .poster a { display: block; border-radius: 14px; }
+    .poster img { display: block; width: 100%; height: auto; border: 1px solid var(--border);
+      border-radius: 14px; background: #fff; }
+    figcaption { margin-top: 8px; color: var(--muted); font-size: .85rem; }
+    figcaption span { display: block; }
+    .bottom-nav { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; }
+    footer { margin: 24px 14px; text-align: center; color: var(--muted); font-size: .78rem; }
+    a:focus-visible { outline: 3px solid var(--green); outline-offset: 4px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body id="top">
+  <header>
+    <div class="in">
+      <a class="back" href="../index.html">← TOPへ もどる <span lang="ne">फर्कनुहोस्</span></a>
+      <span class="brand">Fudotaki Manual</span>
+    </div>
+  </header>
+  <main>
+    <div class="intro">
+      <h1>ごはんと みそしるの おきかた</h1>
+      <p lang="ne">भात र मिसो सुप राख्ने तरिका</p>
+    </div>
+    <nav class="toc" aria-label="もくじ">
+      <a href="#basic">① きほん</a>
+      <a href="#breakfast">② ちょうしょく</a>
+      <a href="#dinner">③ ゆうしょく</a>
+      <a href="#reason">④ なぜ たいせつ？</a>
+      <a href="#kansai">⑤ かんさいとの ちがい</a>
+    </nav>
+
+    <section class="block" id="basic" aria-labelledby="basic-title">
+      <p class="label">① きほんの ルール</p>
+      <h2 id="basic-title">ごはんは ひだり、みそしるは みぎ
+        <span lang="ne">भात बायाँ, मिसो सुप दायाँ</span></h2>
+      <p>おきゃくさまから みて、ごはんは ひだり てまえ、みそしるは みぎ てまえに おきます。</p>
+      <p class="ne" lang="ne">पाहुनाको दृष्टिकोणबाट हेर्दा भात अगाडि बायाँ र मिसो सुप अगाडि दायाँ राख्नुहोस्।</p>
+      <aside class="note">
+        <p>スタッフから みた ひだり・みぎでは ありません。<strong>おきゃくさまから みた ひだり・みぎ</strong>です。</p>
+        <p class="ne" lang="ne">बायाँ र दायाँ कर्मचारीको होइन, पाहुनाको दृष्टिकोणबाट हेर्नुहोस्।</p>
+      </aside>
+    </section>
+
+    <section class="block" id="breakfast" aria-labelledby="breakfast-title">
+      <p class="label">② ちょうしょく</p>
+      <h2 id="breakfast-title">ちょうしょくの おきかた</h2>
+      <p>ちょうしょくでは、ごはんを ひだり、みそしるを みぎに おきます。みそしるに ふたが ついていても、おく ばしょは おなじです。</p>
+      <p class="ne" lang="ne">बिहानको खानामा भात बायाँ र मिसो सुप दायाँ राख्नुहोस्। सुपको भाँडामा ढकनी भए पनि राख्ने ठाउँ उही हो।</p>
+      <figure class="poster">
+        <a href="../assets/img/rice-soup-placement/breakfast.png" target="_blank" rel="noopener" aria-label="ちょうしょくの がぞうを おおきく ひらく">
+          <img src="../assets/img/rice-soup-placement/breakfast.png" width="1448" height="1086" alt="ちょうしょくの はいぜん。おきゃくさまから みて、ごはんは ひだり てまえ、ふたつきの みそしるは みぎ てまえ。">
+        </a>
+        <figcaption>タップすると、がぞうを おおきく ひらけます。<span lang="ne">तस्बिर ठूलो हेर्न ट्याप गर्नुहोस्।</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="block" id="dinner" aria-labelledby="dinner-title">
+      <p class="label">③ ゆうしょく</p>
+      <h2 id="dinner-title">ゆうしょくの おきかた</h2>
+      <p>ゆうしょくでも、ごはんは ひだり、しるものは みぎです。つけものは、ごはんの ひだりおくが きほんです。</p>
+      <p class="ne" lang="ne">बेलुकाको खानामा पनि भात बायाँ र सुप दायाँ राख्नुहोस्। अचार सामान्यतया भातको पछाडि बायाँपट्टि राखिन्छ।</p>
+      <aside class="note">
+        <p>※つけものは、こんだてや しょっきによって、ばしょが すこし かわる ばあいが あります。</p>
+        <p class="ne" lang="ne">मेनु र भाँडाअनुसार अचार राख्ने ठाउँ केही फरक हुन सक्छ।</p>
+      </aside>
+      <figure class="poster">
+        <a href="../assets/img/rice-soup-placement/dinner.png" target="_blank" rel="noopener" aria-label="ゆうしょくの がぞうを おおきく ひらく">
+          <img src="../assets/img/rice-soup-placement/dinner.png" width="1536" height="1024" loading="lazy" alt="ゆうしょくの はいぜん。おきゃくさまから みて、ごはんは ひだり てまえ、しるものは みぎ てまえ、つけものは ごはんの ひだりおく。">
+        </a>
+        <figcaption>タップすると、がぞうを おおきく ひらけます。<span lang="ne">तस्बिर ठूलो हेर्न ट्याप गर्नुहोस्।</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="block" id="reason" aria-labelledby="reason-title">
+      <p class="label">④ なぜ ばしょが たいせつ？</p>
+      <h2 id="reason-title">ぎゃくに おかないでください</h2>
+      <p>ごはんと みそしるの ひだり・みぎを ぎゃくにすると、なくなった かたへの おそなえを れんそうさせる ことが あります。</p>
+      <p>おきゃくさまに しつれいに ならないよう、ただしい ばしょに おきましょう。</p>
+      <p class="ne" lang="ne">भात र मिसो सुपको बायाँ-दायाँ ठाउँ उल्टो राख्दा मृतकलाई चढाइने खानाको तरिका सम्झाउन सक्छ। त्यसैले पाहुनालाई खाना दिँदा सही ठाउँमा राख्नुहोस्।</p>
+    </section>
+
+    <section class="block" id="kansai" aria-labelledby="kansai-title">
+      <p class="label">⑤ かんさいとの ちがい</p>
+      <h2 id="kansai-title">きぬがわふどうたきでは、みぎ てまえ</h2>
+      <p>おおさかなど かんさいの いちぶでは、みそしるを ごはんの おくに おく しゅうかんが あります。</p>
+      <p>これは まちがいでは ありませんが、きぬがわふどうたきでは ごはんの みぎてまえに おきます。</p>
+      <p class="ne" lang="ne">ओसाकालगायत कान्साईका केही ठाउँमा मिसो सुप भातको पछाडि राख्ने चलन छ। यो गलत होइन, तर किनुगावा फुदोताकीमा सुप भातको दायाँ अगाडि राखिन्छ।</p>
+    </section>
+
+    <nav class="bottom-nav" aria-label="ページの いどう">
+      <a class="back" href="../index.html">← TOPへ もどる <span lang="ne">फर्कनुहोस्</span></a>
+      <a href="#top">↑ いちばん うえへ</a>
+    </nav>
+  </main>
+  <footer>&copy; Kinugawa Fudotaki Staff Manual</footer>
+  <script>
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('../sw.js');
+  </script>
+</body>
+</html>
